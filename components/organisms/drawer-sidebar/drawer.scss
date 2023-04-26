@@ -1,0 +1,98 @@
+.drawer-sidebar {
+  width: 320px;
+  padding: 30px;
+  .drawer-close {
+    border-radius: 100%;
+    height: 26px;
+    width: 26px;
+    min-width: auto;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: $orange;
+    text-align: center;
+    line-height: 36px;
+    color: #fff;
+    z-index: 9;
+  }
+  .drawer-title {
+    width: 100%;
+    position: relative;
+    height: 64px;
+    overflow: hidden;
+    .logo {
+      img {
+        width: 100%;
+      }
+    }
+    &.drawer-dark {
+      .logo {
+        width: 95%;
+        position: relative;
+        top: -2px;
+      }
+    }
+    &.drawer-light {
+      .logo {
+        width: 100% !important;
+        height: 64px;
+        position: absolute;
+        top: -103px;
+      }
+    }
+  }
+  .drawer-about {
+    margin: 25px 0;
+    h3 {
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+  .drawer-categories {
+    h3 {
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    hr {
+      position: absolute;
+      height: 30px;
+      top: 9px;
+      width: 1px;
+      background: rgba(0, 0, 0, 0.1);
+      right: 60px;
+    }
+    .mui-style-rtziqk-MuiButtonBase-root-MuiListItem-root {
+      background-color: rgba(0, 0, 0, 0.04);
+      margin-bottom: 10px;
+      border-radius: 10px;
+      &:hover {
+        background-color: var(--primary);
+        box-shadow: 0 0 10px var(--primary);
+        color: #fff;
+        .MuiListItemIcon-root {
+          svg {
+            color: #fff;
+            fill: #fff;
+            left: 10px;
+            position: relative;
+            transition: all ease-in-out 0.5s;
+          }
+        }
+        .title {
+          span {
+            left: -10px;
+            position: relative;
+          }
+        }
+      }
+      .title {
+        span {
+          font-weight: 600;
+          transition: all ease-in-out 0.3s;
+        }
+      }
+    }
+  }
+}

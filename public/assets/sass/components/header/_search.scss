@@ -1,0 +1,35 @@
+.form-header{
+    position: relative;
+    left: 5px;
+    top: 10px;
+    .custom-select{
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        background: #ffffff0d;
+        border-color: #484747;
+        color: #ccc;
+    }
+    .input-search{
+        position: relative;
+        left: -8px;
+        width: auto;
+        background: #ffffff0d;
+        border-color: #484747;
+        color: #ccc;
+        font-size: 0.9em;
+        &:hover,
+        &:focus{
+            background: #fff;
+            color: #333
+        }
+    }
+    .input-group-append{
+        padding: 0;
+        position: relative;
+        left: -10px;
+    }
+    .btn-gray{
+        font-weight: 600;
+        border-color: #484747;
+    }
+}

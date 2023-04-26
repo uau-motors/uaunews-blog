@@ -1,0 +1,9 @@
+.galleria{
+  box-shadow: 0px 2px 12px 3px $gray;
+  width: 952px;
+  border-radius: 5px;
+  padding: 2px;
+  background: rgba($gray,0.5);
+}
+
+@import "responsive";

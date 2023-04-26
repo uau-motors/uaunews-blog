@@ -1,0 +1,86 @@
+.social{
+  margin: 15px 0;
+  .sidebar{
+    margin: 10px 0;
+    min-height: 50px;
+    .social-button{
+      display: grid;
+      grid-template-columns: repeat(5, minmax(48px,1fr));
+      > div{
+        margin: 5px;
+        overflow: hidden;
+        background: $orange;
+        position: relative;
+        border-radius: 5px;
+        text-align: center;
+        a{
+          font-size: 1.5em;
+          color: #FFF;
+        }
+        &:hover{
+          .tooltips{
+            visibility: visible;
+            opacity: 1;
+            &.botton{
+              bottom: -30px;
+              &:before {
+                bottom: 25px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .social{
+    .sidebar{
+      .social-button{
+        > div{
+          height: 48px;
+          line-height: 48px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .social{
+    .sidebar{
+      .social-button{
+        > div{
+          height: 48px;
+          line-height: 48px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .social{
+    .sidebar{
+      .social-button{
+        grid-template-columns: repeat(5, minmax(42px,1fr));
+        > div{
+          height: 32px;
+          line-height: 32px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .social{
+    .sidebar{
+      .social-button{
+        grid-template-columns: repeat(5, minmax(42px,1fr));
+        > div{
+          height: 32px;
+          line-height: 32px;
+        }
+      }
+    }
+  }
+}

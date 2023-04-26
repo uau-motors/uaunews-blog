@@ -1,0 +1,28 @@
+.title-section{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  h2{
+    font-size: 16px;
+    position: relative;
+    background: $gray;
+    color: white;
+    padding: 5px 10px;
+    height: 30px;
+    &:after{
+      content: '';
+      position: absolute;
+      right: -7px;
+      height: 30px;
+      width: 15px;
+      top: 0;
+      border-right: 5px solid $orange;
+      background: $gray;
+      transform: skew(25deg);
+      -o-transform: skew(25deg);
+      -moz-transform: skew(25deg);
+      -webkit-transform: skew(25deg);
+    }
+  }
+}

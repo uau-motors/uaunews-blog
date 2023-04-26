@@ -1,0 +1,36 @@
+.tooltips{
+  position: absolute;
+  background: rgba(0, 0, 0, .95);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 15px;
+  height: 25px;
+  opacity: 0;
+  visibility: hidden;
+  line-height: 16px;
+  left: -50%;
+  z-index: 999;
+  @extend .trans-eio-5s;
+  &:before {
+    border: solid;
+    border-color: transparent transparent rgba(0, 0, 0, .95) transparent;
+    content: "";
+    left: 45%;
+    bottom: 30px;
+    position: absolute;
+  }
+  &.top{
+    top: -30px;
+    &:before{
+      bottom: -6px;
+      border-color: rgba(0, 0, 0, .95) transparent transparent transparent;
+    }
+  }
+  &.botton{
+    bottom: -30px;
+    &:before {
+      bottom: 25px;
+    }
+  }
+}

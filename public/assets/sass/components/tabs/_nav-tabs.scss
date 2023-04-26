@@ -1,0 +1,14 @@
+.tabs{
+  right: 0;
+  top: 3px;
+  position: absolute;
+  .nav-link {
+    padding: 2px 10px;
+    color: $gray;
+    font-size: .85em;
+    &.active{
+      background: $gray;
+      color: #FFF;
+    }
+  }
+}

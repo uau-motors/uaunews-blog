@@ -1,0 +1,46 @@
+.toolbar{
+  position: relative;
+  z-index: 9;
+  background-color: $orange;
+  color: #FFF;
+  height: 30px;
+  line-height: 30px;
+  font-family: 'Montserrat', sans-serif;
+  .nav{
+    li{
+      a{
+        font-size: 0.85em;
+        color: #FFF;
+        border-right: 1px dotted #fff;
+        padding-right: 5px;
+        text-decoration: none;
+      }
+      &:last-child{
+        a{
+          border-right: 0;
+        }
+      }
+    }
+  }
+  .list-inline{
+    li{
+      line-height: 28px;
+      &.mr-15{
+          margin-right: 15px;
+      }
+      a{
+        font-size: 0.8em;
+        color: #FFF;
+          padding-left: 5px;
+          padding-right: 5px;
+        &.social-button{
+          border-radius: 100%;
+          display: block;
+          width: 24px;
+          height: 24px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+// VARIABLES GLOBALS
+@import "variables";
+@import "~animate-sass/_animate.scss";
+// CONFIG
+@import "helpers";
+@import "hover";
+@import "globals";
+
+.theme-dark,
+.theme-light {
+  transition: all ease-in-out 0.3s;
+  main {
+    transition: all ease-in-out 0.3s;
+  }
+}
+
+.theme-dark {
+  color: #fff;
+  background-color: #121212;
+  main {
+    color: #fff;
+    background-color: #121212;
+  }
+}
+
+.theme-light {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #fff;
+  main {
+    color: rgba(0, 0, 0, 0.87);
+    background-color: #fff;
+  }
+}
+
+// COMPONENTS MODULES
+@import "../../components/molecules/close-title/style.scss";
+
+// COMPONENTS ORGANISMS
+// COMPONENTS ORGANISMS
+@import "../../components/organisms/header/header.scss";
+@import "../../components/organisms/search-modal/search-modal.scss";
+@import "../../components/organisms/drawer-sidebar/drawer.scss";
+@import "../../components/organisms/carousel/carousel.scss";
+@import "../../components/organisms/recents-posts/recentsPosts.scss";
+
+@media (max-width: 575.98px) {
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}

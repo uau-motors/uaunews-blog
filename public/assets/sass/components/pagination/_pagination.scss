@@ -1,0 +1,17 @@
+.pagination{
+  flex-flow: column;
+  .MuiPaginationItem-outlinedPrimary.Mui-selected{
+    background-color: darken($orange,5%);
+    border-color: $orange;
+    color: #FFF;
+    outline: inherit;
+    cursor: default;
+    &:hover{
+      background-color: darken($orange,1%);
+    }
+  }
+  .MuiPaginationItem-root:hover{
+    border-color: $orange;
+    outline: inherit;
+  }
+}

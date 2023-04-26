@@ -1,0 +1,74 @@
+@each $color, $value in $theme-colors {
+  .border-outline-#{$color} {
+    @include button-outline-variant($value);
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .text-theme-#{$color} {
+    color: $value
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .bg-theme-#{$color} {
+    @include button-variant($value, $value);
+  }
+  .bg-theme-dark-#{$color} {
+    @include button-variant(darken($value,25), darken($value,25));
+  }
+  .bg-theme-light-#{$color} {
+    @include button-variant(lighten($value,25), lighten($value,25));
+  }
+  .border-theme-#{$color} {
+    border-color: $value;
+    &:after{
+      border-color: darken($value,25);
+    }
+    &:before{
+      border-color: darken($value,25);
+    }
+  }
+  .before-bg-theme-#{$color} {
+    &:before{
+      background: darken($value,25);
+    }
+  }
+  .hover-bg-theme-#{$color} {
+    &:hover{
+      background: darken($value,25);
+    }
+  }
+  .fill-theme-#{$color} {
+    svg{
+      fill: $value;
+      transition: all ease-in-out 0.3s;
+      g, path{
+        fill: $value;
+      }
+    }
+    &:hover{
+      svg{
+        fill: darken($value,25);
+        g, path{
+          fill: darken($value,25);
+        }
+      }
+    }
+  }
+  .after-border-theme-#{$color} {
+    &:after{
+      border-color: darken($value,25);
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .bg-theme-gradient-#{$color} {
+    background: -moz-linear-gradient(top, $value 0%, darken($value,75) 90%);
+    background: -webkit-linear-gradient(top, $value 0%, darken($value,75) 90%);
+    background: linear-gradient(to bottom, $value 0%, darken($value,75) 90%);
+    opacity: .5;
+  }
+}
+

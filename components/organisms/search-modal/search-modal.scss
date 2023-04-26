@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@200;400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@200;400;500;600;800&display=swap");
+
+.search-modal {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-image: url(https://foxiz.themeruby.com/default/wp-content/uploads/sites/2/2021/09/search-bg.jpg);
+  background-position: 0 auto;
+  background-repeat: no-repeat;
+  .search-title {
+    justify-content: space-between;
+    padding: 80px 0 15px;
+    h1 {
+      font-size: 36px;
+      font-family: Sora, Arial, sans-serif;
+      font-weight: 400;
+    }
+  }
+  .search-tabs {
+    button {
+      background-color: #fff;
+      padding: 5px 15px;
+    }
+  }
+  .search-subtitle {
+    justify-content: space-between;
+    h3 {
+      font-size: 26px;
+      font-family: Sora, Arial, sans-serif;
+      font-weight: 400;
+    }
+  }
+  .close-title {
+    position: absolute;
+    right: 15px;
+    top: 30px;
+  }
+  .search-box {
+    position: relative;
+    width: 100%;
+    background-color: rgb(250, 235, 217);
+    border: 1px solid transparent;
+    top: -2px;
+    transition: all ease-in-out 0.3s;
+    input {
+      height: 40px;
+      padding: 10px;
+      font-size: 20px;
+    }
+
+    &:focus-within {
+      border: 1px solid lighten($orange, 1);
+      background-color: rgb(250, 250, 250);
+      box-shadow: 0px 0px 10px lighten($orange, 1);
+    }
+  }
+  .search-pagination-control {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 30px 0;
+    svg[data-testid="KeyboardArrowRightIcon"] {
+      background-image: linear-gradient(
+        lighten($orange, 40%),
+        lighten($orange, 20%)
+      );
+      box-shadow: rgba(22, 29, 37, 0.05) 0px 1px 0px 0px;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      left: -1px;
+    }
+    svg[data-testid="KeyboardArrowLeftIcon"] {
+      background-image: linear-gradient(
+        lighten($orange, 40%),
+        lighten($orange, 20%)
+      );
+      box-shadow: rgba(22, 29, 37, 0.05) 0px 1px 0px 0px;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+  }
+  .search-posts {
+    .search-post-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      margin-bottom: 4px;
+      position: relative;
+      .post-card-thumb {
+        overflow: hidden;
+        border-radius: 3px;
+        height: 155px;
+        width: 100%;
+        transition: all ease-in-out 0.3s;
+        margin-bottom: 10px;
+        cursor: pointer;
+        img {
+          transition: all ease-in-out 0.3s;
+          width: 120%;
+          height: auto;
+        }
+      }
+      &:hover {
+        .post-card-thumb {
+          img {
+            transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+          }
+        }
+      }
+      .post-title {
+        h3 {
+          font-size: 16px;
+          margin: 5px 0;
+          padding: 10px 0;
+          cursor: pointer;
+          transition: all ease-in-out 0.3s;
+          color: var(--secondary);
+          font-weight: 500;
+        }
+      }
+      &:hover {
+        h3 {
+          color: var(--primary);
+        }
+        .post-tag {
+          background-color: var(--primary);
+          color: #fff;
+        }
+      }
+      .post-tag {
+        border-radius: 4px;
+        background-color: rgb(250, 235, 217);
+        width: 40%;
+        text-align: left;
+        margin: 15px 0 10px;
+        padding: 3px;
+        position: absolute;
+        top: 130px;
+        left: 10px;
+        height: auto;
+        color: #333;
+        border: 0.05em solid var(--primary);
+        transition: all ease-in-out 0.3s;
+      }
+      .post-excerpt {
+        font-size: 15px;
+        font-family: Lato;
+      }
+      .post-metas {
+        margin: 15px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: normal;
+        align-items: flex-start;
+        .post-date {
+          margin-right: 15px;
+        }
+        .post-date,
+        .post-views {
+          h6 {
+            font-size: 0.8em;
+            color: var(--secondary);
+            font-weight: 200;
+          }
+        }
+      }
+    }
+  }
+}
