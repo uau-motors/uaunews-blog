@@ -6,6 +6,8 @@
 @import "hover";
 @import "globals";
 
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500;600;700;900&family=Lato:wght@300;400;700;900&family=Roboto:wght@300;400;500;700;900&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300&display=swap");
+
 .theme-dark,
 .theme-light {
   transition: all ease-in-out 0.3s;
@@ -50,4 +52,16 @@
 @media (min-width: 768px) and (max-width: 991.98px) {
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+@media (min-width: 1200px) {
+  .mui-style-1oqqzyl-MuiContainer-root {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .mui-style-1oqqzyl-MuiContainer-root {
+    max-width: 1320px;
+  }
 }

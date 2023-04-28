@@ -77,7 +77,7 @@ const UauToolbar = ({ menus }: ToolbarProps) => {
   });
   return (
     <div className="toolbar">
-      <Container>
+      <Container maxWidth="lg">
         <Toolbar sx={{ flexWrap: "wrap" }}>
           <Grid container rowSpacing={0} columnSpacing={0}>
             <Grid item xs={5} md={4}>

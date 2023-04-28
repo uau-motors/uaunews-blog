@@ -16,7 +16,7 @@ function ThemeToggle() {
   return (
     <div className="toggle-theme">
       <Switch
-        color="default"
+        color="primary"
         checked={theme === "light"}
         onChange={handleToggle}
         icon={<DarkModeIcon />}

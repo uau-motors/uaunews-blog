@@ -6,7 +6,7 @@ interface TitleSectionProps {
 }
 
 const TitleSection: FC<TitleSectionProps> = ({ title }) => (
-  <Box mb={3}>
+  <Box className="title-section">
     <Typography variant="h2" component="h2">
       {title}
     </Typography>

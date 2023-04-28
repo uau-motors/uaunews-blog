@@ -5,96 +5,9 @@ import Layout from "../components/template/layout";
 import { Container } from "@mui/material";
 import CarouselBlog from "../components/organisms/carousel";
 import RecentsPosts from "../components/organisms/recents-posts";
-import { faker } from "@faker-js/faker";
 import { ThemeProvider } from "@mui/material/styles";
 import { ThemeContext } from "../utility/contexts/theme-context";
 import { lightTheme, darkTheme } from "../utility/contexts/theme";
-import { CssBaseline } from "@material-ui/core";
-import SearchModal from "../components/organisms/search-modal";
-
-interface Tag {
-  slug: string;
-  title: string;
-}
-
-interface Data {
-  news: DataItem[];
-  releases: DataItem[];
-  curiosities: DataItem[];
-  tips: DataItem[];
-  histories: DataItem[];
-}
-
-interface DataItem {
-  featured: string;
-  title: string;
-  date: string;
-  tags: Tag;
-  slug: string;
-}
-
-const generateData = (): Data => {
-  const data: Data = {
-    news: [],
-    releases: [],
-    curiosities: [],
-    tips: [],
-    histories: [],
-  };
-
-  const tags: Tag[] = [
-    {
-      slug: "news",
-      title: "Notícias",
-    },
-    {
-      slug: "releases",
-      title: "Lançamentos",
-    },
-    {
-      slug: "curiosities",
-      title: "Curiosidades",
-    },
-    {
-      slug: "tips",
-      title: "Dicas",
-    },
-    {
-      slug: "histories",
-      title: "Histórias",
-    },
-  ];
-
-  const keys: string[] = [
-    "news",
-    "releases",
-    "curiosities",
-    "tips",
-    "histories",
-  ];
-
-  keys.forEach((key: string) => {
-    for (let i = 0; i < 5; i++) {
-      const tag = tags[Math.floor(Math.random() * tags.length)];
-      const dirPath: string = "/assets/images/samples/cars";
-      const randomIndex: number = Math.floor(Math.random() * 20);
-      let fileName: string = `image-${randomIndex}.jpeg`;
-      let filePath: string = `${dirPath}/${fileName}`;
-      const dataItem: DataItem = {
-        featured: `${filePath}`,
-        title: faker.lorem.words(),
-        date: faker.date.recent().toISOString().slice(0, 10),
-        tags: tag,
-        slug: tag.slug,
-      };
-      data[key].push(dataItem);
-    }
-  });
-
-  return data;
-};
-
-const recentsPosts = generateData();
 
 const Home: NextPage = () => {
   const { theme } = useContext(ThemeContext);
@@ -104,7 +17,7 @@ const Home: NextPage = () => {
         <main>
           <Container>
             <CarouselBlog />
-            <RecentsPosts posts={recentsPosts} />
+            <RecentsPosts />
           </Container>
         </main>
       </Layout>

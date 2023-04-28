@@ -7,7 +7,7 @@ import { MidleHeaderProps } from "../../utility/types";
 export default function UauMiddleHeader({ socials }: MidleHeaderProps) {
   return (
     <div className="middleHeader">
-      <Container>
+      <Container maxWidth="lg">
         <Grid container rowSpacing={0} columnSpacing={0}>
           <Grid xs={3} sm={3} md={3}>
             <Logo mode={"light"} />

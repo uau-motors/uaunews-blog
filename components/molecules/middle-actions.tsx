@@ -34,6 +34,7 @@ const MiddleActions = ({ socials }: MidleHeaderProps) => {
         style={{ color: "#FFF", fontSize: "12px", top: "-5px" }}
         variant="outlined"
         color="primary"
+        className="btn"
       >
         &nbsp; Baixe nosso App
       </Button>
@@ -42,6 +43,7 @@ const MiddleActions = ({ socials }: MidleHeaderProps) => {
         style={{ fontSize: "12px", top: "-5px" }}
         color="primary"
         variant="contained"
+        className="btn primary"
       >
         &nbsp; ASSINE
       </Button>
