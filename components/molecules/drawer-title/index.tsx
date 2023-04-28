@@ -1,6 +1,6 @@
 import { Link } from "@mui/material";
 import React, { useContext } from "react";
-import Logo from "../../atoms/logo";
+import Logo from "../logo";
 import { ThemeContext } from "../../../utility/contexts/theme-context";
 
 const DrawerTitle = () => {

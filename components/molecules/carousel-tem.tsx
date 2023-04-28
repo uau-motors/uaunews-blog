@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Date from "../atoms/date";
-import styles from "../organisms/carousel/Carousel.module.css";
 
 const CarouselItem = ({ data }) => {
   return (
@@ -13,9 +12,9 @@ const CarouselItem = ({ data }) => {
         alt={data.title ?? "imagem"}
       />
       <span className="post-cat-wrap">
-        <a href={`/{data.tags.slug}`}>
+        <Link href={`/{data.tags.slug}`}>
           <span className="post-cat">{data.tags.name}</span>
-        </a>
+        </Link>
       </span>
       <div
         className="content"
@@ -25,14 +24,10 @@ const CarouselItem = ({ data }) => {
           <div className="thumb-meta">
             <span className="date meta-item fa-before">
               <i className="fa fa-calendar-o" />{" "}
-              <Date dateString={"2023-03-03"} locale={"ptBR"} />
+              <Date dateString={"2023-03-03"} />
             </span>
           </div>
           <h2 className="thumb-title">{data.title}</h2>
-          <div
-            className="thumb-desc"
-            dangerouslySetInnerHTML={{ __html: data.excerpt }}
-          />
         </div>
       </div>
       <div className="thumb-overlay" />

@@ -22,14 +22,18 @@
     overflow: hidden;
     .logo {
       img {
-        width: 100%;
+        width: 95%;
+      }
+      h1 {
+        visibility: hidden;
+        position: absolute;
       }
     }
     &.drawer-dark {
       .logo {
         width: 95%;
         position: relative;
-        top: -2px;
+        top: 0;
       }
     }
     &.drawer-light {
@@ -37,7 +41,7 @@
         width: 100% !important;
         height: 64px;
         position: absolute;
-        top: -103px;
+        top: -92px;
       }
     }
   }

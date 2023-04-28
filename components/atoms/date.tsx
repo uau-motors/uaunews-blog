@@ -1,14 +1,18 @@
 import { parseISO, format } from "date-fns";
 import React from "react";
+import ptBR from "date-fns/locale/pt-BR";
 
 interface Props {
   dateString: string;
-  locale: Locale;
+  formatDate?: string;
 }
 
-const Date: React.FC<Props> = ({ dateString, locale = "ptBR" }) => {
+const Date: React.FC<Props> = ({
+  dateString,
+  formatDate = "d 'de' LLLL, yyyy",
+}) => {
   const date = parseISO(dateString);
-  return <time dateTime={dateString}>{format(date, "d LLLL, yyyy")}</time>;
+  return <span>{format(date, formatDate, { locale: ptBR })}</span>;
 };
 
 export default Date;

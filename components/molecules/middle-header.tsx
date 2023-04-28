@@ -1,6 +1,6 @@
 import { Container } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
-import Logo from "../atoms/logo";
+import Logo from "./logo";
 import MiddleActions from "./middle-actions";
 import { MidleHeaderProps } from "../../utility/types";
 

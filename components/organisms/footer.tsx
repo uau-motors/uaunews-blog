@@ -8,7 +8,7 @@ import {
   Link,
 } from "@mui/material";
 import styles from "../../styles/Footer.module.css";
-import Logo from "../atoms/logo";
+import Logo from "../molecules/logo";
 import { loadCSS } from "fg-loadcss";
 
 import Icon from "@mui/material/Icon";
