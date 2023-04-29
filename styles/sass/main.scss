@@ -7,34 +7,10 @@
 @import "globals";
 
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Exo+2:wght@200;300;400;500;600;700;900&family=Lato:wght@300;400;700;900&family=Roboto:wght@300;400;500;700;900&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300&display=swap");
-.theme-dark,
-.theme-light {
-  transition: all ease-in-out 0.3s;
-  main {
-    transition: all ease-in-out 0.3s;
-  }
-}
-
-.theme-dark {
-  color: #fff;
-  background-color: #121212;
-  main {
-    color: #fff;
-    background-color: #121212;
-  }
-}
-
-.theme-light {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: #fff;
-  main {
-    color: rgba(0, 0, 0, 0.87);
-    background-color: #fff;
-  }
-}
 
 // COMPONENTS MODULES
 @import "../../components/molecules/close-title/style.scss";
+@import "../../components/molecules/review-meta/style.scss";
 
 // COMPONENTS ORGANISMS
 // COMPONENTS ORGANISMS
@@ -43,6 +19,7 @@
 @import "../../components/organisms/drawer-sidebar/drawer.scss";
 @import "../../components/organisms/carousel/carousel.scss";
 @import "../../components/organisms/recents-posts/recentsPosts.scss";
+@import "../../components/organisms/vehicle-evaluation/vehicle-evaluation.scss";
 @import "../../components/organisms/sidebar/sidebar.scss";
 
 @media (max-width: 575.98px) {

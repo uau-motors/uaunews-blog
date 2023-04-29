@@ -5,7 +5,8 @@ import Layout from "../components/template/layout";
 import { Container } from "@mui/material";
 import CarouselBlog from "../components/organisms/carousel";
 import RecentsPosts from "../components/organisms/recents-posts";
-import Sidebar from "../components/organisms/sidebar";
+import VehicleEvaluation from "../components/organisms/vehicle-evaluation";
+import SidebarSocials from "../components/organisms/sidebar/socials";
 import { ThemeProvider } from "@mui/material/styles";
 import { ThemeContext } from "../utility/contexts/theme-context";
 import { lightTheme, darkTheme } from "../utility/contexts/theme";
@@ -21,20 +22,26 @@ const Home: NextPage = () => {
         <main>
           <Container>
             <CarouselBlog />
-            <Box sx={{ flexGrow: 1 }}>
-              <Grid container spacing={2} className={"recents-news"}>
-                <Grid item xs={9}>
-                  <Box sx={{ width: "100%" }}>
-                    <TitleSection title={"Não perca"} />
-                  </Box>
-                  <RecentsPosts />
-                </Grid>
-                <Grid item xs={3}>
-                  <Sidebar />
-                </Grid>
+
+            <Grid container spacing={2} className={"recents-news"}>
+              <Grid item xs={9}>
+                <Box sx={{ width: "100%" }}>
+                  <TitleSection title={"Não perca"} />
+                </Box>
+                <RecentsPosts />
               </Grid>
-            </Box>
+              <Grid item xs={3}>
+                <SidebarSocials />
+              </Grid>
+            </Grid>
           </Container>
+
+          <Box className={`vehicle-evaluation bg-${theme}`}>
+            <Container>
+              <TitleSection title={"Avaliações UauMotors"} />
+              <VehicleEvaluation />
+            </Container>
+          </Box>
         </main>
       </Layout>
     </ThemeProvider>

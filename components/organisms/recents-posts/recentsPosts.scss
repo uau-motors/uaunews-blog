@@ -1,27 +1,4 @@
 .recents-news {
-  .title-section {
-    position: relative;
-    width: 120px;
-    padding: 3px 10px;
-    margin: 40px 0 20px;
-    h2 {
-      font-size: 22px;
-      font-weight: 500;
-      font-family: "Exo 2";
-    }
-    &:after {
-      border-left: 3px solid var(--primary);
-      border-right: 3px solid var(--primary);
-      bottom: 0;
-      content: "";
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      -webkit-transform: skewX(-15deg);
-      transform: skewX(-15deg);
-    }
-  }
   .post-featured {
     position: relative;
     .post-card-thumb {

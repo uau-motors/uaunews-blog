@@ -2,7 +2,7 @@ import React from "react";
 import Ads from "../../molecules/ads";
 import { Box } from "@mui/material";
 import SocialsNetworks from "../../molecules/socials";
-const Sidebar = () => {
+const SidebarSocials = () => {
   return (
     <Box className={"sidebar"}>
       <Ads />
@@ -11,4 +11,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SidebarSocials;
