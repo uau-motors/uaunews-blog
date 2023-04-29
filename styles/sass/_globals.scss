@@ -7,21 +7,21 @@
   box-sizing: border-box;
 }
 
-ul{
+ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  li{
+  li {
     float: left;
   }
 }
 
-.btn-mini{
+.btn-mini {
   font-size: 0.85em;
   padding: 2px 10px;
 }
 
-main{
+main {
   margin-bottom: 30px;
 }
 
@@ -34,86 +34,186 @@ main{
     justify-content: center;
   }
 }
-.skeleton{ position: relative; top: -5px; }
-.sticky-transitions{
+.skeleton {
+  position: relative;
+  top: -5px;
+}
+.sticky-transitions {
   @extend .trans-eio-3s;
 }
-.mb-1{ margin-bottom: 10px; }
-.mb-2{ margin-bottom: 20px; }
-.mb-3{ margin-bottom: 30px; }
+.mb-1 {
+  margin-bottom: 10px;
+}
+.mb-2 {
+  margin-bottom: 20px;
+}
+.mb-3 {
+  margin-bottom: 30px;
+}
 
-.mt-1{ margin-top: 10px; }
-.mt-2{ margin-top: 20px; }
-.mt-3{ margin-top: 30px; }
+.mt-1 {
+  margin-top: 10px;
+}
+.mt-2 {
+  margin-top: 20px;
+}
+.mt-3 {
+  margin-top: 30px;
+}
 
-.mtb-1{ margin: 10px 0; }
-.mtb-2{ margin: 20px 0; }
-.mtb-3{ margin: 30px 0; }
-.mtb-4{ margin: 40px 0; }
-.mtb-5{ margin: 50px 0; }
+.mtb-1 {
+  margin: 10px 0;
+}
+.mtb-2 {
+  margin: 20px 0;
+}
+.mtb-3 {
+  margin: 30px 0;
+}
+.mtb-4 {
+  margin: 40px 0;
+}
+.mtb-5 {
+  margin: 50px 0;
+}
 
-.block{
+.block {
   display: block;
 }
 
-.trans-eio-5s{
-  -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
-  -ms-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
+.trans-eio-5s {
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 .trans-eio-3s {
-  -webkit-transition: .3s ease-in-out;
-  -moz-transition: .3s ease-in-out;
-  -o-transition: .3s ease-in-out;
-  -ms-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  -ms-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
-.delay-1s{
+.delay-1s {
   -webkit-animation-delay: 0.1s;
   animation-delay: 0.1s;
 }
-.delay-2s{
+.delay-2s {
   -webkit-animation-delay: 0.3s;
   animation-delay: 0.3s;
 }
-.delay-3s{
+.delay-3s {
   -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
-.delay-4s{
+.delay-4s {
   -webkit-animation-delay: 0.7s;
   animation-delay: 0.7s;
 }
-.delay-5s{
+.delay-5s {
   -webkit-animation-delay: 0.9s;
   animation-delay: 0.9s;
 }
 
-.show{ display: block !important}
+.show {
+  display: block !important;
+}
 
-.bold{ font-weight: bold; }
+.bold {
+  font-weight: bold;
+}
 
-.o-hidden{ overflow: hidden; }
+.o-hidden {
+  overflow: hidden;
+}
 
-.breadcrumb{
+.breadcrumb {
   padding: 5px 10px;
   .breadcrumb-item {
-    font-size: .8em;
-    a{
+    font-size: 0.8em;
+    a {
       color: $orange;
     }
   }
 }
 
 .alert-warning {
-  background: rgba(245,175,80,0.2);
+  background: rgba(245, 175, 80, 0.2);
   color: #555;
   font-size: 1.1em;
-  border-color: rgba(245,175,80,0.3);
+  border-color: rgba(245, 175, 80, 0.3);
 }
 
-.align-right{
+.align-right {
   text-align: right;
+}
+
+.bs-facebook {
+  box-shadow: 0 5px 15px var(--bg-facebook);
+  -webkit-transform: translate3d(0, -5px, 0);
+  transform: translate3d(0, -5px, 0);
+}
+.bs-linkedin {
+  box-shadow: 0 5px 15px var(--bg-linkedin);
+  -webkit-transform: translate3d(0, -5px, 0);
+  transform: translate3d(0, -5px, 0);
+}
+.bs-twitter {
+  box-shadow: 0 5px 15px var(--bg-twitter);
+  -webkit-transform: translate3d(0, -5px, 0);
+  transform: translate3d(0, -5px, 0);
+}
+
+.bs-instagram {
+  box-shadow: 0 5px 15px var(--bg-instagram);
+  -webkit-transform: translate3d(0, -5px, 0);
+  transform: translate3d(0, -5px, 0);
+}
+.bs-rss {
+  box-shadow: 0 5px 15px var(--bg-rss);
+  -webkit-transform: translate3d(0, -5px, 0);
+  transform: translate3d(0, -5px, 0);
+}
+.bs-youtube {
+  box-shadow: 0 5px 15px var(--bg-youtube);
+  -webkit-transform: translate3d(0, -5px, 0);
+  transform: translate3d(0, -5px, 0);
+}
+
+.bg-facebook {
+  background-color: var(--bg-facebook);
+  &:hover {
+    @extend .bs-facebook;
+  }
+}
+.bg-linkedin {
+  background-color: var(--bg-linkedin);
+  &:hover {
+    @extend .bs-linkedin;
+  }
+}
+.bg-twitter {
+  background-color: var(--bg-twitter);
+  &:hover {
+    @extend .bs-twitter;
+  }
+}
+.bg-instagram {
+  background-color: var(--bg-instagram);
+  &:hover {
+    @extend .bs-instagram;
+  }
+}
+.bg-rss {
+  background-color: var(--bg-rss);
+  &:hover {
+    @extend .bs-rss;
+  }
+}
+.bg-youtube {
+  background-color: var(--bg-youtube);
+  &:hover {
+    @extend .bs-youtube;
+  }
 }

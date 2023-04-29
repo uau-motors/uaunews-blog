@@ -26,6 +26,13 @@
     rgba(255, 255, 255, 0)
   );
 
+  --bg-facebook: #3578e5;
+  --bg-linkedin: #0073b1;
+  --bg-youtube: #c00;
+  --bg-instagram: #8338ec;
+  --bg-twitter: #a2d2ff;
+  --bg-rss: #e85d04;
+
   --tile-start-rgb: 239, 245, 249;
   --tile-end-rgb: 228, 232, 233;
   --tile-border: conic-gradient(
