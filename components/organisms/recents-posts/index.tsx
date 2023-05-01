@@ -1,13 +1,7 @@
-import React, { FC, Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import { styled } from "@mui/material/styles";
-import { NavTabsRecents } from "../../../utility/constants";
-import TabContent from "../../molecules/tab-content";
 
 import Box from "@mui/material/Box";
-import Tab from "@mui/material/Tab";
-import TabContext from "@mui/lab/TabContext";
-import TabList from "@mui/lab/TabList";
-import TabPanel from "@mui/lab/TabPanel";
 
 import PostImage from "../../molecules/post-card-thumb";
 import PostTitle from "../../molecules/post-title";
@@ -15,9 +9,7 @@ import PostTag from "../../molecules/post-tag";
 import PostDate from "../../molecules/post-date";
 import PostViews from "../../molecules/post-views";
 import PostExcerpt from "../../molecules/post-excerpt";
-import PostAuthor from "../../molecules/post-author";
 
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 
 import data from "../../../utility/data/posts.json";

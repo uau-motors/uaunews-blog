@@ -252,6 +252,20 @@ main {
   }
 }
 
+.post-title {
+  h3 {
+    font-weight: 600;
+    font-family: "Lato";
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+  }
+  &:hover {
+    h3 {
+      color: var(--primary);
+    }
+  }
+}
+
 .title-section {
   position: relative;
   width: 120px;
@@ -273,5 +287,18 @@ main {
     top: 0;
     -webkit-transform: skewX(-15deg);
     transform: skewX(-15deg);
+  }
+}
+
+.post-card-thumb {
+  img {
+    transition: all ease-in-out 0.3s;
+  }
+  &:hover {
+    img {
+      transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+    }
   }
 }

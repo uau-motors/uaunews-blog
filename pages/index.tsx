@@ -6,7 +6,9 @@ import { Container } from "@mui/material";
 import CarouselBlog from "../components/organisms/carousel";
 import RecentsPosts from "../components/organisms/recents-posts";
 import VehicleEvaluation from "../components/organisms/vehicle-evaluation";
+import RecentsVehicles from "../components/organisms/recents-vehicles";
 import SidebarSocials from "../components/organisms/sidebar/socials";
+import SidebarNewsletter from "../components/organisms/sidebar/newsletter";
 import { ThemeProvider } from "@mui/material/styles";
 import { ThemeContext } from "../utility/contexts/theme-context";
 import { lightTheme, darkTheme } from "../utility/contexts/theme";
@@ -30,7 +32,7 @@ const Home: NextPage = () => {
                 </Box>
                 <RecentsPosts />
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={3} style={{ paddingTop: 110 }}>
                 <SidebarSocials />
               </Grid>
             </Grid>
@@ -42,6 +44,18 @@ const Home: NextPage = () => {
               <VehicleEvaluation />
             </Container>
           </Box>
+
+          <Container className={`recents-vehicles`}>
+            <Grid container>
+              <Grid item xs={9}>
+                <TitleSection title={"Últimos Lançamentos"} />
+                <RecentsVehicles />
+              </Grid>
+              <Grid item xs={3}>
+                <SidebarNewsletter theme={theme} />
+              </Grid>
+            </Grid>
+          </Container>
         </main>
       </Layout>
     </ThemeProvider>

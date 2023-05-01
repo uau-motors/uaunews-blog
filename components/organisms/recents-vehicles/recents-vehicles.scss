@@ -1,0 +1,67 @@
+.recents-vehicles {
+  margin: 20px 0 0;
+  padding: 10px 0 20px;
+  .title-section {
+    width: 240px;
+    margin: 10px 0 30px;
+    margin-left: 5px;
+  }
+  .post {
+    position: relative;
+    &:nth-child(1) {
+      padding-right: 4px;
+      margin-left: -5px;
+    }
+    &:nth-child(2) {
+      padding: 0 4px;
+    }
+    &:nth-child(3) {
+      padding-left: 4px;
+    }
+    .post-card-thumb {
+      width: 98%;
+      height: 158px;
+      overflow: hidden;
+      border-radius: 5px;
+      position: relative;
+      cursor: pointer;
+      img {
+        height: 158px;
+        left: 0;
+      }
+    }
+    .content {
+      position: relative;
+      padding-top: 10px;
+      bottom: inherit;
+
+      .post-title {
+        position: relative;
+        margin: 10px 0 15px;
+        z-index: 2;
+        h3 {
+          font-size: 16px;
+        }
+      }
+      .post-metas {
+        margin: 15px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: normal;
+        align-items: flex-start;
+        position: relative;
+        z-index: 2;
+        .post-date {
+          margin-right: 15px;
+        }
+        .post-date,
+        .post-views {
+          h6 {
+            font-size: 0.8em;
+            font-weight: 200;
+          }
+        }
+      }
+    }
+  }
+}

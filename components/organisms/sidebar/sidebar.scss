@@ -1,6 +1,5 @@
 .sidebar {
   position: relative;
-  margin-top: 90px;
   .title-section {
     margin: 20px 0;
     width: 100px;
@@ -44,6 +43,70 @@
       }
       .counter-subscribers {
         font-size: 0.8em;
+      }
+    }
+  }
+
+  .newsletter {
+    padding-top: 58px;
+    .box-newsletter {
+      text-align: center;
+      margin-top: 15px;
+      border-radius: 4px;
+      background: repeating-linear-gradient(
+        45deg,
+        #3c83f1,
+        #3c83f1 10px,
+        #ea4235 10px,
+        #ea4235 20px
+      );
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+    }
+    .form-newsletter {
+      display: flex;
+      margin: 5px;
+      border-radius: 5px;
+      padding: 30px 25px 25px;
+      background-image: url(/assets/images/bg-news.png);
+      h3 {
+        font-size: 1.4em;
+        font-weight: 600;
+        color: var(--secondary);
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+      input {
+        background: #fff;
+        color: var(--secondary);
+      }
+      button {
+        padding: 5px;
+        background: orange;
+        border-radius: 5px;
+        color: var(--secondary);
+      }
+      p {
+        background: #ffffff9e;
+        color: #333;
+        height: auto;
+        padding: 5px;
+        font-size: 0.8em;
+
+        margin-top: 40px;
+        border-radius: 5px;
+      }
+      .mui-style-kx1iyh-MuiFormLabel-root-MuiInputLabel-root {
+        color: var(--secondary);
+      }
+      label[data-shrink="false"]
+        + .MuiInputBase-formControl
+        .mui-style-p51h6s-MuiInputBase-input-MuiOutlinedInput-input {
+        border: 1px solid;
+        border-radius: 4px;
       }
     }
   }
