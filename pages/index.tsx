@@ -7,6 +7,7 @@ import CarouselBlog from "../components/organisms/carousel";
 import RecentsPosts from "../components/organisms/recents-posts";
 import VehicleEvaluation from "../components/organisms/vehicle-evaluation";
 import RecentsVehicles from "../components/organisms/recents-vehicles";
+import PostsVideos from "../components/organisms/posts-videos";
 import SidebarSocials from "../components/organisms/sidebar/socials";
 import SidebarNewsletter from "../components/organisms/sidebar/newsletter";
 import { ThemeProvider } from "@mui/material/styles";
@@ -56,6 +57,13 @@ const Home: NextPage = () => {
               </Grid>
             </Grid>
           </Container>
+
+          <Box className={`posts-videos bg-${theme}`}>
+            <Container>
+              <TitleSection title={"Vídeos"} />
+              <PostsVideos />
+            </Container>
+          </Box>
         </main>
       </Layout>
     </ThemeProvider>

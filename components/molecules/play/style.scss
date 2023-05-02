@@ -1,0 +1,74 @@
+.box-play {
+  position: absolute;
+  top: 45%;
+  z-index: 9;
+  left: 45%;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: pulseShadowlgwhite 2000ms linear infinite;
+
+  .play {
+    position: relative;
+    svg {
+      position: absolute;
+      left: -28px;
+      width: 56px;
+      height: 56px;
+      fill: #ccc;
+      color: #ccc;
+      transition: all ease-in-out 0.3s;
+      &.on {
+        opacity: 0;
+      }
+    }
+  }
+  &:hover {
+    .play {
+      svg {
+        fill: #fff;
+        color: #fff;
+        &.on {
+          opacity: 1;
+        }
+        &.off {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+@-webkit-keyframes pulseShadowlgwhite {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+
+  70% {
+    -webkit-box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes pulseShadowlgwhite {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+
+  70% {
+    -webkit-box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
