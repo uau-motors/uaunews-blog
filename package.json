@@ -25,6 +25,7 @@
     "@mui/icons-material": "^5.11.11",
     "@mui/lab": "^5.0.0-alpha.124",
     "@mui/material": "^5.11.14",
+    "@mui/styles": "^5.12.3",
     "@types/cors": "^2.8.13",
     "@types/date-fns": "^2.6.0",
     "@types/fg-loadcss": "^3.1.1",

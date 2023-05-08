@@ -8,11 +8,12 @@
     background-color: #090909;
   }
   .title-section {
-    width: 90px;
+    width: 100px;
     margin: 20px 0 40px;
     z-index: 9;
     position: relative;
     color: #fff;
+    min-width: 70px;
   }
   .post-featured {
     position: relative;

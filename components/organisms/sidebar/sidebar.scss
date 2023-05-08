@@ -3,6 +3,7 @@
   .title-section {
     margin: 20px 0;
     width: 100px;
+    min-width: 60px;
     h2 {
       font-size: 18px;
     }
@@ -46,7 +47,6 @@
       }
     }
   }
-
   .newsletter {
     padding-top: 58px;
     .box-newsletter {
@@ -78,6 +78,27 @@
         color: var(--secondary);
         text-transform: uppercase;
         margin-bottom: 20px;
+        position: relative;
+        &::before {
+          content: "";
+          bottom: -10px;
+          width: 52%;
+          height: 2px;
+          position: absolute;
+          top: auto;
+          background: orange;
+          left: 25%;
+        }
+        &::after {
+          content: "";
+          bottom: -16px;
+          width: 40%;
+          height: 2px;
+          position: absolute;
+          top: auto;
+          background: orange;
+          left: 30%;
+        }
       }
       input {
         background: #fff;
@@ -96,7 +117,7 @@
         padding: 5px;
         font-size: 0.8em;
 
-        margin-top: 40px;
+        margin-bottom: 10px;
         border-radius: 5px;
       }
       .mui-style-kx1iyh-MuiFormLabel-root-MuiInputLabel-root {
@@ -107,6 +128,127 @@
         .mui-style-p51h6s-MuiInputBase-input-MuiOutlinedInput-input {
         border: 1px solid;
         border-radius: 4px;
+      }
+    }
+  }
+  .tags-container {
+    .title-section {
+      width: 80px;
+      min-width: 50px;
+    }
+    .tags-cloud {
+      position: relative;
+      z-index: 9;
+      margin-left: -10px;
+      a {
+        border-radius: 3px;
+        margin: 3px;
+        padding: 5px;
+        border: 1px solid var(--secondary);
+        transition: all ease-in-out 0.5s;
+        color: #fff;
+        background-color: var(--secondary);
+        &:hover {
+          box-shadow: 0 0 10px var(--primary);
+          background-color: var(--primary);
+          border-color: var(--primary);
+        }
+      }
+    }
+    &.tag-dark {
+      .tags-cloud {
+        a {
+          border: 1px solid rgba(255, 255, 255, 0.23);
+          background-color: rgba(255, 255, 255, 0.23);
+          &:hover {
+            box-shadow: 0 0 10px var(--primary);
+            background-color: var(--primary);
+            border-color: var(--primary);
+          }
+        }
+      }
+    }
+  }
+  .brands-container {
+    .brands-icons {
+      position: relative;
+      z-index: 9;
+      margin-left: -15px;
+      .brand-item {
+        height: 64px;
+        padding: 8px;
+        width: 64px;
+        transition: all ease-in-out 0.3s;
+        img {
+          height: 48px;
+          width: 48px;
+          background: #fff;
+          border-radius: 4px;
+        }
+        &:hover {
+          box-shadow: 0 3px 9px var(--secondary);
+          -webkit-transform: translate3d(0, -5px, 0);
+          transform: translate3d(0, -5px, 0);
+        }
+      }
+    }
+  }
+  .archive-container {
+    .title-section {
+      width: 80px;
+      min-width: 50px;
+    }
+    .archive-posts {
+      li {
+        border-bottom: 1px dotted var(--secondary);
+        padding: 0;
+        height: 30px;
+        margin: 4px 0;
+        .icon-container {
+          position: absolute;
+          left: 0;
+          min-width: 36px;
+          transition: all ease-in-out 0.3s;
+        }
+        &:hover {
+          .icon-container {
+            left: 10px;
+            svg {
+              fill: var(--primary);
+              color: var(--primary);
+            }
+          }
+          .count {
+            background: var(--primary);
+          }
+        }
+      }
+      .button {
+        justify-content: flex-start;
+        padding-left: 36px;
+      }
+      .count {
+        padding: 0 5px;
+        border-radius: 4px;
+        background: var(--secondary);
+        font-size: 1.2em;
+        color: #fff;
+        transition: all ease-in-out 0.3s;
+      }
+    }
+  }
+  .readmore {
+    display: flex;
+    position: absolute;
+    right: 0;
+    p {
+      font-family: "Exo 2";
+      font-weight: 500;
+      transition: all ease-in-out 0.3s;
+    }
+    &:hover {
+      p {
+        color: var(--primary);
       }
     }
   }

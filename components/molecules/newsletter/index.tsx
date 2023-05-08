@@ -27,6 +27,10 @@ const Newsletter = () => {
           className={`form-newsletter`}
         >
           <Typography variant="h3">Assine nossa newsletter</Typography>
+
+          <Typography variant="body2">
+            Faça parte da lista VIP, e receba em primeira mão nossas novidades.
+          </Typography>
           <Input
             label="Digite seu e-mail"
             variant="outlined"
@@ -37,9 +41,6 @@ const Newsletter = () => {
           <Button variant="contained" type="submit">
             assinar
           </Button>
-          <Typography variant="body2">
-            Faça parte da lista VIP, e receba em primeira mão nossas novidades.
-          </Typography>
         </Stack>
       </Box>
     </Box>

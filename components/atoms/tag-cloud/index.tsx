@@ -1,0 +1,31 @@
+import React from "react";
+import { Chip } from "@mui/material";
+
+interface Tag {
+  title: string;
+  url: string;
+}
+
+interface TagCloudProps {
+  tags: Tag[];
+}
+
+const TagCloud: React.FC<TagCloudProps> = ({ tags }) => {
+  return (
+    <>
+      {tags.map((tag, index) => (
+        <Chip
+          key={index}
+          label={tag.title}
+          variant="outlined"
+          size="small"
+          component="a"
+          href={tag.pathname}
+          rel="noopener noreferrer"
+        />
+      ))}
+    </>
+  );
+};
+
+export default TagCloud;

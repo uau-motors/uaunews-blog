@@ -8,8 +8,12 @@ import RecentsPosts from "../components/organisms/recents-posts";
 import VehicleEvaluation from "../components/organisms/vehicle-evaluation";
 import RecentsVehicles from "../components/organisms/recents-vehicles";
 import PostsVideos from "../components/organisms/posts-videos";
+import LastedPosts from "../components/organisms/lasteds-posts";
 import SidebarSocials from "../components/organisms/sidebar/socials";
 import SidebarNewsletter from "../components/organisms/sidebar/newsletter";
+import SidebarTags from "../components/organisms/sidebar/tags";
+import SidebarBrands from "../components/organisms/sidebar/brands";
+import SidebarArchive from "../components/organisms/sidebar/archive";
 import { ThemeProvider } from "@mui/material/styles";
 import { ThemeContext } from "../utility/contexts/theme-context";
 import { lightTheme, darkTheme } from "../utility/contexts/theme";
@@ -64,6 +68,20 @@ const Home: NextPage = () => {
               <PostsVideos />
             </Container>
           </Box>
+
+          <Container className={`lasteds-posts`}>
+            <Grid container>
+              <Grid item xs={9}>
+                <TitleSection title={"Recentes Posts"} />
+                <LastedPosts />
+              </Grid>
+              <Grid item xs={3}>
+                <SidebarTags />
+                <SidebarBrands />
+                <SidebarArchive />
+              </Grid>
+            </Grid>
+          </Container>
         </main>
       </Layout>
     </ThemeProvider>
