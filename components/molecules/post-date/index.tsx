@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { format } from "date-fns";
 
 interface PostDateProps {
-  date: string;
+  date: Date;
 }
 
 const PostDate = ({ date }: PostDateProps) => {
@@ -11,8 +11,8 @@ const PostDate = ({ date }: PostDateProps) => {
       <Box sx={{ mr: 1 }}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="12"
-          height="12"
+          width="16"
+          height="16"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#6B7280"

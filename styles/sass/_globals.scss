@@ -39,6 +39,9 @@ a {
   main {
     color: #fff;
     background-color: #121212;
+    .icon-home {
+      fill: #aaa;
+    }
   }
 }
 
@@ -48,6 +51,9 @@ a {
   main {
     color: rgba(0, 0, 0, 0.87);
     background-color: #fff;
+    .icon-home {
+      fill: var(--secondary);
+    }
   }
 }
 
@@ -274,7 +280,7 @@ main {
   position: relative;
   min-width: 130px;
   padding: 3px 10px;
-  margin: 40px 0 20px;
+  margin: 10px 0 20px;
   h2 {
     font-size: 22px;
     font-weight: 500;
@@ -295,7 +301,8 @@ main {
   }
 }
 
-.post-card-thumb {
+.post-card-thumb,
+.vehicle-card-thumb {
   img {
     transition: all ease-in-out 0.3s;
   }
@@ -304,6 +311,34 @@ main {
       transform: scale(1.1);
       -ms-transform: scale(1.1);
       -webkit-transform: scale(1.1);
+    }
+  }
+}
+
+.breadcrumb ol {
+  > li a {
+    svg {
+      position: relative;
+      top: 3px !important;
+      width: 16px !important;
+      height: 16px !important;
+      margin-right: 5px;
+    }
+  }
+  li {
+    margin: 0;
+    a {
+      font-size: 0.8em;
+      transition: all ease-in-out 0.3s;
+      &:hover {
+        color: var(--primary);
+      }
+      svg {
+        width: 0.6em;
+        height: 0.6em;
+        top: 1px;
+        position: relative;
+      }
     }
   }
 }

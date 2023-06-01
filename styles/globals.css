@@ -4,7 +4,9 @@
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-  --font-family: "Montserrat", "Lato", sans-serif;
+  --font-family: "Lato", "Montserrat", sans-serif;
+  --font-oxigen: "Oxygen", sans-serif;
+  --font-size: 16px;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -32,6 +34,8 @@
   --bg-instagram: #8338ec;
   --bg-twitter: #a2d2ff;
   --bg-rss: #e85d04;
+  --bg-link: #e85d04;
+  --bg-print: #aaa;
 
   --tile-start-rgb: 239, 245, 249;
   --tile-end-rgb: 228, 232, 233;
@@ -112,5 +116,8 @@ a {
 @media (prefers-color-scheme: light) {
   html {
     color-scheme: light;
+  }
+  :root {
+    --currentInvertColor: #fff;
   }
 }

@@ -1,29 +1,29 @@
-$font-family: 'Montserrat', 'Lato', sans-serif;
+$font-family: "Montserrat", "Lato", sans-serif;
 $font-size: 0.875rem;
 
 $dropdown-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 
 // PATHS
-$assets: '/assets';
-$img: '#{$assets}/images';
-$png: '#{$img}/png';
-$svg: '#{$img}/svg';
+$assets: "/assets";
+$img: "#{$assets}/images";
+$png: "#{$img}/png";
+$svg: "#{$img}/svg";
 
 // SIZES ICONS
 $sizes: (
-        icon-mini: 16px,
-        icon-small: 32px,
-        icon-medium: 64px,
-        icon-large: 128px,
-        icon-big: 256px,
-        logo: 100%
+  icon-mini: 16px,
+  icon-small: 32px,
+  icon-medium: 64px,
+  icon-large: 128px,
+  icon-big: 256px,
+  logo: 100%
 );
 
 // BTN FORMATS
 $btns: (
-        rounded : 3%,
-        square : 1%,
-        circle : 50%,
+  rounded: 3%,
+  square: 1%,
+  circle: 50%
 );
 
 // COLORS
@@ -70,72 +70,72 @@ $yellow: #ffeb3b !default;
 $amber: #ffc107 !default;
 $deepOrange: #ff5722 !default;
 
-
 $grays: () !default;
 $grays: map-merge(
-                (
-                        "100": $gray-100,
-                        "200": $gray-200,
-                        "300": $gray-300,
-                        "400": $gray-400,
-                        "500": $gray-500,
-                        "600": $gray-600,
-                        "700": $gray-700,
-                        "800": $gray-800,
-                        "900": $gray-900
-                ),
-                $grays
+  (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
+  ),
+  $grays
 );
 
 $colors: () !default;
 
 $colors: map-merge(
-                (
-                        "white": $white,
-                        "orange": $orange,
-                        "gray": $gray-700,
-                        "pink": $pink,
-                        "red": $red,
-                        "blue": $blue,
-                        "green": $green,
-                        "yellow": $yellow,
-                        "purple": $purple,
-                        "deepPurple": $deepPurple,
-                        "indigo": $indigo,
-                        "lightBlue": $lightBlue,
-                        "cyan": $cyan,
-                        "teal": $teal,
-                        "lightGreen": $lightGreen,
-                        "lime": $lime,
-                        "amber": $amber,
-                        "deepOrange": $deepOrange,
-                ),
-                $colors
+  (
+    "white": $white,
+    "orange": $orange,
+    "gray": $gray-700,
+    "pink": $pink,
+    "red": $red,
+    "blue": $blue,
+    "green": $green,
+    "yellow": $yellow,
+    "purple": $purple,
+    "deepPurple": $deepPurple,
+    "indigo": $indigo,
+    "lightBlue": $lightBlue,
+    "cyan": $cyan,
+    "teal": $teal,
+    "lightGreen": $lightGreen,
+    "lime": $lime,
+    "amber": $amber,
+    "deepOrange": $deepOrange
+  ),
+  $colors
 );
 
 $theme-colors: () !default;
+$currentColor: currentColor;
 
 $theme-colors: map-merge(
-                (
-                        "white": $white,
-                        "orange": $orange,
-                        "default": $default,
-                        "gray": $gray-700,
-                        "red": $red,
-                        "pink": $pink,
-                        "blue": $blue,
-                        "green": $green,
-                        "yellow": $yellow,
-                        "purple": $purple,
-                        "deepPurple": $deepPurple,
-                        "indigo": $indigo,
-                        "lightBlue": $lightBlue,
-                        "cyan": $cyan,
-                        "teal": $teal,
-                        "lightGreen": $lightGreen,
-                        "lime": $lime,
-                        "amber": $amber,
-                        "deepOrange": $deepOrange,
-                ),
-                $theme-colors
+  (
+    "white": $white,
+    "orange": $orange,
+    "default": $default,
+    "gray": $gray-700,
+    "red": $red,
+    "pink": $pink,
+    "blue": $blue,
+    "green": $green,
+    "yellow": $yellow,
+    "purple": $purple,
+    "deepPurple": $deepPurple,
+    "indigo": $indigo,
+    "lightBlue": $lightBlue,
+    "cyan": $cyan,
+    "teal": $teal,
+    "lightGreen": $lightGreen,
+    "lime": $lime,
+    "amber": $amber,
+    "deepOrange": $deepOrange
+  ),
+  $theme-colors
 );

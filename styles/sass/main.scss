@@ -5,13 +5,16 @@
 @import "helpers";
 @import "hover";
 @import "globals";
+@import "post";
 
-@import url("https://fonts.googleapis.com/css2?family=Anton&family=Exo+2:wght@200;300;400;500;600;700;900&family=Lato:wght@300;400;700;900&family=Roboto:wght@300;400;500;700;900&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Oxygen&family=Exo+2:wght@200;300;400;500;600;700;900&family=Lato:wght@300;400;700;900&family=Roboto:wght@300;400;500;700;900&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Oxygen&family=Exo+2:wght@200;300;400;500;600;700;900&family=Lato:wght@300;400;700;900&family=Roboto:wght@300;400;500;700;900&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
 // COMPONENTS MODULES
 @import "../../components/molecules/close-title/style.scss";
 @import "../../components/molecules/review-meta/style.scss";
 @import "../../components/molecules/play/style.scss";
+@import "../../components/molecules/post-image/post-image.scss";
 
 // COMPONENTS ORGANISMS
 // COMPONENTS ORGANISMS
@@ -24,7 +27,11 @@
 @import "../../components/organisms/recents-vehicles/recents-vehicles.scss";
 @import "../../components/organisms/posts-videos/posts-videos.scss";
 @import "../../components/organisms/lasteds-posts/lasteds-posts.scss";
+@import "../../components/organisms/categories/categories.scss";
+@import "../../components/organisms/about/about.scss";
+@import "../../components/organisms/post-header/post-header.scss";
 @import "../../components/organisms/sidebar/sidebar.scss";
+@import "../../components/organisms/footer/footer.scss";
 
 @media (max-width: 575.98px) {
 }

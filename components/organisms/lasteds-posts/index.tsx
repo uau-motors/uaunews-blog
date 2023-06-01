@@ -18,7 +18,7 @@ import { Typography } from "@mui/material";
 
 const LastedPosts = () => {
   const Counter = styled(Typography)(({ theme }) => ({
-    color: theme.palette.mode === "dark" ? "#1A2027" : "#f2f2f2",
+    color: theme.palette.mode === "dark" ? "#1A2027" : "#f2f2f2"
   }));
 
   const handleClick = () => {

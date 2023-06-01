@@ -11,6 +11,7 @@ import PostsVideos from "../components/organisms/posts-videos";
 import LastedPosts from "../components/organisms/lasteds-posts";
 import SidebarSocials from "../components/organisms/sidebar/socials";
 import SidebarNewsletter from "../components/organisms/sidebar/newsletter";
+import SidebarVehicles from '../components/organisms/sidebar/vehicles';
 import SidebarTags from "../components/organisms/sidebar/tags";
 import SidebarBrands from "../components/organisms/sidebar/brands";
 import SidebarArchive from "../components/organisms/sidebar/archive";
@@ -20,6 +21,7 @@ import { lightTheme, darkTheme } from "../utility/contexts/theme";
 import TitleSection from "../components/atoms/title-section";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+
 
 const Home: NextPage = () => {
   const { theme } = useContext(ThemeContext);
@@ -76,6 +78,7 @@ const Home: NextPage = () => {
                 <LastedPosts />
               </Grid>
               <Grid item xs={3}>
+                <SidebarVehicles />
                 <SidebarTags />
                 <SidebarBrands />
                 <SidebarArchive />

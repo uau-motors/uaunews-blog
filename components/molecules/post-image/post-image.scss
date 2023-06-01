@@ -1,0 +1,149 @@
+.post-image {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+  transition: all ease-in-out 0.3s;
+  animation: zoom-in-zoom-out 1s ease;
+  &.size-large {
+    height: 580px;
+  }
+  &.size-medium {
+    height: 200px;
+    width: 256px;
+    margin-bottom: 10px;
+    figure {
+      height: 160px;
+      img {
+        height: 160px;
+        width: 256px;
+      }
+    }
+    .image-legend {
+      h5 {
+        &::before {
+          width: 15px;
+        }
+      }
+      small {
+        margin-left: 25px;
+      }
+    }
+  }
+  &.position-left {
+    float: left;
+    margin-right: 15px;
+  }
+  &.position-right {
+    float: right;
+    margin-left: 15px;
+  }
+  figure {
+    width: 100%;
+    height: 530px;
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 5px;
+    img {
+      transition: all ease-in-out 0.3s;
+      height: 530px;
+      left: 0;
+      position: absolute;
+    }
+    &:hover {
+      img {
+        transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+      }
+    }
+  }
+  .image-legend {
+    position: absolute;
+    left: 5px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    h5 {
+      font-size: 14px;
+      color: var(--primary);
+      font-weight: 600;
+      &::before {
+        display: inline-block;
+        width: 30px;
+        height: 0.3em;
+        margin-right: 7px;
+        content: "";
+        border-top: 1px solid;
+      }
+    }
+    small {
+      font-size: 12px;
+      margin-left: 38px;
+      position: absolute;
+      top: 20px;
+    }
+  }
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    height: 48px;
+    width: 48px;
+    transition: all ease-in-out 0.3s;
+    svg {
+      fill: #fff;
+    }
+    &:hover {
+      background: rgba(0, 0, 0, 0.7);
+    }
+  }
+  &.image-full {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    animation: zoom-in-zoom-out 1s ease;
+    background-color: rgba(30, 30, 30, 0.99);
+    figure {
+      width: 1024px;
+      height: 644px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      left: 25%;
+      top: 20%;
+      img {
+        width: 100%;
+        height: 768px;
+      }
+      &:hover {
+        transform: none;
+        -ms-transform: none;
+        -webkit-transform: none;
+      }
+    }
+    .image-legend {
+      left: 25%;
+      bottom: 9%;
+    }
+  }
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}

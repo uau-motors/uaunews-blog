@@ -2,36 +2,36 @@ import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import { getCarouselPosts } from "../../../pages/api";
 import CarouselItem from "../../molecules/carousel-tem";
+import data from "../../../utility/data/carousel.json";
 
 const responsive = {
   lg: {
     breakpoint: { max: 3000, min: 1024 },
     items: 4,
-    slidesToSlide: 1,
+    slidesToSlide: 1
   },
   md: {
     breakpoint: { max: 1023, min: 464 },
     items: 3,
-    slidesToSlide: 1,
+    slidesToSlide: 1
   },
   sm: {
     breakpoint: { max: 600, min: 464 },
-    items: 2,
+    items: 2
   },
   xs: {
     breakpoint: { max: 463, min: 0 },
-    items: 1,
-  },
+    items: 1
+  }
 };
 
 const CarouselBlog = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    const fetchPosts = async () => {
+    const fetchPosts = () => {
       try {
-        const postsData = await getCarouselPosts();
-        setPosts(postsData);
+        setPosts(data);
       } catch (error) {
         console.log("Erro ao buscar posts:", error);
       }

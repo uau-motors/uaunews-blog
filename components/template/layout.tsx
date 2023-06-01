@@ -9,7 +9,7 @@ const Layout = ({
   preview = false,
   theme = "light",
   header = true,
-  footer = true,
+  footer = true
 }) => {
   return (
     <div id={id} className={`template theme-${theme}`}>
