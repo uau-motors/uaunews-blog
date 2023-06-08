@@ -4,15 +4,17 @@ import Box from "@mui/material/Box";
 import InstallMobileIcon from "@mui/icons-material/InstallMobile";
 import FeedIcon from "@mui/icons-material/Feed";
 import { MidleHeaderProps } from "../../utility/types";
+import { useModal } from "@utility/contexts/modal-context";
 
 const MiddleActions = ({ socials }: MidleHeaderProps) => {
+  const { openModal } = useModal();
   return (
     <Box
       sx={{
         typography: "body1",
         "& > :not(style) + :not(style)": {
-          ml: 1,
-        },
+          ml: 1
+        }
       }}
       className="boxSocials"
     >
@@ -44,6 +46,7 @@ const MiddleActions = ({ socials }: MidleHeaderProps) => {
         color="primary"
         variant="contained"
         className="btn primary"
+        onClick={openModal}
       >
         &nbsp; ASSINE
       </Button>

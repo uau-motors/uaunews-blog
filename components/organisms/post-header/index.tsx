@@ -13,7 +13,7 @@ import React from "react";
 const SinglePostHeader = () => {
   return (
     <Grid container className="post-header">
-      <Breadcrumb />
+      <Breadcrumb titlePage="Avaliação: Novo Toyota Corolla Cross híbrido é mais potente que o brasileiro" />
       <Grid item xs={12}>
         <PostTag label="Notícias" />
       </Grid>

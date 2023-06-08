@@ -64,16 +64,16 @@ const UauToolbar = ({ menus }: ToolbarProps) => {
     }
   }
 
-  useEffect(() => {
-    getBrowserCity();
-  }, []);
+  // useEffect(() => {
+  //   getBrowserCity();
+  // }, []);
 
-  useEffect(() => {
-    if (city) getWeather(city);
-  }, [city]);
+  // useEffect(() => {
+  //   if (city) getWeather(city);
+  // }, [city]);
 
   const date = format(new Date(), "PPPP", {
-    locale: ptBR,
+    locale: ptBR
   });
   return (
     <div className="toolbar">
@@ -92,7 +92,7 @@ const UauToolbar = ({ menus }: ToolbarProps) => {
               </nav>
             </Grid>
             <Grid item xs={7} md={8} className="gridSocials">
-              <Box
+              {/* <Box
                 sx={{
                   typography: "body1",
                   "& > :not(style) + :not(style)": {
@@ -111,7 +111,7 @@ const UauToolbar = ({ menus }: ToolbarProps) => {
                   {weather}°&nbsp;
                   <CloudIcon style={{ fontSize: "13px" }} />
                 </span>
-              </Box>
+              </Box> */}
             </Grid>
           </Grid>
         </Toolbar>

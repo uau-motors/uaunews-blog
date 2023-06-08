@@ -498,4 +498,9 @@
       }
     }
   }
+  .about-service {
+    .feature-card {
+      background: lighten($color: #f2f2f2, $amount: 1%) !important;
+    }
+  }
 }

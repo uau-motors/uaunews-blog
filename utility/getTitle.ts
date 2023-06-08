@@ -1,4 +1,4 @@
-export const getTitle = (name: string): string => {
+export const getTitle = (name, title = null) => {
   switch (name) {
     case "noticias":
       return "Notícias";
@@ -18,6 +18,18 @@ export const getTitle = (name: string): string => {
       return "Histórias";
     case "videos":
       return "Vídeos";
+    case "quem-somos":
+      return "Quem Somos";
+    case "contatos":
+      return "Contatos";
+    case "termos-de-uso":
+      return "Termos de uso";
+    case "politica-de-privacidade":
+      return "Politíca de Privacidade";
+    case "cookies":
+      return "Sobre o uso de cookies";
+    case "[...slug]":
+      return title;
     default:
       return name;
   }

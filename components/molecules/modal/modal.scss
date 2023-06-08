@@ -1,0 +1,79 @@
+.modal {
+  .modal-sign-in {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    .title-login {
+      margin: 30px 0 15px;
+    }
+    .response {
+      width: 100%;
+      margin: 15px 0 15px;
+    }
+    .form-login {
+      width: 100%;
+    }
+    .action-buttons {
+      margin: 30px 0 15px;
+    }
+    .sepatator {
+      align-items: center;
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 10px 0;
+      > div {
+        width: 40%;
+      }
+      h5 {
+        font-size: 0.9em;
+      }
+      &::after,
+      &::before {
+        content: "";
+        top: 8px;
+        width: 30%;
+        height: 2px;
+        position: absolute;
+        background-color: #ddd;
+      }
+      &::before {
+        left: 10px;
+      }
+      &::after {
+        right: 0;
+      }
+    }
+    input:-webkit-autofill {
+      -webkit-box-shadow: inherit;
+      -webkit-text-fill-color: currentColor;
+      caret-color: currentColor;
+    }
+    input:-internal-autofill-selected {
+      appearance: menulist-button;
+      background-image: inherit !important;
+      background-color: inherit !important;
+      color: fieldtext !important;
+    }
+    .forgout {
+      width: 25%;
+      margin-left: 77%;
+      font-size: 0.8em;
+      text-transform: inherit;
+    }
+    .box-forgot {
+      width: 100%;
+    }
+    .progress {
+      margin: 5px 0;
+    }
+    .description {
+      text-align: left;
+    }
+    .input-forgot {
+      width: 480px;
+    }
+  }
+}

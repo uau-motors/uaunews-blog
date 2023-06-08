@@ -1,6 +1,6 @@
 export const StorageTypes = {
   SUBSCRIBE: "@UauMotors:subscribe",
-  SEARCH: "@UauMotors:search",
+  SEARCH: "@UauMotors:search"
 };
 
 export const MenusCategories = [
@@ -12,7 +12,7 @@ export const MenusCategories = [
   { title: "Dicas", pathname: "dicas" },
   { title: "Galerias", pathname: "galerias" },
   { title: "Histórias", pathname: "historias" },
-  { title: "Vídeos", pathname: "videos" },
+  { title: "Vídeos", pathname: "videos" }
 ];
 
 export const Tags = [
@@ -30,13 +30,13 @@ export const Tags = [
   { title: "Seguros", pathname: "seguros" },
   { title: "Carros Novos", pathname: "carros-novos" },
   { title: "Carros Usados", pathname: "carros-usados" },
-  { title: "Hot News", pathname: "hot-news" },
+  { title: "Hot News", pathname: "hot-news" }
 ];
 
 export const MenusInstitutionsToolbar = [
   { title: "Quem Somos", pathname: "quem-somos" },
-  { title: "Anúncie", pathname: "anuncie" },
-  { title: "Contatos", pathname: "contato" },
+  { title: "Anúncie", pathname: "contatos" },
+  { title: "Contatos", pathname: "contatos" }
 ];
 
 export const NavTabsRecents = [
@@ -44,7 +44,7 @@ export const NavTabsRecents = [
   { title: "Lançamentos", url: "releases" },
   { title: "Curiosidades", url: "curiosities" },
   { title: "Histórias", url: "histories" },
-  { title: "Dicas", url: "tips" },
+  { title: "Dicas", url: "tips" }
 ];
 
 export const BrandsIcons = [
@@ -68,5 +68,5 @@ export const BrandsIcons = [
 
   "kia",
   "citroen",
-  "renault",
+  "renault"
 ];

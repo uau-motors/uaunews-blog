@@ -10,7 +10,7 @@ type DrawerContextType = {
 const DrawerContext = createContext<DrawerContextType>({
   isOpen: false,
   toggleDrawer: () => {},
-  drawerProps: {},
+  drawerProps: {}
 });
 
 export const useDrawer = () => useContext(DrawerContext);

@@ -1,4 +1,4 @@
-import { Breadcrumbs, Typography } from "@mui/material";
+import { Breadcrumbs } from "@mui/material";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
@@ -6,10 +6,10 @@ import HomeIcon from "@mui/icons-material/Home";
 import { getTitle } from "@utility/getTitle";
 
 interface BreadcrumbProps {
-  separator?: string;
+  titlePage?: string;
 }
 
-const Breadcrumb: React.FC<BreadcrumbProps> = () => {
+const Breadcrumb: React.FC<BreadcrumbProps> = ({ titlePage }) => {
   const router = useRouter();
   const { pathname, query } = router;
 
@@ -27,7 +27,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = () => {
       </Link>
       {pathnames.map((name, index) => {
         const routeTo = `/${pathnames.slice(0, index + 1).join(">")}`;
-        const title = getTitle(name);
+        const title = getTitle(name, titlePage);
 
         return (
           <Link key={name} color="inherit" href={{ pathname: routeTo, query }}>

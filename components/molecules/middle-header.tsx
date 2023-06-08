@@ -14,6 +14,7 @@ export default function UauMiddleHeader({ socials }: MidleHeaderProps) {
           </Grid>
           <Grid xs={5} sm={4} md={3}>
             <div className="logoUM1">
+              <span>UM1</span>
               <img src={`/assets/images/svg/logo-um1.svg`} alt="logo-um1" />
               <h2>Canal de conteúdo da UauMotors</h2>
             </div>

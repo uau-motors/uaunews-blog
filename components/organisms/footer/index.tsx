@@ -13,6 +13,7 @@ import { loadCSS } from "fg-loadcss";
 
 import Icon from "@mui/material/Icon";
 import Date from "../../atoms/date";
+import SignInModal from "@/components/molecules/modal/sign-in";
 
 export const SocialNetworks = [
   {
@@ -296,6 +297,7 @@ export const UauFooter = () => {
           </Grid>
         </Container>
       </section>
+      <SignInModal />
     </footer>
   );
 };

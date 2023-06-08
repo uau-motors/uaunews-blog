@@ -1,10 +1,12 @@
 import { Box, Container, Grid, Paper } from "@mui/material";
 import React from "react";
+import Breadcrumb from "../breadcrumb";
 
 const AboutUs = () => {
   return (
     <>
       <Container>
+        <Breadcrumb />
         <Box className={`page-about`}>
           <Grid container spacing={2}>
             <Grid item xs={6}>
