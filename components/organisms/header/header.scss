@@ -97,8 +97,7 @@
         position: absolute;
         top: 6px;
         left: 6px;
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
         font-weight: 900;
         color: var(--secondary);
         z-index: 2;
@@ -360,6 +359,8 @@
       right: 0;
       svg {
         fill: var(--secondary);
+        top: -2px;
+        position: relative;
       }
     }
   }
@@ -452,63 +453,64 @@
       }
     }
   }
-}
+  .formHeader {
+    position: relative;
+    left: 5px;
+    top: 10px;
+    height: 40px;
+  }
 
-.formHeader {
-  position: relative;
-  left: 5px;
-  top: 10px;
-  height: 40px;
-}
+  .customSelect {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background: #ffffff0d;
+    border-color: #484747;
+    color: #ccc;
+  }
 
-.customSelect {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  background: #ffffff0d;
-  border-color: #484747;
-  color: #ccc;
-}
+  .inputSearch {
+    position: relative;
+    left: -8px;
+    width: auto;
+    background: #ffffff0d;
+    border-color: #484747;
+    color: #ccc;
+    font-size: 0.9em;
+  }
 
-.inputSearch {
-  position: relative;
-  left: -8px;
-  width: auto;
-  background: #ffffff0d;
-  border-color: #484747;
-  color: #ccc;
-  font-size: 0.9em;
-}
+  .inputSearch:hover,
+  .inputSearch:focus {
+    background: #fff;
+    color: #333;
+  }
 
-.inputSearch:hover,
-.inputSearch:focus {
-  background: #fff;
-  color: #333;
-}
+  .inputGroupAppend {
+    padding: 0;
+    position: relative;
+    left: -10px;
+  }
 
-.inputGroupAppend {
-  padding: 0;
-  position: relative;
-  left: -10px;
-}
+  .btnGray {
+    font-weight: 600;
+    border-color: var(--secondary);
+  }
 
-.btnGray {
-  font-weight: 600;
-  border-color: var(--secondary);
-}
+  .megamenu a:hover > a {
+    background-color: var(--primary);
+    color: #fff !important;
+  }
 
-.megamenu a:hover > a {
-  background-color: var(--primary);
-  color: #fff !important;
-}
-.megamenu a.active {
-  border-bottom: 2px solid var(--primary);
-}
-.megamenu a.active > a {
-  font-weight: 600;
-}
+  .megamenu a.active {
+    border-bottom: 2px solid var(--primary);
+  }
 
-.blogArrowActive {
-  position: relative;
-  left: -35px;
-  top: -8px;
+  .megamenu a.active > a {
+    font-weight: 600;
+  }
+
+  .blogArrowActive {
+    position: relative;
+    left: -35px;
+    top: -8px;
+  }
 }

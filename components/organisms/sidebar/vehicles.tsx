@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import TitleSection from "../../atoms/title-section";
+import TitleSection from "../../molecules/title-section";
 import LastedVehicles from "../../molecules/lasted-vehicles";
 import { ThemeContext } from "../../../utility/contexts/theme-context";
 import { useContext } from "react";

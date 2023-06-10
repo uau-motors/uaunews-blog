@@ -4,21 +4,14 @@ import Container from "@mui/material/Container";
 import Link from "next/link";
 import { Box, Button } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import ThemeToggle from "../molecules/theme-toggle";
-import { useDrawer } from "../../utility/contexts/drawer-context";
+import ThemeToggle from "../theme-toggle";
+import { useOverlay } from "@utility/contexts/provider-context";
 import Router from "next/router";
+import settings from "@utility/settings";
 
-interface NavbarHeaderProps {
-  sections: ReadonlyArray<{
-    title: string;
-    pathname: string;
-  }>;
-  title: string;
-}
-
-export default function NavbarHeader(props: NavbarHeaderProps) {
-  const { isOpen, toggleDrawer } = useDrawer();
-  const { sections } = props;
+export default function NavbarHeader() {
+  const { menusCategories } = settings;
+  const { isOpenDrawer, toggleDrawer } = useOverlay();
 
   const [category, setCategory] = useState("home");
   // const [collapse, setCollapse] = useState(false);
@@ -44,22 +37,18 @@ export default function NavbarHeader(props: NavbarHeaderProps) {
             sx={{
               typography: "body1",
               "& > :not(style) + :not(style)": {
-                ml: 1,
-              },
+                ml: 1
+              }
             }}
           >
-            <button
-              type="button"
-              className="side-menu-trigger"
-              onClick={handleClose}
-            >
+            <button type="button" className="side-menu-trigger" onClick={handleClose}>
               <span className="menu-btn-icon">
                 <span className="line line1"></span>
                 <span className="line line2"></span>
                 <span className="line line3"></span>
               </span>
             </button>
-            {sections.map((section) => (
+            {menusCategories.map((section) => (
               <Link key={section.title} href={section.pathname}>
                 {section.title}
               </Link>
@@ -69,8 +58,8 @@ export default function NavbarHeader(props: NavbarHeaderProps) {
               sx={{
                 typography: "body1",
                 "& > :not(style) + :not(style)": {
-                  sx: 0,
-                },
+                  sx: 0
+                }
               }}
               className="menuActions"
             >

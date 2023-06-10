@@ -1,27 +1,27 @@
-import React from "react";
+import React, { createContext, useContext, useState, ReactNode, useCallback, useMemo } from "react";
 import { ThemeProvider } from "@material-ui/core/styles";
-import { lightTheme, darkTheme } from "./theme";
+import { lightTheme, darkTheme } from "@utility/theme";
 
 interface ThemeContextType {
   theme: string;
   setTheme: (theme: string) => void;
 }
 
-export const ThemeContext = React.createContext<ThemeContextType>({
+export const ThemeContext = createContext<ThemeContextType>({
   theme: "light",
-  setTheme: () => {},
+  setTheme: () => {}
 });
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export function ThemeContextProvider({ children }: Props) {
-  const [themeName, setThemeName] = React.useState(
+  const [themeName, setThemeName] = useState(
     (typeof window !== "undefined" && localStorage.getItem("theme")) || "light"
   );
 
-  const setTheme = React.useCallback((t: string) => {
+  const setTheme = useCallback((t: string) => {
     setThemeName(t);
     if (typeof window !== "undefined") {
       localStorage.setItem("theme", t);
@@ -30,10 +30,10 @@ export function ThemeContextProvider({ children }: Props) {
 
   const theme = themeName === "dark" ? darkTheme : lightTheme;
 
-  const contextValue = React.useMemo(() => {
+  const contextValue = useMemo(() => {
     return {
       theme: themeName,
-      setTheme,
+      setTheme
     };
   }, [themeName, setTheme]);
 

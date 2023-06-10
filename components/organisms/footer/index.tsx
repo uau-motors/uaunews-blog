@@ -1,19 +1,12 @@
 import React, { useEffect } from "react";
-import {
-  Container,
-  Grid,
-  Box,
-  Typography,
-  IconButton,
-  Link
-} from "@mui/material";
+import { Container, Grid, Box, Typography, IconButton, Link } from "@mui/material";
 
-import Logo from "../../molecules/logo";
+import Logo from "@molecules/logo";
 import { loadCSS } from "fg-loadcss";
 
 import Icon from "@mui/material/Icon";
-import Date from "../../atoms/date";
-import SignInModal from "@/components/molecules/modal/sign-in";
+import Date from "@components/atoms/date-component";
+import SignInModal from "@molecules/modal/sign-in";
 
 export const SocialNetworks = [
   {
@@ -158,7 +151,7 @@ const vehiclePhotos: VehiclePhoto[] = [
   }
 ];
 
-export const UauFooter = () => {
+export const Footer = () => {
   useEffect(() => {
     const node = loadCSS(
       "https://use.fontawesome.com/releases/v5.14.0/css/all.css",
@@ -187,8 +180,8 @@ export const UauFooter = () => {
             >
               <Logo mode="light" />
               <Typography>
-                A UauMotors é uma empresa jovem, que nasceu para trazer para
-                seus usuários um vasto conteúdo no mundo dos veículos.
+                A UauMotors é uma empresa jovem, que nasceu para trazer para seus usuários um vasto conteúdo no mundo
+                dos veículos.
               </Typography>
               <span className="mobileTitle">
                 <h4>UauMotors Mobile</h4>
@@ -220,11 +213,7 @@ export const UauFooter = () => {
                 {UauTags.map((tag, key) => {
                   if (key < 12) {
                     return (
-                      <Link
-                        href={`/tag/${tag.pathname}`}
-                        className="tag-cloud-link"
-                        key={key}
-                      >
+                      <Link href={`/tag/${tag.pathname}`} className="tag-cloud-link" key={key}>
                         {tag.title}
                       </Link>
                     );
@@ -277,9 +266,7 @@ export const UauFooter = () => {
         <Container>
           <Grid container rowSpacing={0} columnSpacing={0}>
             <Grid item xs={12} sm={8} md={7}>
-              <Typography>
-                © 2023 UauMotors. Todos os direitos reservados.
-              </Typography>
+              <Typography>© 2023 UauMotors. Todos os direitos reservados.</Typography>
             </Grid>
             <Grid item xs={12} sm={4} md={5}>
               <ul className="socials">
@@ -302,4 +289,4 @@ export const UauFooter = () => {
   );
 };
 
-export default UauFooter;
+export default Footer;

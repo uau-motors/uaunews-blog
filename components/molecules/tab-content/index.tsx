@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import FeaturedPostImage from "./featured-post-image";
-import PostThumb from "./post-thumb";
+import FeaturedPostImage from "../featured-post-image";
+import PostThumb from "../post-thumb";
 
 interface Category {
   slug: string;

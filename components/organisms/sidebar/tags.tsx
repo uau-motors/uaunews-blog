@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import TitleSection from "../../atoms/title-section";
+import TitleSection from "../../molecules/title-section";
 import TagCloud from "../../atoms/tag-cloud";
 import { ThemeContext } from "../../../utility/contexts/theme-context";
 import { useContext } from "react";

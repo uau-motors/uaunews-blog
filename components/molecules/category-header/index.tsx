@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import Breadcrumb from "@molecules/breadcrumb";
-import TitleSection from "@atoms/title-section";
+import TitleSection from "@components/molecules/title-section";
 import { getTitle } from "@utility/getTitle";
 import { useRouter } from "next/router";
 
@@ -18,9 +18,8 @@ const CategoryHeader = () => {
           <Breadcrumb />
           <TitleSection title={title} />
           <Typography variant="h4" className="category-descript">
-            The real test is not whether you avoid this failure, because you
-            won’t. It’s whether you let it harden or shame you into inaction, or
-            whether you learn from it; whether you choose to persevere.
+            The real test is not whether you avoid this failure, because you won’t. It’s whether you let it harden or
+            shame you into inaction, or whether you learn from it; whether you choose to persevere.
           </Typography>
         </Grid>
         <Grid item xs={4}>

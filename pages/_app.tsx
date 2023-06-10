@@ -1,32 +1,27 @@
-import * as React from "react";
-import type { AppProps } from "next/app";
-import { CacheProvider, EmotionCache } from "@emotion/react";
-import createEmotionCache from "../utility/createEmotionCache";
+import { AppProps } from "next/app";
+import { useContext } from "react";
 import "../styles/globals.css";
 import "../styles/sass/main.scss";
+
+import { OverlayProvider } from "@utility/contexts/provider-context";
 import { ThemeContextProvider } from "../utility/contexts/theme-context";
-import { DrawerProvider } from "../utility/contexts/drawer-context";
-import { ModalProvider } from "../utility/contexts/modal-context";
-interface HeaderMfeProps extends AppProps {
-  emotionCache?: EmotionCache;
+import { ThemeContext } from "../utility/contexts/theme-context";
+import { ThemeProvider } from "@mui/material/styles";
+import { lightTheme, darkTheme } from "@utility/theme";
+import { CssBaseline } from "@mui/material";
+
+function App({ Component, pageProps }: AppProps) {
+  const { theme } = useContext(ThemeContext);
+  return (
+    <ThemeContextProvider>
+      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+        <CssBaseline />
+        <OverlayProvider>
+          <Component {...pageProps} />
+        </OverlayProvider>
+      </ThemeProvider>
+    </ThemeContextProvider>
+  );
 }
 
-const clientSideEmotionCache = createEmotionCache();
-
-const HeaderMfe: React.FunctionComponent<HeaderMfeProps> = (props) => {
-  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-
-  return (
-    <CacheProvider value={emotionCache}>
-      <ThemeContextProvider>
-        <ModalProvider>
-          <DrawerProvider>
-            <Component {...pageProps} />
-          </DrawerProvider>
-        </ModalProvider>
-      </ThemeContextProvider>
-    </CacheProvider>
-  );
-};
-
-export default HeaderMfe;
+export default App;

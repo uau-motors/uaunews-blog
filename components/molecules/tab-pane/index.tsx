@@ -1,6 +1,6 @@
 import React from "react";
-import FeaturedPostImage from "./featured-post-image";
-import PostThumb from "./post-thumb";
+import FeaturedPostImage from "../featured-post-image";
+import PostThumb from "../post-thumb";
 import Grid from "@mui/material/Grid";
 
 interface TabPaneProps {

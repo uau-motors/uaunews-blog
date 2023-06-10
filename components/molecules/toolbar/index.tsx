@@ -4,16 +4,18 @@ import Toolbar from "@mui/material/Toolbar";
 import Link from "next/link";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
-import { ToolbarProps } from "../../utility/types";
+import { ToolbarProps } from "../../../utility/types";
 import CloudIcon from "@mui/icons-material/Cloud";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import ThunderstormIcon from "@mui/icons-material/Thunderstorm";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
+import settings from "@utility/settings";
 
-const UauToolbar = ({ menus }: ToolbarProps) => {
+const ToolbarHeader = () => {
   const [city, setCity] = useState<string>();
   const [weather, setWeather] = useState<number>();
+  const { toolbarMenus } = settings;
 
   function getBrowserCity(): Promise<string> {
     return new Promise((resolve, reject) => {
@@ -33,9 +35,7 @@ const UauToolbar = ({ menus }: ToolbarProps) => {
                 reject(new Error("A localização não está no Brasil."));
               }
             } catch (error) {
-              reject(
-                new Error(`Erro ao obter a localização: ${error.message}`)
-              );
+              reject(new Error(`Erro ao obter a localização: ${error.message}`));
             }
           },
           (error: GeolocationPositionError) => {
@@ -75,6 +75,7 @@ const UauToolbar = ({ menus }: ToolbarProps) => {
   const date = format(new Date(), "PPPP", {
     locale: ptBR
   });
+
   return (
     <div className="toolbar">
       <Container maxWidth="lg">
@@ -82,7 +83,7 @@ const UauToolbar = ({ menus }: ToolbarProps) => {
           <Grid container rowSpacing={0} columnSpacing={0}>
             <Grid item xs={5} md={4}>
               <nav className="toolbarLink">
-                {menus.map((item, key) => {
+                {toolbarMenus.map((item, key) => {
                   return (
                     <Link href={`/${item.pathname}`} key={key}>
                       {item.title}
@@ -120,4 +121,4 @@ const UauToolbar = ({ menus }: ToolbarProps) => {
   );
 };
 
-export default UauToolbar;
+export default ToolbarHeader;

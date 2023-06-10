@@ -7,12 +7,9 @@ interface Props {
   formatDate?: string;
 }
 
-const Date: React.FC<Props> = ({
-  dateString,
-  formatDate = "d 'de' LLLL, yyyy",
-}) => {
+const DateComponent: React.FC<Props> = ({ dateString, formatDate = "d 'de' LLLL, yyyy" }) => {
   const date = parseISO(dateString);
   return <span>{format(date, formatDate, { locale: ptBR })}</span>;
 };
 
-export default Date;
+export default DateComponent;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
-import { getCarouselPosts } from "../../../pages/api";
-import CarouselItem from "../../molecules/carousel-tem";
+// import { getCarouselPosts } from "../../../pages/api";
+import CarouselItem from "../../molecules/carousel-item";
 import data from "../../../utility/data/carousel.json";
 
 const responsive = {

@@ -15,7 +15,7 @@ import SidebarTags from "@organisms/sidebar/tags";
 import SidebarBrands from "@organisms/sidebar/brands";
 import SidebarArchive from "@organisms/sidebar/archive";
 
-import TitleSection from "@atoms/title-section";
+import TitleSection from "@components/molecules/title-section";
 import PaginationLink from "@/components/molecules/pagination";
 
 import Stack from "@mui/material/Stack";

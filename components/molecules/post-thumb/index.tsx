@@ -1,6 +1,6 @@
 import React from "react";
 import ProcessImage from "react-imgpro";
-import Date from "../atoms/date";
+import Date from "../../atoms/date-component";
 import { Box, Typography } from "@mui/material";
 
 interface Tag {
@@ -33,8 +33,7 @@ const PostThumb: React.FC<PostThumbProps> = ({ post, delay }) => {
         </a>
         <Box className="content animated fadeIn">
           <Typography variant="subtitle2">
-            <i className="fa fa-calendar-o" />{" "}
-            <Date dateString={post.date} locale={"ptBR"} />
+            <i className="fa fa-calendar-o" /> <Date dateString={post.date} locale={"ptBR"} />
           </Typography>
           <a href={url} title={post.title}>
             <Typography variant="h6">{post.title}</Typography>

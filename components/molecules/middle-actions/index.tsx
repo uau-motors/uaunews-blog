@@ -3,11 +3,13 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import InstallMobileIcon from "@mui/icons-material/InstallMobile";
 import FeedIcon from "@mui/icons-material/Feed";
-import { MidleHeaderProps } from "../../utility/types";
-import { useModal } from "@utility/contexts/modal-context";
 
-const MiddleActions = ({ socials }: MidleHeaderProps) => {
-  const { openModal } = useModal();
+import { useOverlay } from "@utility/contexts/provider-context";
+import settings from "@utility/settings";
+
+const MiddleActions = () => {
+  const { socialItens } = settings;
+  const { openModal } = useOverlay();
   return (
     <Box
       sx={{
@@ -18,7 +20,7 @@ const MiddleActions = ({ socials }: MidleHeaderProps) => {
       }}
       className="boxSocials"
     >
-      {socials.map((item, key) => {
+      {socialItens.map((item, key) => {
         return (
           <IconButton
             type="button"

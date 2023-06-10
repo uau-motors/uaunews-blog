@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { useModal } from "@utility/contexts/modal-context";
+import { useOverlay } from "@utility/contexts/provider-context";
 import {
   Box,
   Button,
@@ -28,19 +28,19 @@ import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import PasswordIcon from "@mui/icons-material/Password";
 
 const SignInModal: React.FC = () => {
-  const { modalOpen, openModal, closeModal } = useModal();
+  const { modalOpen, openModal, closeModal, handleChange, handleFormat, name, email, password, format } = useOverlay();
   const [showPassword, setShowPassword] = React.useState(false);
   const [closeAlert, setCloseAlert] = React.useState(true);
-  const [format, setFormat] = React.useState("signin");
   const [titleLogin, setTitleLogin] = React.useState("LOGIN");
   const [descriptLogin, setDescriptLogin] = React.useState("logar.");
   const [progress, setProgress] = React.useState(0);
   const [color, setColor] = React.useState("inherit");
+  const [repeat, setRepeat] = React.useState("");
+  const [compare, setCompare] = React.useState(false);
+  const [isValid, setIsValid] = React.useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
-  const handleMouseDownPassword = (
-    event: React.MouseEvent<HTMLButtonElement>
-  ) => {
+  const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
   };
 
@@ -48,7 +48,8 @@ const SignInModal: React.FC = () => {
     setCloseAlert((show) => !show);
   };
 
-  const handlePasswordChange = (value) => {
+  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
     const validate = validatePassword(value);
     if (value.length > 0) {
       setProgress(parseInt(validate.progress));
@@ -57,6 +58,12 @@ const SignInModal: React.FC = () => {
       setProgress(0);
       setColor("inherit");
     }
+    handleChange(event);
+  };
+
+  const handleRepeatChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setRepeat(value);
   };
 
   const validatePassword = (password: string) => {
@@ -68,13 +75,13 @@ const SignInModal: React.FC = () => {
 
     let counter = Math.min((password.length / 8) * 100, 100);
 
-    console.log("COUNTER ==> ", counter);
-
     if (counter <= 1) {
       counter = 1;
       hasLetter = false;
       hasNumber = false;
     }
+
+    setIsValid(false);
 
     if (!hasLetter && !hasNumber) {
       clr = "danger";
@@ -98,6 +105,11 @@ const SignInModal: React.FC = () => {
       }
     }
 
+    if (hasLetter && hasNumber && password.length >= 8) {
+      setIsValid(true);
+      setProgress(100);
+    }
+
     return { color: clr, progress: counter };
   };
 
@@ -116,14 +128,18 @@ const SignInModal: React.FC = () => {
     }
   }, [format]);
 
+  React.useEffect(() => {
+    if (password === repeat && isValid) {
+      setCompare(true);
+    } else {
+      setCompare(false);
+    }
+    console.log("COMPARE ==> ", [compare, password, repeat, isValid, progress]);
+  }, [password, repeat]);
+
   return (
     <React.Fragment>
-      <Dialog
-        open={modalOpen}
-        onClose={closeModal}
-        maxWidth={"sm"}
-        className="modal"
-      >
+      <Dialog open={modalOpen} onClose={closeModal} maxWidth={"sm"} className="modal">
         <DialogContent className="modal-sign-in">
           <Box className="title-login">
             <h4>{titleLogin}</h4>
@@ -167,9 +183,7 @@ const SignInModal: React.FC = () => {
           <Box className="sepatator">
             <Box>
               <Typography variant="h5">
-                {format !== "forgot"
-                  ? "Use seu email e senha"
-                  : "Informe seu email"}
+                {format !== "forgot" ? "Use seu email e senha" : "Informe seu email"}
               </Typography>
             </Box>
           </Box>
@@ -180,6 +194,8 @@ const SignInModal: React.FC = () => {
                   <InputLabel htmlFor="email">E-mail</InputLabel>
                   <OutlinedInput
                     id="email"
+                    value={email}
+                    onChange={handleChange}
                     startAdornment={
                       <InputAdornment position="start">
                         <AlternateEmailIcon />
@@ -191,8 +207,10 @@ const SignInModal: React.FC = () => {
                 <FormControl fullWidth sx={{ m: 1 }}>
                   <InputLabel htmlFor="password">Senha</InputLabel>
                   <OutlinedInput
-                    id="password"
+                    name="password"
                     type={showPassword ? "text" : "password"}
+                    value={password}
+                    onChange={handlePasswordChange}
                     endAdornment={
                       <InputAdornment position="end">
                         <IconButton
@@ -212,12 +230,7 @@ const SignInModal: React.FC = () => {
                     }
                     label="Password"
                   />
-                  <Button
-                    onClick={() => setFormat("forgot")}
-                    variant="text"
-                    className="forgout"
-                    size="small"
-                  >
+                  <Button onClick={() => handleFormat("forgot")} variant="text" className="forgout" size="small">
                     Esqueci a senha
                   </Button>
                 </FormControl>
@@ -228,7 +241,9 @@ const SignInModal: React.FC = () => {
                 <FormControl fullWidth sx={{ m: 1 }}>
                   <InputLabel htmlFor="email">Nome</InputLabel>
                   <OutlinedInput
-                    id="name"
+                    name="name"
+                    value={name}
+                    onChange={handleChange}
                     startAdornment={
                       <InputAdornment position="start">
                         <PersonIcon />
@@ -240,7 +255,9 @@ const SignInModal: React.FC = () => {
                 <FormControl fullWidth sx={{ m: 1 }}>
                   <InputLabel htmlFor="email">E-mail</InputLabel>
                   <OutlinedInput
-                    id="email"
+                    name="email"
+                    value={email}
+                    onChange={handleChange}
                     startAdornment={
                       <InputAdornment position="start">
                         <AlternateEmailIcon />
@@ -252,9 +269,10 @@ const SignInModal: React.FC = () => {
                 <FormControl fullWidth sx={{ m: 1 }}>
                   <InputLabel htmlFor="password">Senha</InputLabel>
                   <OutlinedInput
-                    id="password"
+                    name="password"
                     type={showPassword ? "text" : "password"}
-                    onChange={(e) => handlePasswordChange(e.target.value || "")}
+                    value={password}
+                    onChange={handlePasswordChange}
                     endAdornment={
                       <InputAdornment position="end">
                         <IconButton
@@ -275,31 +293,23 @@ const SignInModal: React.FC = () => {
                     label="Password"
                   />
                   <Box sx={{ width: "100%" }} className="progress">
-                    <LinearProgress
-                      value={progress || 1}
-                      color={color || "inherit"}
-                      variant="determinate"
-                    />
+                    <LinearProgress value={progress || 1} color={color || "inherit"} variant="determinate" />
                   </Box>
                   {closeAlert && (
                     <Box sx={{ width: "100%" }} className="description">
-                      <Alert
-                        variant="outlined"
-                        severity="warning"
-                        onClose={handleCloseAlert}
-                      >
+                      <Alert variant="outlined" severity="warning" onClose={handleCloseAlert}>
                         Use 8 ou mais caracteres com letras e números
                       </Alert>
                     </Box>
                   )}
                 </FormControl>
                 <FormControl fullWidth sx={{ m: 1 }}>
-                  <InputLabel htmlFor="repeat-password">
-                    Repetir senha
-                  </InputLabel>
+                  <InputLabel htmlFor="repeat">Repetir senha</InputLabel>
                   <OutlinedInput
-                    id="repeat-password"
+                    name="repeat"
                     type={showPassword ? "text" : "password"}
+                    value={repeat}
+                    onChange={handleRepeatChange}
                     endAdornment={
                       <InputAdornment position="end">
                         <IconButton
@@ -327,7 +337,8 @@ const SignInModal: React.FC = () => {
                 <FormControl fullWidth sx={{ m: 1 }}>
                   <InputLabel htmlFor="email">E-mail</InputLabel>
                   <OutlinedInput
-                    id="email"
+                    name="email"
+                    onChange={handleChange}
                     startAdornment={
                       <InputAdornment position="start">
                         <AlternateEmailIcon />
@@ -343,25 +354,22 @@ const SignInModal: React.FC = () => {
         </DialogContent>
         <DialogActions>
           {format === "forgot" && (
-            <Button onClick={() => setFormat("signin")} variant="outlined">
+            <Button onClick={() => handleFormat("signin")} variant="outlined">
               LOGIN
             </Button>
           )}
           {format === "signin" && (
-            <Button onClick={() => setFormat("signup")} variant="outlined">
+            <Button onClick={() => handleFormat("signup")} variant="outlined">
               CADASTRE-SE
             </Button>
           )}
           {format === "signup" && (
-            <Button onClick={() => setFormat("signin")} variant="outlined">
+            <Button onClick={() => handleFormat("signin")} variant="outlined">
               LOGIN
             </Button>
           )}
           {format === "forgot" && (
-            <Button
-              onClick={() => alert("Recuperar senha")}
-              variant="contained"
-            >
+            <Button onClick={() => alert("Recuperar senha")} variant="contained">
               RECUPERAR SENHA
             </Button>
           )}
@@ -371,7 +379,7 @@ const SignInModal: React.FC = () => {
             </Button>
           )}
           {format === "signup" && (
-            <Button onClick={() => alert("Cadastrar")} variant="contained">
+            <Button onClick={() => alert("Cadastrar")} variant="contained" disabled={!compare}>
               CADASTRAR
             </Button>
           )}

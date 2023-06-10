@@ -1,10 +1,9 @@
 import { Container } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
-import Logo from "./logo";
-import MiddleActions from "./middle-actions";
-import { MidleHeaderProps } from "../../utility/types";
+import Logo from "../logo";
+import MiddleActions from "../middle-actions";
 
-export default function UauMiddleHeader({ socials }: MidleHeaderProps) {
+export default function UauMiddleHeader() {
   return (
     <div className="middleHeader">
       <Container maxWidth="lg">
@@ -20,7 +19,7 @@ export default function UauMiddleHeader({ socials }: MidleHeaderProps) {
             </div>
           </Grid>
           <Grid xs={4} sm={5} md={6}>
-            <MiddleActions socials={socials} />
+            <MiddleActions />
           </Grid>
         </Grid>
       </Container>

@@ -1,7 +1,7 @@
 import React from "react";
 import ProcessImage from "react-imgpro";
 import Skeleton from "react-loading-skeleton";
-import Date from "../atoms/date";
+import Date from "../../atoms/date-component";
 import { Box, Typography } from "@mui/material";
 
 interface FeaturedPostImageProps {
@@ -18,20 +18,10 @@ interface FeaturedPostImageProps {
   rest?: boolean;
 }
 
-const FeaturedPostImage: React.FC<FeaturedPostImageProps> = ({
-  size,
-  post,
-  cls = "",
-  rest = false,
-}) => {
+const FeaturedPostImage: React.FC<FeaturedPostImageProps> = ({ size, post, cls = "", rest = false }) => {
   return (
     <Box className={`featured animated fadeIn ${cls}`}>
-      <img
-        src={`${post.featured}`}
-        alt={post.title}
-        width={size.width}
-        height={size.height}
-      />
+      <img src={`${post.featured}`} alt={post.title} width={size.width} height={size.height} />
       <Box className="thumb-content">
         <Typography variant="body1">
           <a className="post-cat tie-cat-1" href={`/${post.tags.slug}`}>
@@ -43,8 +33,7 @@ const FeaturedPostImage: React.FC<FeaturedPostImageProps> = ({
         </Typography>
         <ul className="meta">
           <li>
-            <i className="fa fa-calendar-o" />{" "}
-            <Date dateString={post.date} locale={"ptBR"} />
+            <i className="fa fa-calendar-o" /> <Date dateString={post.date} locale={"ptBR"} />
           </li>
         </ul>
       </Box>

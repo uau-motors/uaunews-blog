@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import TitleSection from "../../atoms/title-section";
+import TitleSection from "../../molecules/title-section";
 import ArchivePosts from "../../molecules/archive-posts";
 import { ThemeContext } from "../../../utility/contexts/theme-context";
 import { useContext } from "react";
@@ -22,25 +22,25 @@ function getPastMonths() {
     { name: "Setembro", link: "https://exemplo.com/setembro", count: 14 },
     { name: "Outubro", link: "https://exemplo.com/outubro", count: 18 },
     { name: "Novembro", link: "https://exemplo.com/novembro", count: 22 },
-    { name: "Dezembro", link: "https://exemplo.com/dezembro", count: 25 },
+    { name: "Dezembro", link: "https://exemplo.com/dezembro", count: 25 }
   ];
   const pastMonths = [];
   for (let i = 0; i < currentMonth; i++) {
     pastMonths.push({
       name: months[i].name,
       link: months[i].link,
-      count: months[i].count,
+      count: months[i].count
     });
   }
   pastMonths.push({
     name: months[currentMonth].name,
     link: months[currentMonth].link,
-    count: months[currentMonth].count,
+    count: months[currentMonth].count
   });
   return pastMonths.map((month) => ({
     month: `${month.name} ${currentYear}`,
     link: month.link,
-    count: month.count,
+    count: month.count
   }));
 }
 

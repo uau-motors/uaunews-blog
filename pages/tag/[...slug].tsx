@@ -18,7 +18,7 @@ import SidebarArchive from "../../components/organisms/sidebar/archive";
 import { ThemeProvider } from "@mui/material/styles";
 import { ThemeContext } from "../../utility/contexts/theme-context";
 import { lightTheme, darkTheme } from "../../utility/contexts/theme";
-import TitleSection from "../../components/atoms/title-section";
+import TitleSection from "../../components/molecules/title-section";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 
