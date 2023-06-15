@@ -1,14 +1,14 @@
 import * as React from "react";
 import { useContext } from "react";
 import type { NextPage } from "next";
-import Layout from "../components/template/layout";
+import Layout from "../components/templates/home";
 import { Container } from "@mui/material";
 import CarouselBlog from "../components/organisms/carousel";
 import RecentsPosts from "../components/organisms/recents-posts";
 import { faker } from "@faker-js/faker";
 import { ThemeProvider } from "@mui/material/styles";
 import { ThemeContext } from "../utility/contexts/theme-context";
-import { lightTheme, darkTheme } from "../utility/contexts/theme";
+import { lightTheme, darkTheme } from "@utility/theme";
 import { CssBaseline } from "@material-ui/core";
 import SearchModal from "../components/organisms/search-modal";
 
@@ -40,39 +40,33 @@ const generateData = (): Data => {
     releases: [],
     curiosities: [],
     tips: [],
-    histories: [],
+    histories: []
   };
 
   const tags: Tag[] = [
     {
       slug: "news",
-      title: "Notícias",
+      title: "Notícias"
     },
     {
       slug: "releases",
-      title: "Lançamentos",
+      title: "Lançamentos"
     },
     {
       slug: "curiosities",
-      title: "Curiosidades",
+      title: "Curiosidades"
     },
     {
       slug: "tips",
-      title: "Dicas",
+      title: "Dicas"
     },
     {
       slug: "histories",
-      title: "Histórias",
-    },
+      title: "Histórias"
+    }
   ];
 
-  const keys: string[] = [
-    "news",
-    "releases",
-    "curiosities",
-    "tips",
-    "histories",
-  ];
+  const keys: string[] = ["news", "releases", "curiosities", "tips", "histories"];
 
   keys.forEach((key: string) => {
     for (let i = 0; i < 12; i++) {
@@ -86,7 +80,7 @@ const generateData = (): Data => {
         date: faker.date.recent().toISOString().slice(0, 10),
         excerpt: faker.lorem.words(15),
         tags: tag,
-        slug: tag.slug,
+        slug: tag.slug
       };
       data[key].push(dataItem);
     }

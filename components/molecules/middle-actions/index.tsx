@@ -27,6 +27,7 @@ const MiddleActions = () => {
             sx={{ p: "5px" }}
             aria-label={item.title.toLowerCase()}
             key={key}
+            className={`btn-social btn-${item.title.toLowerCase()}`}
             style={{ color: "#FFF", top: -4 }}
           >
             {item.icon}
@@ -38,7 +39,7 @@ const MiddleActions = () => {
         style={{ color: "#FFF", fontSize: "12px", top: "-5px" }}
         variant="outlined"
         color="primary"
-        className="btn"
+        className="btn btn-app"
       >
         &nbsp; Baixe nosso App
       </Button>
@@ -47,10 +48,10 @@ const MiddleActions = () => {
         style={{ fontSize: "12px", top: "-5px" }}
         color="primary"
         variant="contained"
-        className="btn primary"
+        className="btn primary btn-cta"
         onClick={openModal}
       >
-        &nbsp; ASSINE
+        &nbsp;ASSINE
       </Button>
     </Box>
   );

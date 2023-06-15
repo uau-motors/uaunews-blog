@@ -58,7 +58,7 @@ const HotNews = () => {
     <section className={`hot-news hot-news-${theme}`}>
       <Container>
         <Grid container spacing={2}>
-          <Grid item xs={8}>
+          <Grid item xs={12} md={8}>
             <Box className="hot-box">
               <LocalFireDepartmentIcon />
               <Typography variant="body1" className="hot-title">
@@ -71,13 +71,15 @@ const HotNews = () => {
               </Paper>
             </Box>
           </Grid>
-          <Grid item xs={4} className="hot-links">
-            <Typography variant="body1" className="hot-links-title">
-              Hot Links:
-            </Typography>
-            <Link href="#">Destaques</Link>
-            <Link href="#">Mais lidos</Link>
-            <Link href="#">Hot News</Link>
+          <Grid item xs={false} className="hot-links">
+            <Box className="hot-links-internal">
+              <Typography variant="body1" className="hot-links-title">
+                Hot Links:
+              </Typography>
+              <Link href="#">Destaques</Link>
+              <Link href="#">Mais lidos</Link>
+              <Link href="#">Hot News</Link>
+            </Box>
           </Grid>
         </Grid>
       </Container>

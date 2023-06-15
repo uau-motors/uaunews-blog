@@ -1,6 +1,7 @@
 .drawer-sidebar {
   width: 320px;
   padding: 30px;
+  height: 100%;
   .drawer-close {
     border-radius: 100%;
     height: 26px;
@@ -21,27 +22,26 @@
     height: 64px;
     overflow: hidden;
     .logo {
-      img {
-        width: 95%;
-      }
+      width: 130px;
+      position: relative;
+      top: 0;
+      display: flex;
       h1 {
-        visibility: hidden;
-        position: absolute;
-      }
-    }
-    &.drawer-dark {
-      .logo {
-        width: 95%;
+        width: 160px;
         position: relative;
-        top: 0;
+        top: 12px;
+        left: 5px;
+        display: flex;
+        flex-direction: row;
+        font-size: 1.9em;
+        font-family: "Russo One";
+        text-decoration: none;
+        color: var(--secondary);
       }
-    }
-    &.drawer-light {
-      .logo {
-        width: 100% !important;
-        height: 64px;
-        position: absolute;
-        top: -92px;
+      img {
+        width: 56px;
+        height: 56px;
+        margin-top: 3px;
       }
     }
   }
@@ -95,6 +95,20 @@
         span {
           font-weight: 600;
           transition: all ease-in-out 0.3s;
+        }
+      }
+    }
+  }
+}
+
+.theme-dark {
+  .drawer-sidebar {
+    background-color: var(--secondary);
+    color: #fff;
+    .drawer-title {
+      .logo {
+        h1 {
+          color: #fff;
         }
       }
     }

@@ -4,13 +4,11 @@ import { useRouter } from "next/router";
 import { processEnv } from "@libs/processEnv";
 import { SEO } from "@organisms/meta/seo";
 import { GhostSettings, getAllSettings } from "@libs/ghost";
-import { getLocalData } from "@libs/localData";
 
 import { BodyClass } from "@helpers/bodyClass";
 
 import { useContext } from "react";
 import type { NextPage } from "next";
-import Layout from "@components/template/layout";
 import { Container } from "@mui/material";
 import CarouselBlog from "@organisms/carousel";
 import RecentsPosts from "@organisms/recents-posts";
@@ -26,34 +24,47 @@ import SidebarBrands from "@organisms/sidebar/brands";
 import SidebarArchive from "@organisms/sidebar/archive";
 import { ThemeProvider } from "@mui/material/styles";
 import { ThemeContext } from "@utility/contexts/theme-context";
-import { lightTheme, darkTheme } from "../utility/contexts/theme";
+import { lightTheme, darkTheme } from "../utility/theme";
 import TitleSection from "@components/molecules/title-section";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import settings from "@utility/settings";
 
-interface CmsData {
-  bodyClass: string;
-}
+import settings from "@utility/settings";
+import DefaultTemplate from "@components/templates";
+import { CmsData, CarouselDataI } from "@utility/interfaces";
 
 interface HomeProps {
   cmsData: CmsData;
+  // carouselPosts?: CarouselDataI[];
 }
 
-const Home = ({ cmsData }: HomeProps) => {
+// async function getAllPosts() {
+//   const postsResponse = await fetch("https://5dld3.wiremockapi.cloud/api/v1/allposts", { cache: "force-cache" });
+
+//   console.log("Refetching posts");
+
+//   return postsResponse.json();
+// }
+
+const Home = async ({ cmsData }: HomeProps) => {
   const router = useRouter();
   if (router.isFallback) return <div className="loading">Carregando...</div>;
-
   const { bodyClass } = cmsData;
+  const { seo } = settings;
+
+  // const posts = await getAllPosts();
+
+  // console.log("RESPONSE POSTS ==> ", posts);
 
   return (
     <>
-      <SEO {...{ settings }} />
-      <Layout {...{ bodyClass, settings, isHome: true, id: "home", header: true, footer: true }}>
-        <main>
-          <Container>SITE</Container>
-        </main>
-      </Layout>
+      {/* <SEO {...{ title: seo.title, description: seo.description }} /> */}
+      <DefaultTemplate {...{ bodyClass, id: "home", header: true, footer: true }}>
+        <Container>
+          {/* <CarouselBlog posts={carouselPosts} /> */}
+          <div>SITE</div>
+        </Container>
+      </DefaultTemplate>
     </>
     // <ThemeProvider {...processEnv.themeMode}>
     //   <Layout id="home" theme={theme}>
@@ -120,13 +131,7 @@ const Home = ({ cmsData }: HomeProps) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  // try {
-  //   settings = await getLocalData("settings");
-  // } catch (error) {
-  //   throw new Error("Home creation failed.");
-  // }
-
+export const getStaticProps: GetStaticProps = async () => {
   const cmsData = {
     bodyClass: BodyClass({ isHome: true })
   };

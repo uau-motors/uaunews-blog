@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useContext } from "react";
 import type { NextPage } from "next";
-import Layout from "../../components/template/layout";
+import DefaultTemplate from "@components/templates";
 import { Container } from "@mui/material";
 import CarouselBlog from "../../components/organisms/carousel";
 import RecentsPosts from "../../components/organisms/recents-posts";
@@ -26,7 +26,7 @@ const Home: NextPage = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <Layout id="home" theme={theme}>
+      <DefaultTemplate id="home" theme={theme}>
         <main>
           <Container>
             <CarouselBlog />
@@ -85,7 +85,7 @@ const Home: NextPage = () => {
             </Grid>
           </Container>
         </main>
-      </Layout>
+      </DefaultTemplate>
     </ThemeProvider>
   );
 };

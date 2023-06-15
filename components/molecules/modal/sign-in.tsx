@@ -134,7 +134,6 @@ const SignInModal: React.FC = () => {
     } else {
       setCompare(false);
     }
-    console.log("COMPARE ==> ", [compare, password, repeat, isValid, progress]);
   }, [password, repeat]);
 
   return (

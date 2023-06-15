@@ -1,7 +1,8 @@
 import * as React from "react";
 import { useContext } from "react";
 import type { NextPage } from "next";
-import Layout from "../../components/template/layout";
+import DefaultTemplate from "@components/templates";
+
 import { ThemeProvider } from "@mui/material/styles";
 import { ThemeContext } from "@utility/contexts/theme-context";
 import { lightTheme, darkTheme } from "@utility/contexts/theme";
@@ -29,7 +30,7 @@ const PageSinglePost: NextPage = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <Layout id="home" theme={theme}>
+      <DefaultTemplate id="home" theme={theme}>
         <main>
           <Container className={`single-post`}>
             <SinglePostHeader />
@@ -46,7 +47,7 @@ const PageSinglePost: NextPage = () => {
             </Grid>
           </Container>
         </main>
-      </Layout>
+      </DefaultTemplate>
     </ThemeProvider>
   );
 };

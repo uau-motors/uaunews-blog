@@ -14,6 +14,9 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    .icons img {
+      width: 100%;
+    }
   }
   .mobileTitle {
     margin: 15px 0 10px;
@@ -166,27 +169,45 @@
     }
   }
   .logo {
-    width: 160px;
+    width: 130px;
     position: relative;
     top: 0;
-    left: -65px;
-    &:before {
-      content: " ";
-      position: absolute;
-      height: 40px;
-      width: 2px;
-      right: -15px;
-      top: -25px;
-      display: block;
-    }
+    display: flex;
+    margin-bottom: 25px;
     h1 {
-      visibility: hidden;
-      position: absolute;
+      width: 160px;
+      position: relative;
+      top: 12px;
+      left: 5px;
+      display: flex;
+      flex-direction: row;
+      font-size: 1.4em;
+      font-family: "Russo One";
     }
     img {
-      width: 240px;
-      margin-top: 5px;
-      margin-bottom: 10px;
+      width: 46px;
+      height: 46px;
+      margin-top: 3px;
+    }
+  }
+}
+
+@media (min-width: $screen-xs-min) and (max-width: $screen-md-max) {
+  #footer {
+    .footerWidget {
+      .content-about {
+        text-align: center;
+      }
+      .icons img {
+        width: 100%;
+      }
+    }
+    .bottomFooter {
+      .socials {
+        text-align: center;
+        justify-content: center;
+        padding-right: 0;
+      }
     }
   }
 }

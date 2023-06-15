@@ -71,7 +71,11 @@ const settings: UauSettings = {
     { title: "Carros Novos", pathname: "carros-novos" },
     { title: "Carros Usados", pathname: "carros-usados" },
     { title: "Hot News", pathname: "hot-news" }
-  ]
+  ],
+  seo: {
+    title: "UauNews",
+    description: "O canal de conteúdo da UauMotors"
+  }
 };
 
 export default settings;

@@ -6,8 +6,7 @@ import {
   useEffect,
   ChangeEvent,
   FormEvent,
-  MouseEvent,
-  useMemo
+  MouseEvent
 } from "react";
 
 import { DrawerProps } from "@material-ui/core/Drawer";
@@ -29,6 +28,8 @@ export interface ProviderValues {
   password: string;
   name: string;
   format: string;
+  city: string;
+  weather: number;
 }
 
 const defaultValues = {
@@ -47,7 +48,10 @@ const defaultValues = {
   email: "",
   password: "",
   name: "",
-  format: "signin"
+  format: "signin",
+
+  city: "",
+  weather: ""
 };
 
 const OverlayContext = createContext<ProviderValues>(defaultValues);
@@ -68,6 +72,8 @@ export const OverlayProvider = ({ children }: OverlayProviderProps): ReactElemen
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [format, setFormat] = useState("signin");
+  const [city, setCity] = useState("");
+  const [weather, setWeather] = useState("");
 
   const toggleDrawer = (props?: DrawerProps) => {
     if (props) setDrawerProps(props);
@@ -87,19 +93,63 @@ export const OverlayProvider = ({ children }: OverlayProviderProps): ReactElemen
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     let field = event.target.name;
 
-    console.log("event", event.target.name);
-
     if (field === "name") setName(event.target.value);
     if (field === "email") setEmail(event.target.value);
     if (field === "password") setPassword(event.target.value);
-
-    console.log("handleChange", field);
   };
 
   const handleFormat = (f: string = "") => {
     setPassword("");
     setFormat(f);
   };
+
+  const getBrowserCity = (): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      if (navigator.geolocation) {
+        console.log("navigator ==> ", navigator);
+        // navigator.geolocation.getCurrentPosition(
+        //   async (position: GeolocationPosition) => {
+        //     const latitude = position.coords.latitude;
+        //     const longitude = position.coords.longitude;
+        //     const url = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=pt-br`;
+        //     try {
+        //       const response = await fetch(url);
+        //       const data = await response.json();
+        //       if (data.countryCode === "BR") {
+        //         resolve(data.city);
+        //         setCity(data.city);
+        //       } else {
+        //         reject(new Error("A localização não está no Brasil."));
+        //       }
+        //     } catch (error) {
+        //       reject(new Error(`Erro ao obter a localização: ${error.message}`));
+        //     }
+        //   },
+        //   (error: GeolocationPositionError) => {
+        //     reject(new Error(`Erro ao obter a localização: ${error.message}`));
+        //   }
+        // );
+      } else {
+        reject(new Error("Geolocalização não suportada neste navegador."));
+      }
+    });
+  };
+
+  async function getWeather(city: string): Promise<any> {
+    const apiKey = "51e38bb9aa5c0f0180c54903abcc2d84";
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      const weatherData = Math.round(data.main.temp);
+      setWeather(weatherData);
+      return weatherData;
+    } catch (error) {
+      console.error(error);
+      throw new Error("Failed to retrieve weather data");
+    }
+  }
 
   // const handleSubmit = async (event: FormEvent<HTMLFormElement>, cmsUrl: string = "") => {
   //   event.preventDefault();
@@ -136,6 +186,14 @@ export const OverlayProvider = ({ children }: OverlayProviderProps): ReactElemen
   //   };
   // }, []);
 
+  useEffect(() => {
+    getBrowserCity();
+  }, []);
+
+  useEffect(() => {
+    if (city) getWeather(city);
+  }, [city]);
+
   const contextValue: ProviderValues = {
     isOpenDrawer,
     drawerProps,
@@ -149,7 +207,9 @@ export const OverlayProvider = ({ children }: OverlayProviderProps): ReactElemen
     email,
     password,
     name,
-    format
+    format,
+    city,
+    weather
   };
 
   return <OverlayContext.Provider value={contextValue}>{children}</OverlayContext.Provider>;

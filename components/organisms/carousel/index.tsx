@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 // import { getCarouselPosts } from "../../../pages/api";
 import CarouselItem from "../../molecules/carousel-item";
-import data from "../../../utility/data/carousel.json";
+import { CarouselDataI } from "@utility/interfaces";
 
 const responsive = {
   lg: {
@@ -25,25 +25,17 @@ const responsive = {
   }
 };
 
+interface CarouselProps {
+  posts: CarouselDataI[];
+}
+
 const CarouselBlog = () => {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    const fetchPosts = () => {
-      try {
-        setPosts(data);
-      } catch (error) {
-        console.log("Erro ao buscar posts:", error);
-      }
-    };
-
-    fetchPosts();
-  }, []);
-
+  const postData = [];
+  console.log("POSTS ==> ", postData);
   return (
     <section className="carousel-blog">
       <div className="carousel-items">
-        <Carousel
+        {/* <Carousel
           swipeable
           draggable
           responsive={responsive}
@@ -56,11 +48,12 @@ const CarouselBlog = () => {
           transitionDuration={500}
           containerClass="carousel-container"
         >
-          {posts.length > 1 &&
-            posts.map((post, key) => {
+          {postData &&
+            postData.length > 1 &&
+            postData.map((post, key) => {
               return <CarouselItem data={post} key={key} />;
             })}
-        </Carousel>
+        </Carousel> */}
       </div>
     </section>
   );

@@ -5,12 +5,12 @@ type LogoProps = {
 };
 
 const Logo = ({ mode }: LogoProps): JSX.Element => {
-  const logoSrc = `/assets/images/logo-${mode}.svg`;
+  const logoSrc = `/assets/images/logos/logo-orange.svg`;
 
   return (
     <Link href={"/"} className={`logo`}>
-      <Typography variant="h1">UauMotors</Typography>
       <img src={logoSrc} alt="uaumotors logo" />
+      <Typography variant="h1">uaunews</Typography>
     </Link>
   );
 };

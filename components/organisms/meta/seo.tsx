@@ -2,30 +2,19 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import url from "url";
 
-import { GhostSettings } from "@libs/ghost";
 import { Author, PostOrPage, Tag } from "@tryghost/content-api";
-// import { siteTitleMeta, siteDescriptionMeta, siteIcon } from "@organisms/meta/defaults";
-
-interface SEOProps {
-  title?: string;
-  description?: string;
-  sameAs?: string;
-  settings: GhostSettings;
-  canonical?: string;
-  article?: PostOrPage;
-}
+import { SEOI } from "@utility/interfaces";
 
 const siteUrl = "http://localhost:3000";
 const twitter = "https://twitter.com";
 const title = "UauNews";
 const description = "O canal de conteúdo da UauMotors";
-const meta_title = "";
 
 const getPublicTags = (tags: Tag[] | undefined) =>
   tags ? tags.filter((tag) => tag.name?.substr(0, 5) !== "hash-") : [];
 
-export const SEO = (props: SEOProps) => {
-  const { title: t, description: d, settings, article } = props;
+export const SEO = (props: SEOI) => {
+  const { title: t, description: d, article } = props;
 
   const {
     og_title,

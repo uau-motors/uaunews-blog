@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useContext } from "react";
 import type { NextPage } from "next";
-import Layout from "../../components/template/layout";
+import DefaultTemplate from "@components/templates";
 import { ThemeProvider } from "@mui/material/styles";
 import { ThemeContext } from "@utility/contexts/theme-context";
 import { lightTheme, darkTheme } from "@utility/contexts/theme";
@@ -13,11 +13,11 @@ const Pageinstitutional: NextPage = () => {
 
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <Layout id="page" theme={theme}>
+      <DefaultTemplate id="page" theme={theme}>
         <main>
           <Institutional title="Termos de Uso" />
         </main>
-      </Layout>
+      </DefaultTemplate>
     </ThemeProvider>
   );
 };

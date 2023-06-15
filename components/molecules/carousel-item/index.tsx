@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Date from "../../atoms/date-component";
+import Date from "@atoms/date-component";
 
 const CarouselItem = ({ data }) => {
   return (

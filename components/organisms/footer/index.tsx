@@ -179,28 +179,15 @@ export const Footer = () => {
               className="footerWidget"
             >
               <Logo mode="light" />
-              <Typography>
-                A UauMotors é uma empresa jovem, que nasceu para trazer para seus usuários um vasto conteúdo no mundo
-                dos veículos.
+              <Typography className="content-about">
+                A UauNews é um canal de contéudo da UauMotors, que tem como objetivo trazer a você, conteúdos de
+                relevância e todas novidades do mundo automotivos.
               </Typography>
               <span className="mobileTitle">
-                <h4>UauMotors Mobile</h4>
+                <h4>UauNews Mobile</h4>
               </span>
               <Box className="icons">
-                {UauMobile.map((item, key) => {
-                  return (
-                    <IconButton
-                      type="button"
-                      sx={{ p: "5px" }}
-                      aria-label={item.title.toLowerCase()}
-                      key={key}
-                      style={{ width: "40px", color: "#FFF" }}
-                      className="mobileIcons"
-                    >
-                      {item.icon}
-                    </IconButton>
-                  );
-                })}
+                <img src="/assets/images/logos/app-legislativo-disponivel-googleplay-e-appstore.png" alt="logos" />
               </Box>
             </Box>
           </Grid>
@@ -266,7 +253,7 @@ export const Footer = () => {
         <Container>
           <Grid container rowSpacing={0} columnSpacing={0}>
             <Grid item xs={12} sm={8} md={7}>
-              <Typography>© 2023 UauMotors. Todos os direitos reservados.</Typography>
+              <Typography>© 2023 UauNews. Todos os direitos reservados.</Typography>
             </Grid>
             <Grid item xs={12} sm={4} md={5}>
               <ul className="socials">

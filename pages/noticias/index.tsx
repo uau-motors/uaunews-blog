@@ -1,10 +1,10 @@
 import * as React from "react";
 import { useContext } from "react";
 import type { NextPage } from "next";
-import Layout from "../../components/template/layout";
+import DefaultTemplate from "@components/templates";
 import { ThemeProvider } from "@mui/material/styles";
 import { ThemeContext } from "@utility/contexts/theme-context";
-import { lightTheme, darkTheme } from "@utility/contexts/theme";
+import { lightTheme, darkTheme } from "@utility/theme";
 import CategoryPage from "@organisms/categories";
 
 import LastedPosts from "@organisms/lasteds-posts";
@@ -27,7 +27,7 @@ const PageNews: NextPage = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <Layout id="news" theme={theme}>
+      <DefaultTemplate id="news" theme={theme}>
         <main>
           <CategoryPage />
           <Container className={`lasteds-posts`}>
@@ -49,7 +49,7 @@ const PageNews: NextPage = () => {
             </Grid>
           </Container>
         </main>
-      </Layout>
+      </DefaultTemplate>
     </ThemeProvider>
   );
 };
