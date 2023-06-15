@@ -29,13 +29,12 @@ interface CarouselProps {
   posts: CarouselDataI[];
 }
 
-const CarouselBlog = () => {
-  const postData = [];
-  console.log("POSTS ==> ", postData);
+const CarouselBlog = ({ posts }: CarouselProps) => {
+  console.log("POSTS CarouselBlog ==> ", posts);
   return (
     <section className="carousel-blog">
       <div className="carousel-items">
-        {/* <Carousel
+        <Carousel
           swipeable
           draggable
           responsive={responsive}
@@ -48,12 +47,12 @@ const CarouselBlog = () => {
           transitionDuration={500}
           containerClass="carousel-container"
         >
-          {postData &&
-            postData.length > 1 &&
-            postData.map((post, key) => {
+          {posts &&
+            posts.length > 1 &&
+            posts.map((post, key) => {
               return <CarouselItem data={post} key={key} />;
             })}
-        </Carousel> */}
+        </Carousel>
       </div>
     </section>
   );
