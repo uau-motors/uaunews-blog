@@ -769,6 +769,34 @@
   }
 }
 
+@media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+  #header {
+    .middleHeader {
+      .logoUM1 {
+        position: relative;
+        top: 10px;
+        margin-right: 0;
+        left: -70px;
+        width: 160px;
+      }
+    }
+    .megamenu {
+      .menuActions {
+        .btnSearch {
+          width: 213px;
+        }
+      }
+      .nav-item {
+        font-size: 0.82em;
+      }
+      .nav-curiosidades,
+      .nav-avaliacoes {
+        display: none;
+      }
+    }
+  }
+}
+
 .theme-dark {
   #header {
     .hot-news {

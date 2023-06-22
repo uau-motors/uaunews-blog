@@ -42,6 +42,27 @@ a {
     .icon-home {
       fill: #aaa;
     }
+    .recents-news {
+      .post-featured,
+      .post-list {
+        .post-counter {
+          color: #212121 !important;
+        }
+      }
+      .post-date,
+      .post-views {
+        h6 {
+          color: #aaa;
+        }
+      }
+    }
+    .sidebar {
+      .ads {
+        .ads-paper {
+          background-color: var(--secondary) !important;
+        }
+      }
+    }
   }
 }
 
@@ -78,19 +99,24 @@ main {
     justify-content: center;
   }
 }
+
 .skeleton {
   position: relative;
   top: -5px;
 }
+
 .sticky-transitions {
   @extend .trans-eio-3s;
 }
+
 .mb-1 {
   margin-bottom: 10px;
 }
+
 .mb-2 {
   margin-bottom: 20px;
 }
+
 .mb-3 {
   margin-bottom: 30px;
 }
@@ -108,15 +134,19 @@ main {
 .mtb-1 {
   margin: 10px 0;
 }
+
 .mtb-2 {
   margin: 20px 0;
 }
+
 .mtb-3 {
   margin: 30px 0;
 }
+
 .mtb-4 {
   margin: 40px 0;
 }
+
 .mtb-5 {
   margin: 50px 0;
 }
@@ -132,6 +162,7 @@ main {
   -ms-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
+
 .trans-eio-3s {
   -webkit-transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
@@ -139,22 +170,27 @@ main {
   -ms-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
+
 .delay-1s {
   -webkit-animation-delay: 0.1s;
   animation-delay: 0.1s;
 }
+
 .delay-2s {
   -webkit-animation-delay: 0.3s;
   animation-delay: 0.3s;
 }
+
 .delay-3s {
   -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
+
 .delay-4s {
   -webkit-animation-delay: 0.7s;
   animation-delay: 0.7s;
 }
+
 .delay-5s {
   -webkit-animation-delay: 0.9s;
   animation-delay: 0.9s;
@@ -198,11 +234,13 @@ main {
   -webkit-transform: translate3d(0, -5px, 0);
   transform: translate3d(0, -5px, 0);
 }
+
 .bs-linkedin {
   box-shadow: 0 5px 15px var(--bg-linkedin);
   -webkit-transform: translate3d(0, -5px, 0);
   transform: translate3d(0, -5px, 0);
 }
+
 .bs-twitter {
   box-shadow: 0 5px 15px var(--bg-twitter);
   -webkit-transform: translate3d(0, -5px, 0);
@@ -214,11 +252,13 @@ main {
   -webkit-transform: translate3d(0, -5px, 0);
   transform: translate3d(0, -5px, 0);
 }
+
 .bs-rss {
   box-shadow: 0 5px 15px var(--bg-rss);
   -webkit-transform: translate3d(0, -5px, 0);
   transform: translate3d(0, -5px, 0);
 }
+
 .bs-youtube {
   box-shadow: 0 5px 15px var(--bg-youtube);
   -webkit-transform: translate3d(0, -5px, 0);
@@ -231,30 +271,35 @@ main {
     @extend .bs-facebook;
   }
 }
+
 .bg-linkedin {
   background-color: var(--bg-linkedin);
   &:hover {
     @extend .bs-linkedin;
   }
 }
+
 .bg-twitter {
   background-color: var(--bg-twitter);
   &:hover {
     @extend .bs-twitter;
   }
 }
+
 .bg-instagram {
   background-color: var(--bg-instagram);
   &:hover {
     @extend .bs-instagram;
   }
 }
+
 .bg-rss {
   background-color: var(--bg-rss);
   &:hover {
     @extend .bs-rss;
   }
 }
+
 .bg-youtube {
   background-color: var(--bg-youtube);
   &:hover {
@@ -340,5 +385,72 @@ main {
         position: relative;
       }
     }
+  }
+}
+
+@media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+  .visible-xs {
+    display: block;
+    visibility: visible;
+  }
+  .visible-sm,
+  .visible-md,
+  .visible-lg,
+  .visible-xl {
+    display: none;
+    visibility: hidden;
+  }
+}
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  .visible-sm {
+    display: block;
+    visibility: visible;
+  }
+  .visible-xs,
+  .visible-md,
+  .visible-lg,
+  .visible-xl {
+    display: none;
+    visibility: hidden;
+  }
+}
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  .visible-md {
+    display: block;
+    visibility: visible;
+  }
+  .visible-sm,
+  .visible-xs,
+  .visible-lg,
+  .visible-xl {
+    display: none;
+    visibility: hidden;
+  }
+}
+@media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+  .visible-lg {
+    display: block;
+    visibility: visible;
+  }
+  .visible-sm,
+  .visible-md,
+  .visible-xs,
+  .visible-xl {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@media (min-width: $screen-xl) {
+  .visible-xl {
+    display: block;
+    visibility: visible;
+  }
+  .visible-sm,
+  .visible-md,
+  .visible-xs,
+  .visible-lg {
+    display: none;
+    visibility: hidden;
   }
 }

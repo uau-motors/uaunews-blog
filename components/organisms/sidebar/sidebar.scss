@@ -12,8 +12,20 @@
     width: 100%;
     position: relative;
     overflow: hidden;
-    img {
-      width: 100%;
+    .ads-paper {
+      background-color: #f2f2f2;
+      height: 260px;
+      padding: 3px;
+    }
+    .ads-container {
+      .ads-image {
+        width: "100%";
+        border-radius: "4px";
+        img {
+          width: 100%;
+          border-radius: "4px";
+        }
+      }
     }
   }
   .social-counter {
@@ -37,6 +49,8 @@
       .counter-icon svg {
         width: 34px;
         height: 34px;
+        position: relative;
+        top: 7px;
       }
       .num-count {
         font-size: 1.1em;
@@ -44,6 +58,8 @@
       }
       .counter-subscribers {
         font-size: 0.8em;
+        position: relative;
+        top: -3px;
       }
     }
   }
@@ -53,13 +69,7 @@
       text-align: center;
       margin-top: 15px;
       border-radius: 4px;
-      background: repeating-linear-gradient(
-        45deg,
-        #3c83f1,
-        #3c83f1 10px,
-        #ea4235 10px,
-        #ea4235 20px
-      );
+      background: repeating-linear-gradient(45deg, #3c83f1, #3c83f1 10px, #ea4235 10px, #ea4235 20px);
       position: relative;
       display: flex;
       justify-content: center;
@@ -404,6 +414,98 @@
     &:hover {
       p {
         color: var(--primary);
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+  .sidebar {
+    .social-counter {
+      grid-template-columns: repeat(6, minmax(56px, 1fr));
+      .box {
+        height: 48px;
+        width: 48px;
+        .counter-icon svg {
+          width: 24px;
+          height: 24px;
+          position: relative;
+          top: 7px;
+        }
+        .num-count {
+          position: relative;
+          top: -2px;
+          font-size: 0.9em;
+        }
+        .counter-subscribers {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  .sidebar {
+    .ads {
+      .ads-paper {
+        height: 256px;
+      }
+    }
+    .social-counter {
+      grid-template-columns: repeat(3, minmax(72px, 1fr));
+      .box {
+        height: 72px;
+        width: 72px;
+        .counter-icon svg {
+          width: 32px;
+          height: 32px;
+          position: relative;
+          top: 7px;
+        }
+        .counter-subscribers {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+  .sidebar {
+    .ads {
+      .ads-paper {
+        max-height: 278px;
+        min-height: 198px;
+        height: 100%;
+      }
+      .ads-container {
+        height: auto;
+        .ads-paper {
+          .ads-image {
+            width: 100%;
+            height: auto;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .social-counter {
+      grid-template-columns: repeat(3, minmax(72px, 1fr));
+      .box {
+        height: 72px;
+        width: 72px;
+        .counter-icon svg {
+          width: 32px;
+          height: 32px;
+          position: relative;
+          top: 7px;
+        }
+        .counter-subscribers {
+          display: none;
+        }
       }
     }
   }

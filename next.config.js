@@ -15,6 +15,8 @@ const nextConfig = {
       "repository-images.githubusercontent.com",
       "www.gravatar.com",
       "github.githubassets.com",
+      "securemove.in",
+      "192.168.15*",
       ...(process.env.IMAGE_DOMAINS || "").split(",")
     ],
     formats: ["image/avif", "image/webp"]

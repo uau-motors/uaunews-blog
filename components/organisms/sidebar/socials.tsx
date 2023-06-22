@@ -7,9 +7,7 @@ const SidebarSocials = () => {
     <Box className={"sidebar"}>
       <Ads
         format={"square"}
-        imageUrl={
-          "https://newzin.themescamp.com/politics/wp-content/uploads/sites/7/2022/08/banner12.png"
-        }
+        imageUrl={"https://securemove.in/wp-content/uploads/2022/08/Car-transport-cost.jpg"}
         altText="250x250"
       />
       <SocialsNetworks />

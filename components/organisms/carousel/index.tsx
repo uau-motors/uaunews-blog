@@ -30,7 +30,6 @@ interface CarouselProps {
 }
 
 const CarouselBlog = ({ posts }: CarouselProps) => {
-  console.log("POSTS CarouselBlog ==> ", posts);
   return (
     <section className="carousel-blog">
       <div className="carousel-items">

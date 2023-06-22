@@ -41,7 +41,16 @@ export interface CarouselDataI {
   feature_image: string;
   created_at: string;
   excerpt: string;
-  tag: TagI;
+  tags: TagI[];
+}
+export interface PostCardDataI {
+  id: string;
+  title: string;
+  slug: string;
+  feature_image: string;
+  created_at: string;
+  excerpt: string;
+  tags: TagI[];
 }
 export interface PostDataI {
   id: string;

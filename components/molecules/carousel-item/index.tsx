@@ -7,8 +7,8 @@ const CarouselItem = ({ data }) => {
     <div className={`slide animated slideInLeft`}>
       <img width="843" height="470" src={data.feature_image} alt={data.title ?? "imagem"} />
       <span className="post-cat-wrap">
-        <Link href={`/{data.tags.slug}`}>
-          <span className="post-cat">{data.tags.name}</span>
+        <Link href={`/${data.tags[0].slug}`}>
+          <span className="post-cat">{data.tags[0].name}</span>
         </Link>
       </span>
       <div className="content" onClick={() => (window.location.href = `/${data.tags.slug}`)}>
