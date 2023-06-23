@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { format } from "date-fns";
 
 interface PostDateProps {
-  date: Date;
+  date: string;
 }
 
 const PostDate = ({ date }: PostDateProps) => {
@@ -28,7 +28,7 @@ const PostDate = ({ date }: PostDateProps) => {
         </svg>
       </Box>
       <Typography variant="subtitle2" sx={{ color: "text.secondary" }}>
-        {format(new Date(date), "dd/MM/yyyy")}
+        {format(new Date(), "dd/MM/yyyy")}
       </Typography>
     </Box>
   );

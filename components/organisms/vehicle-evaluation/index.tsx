@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Box, Grid } from "@mui/material";
 
 import PostImage from "@molecules/post-card-thumb";
@@ -7,84 +7,258 @@ import PostDate from "@molecules/post-date";
 import PostViews from "@molecules/post-views";
 import ReviewMeta from "@molecules/review-meta";
 
-import data from "@utility/data/posts.json";
-import TitleSection from '@components/molecules/title-section';
+import TitleSection from "@components/molecules/title-section";
+import { PostCardDataI } from "@utility/interfaces";
 
-const VehicleEvaluation = () => {
+interface VehicleEvaluationProps {
+  posts: PostCardDataI[];
+}
+
+const VehicleEvaluation = ({ posts }: VehicleEvaluationProps) => {
   const handleClick = () => {
     console.log("O botão foi clicado!");
   };
 
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={12}>
-        <TitleSection title={"Avaliações UauMotors"} />
-      </Grid>
-      <Box className="visible-xs">
+    <Fragment>
+      <Box className={"posts"}>
+        <Grid container spacing={2}>
           <Grid item xs={12} className="post-featured">
-            <PostImage
-              imageUrl={data[16].feature_image}
-              altText={data[3].title}
-              onClick={handleClick}
-            />
-            <Box className="content">
-              <PostTitle
-                title={
-                  "Avaliação: Novo Toyota Corolla Cross híbrido é mais potente que o brasileiro"
-                }
-                onClick={handleClick}
-              />
-              <ReviewMeta score={9.6} place="Good Place" />
-              <Box className="post-metas">
-                <PostDate date={new Date()} />
-                <PostViews views={7} />
-              </Box>
+            <Box sx={{ width: "100%" }}>
+              <TitleSection title={"Avaliações UauMotors"} />
             </Box>
           </Grid>
+        </Grid>
 
-          <Grid item xs={12} className="post-featured-2">
-              <PostImage
-                imageUrl={data[14].feature_image}
-                altText={data[3].title}
-                onClick={handleClick}
-              />
-              <Box className="content">
-                <PostTitle
-                  title={
-                    "Teste: VW Polo Track 2023 é muito melhor que Gol e pode ser o novo carro popular"
-                  }
-                  onClick={handleClick}
-                />
-                <ReviewMeta score={9.6} place="Good Place" />
-                <Box className="post-metas">
-                  <PostDate date={new Date()} />
-                  <PostViews views={7} />
+        <Box className="visible-xs">
+          <Grid container spacing={2}>
+            {posts && posts.length > 0 && (
+              <Grid item xs={12} className="post-featured">
+                <PostImage imageUrl={posts[0].feature_image} altText={posts[0].title} onClick={handleClick} />
+                <Box className="content">
+                  <PostTitle title={posts[0].title} onClick={handleClick} />
+                  <ReviewMeta score={9.6} place="Good Place" />
+                  <Box className="post-metas">
+                    <PostDate date={new Date()} />
+                    <PostViews views={7} />
+                  </Box>
                 </Box>
-              </Box>
+              </Grid>
+            )}
+            {posts &&
+              posts.length > 1 &&
+              posts.map((post, key) => {
+                if (key > 1 && key < 4)
+                  return (
+                    <Grid item xs={12} className="post-featured-2" key={key}>
+                      <PostImage imageUrl={post.feature_image} altText={post.title} onClick={handleClick} />
+                      <Box className="content">
+                        <PostTitle title={post.title} onClick={handleClick} />
+                        <ReviewMeta score={9.6} place="Good Place" />
+                        <Box className="post-metas">
+                          <PostDate date={new Date()} />
+                          <PostViews views={7} />
+                        </Box>
+                      </Box>
+                    </Grid>
+                  );
+              })}
           </Grid>
+        </Box>
 
-          <Grid item xs={12} className="post-featured-2">
-              <PostImage
-                imageUrl={data[17].feature_image}
-                altText={data[3].title}
-                onClick={handleClick}
-              />
-              <Box className="content">
-                <PostTitle
-                  title={
-                    "Avaliação: Purosangue é uma legítima Ferrari mesmo vestida de SUV
-                  }
-                  onClick={handleClick}
-                />
-                <ReviewMeta score={9.6} place="Good Place" />
-                <Box className="post-metas">
-                  <PostDate date={new Date()} />
-                  <PostViews views={7} />
-                </Box>
-              </Box>
+        <Box className="visible-sm">
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              {posts && posts.length > 0 && (
+                <Grid item xs={12} className="post-featured">
+                  <PostImage imageUrl={posts[0].feature_image} altText={posts[0].title} onClick={handleClick} />
+                  <Box className="content">
+                    <PostTitle title={posts[0].title} onClick={handleClick} />
+                    <ReviewMeta score={9.6} place="Good Place" />
+                    <Box className="post-metas">
+                      <PostDate date={new Date()} />
+                      <PostViews views={7} />
+                    </Box>
+                  </Box>
+                </Grid>
+              )}
+            </Grid>
+
+            <Grid item xs={6}>
+              {posts &&
+                posts.length > 1 &&
+                posts.map((post, key) => {
+                  if (key > 1 && key < 4)
+                    return (
+                      <Grid item xs={12} className={"post-featured-2"} key={key}>
+                        <Grid container spacing={2}>
+                          <Grid item xs={5}>
+                            <PostImage imageUrl={post.feature_image} altText={post.title} onClick={handleClick} />
+                          </Grid>
+                          <Grid item xs={7}>
+                            <Box className="content">
+                              <PostTitle
+                                title={
+                                  "Teste: VW Polo Track 2023 é muito melhor que Gol e pode ser o novo carro popular"
+                                }
+                                onClick={handleClick}
+                              />
+                              <ReviewMeta score={9.6} place="Good Place" />
+                              <Box className="post-metas">
+                                <PostDate date={new Date()} />
+                                <PostViews views={7} />
+                              </Box>
+                            </Box>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    );
+                })}
+            </Grid>
           </Grid>
-       </Box>
-    </Grid>
+        </Box>
+
+        <Box className="visible-md">
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              {posts && posts.length > 0 && (
+                <Grid item xs={12} className="post-featured">
+                  <PostImage imageUrl={posts[0].feature_image} altText={posts[0].title} onClick={handleClick} />
+                  <Box className="content">
+                    <PostTitle title={posts[0].title} onClick={handleClick} />
+                    <ReviewMeta score={9.6} place="Good Place" />
+                    <Box className="post-metas">
+                      <PostDate date={new Date()} />
+                      <PostViews views={7} />
+                    </Box>
+                  </Box>
+                </Grid>
+              )}
+            </Grid>
+
+            <Grid item xs={6}>
+              {posts &&
+                posts.length > 1 &&
+                posts.map((post, key) => {
+                  if (key > 1 && key < 4)
+                    return (
+                      <Grid item xs={12} className={"post-featured-2"} key={key}>
+                        <Grid container spacing={2}>
+                          <Grid item xs={5}>
+                            <PostImage imageUrl={post.feature_image} altText={post.title} onClick={handleClick} />
+                          </Grid>
+                          <Grid item xs={7}>
+                            <Box className="content">
+                              <PostTitle
+                                title={
+                                  "Teste: VW Polo Track 2023 é muito melhor que Gol e pode ser o novo carro popular"
+                                }
+                                onClick={handleClick}
+                              />
+                              <ReviewMeta score={9.6} place="Good Place" />
+                              <Box className="post-metas">
+                                <PostDate date={new Date()} />
+                                <PostViews views={7} />
+                              </Box>
+                            </Box>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    );
+                })}
+            </Grid>
+          </Grid>
+        </Box>
+
+        <Box className="visible-lg">
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              {posts && posts.length > 0 && (
+                <Grid item xs={12} className="post-featured">
+                  <PostImage imageUrl={posts[0].feature_image} altText={posts[0].title} onClick={handleClick} />
+                  <Box className="content">
+                    <PostTitle title={posts[0].title} onClick={handleClick} />
+                    <ReviewMeta score={9.6} place="Good Place" />
+                    <Box className="post-metas">
+                      <PostDate date={new Date()} />
+                      <PostViews views={7} />
+                    </Box>
+                  </Box>
+                </Grid>
+              )}
+            </Grid>
+
+            <Grid item xs={6}>
+              {posts &&
+                posts.length > 1 &&
+                posts.map((post, key) => {
+                  if (key > 1 && key < 4)
+                    return (
+                      <Grid item xs={12} className={"post-featured-2"} key={key}>
+                        <Grid container spacing={2}>
+                          <Grid item xs={5}>
+                            <PostImage imageUrl={post.feature_image} altText={post.title} onClick={handleClick} />
+                          </Grid>
+                          <Grid item xs={7}>
+                            <Box className="content">
+                              <PostTitle
+                                title={
+                                  "Teste: VW Polo Track 2023 é muito melhor que Gol e pode ser o novo carro popular"
+                                }
+                                onClick={handleClick}
+                              />
+                              <ReviewMeta score={9.6} place="Good Place" />
+                              <Box className="post-metas">
+                                <PostDate date={new Date()} />
+                                <PostViews views={7} />
+                              </Box>
+                            </Box>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    );
+                })}
+            </Grid>
+          </Grid>
+        </Box>
+
+        <Box className="visible-xl">
+          <Grid container spacing={2}>
+            {posts && posts.length > 0 && (
+              <Grid item xs={4} className="post-featured">
+                <PostImage imageUrl={posts[0].feature_image} altText={posts[0].title} onClick={handleClick} />
+                <Box className="content">
+                  <PostTitle title={posts[0].title} onClick={handleClick} />
+                  <ReviewMeta score={9.6} place="Good Place" />
+                  <Box className="post-metas">
+                    <PostDate date={new Date()} />
+                    <PostViews views={7} />
+                  </Box>
+                </Box>
+              </Grid>
+            )}
+            {posts &&
+              posts.length > 1 &&
+              posts.map((post, key) => {
+                if (key > 1 && key < 4)
+                  return (
+                    <Grid item xs={4} className="post-featured-2" key={key}>
+                      <PostImage imageUrl={post.feature_image} altText={post.title} onClick={handleClick} />
+                      <Box className="content">
+                        <PostTitle title={post.title} onClick={handleClick} />
+                        <ReviewMeta score={9.6} place="Good Place" />
+                        <Box className="post-metas">
+                          <PostDate date={post.title} />
+                          <PostViews views={7} />
+                        </Box>
+                      </Box>
+                    </Grid>
+                  );
+              })}
+          </Grid>
+        </Box>
+      </Box>
+    </Fragment>
   );
 };
 

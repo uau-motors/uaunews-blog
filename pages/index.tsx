@@ -92,6 +92,7 @@ export const getStaticProps = async ({ params }) => {
   const posts = limitExcerptCharacters(limitTitleCharacters(allPosts, 80), 240);
   const carouselPosts = removeLast12Records(posts);
   const recentsPosts = removePartialRecords(posts, 12, 6);
+  const evaluationPosts = removePartialRecords(posts, 0, 3);
 
   const cmsData = {
     bodyClass: BodyClass({ isHome: true })
@@ -99,16 +100,21 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     revalidate: 10,
-    props: { cmsData, carouselPosts, recentsPosts }
+    props: { cmsData, carouselPosts, recentsPosts, evaluationPosts }
   };
 };
 
-const Home: React.FC<{ cmsData: CmsData; carouselPosts: CarouselDataI[]; recentsPosts: PostCardDataI[] }> = (props) => {
+const Home: React.FC<{
+  cmsData: CmsData;
+  carouselPosts: CarouselDataI[];
+  recentsPosts: PostCardDataI[];
+  evaluationPosts: PostCardDataI[];
+}> = (props) => {
   const router = useRouter();
   if (router.isFallback) return <div className="loading">Carregando...</div>;
   const bodyClass = BodyClass({ isHome: true });
   const { seo } = settings;
-  const { cmsData, carouselPosts, recentsPosts } = props;
+  const { cmsData, carouselPosts, recentsPosts, evaluationPosts } = props;
 
   // console.log("HOME PROPS ==> ", [cmsData, carouselPosts]);
 
@@ -122,7 +128,7 @@ const Home: React.FC<{ cmsData: CmsData; carouselPosts: CarouselDataI[]; recents
             <RecentsPosts posts={recentsPosts} />
           </Box>
           <Box className={`vehicle-evaluation`}>
-            <VehicleEvaluation />
+            <VehicleEvaluation posts={evaluationPosts} />
           </Box>
         </Container>
       </DefaultTemplate>

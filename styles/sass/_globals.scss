@@ -36,6 +36,27 @@ a {
 .theme-dark {
   color: #fff;
   background-color: #121212;
+  #header {
+    .hot-news {
+      .hot-slider {
+        a {
+          color: #fff;
+          &:hover {
+            color: var(--primary);
+          }
+        }
+      }
+    }
+  }
+  .MuiMenu-paper {
+    background-color: #121212;
+    li {
+      color: #fff;
+    }
+  }
+  .MuiDrawer-paper {
+    background-color: var(--secondary);
+  }
   main {
     color: #fff;
     background-color: #121212;
@@ -60,6 +81,16 @@ a {
       .ads {
         .ads-paper {
           background-color: var(--secondary) !important;
+        }
+      }
+    }
+    .vehicle-evaluation {
+      .post-metas {
+        .post-date,
+        .post-views {
+          h6 {
+            color: #aaa;
+          }
         }
       }
     }

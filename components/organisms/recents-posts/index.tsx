@@ -86,6 +86,7 @@ const RecentPosts = ({ posts }: RecentPostsProps) => {
             </Grid>
           </Grid>
         </Box>
+
         <Box className="visible-sm">
           <Grid container spacing={2}>
             {posts && posts.length > 0 && (
