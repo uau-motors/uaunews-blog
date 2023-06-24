@@ -1,18 +1,19 @@
-import * as React from "react";
+import React, { useContext } from "react";
 import { useRouter } from "next/router";
 import { Container } from "@mui/material";
-import CarouselBlog from "../components/organisms/carousel";
-import RecentsPosts from "../components/organisms/recents-posts";
-import VehicleEvaluation from "../components/organisms/vehicle-evaluation";
-import RecentsVehicles from "../components/organisms/recents-vehicles";
-import PostsVideos from "../components/organisms/posts-videos";
-import LastedPosts from "../components/organisms/lasteds-posts";
-import SidebarSocials from "../components/organisms/sidebar/socials";
-import SidebarNewsletter from "../components/organisms/sidebar/newsletter";
-import SidebarVehicles from "../components/organisms/sidebar/vehicles";
-import SidebarTags from "../components/organisms/sidebar/tags";
-import SidebarBrands from "../components/organisms/sidebar/brands";
-import SidebarArchive from "../components/organisms/sidebar/archive";
+import { ThemeContext } from "@utility/contexts/theme-context";
+import CarouselBlog from "@organisms/carousel";
+import RecentsPosts from "@organisms/recents-posts";
+import VehicleEvaluation from "@organisms/vehicle-evaluation";
+import RecentsVehicles from "@organisms/recents-vehicles";
+import PostsVideos from "@organisms/posts-videos";
+import LastedPosts from "@organisms/lasteds-posts";
+import SidebarSocials from "@organisms/sidebar/socials";
+import SidebarNewsletter from "@organisms/sidebar/newsletter";
+import SidebarVehicles from "@organisms/sidebar/vehicles";
+import SidebarTags from "@organisms/sidebar/tags";
+import SidebarBrands from "@organisms/sidebar/brands";
+import SidebarArchive from "@organisms/sidebar/archive";
 
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -23,6 +24,7 @@ import { SEO } from "@organisms/meta/seo";
 import { CmsData, CarouselDataI, PostCardDataI } from "@utility/interfaces";
 import { BodyClass } from "@helpers/bodyClass";
 import { getAllPosts } from "./api";
+import TitleSection from "@components/molecules/title-section";
 
 function removeLast12Records(jsonArray: any[]): any[] {
   const sortedArray = jsonArray.sort((a, b) => {
@@ -92,7 +94,7 @@ export const getStaticProps = async ({ params }) => {
   const posts = limitExcerptCharacters(limitTitleCharacters(allPosts, 80), 240);
   const carouselPosts = removeLast12Records(posts);
   const recentsPosts = removePartialRecords(posts, 12, 6);
-  const evaluationPosts = removePartialRecords(posts, 0, 3);
+  const evaluationPosts = removePartialRecords(posts, 0, 5);
 
   const cmsData = {
     bodyClass: BodyClass({ isHome: true })
@@ -110,13 +112,14 @@ const Home: React.FC<{
   recentsPosts: PostCardDataI[];
   evaluationPosts: PostCardDataI[];
 }> = (props) => {
+  const { theme } = useContext(ThemeContext);
   const router = useRouter();
   if (router.isFallback) return <div className="loading">Carregando...</div>;
   const bodyClass = BodyClass({ isHome: true });
   const { seo } = settings;
   const { cmsData, carouselPosts, recentsPosts, evaluationPosts } = props;
 
-  // console.log("HOME PROPS ==> ", [cmsData, carouselPosts]);
+  console.log("HOME PROPS ==> ", cmsData);
 
   return (
     <>
@@ -124,13 +127,25 @@ const Home: React.FC<{
       <DefaultTemplate {...{ bodyClass, id: "home", header: true, footer: true }}>
         <Container>
           <CarouselBlog posts={carouselPosts || []} />
+
           <Box className={"recents-news"}>
             <RecentsPosts posts={recentsPosts} />
           </Box>
+
           <Box className={`vehicle-evaluation`}>
             <VehicleEvaluation posts={evaluationPosts} />
           </Box>
+
+          <Box className={`recents-vehicles`}>
+            <RecentsVehicles posts={evaluationPosts} />
+          </Box>
         </Container>
+
+        <Box className={`posts-videos bg-${theme}`}>
+          <Container>
+            <PostsVideos posts={evaluationPosts} />
+          </Container>
+        </Box>
       </DefaultTemplate>
     </>
   );

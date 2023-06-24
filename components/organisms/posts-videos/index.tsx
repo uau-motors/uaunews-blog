@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import { Box, Grid } from "@mui/material";
 
@@ -8,76 +8,250 @@ import PostDate from "../../molecules/post-date";
 import PostViews from "../../molecules/post-views";
 import Play from "../../molecules/play";
 
-import data from "../../../utility/data/posts.json";
+import TitleSection from "@components/molecules/title-section";
+import { PostCardDataI } from "@utility/interfaces";
 
-const PostsVideos = () => {
+interface VideosProps {
+  posts: PostCardDataI[];
+}
+
+const PostsVideos = ({ posts }: VideosProps) => {
   const handleClick = () => {
     console.log("O botão foi clicado!");
   };
   return (
-    <Grid container> 
-      <Grid item xs={6} className="post-featured">
-          <PostImage
-            imageUrl={data[14].feature_image}
-            altText={data[3].title}
-            onClick={handleClick}
-          />
-          <Play/>
-          <Box className="content">
-            <PostTitle
-              title={
-                "Avaliação: Novo Toyota Corolla Cross híbrido é mais potente que o brasileiro"
-              }
-              onClick={handleClick}
-            />
-            <Box className="post-metas">
-              <PostDate date={new Date()} />
-              <PostViews views={7} />
+    <Fragment>
+      <Box className={"posts"}>
+        <Grid container spacing={2}>
+          <Grid item xs={12} className="post-featured">
+            <Box sx={{ width: "100%" }}>
+              <TitleSection title={"Vídeos"} />
             </Box>
-          </Box>
-      </Grid>
-      <Grid item xs={3} className="post">
-          <PostImage
-            imageUrl={data[17].feature_image}
-            altText={data[3].title}
-            onClick={handleClick}
-          />
-          <Play/>
-          <Box className="content">
-            <PostTitle
-              title={
-                "Novo Honda Civic Type R, com 330 cv, começa a desembarcar no Brasil
-              }
-              onClick={handleClick}
-            />
-            <Box className="post-metas">
-              <PostDate date={new Date()} />
-              <PostViews views={7} />
-            </Box>
-          </Box>
-      </Grid>
-      <Grid item xs={3} className="post">
-          <PostImage
-            imageUrl={data[19].feature_image}
-            altText={data[3].title}
-            onClick={handleClick}
-          />
-          <Play/>
-          <Box className="content">
-            <PostTitle
-              title={
-                "Volkswagen ID.7: sedã elétrico sucessor do Passat promete rodar por 700 km
-              }
-              onClick={handleClick}
-            />
-            <Box className="post-metas">
-              <PostDate date={new Date()} />
-              <PostViews views={7} />
-            </Box>
-          </Box>
-      </Grid>
-    </Grid>
-    );
+          </Grid>
+        </Grid>
+
+        <Box className="visible-xs">
+          <Grid container spacing={2}>
+            {posts && posts.length > 0 && (
+              <Grid item xs={12} className="post-featured">
+                <PostImage imageUrl={posts[0].feature_image} altText={posts[0].title} onClick={handleClick} />
+                <Play />
+                <Box className="content">
+                  <PostTitle title={posts[0].title} onClick={handleClick} />
+                  <Box className="post-metas">
+                    <PostDate date={new Date()} />
+                    <PostViews views={7} />
+                  </Box>
+                </Box>
+              </Grid>
+            )}
+            {posts &&
+              posts.length > 1 &&
+              posts.map((post, key) => {
+                if (key > 1 && key < 4)
+                  return (
+                    <Grid item xs={12} className={"post"} key={key}>
+                      <PostImage imageUrl={post.feature_image} altText={post.title} onClick={handleClick} />
+                      <Play />
+                      <Box className="content">
+                        <PostTitle title={post.title} onClick={handleClick} />
+                        <Box className="post-metas">
+                          <PostDate date={new Date()} />
+                          <PostViews views={7} />
+                        </Box>
+                      </Box>
+                    </Grid>
+                  );
+              })}
+          </Grid>
+        </Box>
+
+        <Box className="visible-sm">
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              {posts && posts.length > 0 && (
+                <Grid item xs={12} className="post-featured">
+                  <PostImage imageUrl={posts[0].feature_image} altText={posts[0].title} onClick={handleClick} />
+                  <Play />
+                  <Box className="content">
+                    <PostTitle title={posts[0].title} onClick={handleClick} />
+                    <Box className="post-metas">
+                      <PostDate date={new Date()} />
+                      <PostViews views={7} />
+                    </Box>
+                  </Box>
+                </Grid>
+              )}
+            </Grid>
+            <Grid item xs={6} className={"post"}>
+              {posts &&
+                posts.length > 1 &&
+                posts.map((post, key) => {
+                  if (key > 1 && key < 4)
+                    return (
+                      <Grid item xs={12} className="post-item" key={key}>
+                        <Grid container spacing={2}>
+                          <Grid item xs={5} className="card-video">
+                            <PostImage imageUrl={post.feature_image} altText={post.title} onClick={handleClick} />
+                            <Play />
+                          </Grid>
+                          <Grid item xs={7}>
+                            <Box className="content">
+                              <PostTitle title={post.title} onClick={handleClick} />
+                              <Box className="post-metas">
+                                <PostDate date={new Date()} />
+                                <PostViews views={7} />
+                              </Box>
+                            </Box>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    );
+                })}
+            </Grid>
+          </Grid>
+        </Box>
+
+        <Box className="visible-md">
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              {posts && posts.length > 0 && (
+                <Grid item xs={12} className="post-featured">
+                  <PostImage imageUrl={posts[0].feature_image} altText={posts[0].title} onClick={handleClick} />
+                  <Play />
+                  <Box className="content">
+                    <PostTitle title={posts[0].title} onClick={handleClick} />
+                    <Box className="post-metas">
+                      <PostDate date={new Date()} />
+                      <PostViews views={7} />
+                    </Box>
+                  </Box>
+                </Grid>
+              )}
+            </Grid>
+            <Grid item xs={6} className={"post"}>
+              {posts &&
+                posts.length > 1 &&
+                posts.map((post, key) => {
+                  if (key > 1 && key < 4)
+                    return (
+                      <Grid item xs={12} className="post-item" key={key}>
+                        <Grid container spacing={2}>
+                          <Grid item xs={5} className="card-video">
+                            <PostImage imageUrl={post.feature_image} altText={post.title} onClick={handleClick} />
+                            <Play />
+                          </Grid>
+                          <Grid item xs={7}>
+                            <Box className="content">
+                              <PostTitle title={post.title} onClick={handleClick} />
+                              <Box className="post-metas">
+                                <PostDate date={new Date()} />
+                                <PostViews views={7} />
+                              </Box>
+                            </Box>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    );
+                })}
+            </Grid>
+          </Grid>
+        </Box>
+
+        <Box className="visible-lg">
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              {posts && posts.length > 0 && (
+                <Grid item xs={12} className="post-featured">
+                  <PostImage imageUrl={posts[0].feature_image} altText={posts[0].title} onClick={handleClick} />
+                  <Play />
+                  <Box className="content">
+                    <PostTitle title={posts[0].title} onClick={handleClick} />
+                    <Box className="post-metas">
+                      <PostDate date={new Date()} />
+                      <PostViews views={7} />
+                    </Box>
+                  </Box>
+                </Grid>
+              )}
+            </Grid>
+            <Grid item xs={6} className={"post"}>
+              {posts &&
+                posts.length > 1 &&
+                posts.map((post, key) => {
+                  if (key > 1 && key < 4)
+                    return (
+                      <Grid item xs={12} className="post-item" key={key}>
+                        <Grid container spacing={2}>
+                          <Grid item xs={5} className="card-video">
+                            <PostImage imageUrl={post.feature_image} altText={post.title} onClick={handleClick} />
+                            <Play />
+                          </Grid>
+                          <Grid item xs={7}>
+                            <Box className="content">
+                              <PostTitle title={post.title} onClick={handleClick} />
+                              <Box className="post-metas">
+                                <PostDate date={new Date()} />
+                                <PostViews views={7} />
+                              </Box>
+                            </Box>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    );
+                })}
+            </Grid>
+          </Grid>
+        </Box>
+
+        <Box className="visible-xl">
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              {posts && posts.length > 0 && (
+                <Grid item xs={12} className="post-featured">
+                  <PostImage imageUrl={posts[0].feature_image} altText={posts[0].title} onClick={handleClick} />
+                  <Play />
+                  <Box className="content">
+                    <PostTitle title={posts[0].title} onClick={handleClick} />
+                    <Box className="post-metas">
+                      <PostDate date={new Date()} />
+                      <PostViews views={7} />
+                    </Box>
+                  </Box>
+                </Grid>
+              )}
+            </Grid>
+            <Grid item xs={6} className={"post"}>
+              {posts &&
+                posts.length > 1 &&
+                posts.map((post, key) => {
+                  if (key > 1 && key < 4)
+                    return (
+                      <Grid item xs={12} className="post-item" key={key}>
+                        <Grid container spacing={2}>
+                          <Grid item xs={5} className="card-video">
+                            <PostImage imageUrl={post.feature_image} altText={post.title} onClick={handleClick} />
+                            <Play />
+                          </Grid>
+                          <Grid item xs={7}>
+                            <Box className="content">
+                              <PostTitle title={post.title} onClick={handleClick} />
+                              <Box className="post-metas">
+                                <PostDate date={new Date()} />
+                                <PostViews views={7} />
+                              </Box>
+                            </Box>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    );
+                })}
+            </Grid>
+          </Grid>
+        </Box>
+      </Box>
+    </Fragment>
+  );
 };
 
 export default PostsVideos;

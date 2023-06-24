@@ -13,25 +13,25 @@ interface PostCardProps {
   content: any;
 }
 
-const PostCard = ({ featured, title, tags, excerpt, author, date, link }) => {
+const PostCard = ({ feature_image, title, tags, excerpt, author, date, link }) => {
   const handleClick = () => {
     console.log("O botão foi clicado!");
   };
 
   console.log("CONTENT ==> ", {
-    featured,
+    feature_image,
     title,
     tags,
     excerpt,
     author,
     link,
-    date,
+    date
   });
 
   return (
     <div className="search-post-card">
-      <PostImage imageUrl={featured} altText={title} onClick={handleClick} />
-      <PostTag label={tags.title} onClick={handleClick} />
+      <PostImage imageUrl={feature_image} altText={title} onClick={handleClick} />
+      <PostTag label={tags[0].name} onClick={handleClick} />
       <PostTitle title={title} onClick={handleClick} />
       <PostExcerpt excerpt={excerpt} />
       <Box className="post-metas">

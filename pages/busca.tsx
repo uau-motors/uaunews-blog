@@ -1,106 +1,81 @@
 import * as React from "react";
-import { useContext } from "react";
-import type { NextPage } from "next";
-import Layout from "../components/templates/home";
-import { Container } from "@mui/material";
-import CarouselBlog from "../components/organisms/carousel";
-import RecentsPosts from "../components/organisms/recents-posts";
-import { faker } from "@faker-js/faker";
-import { ThemeProvider } from "@mui/material/styles";
-import { ThemeContext } from "../utility/contexts/theme-context";
-import { lightTheme, darkTheme } from "@utility/theme";
-import { CssBaseline } from "@material-ui/core";
+
+import { useRouter } from "next/router";
+
 import SearchModal from "../components/organisms/search-modal";
 
-interface Tag {
-  slug: string;
-  title: string;
-}
+import DefaultTemplate from "@components/templates";
+import settings from "@utility/settings";
+import { SEO } from "@organisms/meta/seo";
+import { CmsData, CarouselDataI, PostCardDataI } from "@utility/interfaces";
+import { BodyClass } from "@helpers/bodyClass";
+import { getAllPosts } from "./api";
 
-interface Data {
-  news: DataItem[];
-  releases: DataItem[];
-  curiosities: DataItem[];
-  tips: DataItem[];
-  histories: DataItem[];
-}
-
-interface DataItem {
-  featured: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  tags: Tag;
-  slug: string;
-}
-
-const generateData = (): Data => {
-  const data: Data = {
-    news: [],
-    releases: [],
-    curiosities: [],
-    tips: [],
-    histories: []
-  };
-
-  const tags: Tag[] = [
-    {
-      slug: "news",
-      title: "Notícias"
-    },
-    {
-      slug: "releases",
-      title: "Lançamentos"
-    },
-    {
-      slug: "curiosities",
-      title: "Curiosidades"
-    },
-    {
-      slug: "tips",
-      title: "Dicas"
-    },
-    {
-      slug: "histories",
-      title: "Histórias"
-    }
-  ];
-
-  const keys: string[] = ["news", "releases", "curiosities", "tips", "histories"];
-
-  keys.forEach((key: string) => {
-    for (let i = 0; i < 12; i++) {
-      const tag = tags[Math.floor(Math.random() * tags.length)];
-      const dirPath: string = "/assets/images/samples/cars";
-      let fileName: string = `image-${i}.jpeg`;
-      let filePath: string = `${dirPath}/${fileName}`;
-      const dataItem: DataItem = {
-        featured: `${filePath}`,
-        title: faker.lorem.words(7),
-        date: faker.date.recent().toISOString().slice(0, 10),
-        excerpt: faker.lorem.words(15),
-        tags: tag,
-        slug: tag.slug
-      };
-      data[key].push(dataItem);
-    }
+function removeLast12Records(jsonArray: any[]): any[] {
+  const sortedArray = jsonArray.sort((a, b) => {
+    const dateA = new Date(a.created_at);
+    const dateB = new Date(b.created_at);
+    return dateA.getTime() - dateB.getTime();
   });
 
-  return data;
+  const posts = sortedArray.slice(-12);
+  return posts;
+}
+
+function limitExcerptCharacters(jsonArray: any[], maxLength: number): any[] {
+  const modifiedArray = jsonArray.map((record) => {
+    if (record.excerpt && record.excerpt.length > maxLength) {
+      record.excerpt = record.excerpt.substring(0, maxLength) + "...";
+    }
+    return record;
+  });
+
+  return modifiedArray;
+}
+
+function limitTitleCharacters(jsonArray: any[], maxLength: number): any[] {
+  const modifiedArray = jsonArray.map((record) => {
+    if (record.title && record.title.length > maxLength) {
+      record.title = record.title.substring(0, maxLength) + "...";
+    }
+    return record;
+  });
+
+  return modifiedArray;
+}
+
+export const getStaticProps = async ({ params }) => {
+  const allPosts = await getAllPosts();
+  const posts = limitExcerptCharacters(limitTitleCharacters(allPosts, 80), 240);
+  const searchPost = removeLast12Records(posts);
+
+  const cmsData = {
+    bodyClass: BodyClass({ isHome: false })
+  };
+
+  return {
+    revalidate: 10,
+    props: { cmsData, searchPost }
+  };
 };
 
-const recentsPosts = generateData();
+const SearchPage: React.FC<{
+  cmsData: CmsData;
+  searchPost: PostCardDataI[];
+}> = (props) => {
+  const router = useRouter();
+  if (router.isFallback) return <div className="loading">Carregando...</div>;
+  const bodyClass = BodyClass({ isHome: true });
+  const { seo } = settings;
+  const { cmsData, searchPost } = props;
 
-const SearchPage: NextPage = () => {
-  const { theme } = useContext(ThemeContext);
   return (
-    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <Layout id="home" theme={theme} header={false} footer={false}>
-        <main>
-          <SearchModal theme={theme} posts={recentsPosts} />
-        </main>
-      </Layout>
-    </ThemeProvider>
+    <>
+      <SEO {...{ title: seo.title, description: seo.description }} />
+      <DefaultTemplate {...{ bodyClass, id: "search", header: false, footer: false }}>
+        <SearchModal theme={"light"} posts={searchPost} />
+      </DefaultTemplate>
+    </>
   );
 };
 

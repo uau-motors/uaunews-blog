@@ -70,12 +70,6 @@ a {
           color: #212121 !important;
         }
       }
-      .post-date,
-      .post-views {
-        h6 {
-          color: #aaa;
-        }
-      }
     }
     .sidebar {
       .ads {
@@ -83,8 +77,13 @@ a {
           background-color: var(--secondary) !important;
         }
       }
+      .newsletter {
+        background-color: var(--secondary) !important;
+      }
     }
-    .vehicle-evaluation {
+    .recents-news,
+    .vehicle-evaluation,
+    .recents-vehicles {
       .post-metas {
         .post-date,
         .post-views {

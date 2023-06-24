@@ -65,3 +65,242 @@
     }
   }
 }
+
+@media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+  .recents-vehicles {
+    margin: 10px 0 0;
+    padding: 0;
+    .title-section {
+      margin: 0 0 30px 5px;
+    }
+    .post {
+      padding: 0;
+      margin: 0;
+      &:nth-child(1) {
+        margin: 0;
+      }
+      .post-card-thumb {
+        width: 100%;
+        height: 120px;
+        img {
+          height: 120px;
+          left: -20%;
+          position: relative;
+        }
+      }
+      .content {
+        padding: 0 0 0 10px;
+        border-left: 1px solid var(--primary);
+        .extra-meta,
+        .post-views {
+          display: none;
+        }
+      }
+    }
+    .sidebar .newsletter {
+      padding-top: 0;
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  .recents-vehicles {
+    margin: 10px 0 0;
+    padding: 0;
+    .title-section {
+      margin: 0 0 30px 5px;
+    }
+    .post {
+      padding: 0;
+      margin: 0;
+      &:nth-child(1) {
+        margin: 0;
+      }
+      .post-card-thumb {
+        width: 100%;
+        height: 120px;
+        img {
+          height: 120px;
+          left: -20%;
+          position: relative;
+        }
+      }
+      .content {
+        padding: 0 0 0 10px;
+        border-left: 1px solid var(--primary);
+        .extra-meta,
+        .post-views {
+          display: none;
+        }
+        .post-title h3 {
+          font-size: 16px;
+        }
+      }
+    }
+    .sidebar {
+      .newsletter {
+        padding: 0;
+        width: 100%;
+        background: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .box-newsletter {
+          margin: 15px 0;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  .recents-vehicles {
+    margin: 10px 0 0;
+    padding: 0;
+    .title-section {
+      margin: 0 0 30px 5px;
+    }
+    .posts-items {
+      padding: 10px 0 10px 20px;
+    }
+
+    .post {
+      padding: 0;
+      margin: 0;
+      .MuiGrid-item {
+        padding-right: 3px;
+        padding-bottom: 20px;
+      }
+      .post-item-1,
+      .post-item-2 {
+        padding-left: 0;
+        padding-right: 5px;
+      }
+
+      .post-item-2,
+      .post-item-4 {
+        padding-right: 0;
+        padding-left: 5px;
+      }
+
+      .post-card-thumb {
+        width: 100%;
+        height: 120px;
+        top: 5px;
+        img {
+          height: 120px;
+          left: -20%;
+          position: relative;
+        }
+      }
+      .content {
+        padding: 0 0 0 10px;
+        border-left: 1px solid var(--primary);
+        min-height: 100px;
+        .extra-meta,
+        .post-views {
+          display: none;
+        }
+        .post-title h3 {
+          font-size: 16px;
+        }
+      }
+      &:nth-child(1) {
+        margin: 0;
+        padding-right: 0;
+      }
+    }
+    .sidebar {
+      .newsletter {
+        padding: 0;
+        width: 100%;
+        background: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .box-newsletter {
+          margin: 0;
+        }
+        .form-newsletter {
+          padding: 15px 25px 25px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-xl) {
+  .recents-vehicles {
+    margin: 10px 0 0;
+    padding: 0;
+    .title-section {
+      margin: 0 0 30px 5px;
+    }
+    .posts-items {
+      padding: 10px 0 10px 20px;
+    }
+
+    .post {
+      padding: 0;
+      margin: 0;
+      .MuiGrid-item {
+        padding-right: 3px;
+        padding-bottom: 20px;
+      }
+      .post-item-1,
+      .post-item-2 {
+        padding-left: 0;
+        padding-right: 5px;
+      }
+
+      .post-item-2,
+      .post-item-4 {
+        padding-right: 0;
+        padding-left: 5px;
+      }
+
+      .post-card-thumb {
+        width: 100%;
+        height: 120px;
+        top: 5px;
+        img {
+          height: 120px;
+          left: -20%;
+          position: relative;
+        }
+      }
+      .content {
+        padding: 0 0 0 10px;
+        border-left: 1px solid var(--primary);
+        min-height: 100px;
+        .extra-meta,
+        .post-views {
+          display: none;
+        }
+        .post-title h3 {
+          font-size: 16px;
+        }
+      }
+      &:nth-child(1) {
+        margin: 0;
+        padding-right: 0;
+      }
+    }
+    .sidebar {
+      .newsletter {
+        padding: 0;
+        width: 100%;
+        background: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .box-newsletter {
+          margin: 0;
+        }
+        .form-newsletter {
+          padding: 15px 25px 25px;
+        }
+      }
+    }
+  }
+}
