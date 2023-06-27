@@ -8,9 +8,6 @@ import { SEO } from "@organisms/meta/seo";
 import { CmsData, PostCardDataI } from "@utility/interfaces";
 import { BodyClass } from "@helpers/bodyClass";
 
-import CategoryPage from "@organisms/categories";
-
-import LastedPosts from "@organisms/lasteds-posts";
 import SidebarSocials from "@organisms/sidebar/socials";
 import SidebarNewsletter from "@organisms/sidebar/newsletter";
 import SidebarTags from "@organisms/sidebar/tags";
@@ -96,7 +93,7 @@ function limitTitleCharacters(jsonArray: any[], maxLength: number): any[] {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const arr: string[] = ["slug1", "slug2"];
+  const arr: string[] = ["slug", "noticia-exemplo"];
   const paths = arr.map((slug) => {
     return {
       params: { slug: [slug] } // Definir o parâmetro slug como um array
