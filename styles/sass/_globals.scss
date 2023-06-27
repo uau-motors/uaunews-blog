@@ -80,10 +80,44 @@ a {
       .newsletter {
         background-color: var(--secondary) !important;
       }
+      .brands-container {
+        .brands-icons {
+          > div {
+            background-color: var(--secondary) !important;
+          }
+        }
+      }
+      .archive-container {
+        .archive-posts {
+          ul {
+            li {
+              border-bottom: 1px dotted var(--secondary);
+              &:hover {
+                .icon-container {
+                  svg {
+                    fill: var(--primary);
+                    color: var(--primary);
+                  }
+                }
+                .count {
+                  background: var(--primary);
+                }
+              }
+              .icon-container {
+                svg {
+                  fill: #aaa;
+                  color: #aaa;
+                }
+              }
+            }
+          }
+        }
+      }
     }
     .recents-news,
     .vehicle-evaluation,
-    .recents-vehicles {
+    .recents-vehicles,
+    .lasteds-posts {
       .post-metas {
         .post-date,
         .post-views {

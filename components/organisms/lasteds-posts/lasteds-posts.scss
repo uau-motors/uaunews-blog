@@ -104,3 +104,133 @@
     padding-right: 20px;
   }
 }
+
+@media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+  .lasteds-posts {
+    .post-list {
+      .post {
+        .post-title h3 {
+          font-size: 14px;
+        }
+        .post-card-thumb {
+          width: 100%;
+          height: 90px;
+          img {
+            height: 90px;
+            left: 0;
+          }
+        }
+        .post-tag {
+          width: 110px;
+          height: 20px;
+          bottom: 10px;
+          > span {
+            font-size: 0.9em;
+            padding: 2px 4px;
+          }
+        }
+      }
+    }
+    .ads-xs {
+      margin-top: 5px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  .lasteds-posts {
+    .post-list {
+      .post {
+        .post-title h3 {
+          font-size: 14px;
+        }
+        .post-card-thumb {
+          width: 100%;
+          height: 90px;
+          img {
+            height: 90px;
+            left: 0;
+          }
+        }
+        .post-tag {
+          width: 110px;
+          height: 20px;
+          bottom: 10px;
+          > span {
+            font-size: 0.9em;
+            padding: 2px 4px;
+          }
+        }
+      }
+    }
+    .ads-sm {
+      margin-top: 5px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  .lasteds-posts {
+    .post-list {
+      .post {
+        .post-title h3 {
+          font-size: 14px;
+        }
+        .post-card-thumb {
+          width: 100%;
+          height: 90px;
+          img {
+            height: 90px;
+            left: 0;
+          }
+        }
+        .post-tag {
+          width: 110px;
+          height: 20px;
+          bottom: 10px;
+          > span {
+            font-size: 0.9em;
+            padding: 2px 4px;
+          }
+        }
+      }
+    }
+    .ads-md {
+      margin-top: 5px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+  .lasteds-posts {
+    .post-list {
+      .post {
+        .post-title h3 {
+          font-size: 16px;
+        }
+      }
+    }
+    .ads-lg {
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+    .ads-lg {
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+    .brands-lg {
+      margin-top: 0;
+      margin-bottom: 5px;
+      .sidebar {
+        .brands-container {
+          .brands-icons {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}

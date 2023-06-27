@@ -1,9 +1,10 @@
 .vehicle-evaluation {
-  margin: 0;
+  margin-top: 30px;
+  margin-bottom: 30px;
   padding: 0 0 20px;
   .title-section {
     width: 250px;
-    margin: 20px 0;
+    margin: 10px 0 20px;
   }
 
   .post-featured,
@@ -119,9 +120,6 @@
   .vehicle-evaluation {
     margin: 0;
     padding: 0;
-    .title-section {
-      margin: 20px 0 0;
-    }
     .post-featured {
       margin-bottom: 25px;
       .content {

@@ -95,6 +95,7 @@ export const getStaticProps = async ({ params }) => {
   const carouselPosts = removeLast12Records(posts);
   const recentsPosts = removePartialRecords(posts, 12, 6);
   const evaluationPosts = removePartialRecords(posts, 0, 5);
+  const lastedPosts = removePartialRecords(posts, 12, 6);
 
   const cmsData = {
     bodyClass: BodyClass({ isHome: true })
@@ -102,7 +103,7 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     revalidate: 10,
-    props: { cmsData, carouselPosts, recentsPosts, evaluationPosts }
+    props: { cmsData, carouselPosts, recentsPosts, evaluationPosts, lastedPosts }
   };
 };
 
@@ -111,13 +112,14 @@ const Home: React.FC<{
   carouselPosts: CarouselDataI[];
   recentsPosts: PostCardDataI[];
   evaluationPosts: PostCardDataI[];
+  lastedPosts: PostCardDataI[];
 }> = (props) => {
   const { theme } = useContext(ThemeContext);
   const router = useRouter();
   if (router.isFallback) return <div className="loading">Carregando...</div>;
   const bodyClass = BodyClass({ isHome: true });
   const { seo } = settings;
-  const { cmsData, carouselPosts, recentsPosts, evaluationPosts } = props;
+  const { cmsData, carouselPosts, recentsPosts, evaluationPosts, lastedPosts } = props;
 
   console.log("HOME PROPS ==> ", cmsData);
 
@@ -131,19 +133,29 @@ const Home: React.FC<{
           <Box className={"recents-news"}>
             <RecentsPosts posts={recentsPosts} />
           </Box>
-
-          <Box className={`vehicle-evaluation`}>
-            <VehicleEvaluation posts={evaluationPosts} />
-          </Box>
-
-          <Box className={`recents-vehicles`}>
-            <RecentsVehicles posts={evaluationPosts} />
-          </Box>
         </Container>
+
+        <Box className={`vehicle-evaluation bg-${theme}`}>
+          <Container>
+            <VehicleEvaluation posts={evaluationPosts} />
+          </Container>
+        </Box>
+
+        <Box className={`recents-vehicles`}>
+          <Container>
+            <RecentsVehicles posts={evaluationPosts} />
+          </Container>
+        </Box>
 
         <Box className={`posts-videos bg-${theme}`}>
           <Container>
             <PostsVideos posts={evaluationPosts} />
+          </Container>
+        </Box>
+
+        <Box className={`lasteds-posts`}>
+          <Container>
+            <LastedPosts posts={lastedPosts} />
           </Container>
         </Box>
       </DefaultTemplate>

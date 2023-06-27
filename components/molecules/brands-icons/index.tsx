@@ -12,7 +12,7 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: "center",
   color: theme.palette.text.secondary,
   height: 60,
-  lineHeight: "60px",
+  lineHeight: "60px"
 }));
 
 const BrandIcons = () => {
@@ -22,18 +22,19 @@ const BrandIcons = () => {
         p: 1,
         bgcolor: "background.default",
         display: "grid",
-        gridTemplateColumns: { md: "1fr 1fr 1fr 1fr" },
-        gap: 1,
+        gridTemplateColumns: {
+          xs: "1fr 1fr 1fr 1fr",
+          sm: "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr",
+          md: "1fr 1fr 1fr 1fr"
+        },
+
+        gap: 2
       }}
     >
       {sortedBrandsIcons.map((brand, key) => (
         <Item key={key} elevation={1} className="brand-item">
           <Link href={brand}>
-            <img
-              src={`/assets/images/logos/vehicles/${brand}.svg`}
-              alt={brand}
-              loading="lazy"
-            />
+            <img src={`/assets/images/logos/vehicles/${brand}.svg`} alt={brand} loading="lazy" />
           </Link>
         </Item>
       ))}

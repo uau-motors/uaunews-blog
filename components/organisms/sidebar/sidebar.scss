@@ -364,41 +364,37 @@
       min-width: 50px;
     }
     .archive-posts {
-      li {
-        border-bottom: 1px dotted var(--secondary);
-        padding: 0;
-        height: 30px;
-        margin: 4px 0;
-        .icon-container {
-          position: absolute;
-          left: 0;
-          min-width: 36px;
-          transition: all ease-in-out 0.3s;
-        }
-        &:hover {
+      ul {
+        background: inherit;
+        li {
+          border-bottom: 1px dotted #aaa;
+          padding: 0;
+          height: 30px;
+          margin: 4px 0;
           .icon-container {
-            left: 10px;
-            svg {
-              fill: var(--primary);
-              color: var(--primary);
+            position: absolute;
+            left: 0;
+            min-width: 36px;
+            transition: all ease-in-out 0.3s;
+          }
+          &:hover {
+            .icon-container {
+              left: 10px;
             }
           }
-          .count {
-            background: var(--primary);
-          }
         }
-      }
-      .button {
-        justify-content: flex-start;
-        padding-left: 36px;
-      }
-      .count {
-        padding: 2px 5px;
-        border-radius: 4px;
-        background: var(--secondary);
-        font-size: 0.85em;
-        color: #fff;
-        transition: all ease-in-out 0.3s;
+        .button {
+          justify-content: flex-start;
+          padding-left: 36px;
+        }
+        .count {
+          padding: 2px 5px;
+          border-radius: 4px;
+          background: var(--secondary);
+          font-size: 0.85em;
+          color: #fff;
+          transition: all ease-in-out 0.3s;
+        }
       }
     }
   }
@@ -422,6 +418,7 @@
 @media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
   .sidebar {
     .social-counter {
+      min-height: 90px;
       grid-template-columns: repeat(6, minmax(56px, 1fr));
       .box {
         height: 48px;
@@ -442,9 +439,55 @@
         }
       }
     }
+    .brands-container {
+      margin-bottom: 30px;
+      .brands-icons {
+        margin-left: 0;
+        > div {
+          background-color: #f2f2f2;
+          border-radius: 5px;
+          margin: 0;
+          padding: 10px;
+        }
+      }
+    }
   }
 }
-
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  .sidebar {
+    .social-counter {
+      min-height: 90px;
+      grid-template-columns: repeat(6, minmax(56px, 1fr));
+      .box {
+        height: 48px;
+        width: 48px;
+        .counter-icon svg {
+          width: 24px;
+          height: 24px;
+          position: relative;
+          top: 7px;
+        }
+        .num-count {
+          position: relative;
+          top: -2px;
+          font-size: 0.9em;
+        }
+        .counter-subscribers {
+          display: none;
+        }
+      }
+    }
+    .brands-container {
+      margin-bottom: 30px;
+      .brands-icons {
+        margin-left: 0;
+        > div {
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+}
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
   .sidebar {
     .ads {
@@ -470,7 +513,6 @@
     }
   }
 }
-
 @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
   .sidebar {
     .ads {
@@ -493,18 +535,108 @@
       }
     }
     .social-counter {
-      grid-template-columns: repeat(3, minmax(72px, 1fr));
+      grid-template-columns: repeat(3, minmax(77px, 1fr));
       .box {
-        height: 72px;
-        width: 72px;
+        height: 77px;
+        width: 77px;
         .counter-icon svg {
           width: 32px;
           height: 32px;
           position: relative;
           top: 7px;
         }
-        .counter-subscribers {
-          display: none;
+      }
+    }
+    .brands-container {
+      .brands-icons {
+        margin-left: 0;
+        .brand-item {
+          height: 46px;
+          padding: 3px;
+          width: 46px;
+          img {
+            height: 36px;
+            width: 36px;
+          }
+        }
+      }
+    }
+    .tags-container {
+      .title-section {
+        width: 70px;
+        margin: 15px 6px;
+      }
+      .tags-cloud {
+        margin-left: 0;
+        a {
+          span {
+            padding: 5px 0;
+          }
+        }
+      }
+    }
+    .archive-container {
+      .archive-posts {
+        ul {
+          background: inherit;
+        }
+      }
+    }
+  }
+}
+@media (min-width: $screen-xl) {
+  .sidebar {
+    .ads {
+      .ads-paper {
+        max-height: 278px;
+        min-height: 198px;
+        height: 100%;
+      }
+      .ads-container {
+        height: auto;
+        .ads-paper {
+          .ads-image {
+            width: 100%;
+            height: auto;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .brands-container {
+      .brands-icons {
+        margin-left: 0;
+        .brand-item {
+          height: 46px;
+          padding: 3px;
+          width: 46px;
+          img {
+            height: 36px;
+            width: 36px;
+          }
+        }
+      }
+    }
+    .tags-container {
+      .title-section {
+        width: 70px;
+        margin: 30px 6px 15px;
+      }
+      .tags-cloud {
+        margin-left: 0;
+        a {
+          span {
+            padding: 5px 0;
+          }
+        }
+      }
+    }
+    .archive-container {
+      .archive-posts {
+        ul {
+          background: inherit;
         }
       }
     }

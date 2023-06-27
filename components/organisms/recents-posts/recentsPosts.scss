@@ -243,7 +243,24 @@
     }
   }
 }
-
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  .recents-news {
+    .post-featured {
+      .post-title h3 {
+        font-size: 18px;
+      }
+      .post-excerpt {
+        font-size: 14px;
+      }
+      .post-card-thumb {
+        height: 480px;
+        img {
+          height: 480px;
+        }
+      }
+    }
+  }
+}
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
   .recents-news {
     .post-featured {
@@ -262,7 +279,6 @@
     }
   }
 }
-
 @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
   .recents-news {
     .post-featured {

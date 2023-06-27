@@ -130,7 +130,7 @@ const RecentsVehicles = ({ posts }: RecentsVehiclesProps) => {
 
         <Box className="visible-lg">
           <Grid container spacing={2}>
-            <Grid item xs={8} className="posts-items">
+            <Grid item xs={9} className="posts-items">
               <Grid container className="post">
                 {posts &&
                   posts.length > 1 &&
@@ -157,7 +157,7 @@ const RecentsVehicles = ({ posts }: RecentsVehiclesProps) => {
                   })}
               </Grid>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
               <SidebarNewsletter theme={"light"} />
             </Grid>
           </Grid>
