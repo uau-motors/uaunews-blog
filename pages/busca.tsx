@@ -44,7 +44,7 @@ function limitTitleCharacters(jsonArray: any[], maxLength: number): any[] {
   return modifiedArray;
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async () => {
   const allPosts = await getAllPosts();
   const posts = limitExcerptCharacters(limitTitleCharacters(allPosts, 80), 240);
   const searchPost = removeLast12Records(posts);
@@ -73,7 +73,7 @@ const SearchPage: React.FC<{
     <>
       <SEO {...{ title: seo.title, description: seo.description }} />
       <DefaultTemplate {...{ bodyClass, id: "search", header: false, footer: false }}>
-        <SearchModal theme={"light"} posts={searchPost} />
+        <SearchModal posts={searchPost} />
       </DefaultTemplate>
     </>
   );

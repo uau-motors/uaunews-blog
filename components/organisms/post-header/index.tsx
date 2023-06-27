@@ -1,12 +1,12 @@
-import Breadcrumb from "@/components/molecules/breadcrumb";
-import PostAuthor from "@/components/molecules/post-author";
-import PostDate from "@/components/molecules/post-date";
-import PostExcerpt from "@/components/molecules/post-excerpt";
-import PostReadingTime from "@/components/molecules/post-reading-time";
-import PostShare from "@/components/molecules/post-share";
-import PostTag from "@/components/molecules/post-tag";
-import PostTitle from "@/components/molecules/post-title";
-import PostViews from "@/components/molecules/post-views";
+import Breadcrumb from "@molecules/breadcrumb";
+import PostAuthor from "@molecules/post-author";
+import PostDate from "@molecules/post-date";
+import PostExcerpt from "@molecules/post-excerpt";
+import PostReadingTime from "@molecules/post-reading-time";
+import PostShare from "@molecules/post-share";
+import PostTag from "@molecules/post-tag";
+import PostTitle from "@molecules/post-title";
+import PostViews from "@molecules/post-views";
 import { Box, Container, Grid } from "@mui/material";
 import React from "react";
 
@@ -36,7 +36,7 @@ Avaliação: Novo Toyota Corolla Cross híbrido é mais potente que o brasileiro
       </Grid>
       <Grid item xs={6}>
         <Box className="post-metas">
-          <PostDate date={new Date()} />
+          <PostDate date={"01/01/2023"} />
           <PostViews views={7} />
           <PostReadingTime time={4} />
         </Box>

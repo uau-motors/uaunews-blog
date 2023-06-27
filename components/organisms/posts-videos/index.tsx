@@ -39,7 +39,7 @@ const PostsVideos = ({ posts }: VideosProps) => {
                 <Box className="content">
                   <PostTitle title={posts[0].title} onClick={handleClick} />
                   <Box className="post-metas">
-                    <PostDate date={new Date()} />
+                    <PostDate date={"01/01/2023"} />
                     <PostViews views={7} />
                   </Box>
                 </Box>
@@ -56,7 +56,7 @@ const PostsVideos = ({ posts }: VideosProps) => {
                       <Box className="content">
                         <PostTitle title={post.title} onClick={handleClick} />
                         <Box className="post-metas">
-                          <PostDate date={new Date()} />
+                          <PostDate date={"01/01/2023"} />
                           <PostViews views={7} />
                         </Box>
                       </Box>
@@ -76,7 +76,7 @@ const PostsVideos = ({ posts }: VideosProps) => {
                   <Box className="content">
                     <PostTitle title={posts[0].title} onClick={handleClick} />
                     <Box className="post-metas">
-                      <PostDate date={new Date()} />
+                      <PostDate date={"01/01/2023"} />
                       <PostViews views={7} />
                     </Box>
                   </Box>
@@ -99,7 +99,7 @@ const PostsVideos = ({ posts }: VideosProps) => {
                             <Box className="content">
                               <PostTitle title={post.title} onClick={handleClick} />
                               <Box className="post-metas">
-                                <PostDate date={new Date()} />
+                                <PostDate date={"01/01/2023"} />
                                 <PostViews views={7} />
                               </Box>
                             </Box>
@@ -122,7 +122,7 @@ const PostsVideos = ({ posts }: VideosProps) => {
                   <Box className="content">
                     <PostTitle title={posts[0].title} onClick={handleClick} />
                     <Box className="post-metas">
-                      <PostDate date={new Date()} />
+                      <PostDate date={"01/01/2023"} />
                       <PostViews views={7} />
                     </Box>
                   </Box>
@@ -145,7 +145,7 @@ const PostsVideos = ({ posts }: VideosProps) => {
                             <Box className="content">
                               <PostTitle title={post.title} onClick={handleClick} />
                               <Box className="post-metas">
-                                <PostDate date={new Date()} />
+                                <PostDate date={"01/01/2023"} />
                                 <PostViews views={7} />
                               </Box>
                             </Box>
@@ -168,7 +168,7 @@ const PostsVideos = ({ posts }: VideosProps) => {
                   <Box className="content">
                     <PostTitle title={posts[0].title} onClick={handleClick} />
                     <Box className="post-metas">
-                      <PostDate date={new Date()} />
+                      <PostDate date={"01/01/2023"} />
                       <PostViews views={7} />
                     </Box>
                   </Box>
@@ -191,7 +191,7 @@ const PostsVideos = ({ posts }: VideosProps) => {
                             <Box className="content">
                               <PostTitle title={post.title} onClick={handleClick} />
                               <Box className="post-metas">
-                                <PostDate date={new Date()} />
+                                <PostDate date={"01/01/2023"} />
                                 <PostViews views={7} />
                               </Box>
                             </Box>
@@ -214,7 +214,7 @@ const PostsVideos = ({ posts }: VideosProps) => {
                   <Box className="content">
                     <PostTitle title={posts[0].title} onClick={handleClick} />
                     <Box className="post-metas">
-                      <PostDate date={new Date()} />
+                      <PostDate date={"01/01/2023"} />
                       <PostViews views={7} />
                     </Box>
                   </Box>
@@ -237,7 +237,7 @@ const PostsVideos = ({ posts }: VideosProps) => {
                             <Box className="content">
                               <PostTitle title={post.title} onClick={handleClick} />
                               <Box className="post-metas">
-                                <PostDate date={new Date()} />
+                                <PostDate date={"01/01/2023"} />
                                 <PostViews views={7} />
                               </Box>
                             </Box>

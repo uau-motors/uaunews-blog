@@ -45,15 +45,10 @@ const SearchBox: React.FC<SearchBoxProps> = ({ onSearch }) => {
         inputProps={{ "aria-label": "buscar por..." }}
         value={searchTerm}
         onChange={(event) => setSearchTerm(event.target.value)}
-        onKeyDown={handleKeyDown}
+        // onKeyDown={handleKeyDown}
       />
       {searchTerm && (
-        <IconButton
-          type="button"
-          sx={{ p: "10px" }}
-          aria-label="search"
-          onClick={onClose}
-        >
+        <IconButton type="button" sx={{ p: "10px" }} aria-label="search" onClick={onClose}>
           <CloseIcon />
         </IconButton>
       )}

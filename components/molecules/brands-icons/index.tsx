@@ -4,6 +4,7 @@ import { Paper, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { BrandsIcons } from "../../../utility/constants";
 import Link from "next/link";
+import Image from "next/image";
 
 const sortedBrandsIcons = BrandsIcons.sort((a, b) => a.localeCompare(b));
 
@@ -34,7 +35,13 @@ const BrandIcons = () => {
       {sortedBrandsIcons.map((brand, key) => (
         <Item key={key} elevation={1} className="brand-item">
           <Link href={brand}>
-            <img src={`/assets/images/logos/vehicles/${brand}.svg`} alt={brand} loading="lazy" />
+            <Image
+              src={`/assets/images/logos/vehicles/${brand}.svg`}
+              alt={brand}
+              loading="lazy"
+              width={256}
+              height={256}
+            />
           </Link>
         </Item>
       ))}

@@ -8,16 +8,17 @@ interface PostLongTextProps {
 
 const useStyles = makeStyles<Theme>((theme) => ({
   root: {
-    marginBottom: theme.spacing(2),
-  },
+    marginBottom: theme.spacing(2)
+  }
 }));
 
 const PostLongText: React.FC<PostLongTextProps> = ({ text }) => {
   const classes = useStyles();
+  const parsedText = ReactHtmlParser(text);
 
   return (
     <Typography variant="body1" className={classes.root}>
-      {ReactHtmlParser(text)}
+      {parsedText}
     </Typography>
   );
 };

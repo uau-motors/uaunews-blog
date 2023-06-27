@@ -1,8 +1,8 @@
-import TitleSection from "@/components/atoms/title-section";
-import PostCredit from "@/components/molecules/post-credit";
-import PostImage from "@/components/molecules/post-image";
-import PostTitle from "@/components/molecules/post-title";
-import RelatedsPosts from "@/components/molecules/relateds-posts";
+import TitleSection from "@molecules/title-section";
+import PostCredit from "@molecules/post-credit";
+import PostImage from "@molecules/post-image";
+import PostTitle from "@molecules/post-title";
+import RelatedsPosts from "@molecules/relateds-posts";
 
 import {
   Box,
@@ -20,13 +20,13 @@ import {
   Typography
 } from "@mui/material";
 import React from "react";
-import NewsletterPost from "@/components/molecules/newsletter-post";
-import PostShare from "@/components/molecules/post-share";
-import PostNavigator from "@/components/molecules/post-navegator";
-import PostComment from "@/components/molecules/post-comment";
-import PostContent from "@/components/molecules/post-content";
-import PostGallery from "@/components/molecules/post-gallery";
-import PostVideo from "@/components/molecules/post-video";
+import NewsletterPost from "@molecules/newsletter-post";
+import PostShare from "@molecules/post-share";
+import PostNavigator from "@molecules/post-navegator";
+import PostComment from "@molecules/post-comment";
+import PostContent from "@molecules/post-content";
+import PostGallery from "@molecules/post-gallery";
+import PostVideo from "@molecules/post-video";
 
 interface SinglePostProps {
   format: string;

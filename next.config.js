@@ -16,6 +16,8 @@ const nextConfig = {
       "www.gravatar.com",
       "github.githubassets.com",
       "securemove.in",
+      "demo.tagdiv.com",
+      "via.placeholder.com",
       "192.168.15*",
       ...(process.env.IMAGE_DOMAINS || "").split(",")
     ],

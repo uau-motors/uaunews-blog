@@ -1,14 +1,4 @@
-import {
-  Box,
-  Button,
-  Checkbox,
-  Container,
-  FormControlLabel,
-  Grid,
-  Paper,
-  TextField,
-  Typography
-} from "@mui/material";
+import { Box, Button, Checkbox, Container, FormControlLabel, Grid, TextField, Typography } from "@mui/material";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
 import ForwardToInboxIcon from "@mui/icons-material/ForwardToInbox";
@@ -16,6 +6,7 @@ import ShareLocationIcon from "@mui/icons-material/ShareLocation";
 import React, { useState } from "react";
 import Breadcrumb from "../breadcrumb";
 import Select from "react-select";
+import Image from "next/image";
 
 const arrayStates = [{ value: "", label: "Informe o estado" }];
 const arrayCities = [{ value: "", label: "Selecione a cidade" }];
@@ -45,9 +36,8 @@ const ContactUs = () => {
                 <Box>
                   <h5>Fale Conosco</h5>
                   <p>
-                    Entre em contato conosco caso tenha alguma dúvida ou queira
-                    contratar algum de nossos serviços, temos uma equipe
-                    especializada que irá lhe atender.
+                    Entre em contato conosco caso tenha alguma dúvida ou queira contratar algum de nossos serviços,
+                    temos uma equipe especializada que irá lhe atender.
                   </p>
                 </Box>
               </Box>
@@ -102,10 +92,9 @@ const ContactUs = () => {
               <Box className="box-image">
                 <Typography variant="h3">Como podemos ajudar?</Typography>
                 <Typography variant="body2">
-                  Preencha as informações ao lado que em breve entraremos em
-                  contato com você.
+                  Preencha as informações ao lado que em breve entraremos em contato com você.
                 </Typography>
-                <img src="/assets/images/contact.webp" alt="contact person" />
+                <Image src="/assets/images/contact.webp" alt="contact person" width={1920} height={1080} />
               </Box>
             </Grid>
             <Grid item xs={7} className="box-form">
@@ -152,13 +141,10 @@ const ContactUs = () => {
                       id="uf"
                       options={states}
                       className="select"
-                      defaultValue={arrayStates}
                       isSearchable
                       isClearable
                       onChange={handleChange("uf")}
-                      margin="normal"
                       value={uf}
-                      variant="outlined"
                     />
                   </Grid>
                   <Grid item xs={8}>
@@ -197,29 +183,17 @@ const ContactUs = () => {
                     Capcha
                   </Grid>
                   <Grid item xs={4}>
-                    <Button
-                      variant="contained"
-                      disabled={true}
-                      startIcon={<WhatsAppIcon />}
-                    >
+                    <Button variant="contained" disabled={true} startIcon={<WhatsAppIcon />}>
                       Whatsapp
                     </Button>
                   </Grid>
                   <Grid item xs={4}>
-                    <Button
-                      variant="contained"
-                      disabled={true}
-                      startIcon={<PhoneInTalkIcon />}
-                    >
+                    <Button variant="contained" disabled={true} startIcon={<PhoneInTalkIcon />}>
                       Ligue-me
                     </Button>
                   </Grid>
                   <Grid item xs={4}>
-                    <Button
-                      variant="contained"
-                      disabled={true}
-                      startIcon={<ForwardToInboxIcon />}
-                    >
+                    <Button variant="contained" disabled={true} startIcon={<ForwardToInboxIcon />}>
                       Por email
                     </Button>
                   </Grid>

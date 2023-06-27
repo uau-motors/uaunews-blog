@@ -2,6 +2,7 @@ import { Skeleton, Box, Typography, Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import OpenInFullIcon from "@mui/icons-material/OpenInFull";
+import Image from "next/image";
 
 interface PostImageProps {
   imageUrl: string;
@@ -29,44 +30,27 @@ const PostImage: React.FC<PostImageProps> = ({
   }, []);
 
   useEffect(() => {
-    if (zoom) {
+    if (zoom === true) {
       setFull(false);
     }
-  }, [full]);
+  }, [full, zoom]);
 
   return (
-    <div
-      className={`post-image size-${format} position-${position} image-${
-        full === true ? "full" : ""
-      }`}
-    >
+    <div className={`post-image size-${format} position-${position} image-${full === true ? "full" : ""}`}>
       {imageUrl && imageUrl != "/assets/images/samples/cars/image-0.jpeg" ? (
         <>
           {zoom && (
             <figure onClick={() => setFull(full ? false : true)}>
-              <img
-                decoding="async"
-                loading="lazy"
-                src={imageUrl}
-                alt={altText}
-              />
+              <Image decoding="async" loading="lazy" src={imageUrl} alt={altText} width={1920} height={1080} />
             </figure>
           )}
           {!zoom && (
             <figure>
-              <img
-                decoding="async"
-                loading="lazy"
-                src={imageUrl}
-                alt={altText}
-              />
+              <Image decoding="async" loading="lazy" src={imageUrl} alt={altText} width={1920} height={1080} />
             </figure>
           )}
           {format === "large" && zoom === true && (
-            <Button
-              onClick={() => setFull(full ? false : true)}
-              className="close"
-            >
+            <Button onClick={() => setFull(full ? false : true)} className="close">
               {full && <CloseIcon />}
               {!full && <OpenInFullIcon />}
             </Button>

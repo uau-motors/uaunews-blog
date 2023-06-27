@@ -11,21 +11,20 @@ import "swiper/css/effect-fade";
 import SwiperClass from "swiper/types/swiper-class";
 import SwiperCore, { FreeMode, Navigation, Thumbs, Controller } from "swiper";
 import PostImage from "../post-image";
+import Image from "next/image";
 
 const PostGallery = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperCore>();
   const [firstSwiper, setFirstSwiper] = useState<SwiperClass>();
   const [secondSwiper, setSecondSwiper] = useState<SwiperClass>();
-  const swiper1Ref = useRef<React.MutableRefObject<null>>(null);
-  const swiper2Ref = useRef();
+  const swiper1Ref = useRef<any>(null);
+  const swiper2Ref = useRef<any>(null);
 
   useLayoutEffect(() => {
-    if (swiper1Ref.current !== null) {
-      swiper1Ref.current.controller.control = swiper2Ref.current;
+    if (swiper1Ref.current !== null && swiper2Ref.current !== null) {
+      swiper1Ref.current.swiper.controller.control = swiper2Ref.current.swiper;
     }
   }, []);
-
-  console.log("THUMBSSWIPER ==> ", thumbsSwiper);
 
   return (
     <>
@@ -77,7 +76,12 @@ const PostGallery = () => {
           return (
             <>
               <SwiperSlide>
-                <img src={`/assets/images/samples/cars/image-${i}.jpeg`} />
+                <Image
+                  src={`/assets/images/samples/cars/image-${i}.jpeg`}
+                  alt={`image-${i}`}
+                  width={1920}
+                  height={1080}
+                />
               </SwiperSlide>
             </>
           );

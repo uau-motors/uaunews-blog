@@ -1,4 +1,4 @@
-import AboutUs from "@/components/molecules/about-us";
+import AboutUs from "@molecules/about-us";
 import React from "react";
 
 const AboutPage = () => {

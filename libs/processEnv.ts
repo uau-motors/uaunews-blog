@@ -1,5 +1,3 @@
-import { ToolbarNavI } from "@utility/interfaces";
-
 // siteUrl, platform, ghostAPIUrl, ghostAPIKey must be defined here
 export const ghostAPIUrl = process.env.CMS_GHOST_API_URL || "http://localhost:3000";
 export const ghostAPIKey = process.env.CMS_GHOST_API_KEY || "387f956eaa95345f7bb484d0b8";

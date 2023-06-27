@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Box, Paper, Skeleton } from "@mui/material";
+import Image from "next/image";
 
-const Ads = ({ format, imageUrl, altText }) => {
+interface AdsPropsI {
+  format?: string;
+  imageUrl?: string;
+  altText?: string;
+}
+
+const Ads = ({ format, imageUrl, altText }: AdsPropsI) => {
   const [width, setWidth] = useState(250);
   const [height, setHeight] = useState(250);
 
@@ -14,7 +21,7 @@ const Ads = ({ format, imageUrl, altText }) => {
       setHeight(250);
       setWidth(250);
     }
-  }, []);
+  }, [format]);
 
   return (
     <Box className="ads">
@@ -22,7 +29,13 @@ const Ads = ({ format, imageUrl, altText }) => {
         <Paper sx={{ display: { xl: "none", xs: "block" } }} className="ads-paper">
           {imageUrl ? (
             <center>
-              <img src={imageUrl} className="ads-image" width={width} height={height} alt={altText} />
+              <Image
+                src={imageUrl}
+                className="ads-image"
+                width={width}
+                height={height}
+                alt={altText ? altText : "ads-image"}
+              />
             </center>
           ) : (
             <Skeleton variant="rectangular" width={width} height={height} className="ads-image" />
@@ -31,7 +44,13 @@ const Ads = ({ format, imageUrl, altText }) => {
         <Paper sx={{ display: { xl: "block", xs: "none" } }} className="ads-paper">
           {imageUrl ? (
             <center>
-              <img src={imageUrl} className="ads-image" width={width} height={height} alt={altText} />
+              <Image
+                src={imageUrl}
+                className="ads-image"
+                width={width}
+                height={height}
+                alt={altText ? altText : "ads-image"}
+              />
             </center>
           ) : (
             <Skeleton variant="rectangular" width="100%" height="auto" className="ads-image" />

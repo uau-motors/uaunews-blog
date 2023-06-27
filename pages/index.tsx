@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useRouter } from "next/router";
-import { Container } from "@mui/material";
+import { Box, Container, Grid } from "@mui/material";
 import { ThemeContext } from "@utility/contexts/theme-context";
 import CarouselBlog from "@organisms/carousel";
 import RecentsPosts from "@organisms/recents-posts";
@@ -8,15 +8,6 @@ import VehicleEvaluation from "@organisms/vehicle-evaluation";
 import RecentsVehicles from "@organisms/recents-vehicles";
 import PostsVideos from "@organisms/posts-videos";
 import LastedPosts from "@organisms/lasteds-posts";
-import SidebarSocials from "@organisms/sidebar/socials";
-import SidebarNewsletter from "@organisms/sidebar/newsletter";
-import SidebarVehicles from "@organisms/sidebar/vehicles";
-import SidebarTags from "@organisms/sidebar/tags";
-import SidebarBrands from "@organisms/sidebar/brands";
-import SidebarArchive from "@organisms/sidebar/archive";
-
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
 
 import DefaultTemplate from "@components/templates";
 import settings from "@utility/settings";
@@ -24,7 +15,6 @@ import { SEO } from "@organisms/meta/seo";
 import { CmsData, CarouselDataI, PostCardDataI } from "@utility/interfaces";
 import { BodyClass } from "@helpers/bodyClass";
 import { getAllPosts } from "./api";
-import TitleSection from "@components/molecules/title-section";
 
 function removeLast12Records(jsonArray: any[]): any[] {
   const sortedArray = jsonArray.sort((a, b) => {
@@ -89,7 +79,7 @@ function limitTitleCharacters(jsonArray: any[], maxLength: number): any[] {
   return modifiedArray;
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async () => {
   const allPosts = await getAllPosts();
   const posts = limitExcerptCharacters(limitTitleCharacters(allPosts, 80), 240);
   const carouselPosts = removeLast12Records(posts);
@@ -121,7 +111,7 @@ const Home: React.FC<{
   const { seo } = settings;
   const { cmsData, carouselPosts, recentsPosts, evaluationPosts, lastedPosts } = props;
 
-  console.log("HOME PROPS ==> ", cmsData);
+  // console.log("HOME PROPS ==> ", cmsData);
 
   return (
     <>

@@ -39,7 +39,7 @@ const VehicleEvaluation = ({ posts }: VehicleEvaluationProps) => {
                   <PostTitle title={posts[0].title} onClick={handleClick} />
                   <ReviewMeta score={9.6} place="Good Place" />
                   <Box className="post-metas">
-                    <PostDate date={new Date()} />
+                    <PostDate date={"01/01/2023"} />
                     <PostViews views={7} />
                   </Box>
                 </Box>
@@ -56,7 +56,7 @@ const VehicleEvaluation = ({ posts }: VehicleEvaluationProps) => {
                         <PostTitle title={post.title} onClick={handleClick} />
                         <ReviewMeta score={9.6} place="Good Place" />
                         <Box className="post-metas">
-                          <PostDate date={new Date()} />
+                          <PostDate date={"01/01/2023"} />
                           <PostViews views={7} />
                         </Box>
                       </Box>
@@ -76,7 +76,7 @@ const VehicleEvaluation = ({ posts }: VehicleEvaluationProps) => {
                     <PostTitle title={posts[0].title} onClick={handleClick} />
                     <ReviewMeta score={9.6} place="Good Place" />
                     <Box className="post-metas">
-                      <PostDate date={new Date()} />
+                      <PostDate date={"01/01/2023"} />
                       <PostViews views={7} />
                     </Box>
                   </Box>
@@ -105,7 +105,7 @@ const VehicleEvaluation = ({ posts }: VehicleEvaluationProps) => {
                               />
                               <ReviewMeta score={9.6} place="Good Place" />
                               <Box className="post-metas">
-                                <PostDate date={new Date()} />
+                                <PostDate date={"01/01/2023"} />
                                 <PostViews views={7} />
                               </Box>
                             </Box>
@@ -128,7 +128,7 @@ const VehicleEvaluation = ({ posts }: VehicleEvaluationProps) => {
                     <PostTitle title={posts[0].title} onClick={handleClick} />
                     <ReviewMeta score={9.6} place="Good Place" />
                     <Box className="post-metas">
-                      <PostDate date={new Date()} />
+                      <PostDate date={"01/01/2023"} />
                       <PostViews views={7} />
                     </Box>
                   </Box>
@@ -157,7 +157,7 @@ const VehicleEvaluation = ({ posts }: VehicleEvaluationProps) => {
                               />
                               <ReviewMeta score={9.6} place="Good Place" />
                               <Box className="post-metas">
-                                <PostDate date={new Date()} />
+                                <PostDate date={"01/01/2023"} />
                                 <PostViews views={7} />
                               </Box>
                             </Box>
@@ -180,7 +180,7 @@ const VehicleEvaluation = ({ posts }: VehicleEvaluationProps) => {
                     <PostTitle title={posts[0].title} onClick={handleClick} />
                     <ReviewMeta score={9.6} place="Good Place" />
                     <Box className="post-metas">
-                      <PostDate date={new Date()} />
+                      <PostDate date={"01/01/2023"} />
                       <PostViews views={7} />
                     </Box>
                   </Box>
@@ -209,7 +209,7 @@ const VehicleEvaluation = ({ posts }: VehicleEvaluationProps) => {
                               />
                               <ReviewMeta score={9.6} place="Good Place" />
                               <Box className="post-metas">
-                                <PostDate date={new Date()} />
+                                <PostDate date={"01/01/2023"} />
                                 <PostViews views={7} />
                               </Box>
                             </Box>
@@ -231,7 +231,7 @@ const VehicleEvaluation = ({ posts }: VehicleEvaluationProps) => {
                   <PostTitle title={posts[0].title} onClick={handleClick} />
                   <ReviewMeta score={9.6} place="Good Place" />
                   <Box className="post-metas">
-                    <PostDate date={new Date()} />
+                    <PostDate date={"01/01/2023"} />
                     <PostViews views={7} />
                   </Box>
                 </Box>

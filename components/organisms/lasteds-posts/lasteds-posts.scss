@@ -17,6 +17,7 @@
       cursor: pointer;
       img {
         height: 200px;
+        width: auto;
         left: 0;
         position: absolute;
       }
@@ -225,11 +226,6 @@
       margin-top: 0;
       margin-bottom: 5px;
       .sidebar {
-        .brands-container {
-          .brands-icons {
-            margin-left: 0;
-          }
-        }
       }
     }
   }

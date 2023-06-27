@@ -18,6 +18,8 @@ export default class HeaderDocument extends Document {
             title="UauMotors RSS Feed"
             href={`${resolve(processEnv.siteUrl, "rss.xml")}`}
           />
+
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" />
         </Head>
         <body {...{ className: bodyClass }}>
           <Main />

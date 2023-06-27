@@ -1,24 +1,25 @@
-import * as React from "react";
-import { useContext } from "react";
-import type { NextPage } from "next";
-import DefaultTemplate from "@components/templates";
-import { ThemeProvider } from "@mui/material/styles";
-import { ThemeContext } from "@utility/contexts/theme-context";
-import { lightTheme, darkTheme } from "@utility/contexts/theme";
-import { Container } from "@mui/material";
-import Institutional from "@/components/organisms/page";
+import React from "react";
+import { useRouter } from "next/router";
 
-const Pageinstitutional: NextPage = () => {
-  const { theme } = useContext(ThemeContext);
+import DefaultTemplate from "@components/templates";
+import settings from "@utility/settings";
+import { SEO } from "@organisms/meta/seo";
+import { BodyClass } from "@helpers/bodyClass";
+import Institutional from "@organisms/page";
+
+const Pageinstitutional: React.FC = () => {
+  const router = useRouter();
+  if (router.isFallback) return <div className="loading">Carregando...</div>;
+  const bodyClass = BodyClass({ isHome: false });
+  const { seo } = settings;
 
   return (
-    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <DefaultTemplate id="page" theme={theme}>
-        <main>
-          <Institutional title="Termos de Uso" />
-        </main>
+    <>
+      <SEO {...{ title: seo.title, description: seo.description }} />
+      <DefaultTemplate {...{ bodyClass, id: "about", header: true, footer: true }}>
+        <Institutional title="Termos de Uso" />
       </DefaultTemplate>
-    </ThemeProvider>
+    </>
   );
 };
 

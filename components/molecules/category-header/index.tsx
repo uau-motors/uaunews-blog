@@ -4,12 +4,13 @@ import Breadcrumb from "@molecules/breadcrumb";
 import TitleSection from "@components/molecules/title-section";
 import { getTitle } from "@utility/getTitle";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 const CategoryHeader = () => {
   const router = useRouter();
   const { pathname, query } = router;
   const pathnames = pathname.split("/").filter((x) => x);
-  const title = getTitle(pathnames[0]);
+  const title = getTitle(pathnames[0], "");
 
   return (
     <Container className="category-header">
@@ -24,7 +25,7 @@ const CategoryHeader = () => {
         </Grid>
         <Grid item xs={4}>
           <Box className="category-media">
-            <img
+            <Image
               src="https://motors.stylemixthemes.com/classified-four/wp-content/uploads/sites/13/2015/12/tesla1-398x206.jpg"
               alt={pathnames[0]}
             />

@@ -44,15 +44,15 @@ const HotNews = () => {
     }, 5000);
   };
 
-  useEffect(() => {
-    changeHotNews();
-  }, []);
+  //  useEffect(() => {
+  //    changeHotNews
+  //  }, []);
 
-  useEffect(() => {
-    if (activeStep === 0) {
-      changeHotNews();
-    }
-  }, [activeStep]);
+  // useEffect(() => {
+  //   if (activeStep === 0) {
+  //     changeHotNews
+  //   }
+  // }, [activeStep]);
 
   return (
     <section className={`hot-news hot-news-${theme}`}>

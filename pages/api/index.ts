@@ -11,6 +11,5 @@ import { NextApiRequest, NextApiResponse } from "next";
 export const getAllPosts = async () => {
   const response = await fetch(`https://5dld3.wiremockapi.cloud/api/v1/allposts`);
   const data = await response.json();
-  console.log("getAllPosts ==> ", data);
   return data;
 };

@@ -26,6 +26,7 @@ export interface SEOI {
   sameAs?: string;
   canonical?: string;
   article?: any;
+  settings?: any;
 }
 
 export interface TagI {
@@ -78,4 +79,15 @@ export interface UauSettings {
   menusCategories: MenusI[];
   tags: MenusI[];
   seo: SEOI;
+}
+
+export interface NavItem {
+  label: string;
+  url: string;
+}
+
+export interface Archive {
+  month: string;
+  link: string;
+  count: number;
 }

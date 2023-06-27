@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Container, Grid, Box, Typography, IconButton, Link } from "@mui/material";
+import { Container, Grid, Box, Typography, Link } from "@mui/material";
 
 import Logo from "@molecules/logo";
 import { loadCSS } from "fg-loadcss";
@@ -7,6 +7,7 @@ import { loadCSS } from "fg-loadcss";
 import Icon from "@mui/material/Icon";
 import Date from "@components/atoms/date-component";
 import SignInModal from "@molecules/modal/sign-in";
+import Image from "next/image";
 
 export const SocialNetworks = [
   {
@@ -152,18 +153,6 @@ const vehiclePhotos: VehiclePhoto[] = [
 ];
 
 export const Footer = () => {
-  useEffect(() => {
-    const node = loadCSS(
-      "https://use.fontawesome.com/releases/v5.14.0/css/all.css",
-      // Inject before JSS
-      document.querySelector("#font-awesome-css") || document.head.firstChild
-    );
-
-    return () => {
-      node.parentNode!.removeChild(node);
-    };
-  }, []);
-
   return (
     <footer id="footer">
       <Container>
@@ -187,7 +176,12 @@ export const Footer = () => {
                 <h4>UauNews Mobile</h4>
               </span>
               <Box className="icons">
-                <img src="/assets/images/logos/app-legislativo-disponivel-googleplay-e-appstore.png" alt="logos" />
+                <Image
+                  src="/assets/images/logos/app-legislativo-disponivel-googleplay-e-appstore.png"
+                  alt="logos"
+                  width={1}
+                  height={1}
+                />
               </Box>
             </Box>
           </Grid>
@@ -222,7 +216,7 @@ export const Footer = () => {
                         <span>
                           <small>
                             <i className={"fa fa-calendar"} />
-                            <Date dateString={post.date} locale={"ptBR"} />
+                            <Date dateString={post.date} />
                           </small>
                         </span>
                         <h3>{post.title}</h3>
@@ -241,7 +235,7 @@ export const Footer = () => {
               <div className="thumbnails">
                 {vehiclePhotos.map((img, key) => (
                   <div key={key}>
-                    <img src={img.src} alt={img.alt} />
+                    <Image src={img.src} alt={img.alt} width={1920} height={1080} />
                   </div>
                 ))}
               </div>

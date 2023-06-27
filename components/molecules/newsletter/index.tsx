@@ -5,13 +5,12 @@ const Newsletter = () => {
   const [email, setEmail] = useState("");
 
   const Input = styled(TextField)(({ theme }) => ({
-    color: theme.palette.mode === "dark" ? "#1A2027" : "#1A2027",
+    color: theme.palette.mode === "dark" ? "#1A2027" : "#1A2027"
   }));
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault();
     // Aqui você pode adicionar a lógica para enviar o email para o servidor
-    console.log(email);
     setEmail("");
   };
 
@@ -28,9 +27,7 @@ const Newsletter = () => {
         >
           <Typography variant="h3">Assine nossa newsletter</Typography>
 
-          <Typography variant="body2">
-            Faça parte da lista VIP, e receba em primeira mão nossas novidades.
-          </Typography>
+          <Typography variant="body2">Faça parte da lista VIP, e receba em primeira mão nossas novidades.</Typography>
           <Input
             label="Digite seu e-mail"
             variant="outlined"

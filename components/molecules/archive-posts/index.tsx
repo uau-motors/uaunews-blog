@@ -6,20 +6,25 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import IconButton from "@mui/material/IconButton";
 import Link from "next/link";
-import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
-export default function ArchivePosts({ data }) {
+import { Archive } from "@utility/interfaces";
+
+interface ArchivePropsI {
+  data: Archive[];
+}
+
+export default function ArchivePosts({ data }: ArchivePropsI) {
   return (
     <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
       {data &&
-        data.map((value, key) => (
+        data.map((post, key) => (
           <ListItem
             disablePadding
             key={key}
             disableGutters
             secondaryAction={
               <IconButton aria-label="count" className="count">
-                {value.count}
+                {post.count}
               </IconButton>
             }
           >
@@ -28,8 +33,8 @@ export default function ArchivePosts({ data }) {
                 <KeyboardDoubleArrowRightIcon />
               </ListItemIcon>
 
-              <Link href={`${value.link}`} className="link">
-                <ListItemText primary={`${value.month}`} />
+              <Link href={`${post.link}`} className="link">
+                <ListItemText primary={`${post.month}`} />
               </Link>
             </ListItemButton>
           </ListItem>

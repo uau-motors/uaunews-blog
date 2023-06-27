@@ -33,8 +33,8 @@ const SignInModal: React.FC = () => {
   const [closeAlert, setCloseAlert] = React.useState(true);
   const [titleLogin, setTitleLogin] = React.useState("LOGIN");
   const [descriptLogin, setDescriptLogin] = React.useState("logar.");
-  const [progress, setProgress] = React.useState(0);
-  const [color, setColor] = React.useState("inherit");
+  const [progress, setProgress] = React.useState("0");
+  const [color, setColor] = React.useState("primary");
   const [repeat, setRepeat] = React.useState("");
   const [compare, setCompare] = React.useState(false);
   const [isValid, setIsValid] = React.useState(false);
@@ -51,11 +51,12 @@ const SignInModal: React.FC = () => {
   const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     const validate = validatePassword(value);
+    const progress = validate.progress ? validate.progress.toString() : "0";
     if (value.length > 0) {
-      setProgress(parseInt(validate.progress));
+      setProgress(progress);
       setColor(validate.color);
     } else {
-      setProgress(0);
+      setProgress("0");
       setColor("inherit");
     }
     handleChange(event);
@@ -107,7 +108,7 @@ const SignInModal: React.FC = () => {
 
     if (hasLetter && hasNumber && password.length >= 8) {
       setIsValid(true);
-      setProgress(100);
+      setProgress("100");
     }
 
     return { color: clr, progress: counter };
@@ -126,10 +127,10 @@ const SignInModal: React.FC = () => {
       setTitleLogin("ESQUECEU SENHA?");
       setDescriptLogin("Informe seu email abaixo para resetar sua senha.");
     }
-  }, [format]);
+  }, [format, isValid]);
 
   React.useEffect(() => {
-    if (password === repeat && isValid) {
+    if (password === repeat) {
       setCompare(true);
     } else {
       setCompare(false);
@@ -292,7 +293,7 @@ const SignInModal: React.FC = () => {
                     label="Password"
                   />
                   <Box sx={{ width: "100%" }} className="progress">
-                    <LinearProgress value={progress || 1} color={color || "inherit"} variant="determinate" />
+                    <LinearProgress value={parseInt(progress) || 1} color={"inherit"} variant="determinate" />
                   </Box>
                   {closeAlert && (
                     <Box sx={{ width: "100%" }} className="description">

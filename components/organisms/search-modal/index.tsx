@@ -15,7 +15,7 @@ interface SearchModalProps {
   posts: PostCardDataI[];
 }
 
-const SearchModal: React.FC = ({ posts }: SearchModalProps) => {
+const SearchModal = ({ posts }: SearchModalProps) => {
   const [searchTerm, setSearchTerm] = React.useState("");
 
   return (

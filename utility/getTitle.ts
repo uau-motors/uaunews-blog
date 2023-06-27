@@ -1,4 +1,4 @@
-export const getTitle = (name, title = null) => {
+export const getTitle = (name: any, title: string | undefined) => {
   switch (name) {
     case "noticias":
       return "Notícias";

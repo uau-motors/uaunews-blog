@@ -86,7 +86,7 @@ export const authorSameAs = (author: Author) => {
   return (authorProfiles.length > 0 && `["${authorProfiles.join(`", "`)}"]`) || undefined;
 };
 
-const getJsonLd = ({ title, description, canonical, settings, sameAs, article }: SEOProps) => {
+const getJsonLd = ({ title, description, canonical, settings, sameAs, article }: SEOI) => {
   const pubLogoUrl = "logo.svg";
   const type = article ? "Article" : "WebSite";
 

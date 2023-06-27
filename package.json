@@ -74,6 +74,7 @@
   "devDependencies": {
     "@types/cheerio": "^0.22.31",
     "@types/nodemailer": "^6.4.8",
+    "@types/react-html-parser": "^2.0.2",
     "@types/refractor": "^3.0.2",
     "@types/rss": "^0.0.30",
     "@types/sanitize-html": "^2.9.0",

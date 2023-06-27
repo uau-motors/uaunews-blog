@@ -6,11 +6,9 @@ import PostImage from "@molecules/post-card-thumb";
 import PostTitle from "@molecules/post-title";
 import PostDate from "@molecules/post-date";
 import PostViews from "@molecules/post-views";
-import PostExcerpt from "@molecules/post-excerpt";
 
 import { PostCardDataI } from "@utility/interfaces";
 
-import data from "@utility/data/posts.json";
 import TitleSection from "@components/molecules/title-section";
 import SidebarNewsletter from "../sidebar/newsletter";
 
@@ -45,7 +43,7 @@ const RecentsVehicles = ({ posts }: RecentsVehiclesProps) => {
                         <Box className="content">
                           <PostTitle title={post.title} onClick={handleClick} />
                           <Box className="post-metas">
-                            <PostDate date={new Date()} />
+                            <PostDate date={"01/01/2023"} />
                             <PostViews views={7} />
                           </Box>
                         </Box>
@@ -57,7 +55,7 @@ const RecentsVehicles = ({ posts }: RecentsVehiclesProps) => {
                   );
               })}
             <Grid item xs={12}>
-              <SidebarNewsletter theme={"light"} />
+              <SidebarNewsletter />
             </Grid>
           </Grid>
         </Box>
@@ -75,7 +73,7 @@ const RecentsVehicles = ({ posts }: RecentsVehiclesProps) => {
                           <Box className="content">
                             <PostTitle title={post.title} onClick={handleClick} />
                             <Box className="post-metas">
-                              <PostDate date={new Date()} />
+                              <PostDate date={"01/01/2023"} />
                               <PostViews views={7} />
                             </Box>
                           </Box>
@@ -88,7 +86,7 @@ const RecentsVehicles = ({ posts }: RecentsVehiclesProps) => {
                   );
               })}
             <Grid item xs={12}>
-              <SidebarNewsletter theme={"light"} />
+              <SidebarNewsletter />
             </Grid>
           </Grid>
         </Box>
@@ -108,7 +106,7 @@ const RecentsVehicles = ({ posts }: RecentsVehiclesProps) => {
                               <Box className="content">
                                 <PostTitle title={post.title} onClick={handleClick} />
                                 <Box className="post-metas">
-                                  <PostDate date={new Date()} />
+                                  <PostDate date={"01/01/2023"} />
                                   <PostViews views={7} />
                                 </Box>
                               </Box>
@@ -123,7 +121,7 @@ const RecentsVehicles = ({ posts }: RecentsVehiclesProps) => {
               </Grid>
             </Grid>
             <Grid item xs={4}>
-              <SidebarNewsletter theme={"light"} />
+              <SidebarNewsletter />
             </Grid>
           </Grid>
         </Box>
@@ -143,7 +141,7 @@ const RecentsVehicles = ({ posts }: RecentsVehiclesProps) => {
                               <Box className="content">
                                 <PostTitle title={post.title} onClick={handleClick} />
                                 <Box className="post-metas">
-                                  <PostDate date={new Date()} />
+                                  <PostDate date={"01/01/2023"} />
                                   <PostViews views={7} />
                                 </Box>
                               </Box>
@@ -158,7 +156,7 @@ const RecentsVehicles = ({ posts }: RecentsVehiclesProps) => {
               </Grid>
             </Grid>
             <Grid item xs={3}>
-              <SidebarNewsletter theme={"light"} />
+              <SidebarNewsletter />
             </Grid>
           </Grid>
         </Box>
@@ -178,7 +176,7 @@ const RecentsVehicles = ({ posts }: RecentsVehiclesProps) => {
                               <Box className="content">
                                 <PostTitle title={post.title} onClick={handleClick} />
                                 <Box className="post-metas">
-                                  <PostDate date={new Date()} />
+                                  <PostDate date={"01/01/2023"} />
                                   <PostViews views={7} />
                                 </Box>
                               </Box>
@@ -193,7 +191,7 @@ const RecentsVehicles = ({ posts }: RecentsVehiclesProps) => {
               </Grid>
             </Grid>
             <Grid item xs={4}>
-              <SidebarNewsletter theme={"light"} />
+              <SidebarNewsletter />
             </Grid>
           </Grid>
         </Box>

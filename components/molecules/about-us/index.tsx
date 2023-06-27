@@ -1,6 +1,7 @@
 import { Box, Container, Grid, Paper } from "@mui/material";
 import React from "react";
 import Breadcrumb from "../breadcrumb";
+import Image from "next/image";
 
 const AboutUs = () => {
   return (
@@ -13,13 +14,13 @@ const AboutUs = () => {
               <Box className="about-photos">
                 <ul>
                   <li>
-                    <img src="/assets/images/about/about-1.jpg" alt="about-1" />
+                    <Image src="/assets/images/about/about-1.jpg" alt="about-1" width={1920} height={1080} />
                   </li>
                   <li>
-                    <img src="/assets/images/about/about-2.jpg" alt="about-2" />
+                    <Image src="/assets/images/about/about-2.jpg" alt="about-2" width={1920} height={1080} />
                   </li>
                   <li>
-                    <img src="/assets/images/about/about-3.jpg" alt="about-3" />
+                    <Image src="/assets/images/about/about-3.jpg" alt="about-3" width={1920} height={1080} />
                   </li>
                 </ul>
               </Box>
@@ -30,25 +31,21 @@ const AboutUs = () => {
                 <h2>Uma empresa jovem, com uma meta gigante pra você!</h2>
 
                 <p>
-                  A UauMotors é um portal de veículos que nasceu com o objetivo
-                  de cobrir o universo automotivo, trazendo sempre as melhores
-                  informações sobre carros e motos. Levar serviços de qualidades
-                  ao nossos clientes para que tenha sucesso em seus negócios.
+                  A UauMotors é um portal de veículos que nasceu com o objetivo de cobrir o universo automotivo,
+                  trazendo sempre as melhores informações sobre carros e motos. Levar serviços de qualidades ao nossos
+                  clientes para que tenha sucesso em seus negócios.
                 </p>
 
                 <p>
-                  Nossa missão é compartilhar tudo que está acontecendo no
-                  cenário nacional e internacional, sempre mantendo o leitor bem
-                  informado. Mantemos também uma seção de testes e avaliações,
-                  onde analisamos os veículos de diversas marcas para auxiliar
-                  nosso leitor que está em busca de um novo carro a fazer um bom
-                  negócio.
+                  Nossa missão é compartilhar tudo que está acontecendo no cenário nacional e internacional, sempre
+                  mantendo o leitor bem informado. Mantemos também uma seção de testes e avaliações, onde analisamos os
+                  veículos de diversas marcas para auxiliar nosso leitor que está em busca de um novo carro a fazer um
+                  bom negócio.
                 </p>
 
                 <p>
-                  Com o nascimento pela paixão no setor automobilístico, o José
-                  Roberto, CEO da empresa decidiu investir e criar o UauMotors
-                  dando forma a uma antiga paixão.
+                  Com o nascimento pela paixão no setor automobilístico, o José Roberto, CEO da empresa decidiu investir
+                  e criar o UauMotors dando forma a uma antiga paixão.
                 </p>
               </Box>
             </Grid>
@@ -103,10 +100,7 @@ const AboutUs = () => {
             <Grid container spacing={2}>
               <Grid item xs={12} className="title">
                 <Box>
-                  <h2>
-                    POR QUE ESCOLHER NOSSOS SERVIÇOS PARA VENDER OU COMPRAR SEU
-                    CARRO
-                  </h2>
+                  <h2>POR QUE ESCOLHER NOSSOS SERVIÇOS PARA VENDER OU COMPRAR SEU CARRO</h2>
                 </Box>
               </Grid>
               <Grid item xs={4}>
@@ -116,9 +110,8 @@ const AboutUs = () => {
                   </Box>
                   <h4>Classificados</h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quaerat aliquam illo voluptatem, eaque, quidem dicta fugit
-                    libero pariatur hic laborum aliquid repellendus similique.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aliquam illo voluptatem, eaque,
+                    quidem dicta fugit libero pariatur hic laborum aliquid repellendus similique.
                   </p>
                 </Box>
               </Grid>
@@ -129,9 +122,8 @@ const AboutUs = () => {
                   </Box>
                   <h4>Guia de Serviços</h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quaerat aliquam illo voluptatem, eaque, quidem dicta fugit
-                    libero pariatur hic laborum aliquid repellendus similique.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aliquam illo voluptatem, eaque,
+                    quidem dicta fugit libero pariatur hic laborum aliquid repellendus similique.
                   </p>
                 </Box>
               </Grid>
@@ -142,9 +134,8 @@ const AboutUs = () => {
                   </Box>
                   <h4>Notícias</h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quaerat aliquam illo voluptatem, eaque, quidem dicta fugit
-                    libero pariatur hic laborum aliquid repellendus similique.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aliquam illo voluptatem, eaque,
+                    quidem dicta fugit libero pariatur hic laborum aliquid repellendus similique.
                   </p>
                 </Box>
               </Grid>
@@ -158,15 +149,19 @@ const AboutUs = () => {
             <Grid item xs={4}>
               <Box className="wrap-image">
                 <Box className="review-wrap-image">
-                  <img
+                  <Image
                     src="https://mironmahmud.com/ghurnek/assets/images/review/02.jpg"
                     alt="review"
+                    width={1920}
+                    height={1080}
                   />
                 </Box>
                 <Box className="review-wrap-user">
-                  <img
+                  <Image
                     src="https://mironmahmud.com/ghurnek/assets/images/team/02.jpg"
                     alt="review"
+                    width={1920}
+                    height={1080}
                   />
                 </Box>
               </Box>
@@ -174,9 +169,8 @@ const AboutUs = () => {
             <Grid item xs={8}>
               <Box className="review-wrap-content">
                 <p className="review-wrap-quote">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit
-                  Expedita ut porro beatae itaque accusantium nisi Asperiores
-                  reprehenderit
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit Expedita ut porro beatae itaque accusantium
+                  nisi Asperiores reprehenderit
                 </p>
                 <h3 className="review-wrap-user">tahmina bonny</h3>
                 <h5 className="review-wrap-type">seller review</h5>
@@ -191,17 +185,17 @@ const AboutUs = () => {
             <Grid container spacing={2}>
               <Grid item xs={12} className="title">
                 <Box>
-                  <h2>
-                    CONHEÇA NOSSO TIME, VEJA QUEM SÃO OS QUE FAZEM A DIFERENÇA
-                  </h2>
+                  <h2>CONHEÇA NOSSO TIME, VEJA QUEM SÃO OS QUE FAZEM A DIFERENÇA</h2>
                 </Box>
               </Grid>
               <Grid item xs={3}>
                 <div className="team-card">
                   <figure className="team-media">
-                    <img
+                    <Image
                       src="https://mironmahmud.com/ghurnek/assets/images/team/01.jpg"
                       alt="equipe"
+                      width={1920}
+                      height={1080}
                     />
                     <div className="team-overlay">
                       <a href="#" className="bg-facebook">
@@ -224,9 +218,11 @@ const AboutUs = () => {
               <Grid item xs={3}>
                 <div className="team-card">
                   <figure className="team-media">
-                    <img
+                    <Image
                       src="https://mironmahmud.com/ghurnek/assets/images/team/02.jpg"
                       alt="equipe"
+                      width={1920}
+                      height={1080}
                     />
                     <div className="team-overlay">
                       <a href="#" className="bg-facebook">
@@ -249,9 +245,11 @@ const AboutUs = () => {
               <Grid item xs={3}>
                 <div className="team-card">
                   <figure className="team-media">
-                    <img
+                    <Image
                       src="https://mironmahmud.com/ghurnek/assets/images/team/03.jpg"
                       alt="equipe"
+                      width={1920}
+                      height={1080}
                     />
                     <div className="team-overlay">
                       <a href="#" className="bg-facebook">
@@ -274,9 +272,11 @@ const AboutUs = () => {
               <Grid item xs={3}>
                 <div className="team-card">
                   <figure className="team-media">
-                    <img
+                    <Image
                       src="https://mironmahmud.com/ghurnek/assets/images/team/04.jpg"
                       alt="equipe"
+                      width={1920}
+                      height={1080}
                     />
                     <div className="team-overlay">
                       <a href="#" className="bg-facebook">

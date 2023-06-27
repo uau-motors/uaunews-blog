@@ -5,7 +5,16 @@ import { ThemeContext } from "../../../utility/contexts/theme-context";
 import { useContext } from "react";
 import { Tags } from "../../../utility/constants";
 
-const getTags = (tags) => {
+interface TagsI {
+  title: string;
+  pathname: string;
+}
+
+interface TagsProps {
+  tags: TagsI[];
+}
+
+const getTags = ({ tags }: TagsProps) => {
   const tagsRandom = [...tags];
   for (let i = tagsRandom.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -21,7 +30,7 @@ function SidebarTags() {
       <Box className={`tags-container tag-${theme}`}>
         <TitleSection title={"Tags"} />
         <Box className="tags-cloud">
-          <TagCloud tags={getTags(Tags)} />
+          <TagCloud tags={getTags({ tags: Tags })} />
         </Box>
       </Box>
     </Box>

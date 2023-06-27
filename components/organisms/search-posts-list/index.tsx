@@ -1,13 +1,13 @@
 import React from "react";
 import { Grid } from "@mui/material";
 import PostCard from "../post-card";
+import { PostCardDataI } from "@utility/interfaces";
 
 interface PostListProps {
-  posts: PostCardProps[];
+  posts: PostCardDataI[];
 }
 
-const SearchPostList: React.FC<PostListProps> = (props) => {
-  const { posts } = props;
+const SearchPostList = ({ posts }: PostListProps) => {
   return (
     <Grid container spacing={2} className="search-posts">
       {posts &&

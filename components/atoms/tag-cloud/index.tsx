@@ -3,7 +3,7 @@ import { Chip } from "@mui/material";
 
 interface Tag {
   title: string;
-  url: string;
+  pathname: string;
 }
 
 interface TagCloudProps {

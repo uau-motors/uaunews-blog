@@ -3,6 +3,8 @@
  * Check lib/environments.ts
  */
 
+import { NavItem } from "@utility/interfaces";
+
 // Cache control
 export const fileCache: boolean = true;
 
@@ -48,7 +50,7 @@ export const maxDepth: number = 2;
 // Custom site navigation (default: [], label is case sensitive)
 // Override: [{ label: 'Home', url: '/' }]
 // Add new: [{ label: 'Contact', url: '/contact' }]
-import { NavItem } from "@libs/ghost";
+// import { NavItem } from "@libs/ghost";
 export const customNavigation: NavItem[] = [{ label: "Contact", url: "/contact" }];
 
 // Incremental Static Regenerations (ISR)

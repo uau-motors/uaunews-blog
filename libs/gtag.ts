@@ -2,9 +2,9 @@
  * GA integration
  * https://github.com/vercel/next.js/tree/canary/examples/with-google-analytics
  */
-import { processEnv } from "@libs/processEnv";
+// import { processEnv } from "@libs/processEnv";
 
-export const GA_TRACKING_ID = processEnv.gaMeasurementId;
+export const GA_TRACKING_ID = "123";
 
 /**
  * Custom event type for Google Analytics.

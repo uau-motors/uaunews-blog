@@ -1,5 +1,5 @@
 import React from "react";
-import ContactUs from "@/components/molecules/contact-us";
+import ContactUs from "@molecules/contact-us";
 
 const ContactPage = () => {
   return (

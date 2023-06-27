@@ -1,32 +1,17 @@
 import React from "react";
-import { makeStyles, Theme } from "@material-ui/core";
-import PostImage from "../../molecules/post-card-thumb";
-import PostTitle from "../../molecules/post-title";
-import PostTag from "../../molecules/post-tag";
-import PostDate from "../../molecules/post-date";
-import PostViews from "../../molecules/post-views";
-import PostExcerpt from "../../molecules/post-excerpt";
-import PostAuthor from "../../molecules/post-author";
+import PostImage from "@molecules/post-card-thumb";
+import PostTitle from "@molecules/post-title";
+import PostTag from "@molecules/post-tag";
+import PostDate from "@molecules/post-date";
+import PostViews from "@molecules/post-views";
+import PostExcerpt from "@molecules/post-excerpt";
 import { Box } from "@mui/material";
+import { PostCardDataI } from "@utility/interfaces";
 
-interface PostCardProps {
-  content: any;
-}
-
-const PostCard = ({ feature_image, title, tags, excerpt, author, date, link }) => {
+const PostCard = ({ feature_image, title, tags, excerpt, created_at }: PostCardDataI) => {
   const handleClick = () => {
     console.log("O botão foi clicado!");
   };
-
-  console.log("CONTENT ==> ", {
-    feature_image,
-    title,
-    tags,
-    excerpt,
-    author,
-    link,
-    date
-  });
 
   return (
     <div className="search-post-card">
@@ -35,7 +20,7 @@ const PostCard = ({ feature_image, title, tags, excerpt, author, date, link }) =
       <PostTitle title={title} onClick={handleClick} />
       <PostExcerpt excerpt={excerpt} />
       <Box className="post-metas">
-        <PostDate date={date} />
+        <PostDate date={created_at} />
         <PostViews views={7} />
       </Box>
       {/* <PostAuthor author={author} /> */}

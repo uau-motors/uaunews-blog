@@ -14,6 +14,7 @@
       cursor: pointer;
       img {
         height: 345px;
+        width: auto;
         left: -20%;
         position: absolute;
       }
@@ -127,6 +128,7 @@
         img {
           height: 100px;
           left: 0;
+          width: auto;
           position: absolute;
         }
       }

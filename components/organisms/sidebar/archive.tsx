@@ -47,6 +47,7 @@ function getPastMonths() {
 function SidebarArchive() {
   const { theme } = useContext(ThemeContext);
   const data = getPastMonths();
+
   return (
     <Box className={"sidebar"}>
       <Box className={`archive-container archive-${theme}`}>

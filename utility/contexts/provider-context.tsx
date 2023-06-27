@@ -1,13 +1,4 @@
-import {
-  createContext,
-  useContext,
-  ReactElement,
-  useState,
-  useEffect,
-  ChangeEvent,
-  FormEvent,
-  MouseEvent
-} from "react";
+import { createContext, useContext, ReactElement, useState, useEffect, ChangeEvent } from "react";
 
 import { DrawerProps } from "@material-ui/core/Drawer";
 
@@ -51,7 +42,7 @@ const defaultValues = {
   format: "signin",
 
   city: "",
-  weather: ""
+  weather: 0
 };
 
 const OverlayContext = createContext<ProviderValues>(defaultValues);
@@ -73,7 +64,7 @@ export const OverlayProvider = ({ children }: OverlayProviderProps): ReactElemen
   const [name, setName] = useState("");
   const [format, setFormat] = useState("signin");
   const [city, setCity] = useState("");
-  const [weather, setWeather] = useState("");
+  const [weather, setWeather] = useState<number>(0);
 
   const toggleDrawer = (props?: DrawerProps) => {
     if (props) setDrawerProps(props);
@@ -106,7 +97,7 @@ export const OverlayProvider = ({ children }: OverlayProviderProps): ReactElemen
   const getBrowserCity = (): Promise<string> => {
     return new Promise((resolve, reject) => {
       if (navigator.geolocation) {
-        console.log("navigator ==> ", navigator);
+        // console.log("navigator ==> ", navigator);
         // navigator.geolocation.getCurrentPosition(
         //   async (position: GeolocationPosition) => {
         //     const latitude = position.coords.latitude;

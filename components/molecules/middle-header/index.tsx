@@ -3,6 +3,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import Logo from "../logo";
 import MiddleActions from "../middle-actions";
 import ThemeToggle from "../theme-toggle";
+import Image from "next/image";
 
 export default function UauMiddleHeader() {
   return (
@@ -15,7 +16,7 @@ export default function UauMiddleHeader() {
           <Grid xs={9} sm={3} md={3}>
             <div className="logoUM1">
               <span>UM1</span>
-              <img src={`/assets/images/svg/logo-um1.svg`} alt="logo-um1" />
+              <Image src={`/assets/images/svg/logo-um1.svg`} alt="logo-um1" width={40} height={40} />
               <h2>Canal de conteúdo da UauMotors</h2>
             </div>
           </Grid>

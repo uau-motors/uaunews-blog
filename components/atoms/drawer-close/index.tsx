@@ -7,7 +7,6 @@ const DrawerClose: React.FC = () => {
 
   const handleClose = () => {
     toggleDrawer();
-    console.log("handleClose");
   };
 
   return (

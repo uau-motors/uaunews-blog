@@ -1,25 +1,44 @@
-import * as React from "react";
-import { useContext } from "react";
-import type { NextPage } from "next";
+import React from "react";
+import { useRouter } from "next/router";
+import { Container, Grid } from "@mui/material";
 
 import DefaultTemplate from "@components/templates";
-import { ThemeProvider } from "@mui/material/styles";
-import { ThemeContext } from "@utility/contexts/theme-context";
-import { lightTheme, darkTheme } from "@utility/contexts/theme";
+import settings from "@utility/settings";
+import { SEO } from "@organisms/meta/seo";
+import { CmsData } from "@utility/interfaces";
+import { BodyClass } from "@helpers/bodyClass";
 
-import ContactPage from "@/components/organisms/contact";
+export const getStaticProps = async () => {
+  const cmsData = {
+    bodyClass: BodyClass({ isHome: true })
+  };
 
-const About: NextPage = () => {
-  const { theme } = useContext(ThemeContext);
+  return {
+    revalidate: 10,
+    props: { cmsData }
+  };
+};
+
+import ContactPage from "@organisms/contact";
+
+const Contact: React.FC<{
+  cmsData: CmsData;
+}> = (props) => {
+  const router = useRouter();
+  if (router.isFallback) return <div className="loading">Carregando...</div>;
+  const bodyClass = BodyClass({ isHome: false });
+  const { seo } = settings;
+
   return (
-    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <DefaultTemplate id="contact" theme={theme}>
-        <main>
+    <>
+      <SEO {...{ title: seo.title, description: seo.description }} />
+      <DefaultTemplate {...{ bodyClass, id: "contact", header: true, footer: true }}>
+        <Container>
           <ContactPage />
-        </main>
+        </Container>
       </DefaultTemplate>
-    </ThemeProvider>
+    </>
   );
 };
 
-export default About;
+export default Contact;

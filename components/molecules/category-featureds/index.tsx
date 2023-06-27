@@ -18,20 +18,14 @@ const CategoryFeatureds = () => {
       <Grid container>
         <Grid item xs={7} className="large-featured">
           <Box className="post">
-            <PostImage
-              imageUrl={data[14].feature_image}
-              altText={data[3].title}
-              onClick={handleClick}
-            />
+            <PostImage imageUrl={data[14].feature_image} altText={data[3].title} onClick={handleClick} />
             <Box className="content">
               <PostTitle
-                title={
-                  "Avaliação: Novo Toyota Corolla Cross híbrido é mais potente que o brasileiro"
-                }
+                title={"Avaliação: Novo Toyota Corolla Cross híbrido é mais potente que o brasileiro"}
                 onClick={handleClick}
               />
               <Box className="post-metas">
-                <PostDate date={new Date()} />
+                <PostDate date={"01/01/2023"} />
                 <PostViews views={7} />
               </Box>
             </Box>
@@ -39,47 +33,35 @@ const CategoryFeatureds = () => {
         </Grid>
         <Grid item xs={5} className="medium-featured">
           <Grid container>
-             <Grid item xs={12}>
+            <Grid item xs={12}>
               <Box className="post">
-                <PostImage
-                  imageUrl={data[17].feature_image}
-                  altText={data[3].title}
-                  onClick={handleClick}
-                />
+                <PostImage imageUrl={data[17].feature_image} altText={data[3].title} onClick={handleClick} />
                 <Box className="content">
                   <PostTitle
-                    title={
-                      "Novo Honda Civic Type R, com 330 cv, começa a desembarcar no Brasil
-                    }
+                    title={"Novo Honda Civic Type R, com 330 cv, começa a desembarcar no Brasil"}
                     onClick={handleClick}
                   />
                   <Box className="post-metas">
-                    <PostDate date={new Date()} />
+                    <PostDate date={"01/01/2023"} />
                     <PostViews views={7} />
                   </Box>
                 </Box>
-                </Box>
+              </Box>
             </Grid>
             <Grid item xs={12}>
-                    <Box className="post">
-                <PostImage
-                  imageUrl={data[19].feature_image}
-                  altText={data[3].title}
-                  onClick={handleClick}
-                />
+              <Box className="post">
+                <PostImage imageUrl={data[19].feature_image} altText={data[3].title} onClick={handleClick} />
                 <Box className="content">
                   <PostTitle
-                    title={
-                      "Volkswagen ID.7: sedã elétrico sucessor do Passat promete rodar por 700 km
-                    }
+                    title={"Volkswagen ID.7: sedã elétrico sucessor do Passat promete rodar por 700 km"}
                     onClick={handleClick}
                   />
                   <Box className="post-metas">
-                    <PostDate date={new Date()} />
+                    <PostDate date={"01/01/2023"} />
                     <PostViews views={7} />
                   </Box>
                 </Box>
-                </Box>
+              </Box>
             </Grid>
           </Grid>
         </Grid>
