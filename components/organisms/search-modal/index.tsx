@@ -9,12 +9,17 @@ import SearchPagination from "../../molecules/search-pagination";
 import SearchPostList from "../search-posts-list";
 
 import { Box } from "@mui/system";
+import { PostCardDataI } from "@utility/interfaces";
 
-const SearchModal: React.FC = (props) => {
+interface SearchModalProps {
+  posts: PostCardDataI[];
+}
+
+const SearchModal = ({ posts }: SearchModalProps) => {
   const [searchTerm, setSearchTerm] = React.useState("");
 
   return (
-    <section className={`search-modal theme-${props.theme}`}>
+    <section className={`search-modal theme-light`}>
       <Container style={{ position: "relative" }}>
         <CloseTitle />
         <SearchTitle />
@@ -24,7 +29,7 @@ const SearchModal: React.FC = (props) => {
           <SearchSubtitle />
           <SearchPagination />
         </Box>
-        <SearchPostList posts={props.posts} />
+        <SearchPostList posts={posts} />
       </Container>
     </section>
   );

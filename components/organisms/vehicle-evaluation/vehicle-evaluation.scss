@@ -1,0 +1,277 @@
+.vehicle-evaluation {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 0 0 20px;
+  .title-section {
+    width: 250px;
+    margin: 10px 0 20px;
+  }
+
+  .post-featured,
+  .post-featured-2 {
+    position: relative;
+    padding-right: 10px;
+    .post-card-thumb {
+      width: 100%;
+      height: 345px;
+      overflow: hidden;
+      border-radius: 5px;
+      position: relative;
+      cursor: pointer;
+      img {
+        height: 345px;
+        left: -30%;
+        width: auto;
+        position: absolute;
+      }
+    }
+  }
+  .post-featured {
+    padding-right: 0;
+    .post-card-thumb {
+      &::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(360deg, black, transparent);
+      }
+    }
+    .content {
+      position: absolute;
+      z-index: 9;
+      bottom: 20px;
+      left: 20px;
+      padding: 10px;
+      .post-title {
+        h3 {
+          color: #fff;
+        }
+      }
+      .post-metas {
+        h6 {
+          color: #fff;
+        }
+      }
+      .review-extra {
+        color: #fff;
+      }
+    }
+    &:hover {
+      .post-title {
+        h3 {
+          color: var(--primary);
+        }
+      }
+    }
+  }
+  .post-featured-2 {
+    position: relative;
+    padding: 0 10px;
+    &:nth-child(2) {
+      padding-right: 0;
+    }
+    .post-card-thumb {
+      height: 210px;
+      img {
+        height: 210px;
+        left: 0;
+        width: auto;
+      }
+    }
+    .content {
+      position: relative;
+      padding: 10px;
+      bottom: inherit;
+    }
+  }
+
+  .post-title {
+    position: relative;
+    margin: 10px 0 15px;
+    z-index: 2;
+    h3 {
+      font-size: 18px;
+    }
+  }
+
+  .post-metas {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: normal;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+    .post-date {
+      margin-right: 15px;
+    }
+    .post-date,
+    .post-views {
+      h6 {
+        font-size: 0.8em;
+        font-weight: 200;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+  .vehicle-evaluation {
+    margin: 0;
+    padding: 0;
+    .post-featured {
+      margin-bottom: 25px;
+      .content {
+        left: 15px;
+        bottom: -15px;
+      }
+    }
+    .post-featured,
+    .post-featured-2 {
+      padding-left: 15px;
+      padding-right: 0;
+    }
+    .post-featured-2 {
+      .post-card-thumb img {
+        height: 230px;
+        left: 0px;
+        top: -7px;
+      }
+      .content {
+        padding: 10px 0 0;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  .vehicle-evaluation {
+    .post-featured {
+      .post-card-thumb {
+        height: 360px;
+        img {
+          height: 368px;
+          left: -50%;
+        }
+      }
+      .content {
+        left: 10px;
+        bottom: -15px;
+      }
+    }
+    .post-featured-2 {
+      padding: 0;
+      margin-bottom: 10px;
+      .content {
+        padding: 0;
+        .extra-meta,
+        .post-views {
+          display: none;
+        }
+      }
+      .post-card-thumb {
+        height: 165px;
+        img {
+          height: 168px;
+          left: -50%;
+        }
+      }
+    }
+    .post-title {
+      margin: 0 0 15px;
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  .vehicle-evaluation {
+    .post-featured {
+      .post-card-thumb {
+        height: 360px;
+        img {
+          height: 368px;
+          left: -40%;
+        }
+      }
+      .content {
+        left: 10px;
+        bottom: -15px;
+      }
+    }
+    .post-featured-2 {
+      padding: 0;
+      margin-bottom: 10px;
+      .content {
+        padding: 0;
+        .extra-meta,
+        .post-views {
+          display: none;
+        }
+      }
+      .post-card-thumb {
+        height: 165px;
+        img {
+          height: 168px;
+          left: -50%;
+        }
+      }
+    }
+    .post-title {
+      margin: 0 0 15px;
+    }
+  }
+}
+
+@media (min-width: 980px) and (max-width: $screen-md-max) {
+  .vehicle-evaluation {
+    .post-featured {
+      .content {
+        left: 10px;
+      }
+    }
+    .post-featured-2 {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+@media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+  .vehicle-evaluation {
+    .post-featured {
+      .post-card-thumb {
+        height: 360px;
+        img {
+          height: 368px;
+          left: -25%;
+        }
+      }
+      .content {
+        bottom: -15px;
+        left: 10px;
+      }
+    }
+    .post-featured-2 {
+      padding: 0;
+      margin-bottom: 25px;
+      .content {
+        padding: 0;
+        .extra-meta {
+          display: none;
+        }
+      }
+      .post-card-thumb {
+        height: 165px;
+        img {
+          height: 168px;
+          left: -30%;
+        }
+      }
+    }
+    .post-title {
+      margin: 0 0 15px;
+    }
+  }
+}

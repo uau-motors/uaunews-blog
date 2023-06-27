@@ -1,94 +1,293 @@
-import React, { FC, useState } from "react";
-import { styled } from "@mui/material/styles";
-import { NavTabsRecents } from "../../../utility/constants";
-import TitleSection from "../../atoms/title-section";
-import TabContent from "../../molecules/tab-content";
+import React, { Fragment } from "react";
 
 import Box from "@mui/material/Box";
-import Tab from "@mui/material/Tab";
-import TabContext from "@mui/lab/TabContext";
-import TabList from "@mui/lab/TabList";
-import TabPanel from "@mui/lab/TabPanel";
 
-import Paper from "@mui/material/Paper";
+import PostImage from "@molecules/post-card-thumb";
+import PostTitle from "@molecules/post-title";
+import PostTag from "@molecules/post-tag";
+import PostDate from "@molecules/post-date";
+import PostViews from "@molecules/post-views";
+import PostExcerpt from "@molecules/post-excerpt";
+
 import Grid from "@mui/material/Grid";
 
-interface Tag {
-  slug: string;
-  title: string;
-}
-
-interface Post {
-  title: string;
-  content: string;
-  featured: string;
-  date: string;
-  tags: Tag;
-  slug: string;
-}
-
-interface Posts {
-  news: Post[];
-  releases: Post[];
-  curiosities: Post[];
-  tips: Post[];
-  histories: Post[];
-}
+import { Typography } from "@mui/material";
+import { PostCardDataI } from "@utility/interfaces";
+import TitleSection from "@molecules/title-section";
+import SidebarSocials from "@organisms/sidebar/socials";
 
 interface RecentPostsProps {
-  posts: Posts;
+  posts: PostCardDataI[];
 }
 
-function a11yProps(index: number) {
-  return {
-    id: `full-width-tab-${index}`,
-    "aria-controls": `full-width-tabpanel-${index}`,
+const RecentPosts = ({ posts }: RecentPostsProps) => {
+  const handleClick = () => {
+    console.log("O botão foi clicado!");
   };
-}
-
-const RecentPosts: FC<RecentPostsProps> = ({ posts }) => {
-  const [value, setValue] = React.useState("0");
-
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    setValue(newValue);
-  };
-  const [tag, setTag] = useState<string>("news");
-
-  const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  }));
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2} className={"recents-news"}>
-        <Grid item xs={8}>
-          <Box sx={{ width: "100%" }}>
-            <TitleSection title={"Recentes"} />
-            <TabContext value={value}>
-              <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-                <TabList
-                  onChange={handleChange}
-                  aria-label="lab API tabs example"
-                >
-                  {NavTabsRecents.map((tab, key) => (
-                    <Tab label={tab.title} {...a11yProps(key)} />
-                  ))}
-                </TabList>
-                <TabPanel value={0}>Item Two</TabPanel>
-                {/* <TabContent posts={posts.releases} /> */}
-              </Box>
-            </TabContext>
-          </Box>
+    <Fragment>
+      <Box className={"posts"}>
+        <Grid container spacing={2}>
+          <Grid item xs={12} className="post-featured">
+            <Box sx={{ width: "100%" }}>
+              <TitleSection title={"Não perca"} />
+            </Box>
+          </Grid>
         </Grid>
-        <Grid item xs={4}>
-          <Item>xs=4</Item>
-        </Grid>
-      </Grid>
-    </Box>
+        <Box className="visible-xs">
+          <Grid container spacing={2}>
+            {posts && posts.length > 0 && (
+              <Grid item xs={12} className="post-featured">
+                <PostImage imageUrl={posts[0].feature_image} altText={posts[0].title} onClick={handleClick} />
+                <Typography variant="h5" className="post-counter">
+                  01
+                </Typography>
+                <PostTag label={posts[0].tags[0].name} onClick={handleClick} />
+                <PostTitle title={posts[0].title} onClick={handleClick} />
+                <PostExcerpt excerpt={posts[0].excerpt} />
+                <Box className="post-metas">
+                  <PostDate date={posts[0].created_at} />
+                  <PostViews views={7} />
+                </Box>
+              </Grid>
+            )}
+          </Grid>
+          <Grid container spacing={2} className="post-list">
+            {posts &&
+              posts.length > 1 &&
+              posts.map((post, key) => {
+                if (key > 1 && key < 6)
+                  return (
+                    <Grid item xs={12} className={"post-item"} key={key}>
+                      <Grid container spacing={2}>
+                        <Grid item xs={5}>
+                          <PostImage imageUrl={post.feature_image} altText={post.title} onClick={handleClick} />
+                          <PostTag label={post.tags[0].name} onClick={handleClick} />
+                        </Grid>
+                        <Grid item xs={7}>
+                          <Typography variant="h5" className="post-counter">
+                            0{key}
+                          </Typography>
+                          <PostTitle title={post.title} onClick={handleClick} />
+                          <Box className="post-metas">
+                            <PostDate date={post.created_at} />
+                          </Box>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                  );
+              })}
+          </Grid>
+
+          <Grid container spacing={2} className="post-list">
+            <Grid item xs={12}>
+              <SidebarSocials />
+            </Grid>
+          </Grid>
+        </Box>
+        <Box className="visible-sm">
+          <Grid container spacing={2}>
+            {posts && posts.length > 0 && (
+              <Grid item xs={7} className="post-featured">
+                <PostImage imageUrl={posts[0].feature_image} altText={posts[0].title} onClick={handleClick} />
+                <Typography variant="h5" className="post-counter">
+                  01
+                </Typography>
+                <PostTag label={posts[0].tags[0].name} onClick={handleClick} />
+                <PostTitle title={posts[0].title} onClick={handleClick} />
+                <PostExcerpt excerpt={posts[0].excerpt} />
+                <Box className="post-metas">
+                  <PostDate date={posts[0].created_at} />
+                  <PostViews views={7} />
+                </Box>
+              </Grid>
+            )}
+            <Grid item xs={5}>
+              <SidebarSocials />
+            </Grid>
+          </Grid>
+          <Grid container spacing={2} className="post-list">
+            {posts &&
+              posts.length > 1 &&
+              posts.map((post, key) => {
+                if (key > 1 && key < 6)
+                  return (
+                    <Grid item xs={6} className={"post-item"} key={key}>
+                      <Grid container spacing={2}>
+                        <Grid item xs={5}>
+                          <PostImage imageUrl={post.feature_image} altText={post.title} onClick={handleClick} />
+                          <PostTag label={post.tags[0].name} onClick={handleClick} />
+                        </Grid>
+                        <Grid item xs={7}>
+                          <Typography variant="h5" className="post-counter">
+                            0{key}
+                          </Typography>
+                          <PostTitle title={post.title} onClick={handleClick} />
+                          <Box className="post-metas">
+                            <PostDate date={post.created_at} />
+                          </Box>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                  );
+              })}
+          </Grid>
+        </Box>
+        <Box className="visible-md">
+          <Grid container spacing={2}>
+            {posts && posts.length > 0 && (
+              <Grid item xs={8} className="post-featured">
+                <PostImage imageUrl={posts[0].feature_image} altText={posts[0].title} onClick={handleClick} />
+                <Typography variant="h5" className="post-counter">
+                  01
+                </Typography>
+                <PostTag label={posts[0].tags[0].name} onClick={handleClick} />
+                <PostTitle title={posts[0].title} onClick={handleClick} />
+                <PostExcerpt excerpt={posts[0].excerpt} />
+                <Box className="post-metas">
+                  <PostDate date={posts[0].created_at} />
+                  <PostViews views={7} />
+                </Box>
+              </Grid>
+            )}
+            <Grid item xs={4}>
+              <SidebarSocials />
+            </Grid>
+          </Grid>
+          <Grid container spacing={2} className="post-list">
+            {posts &&
+              posts.length > 1 &&
+              posts.map((post, key) => {
+                if (key > 1 && key < 6)
+                  return (
+                    <Grid item xs={6} className={"post-item"} key={key}>
+                      <Grid container spacing={2}>
+                        <Grid item xs={5}>
+                          <PostImage imageUrl={post.feature_image} altText={post.title} onClick={handleClick} />
+                          <PostTag label={post.tags[0].name} onClick={handleClick} />
+                        </Grid>
+                        <Grid item xs={7}>
+                          <Typography variant="h5" className="post-counter">
+                            0{key}
+                          </Typography>
+                          <PostTitle title={post.title} onClick={handleClick} />
+                          <Box className="post-metas">
+                            <PostDate date={post.created_at} />
+                          </Box>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                  );
+              })}
+          </Grid>
+        </Box>
+        <Box className="visible-lg">
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              <Grid container spacing={2}>
+                <Grid item xs={6} className="post-featured">
+                  {posts && posts.length > 0 && (
+                    <Grid item xs={12}>
+                      <PostImage imageUrl={posts[0].feature_image} altText={posts[0].title} onClick={handleClick} />
+                      <Typography variant="h5" className="post-counter">
+                        01
+                      </Typography>
+                      <PostTag label={posts[0].tags[0].name} onClick={handleClick} />
+                      <PostTitle title={posts[0].title} onClick={handleClick} />
+                      <PostExcerpt excerpt={posts[0].excerpt} />
+                      <Box className="post-metas">
+                        <PostDate date={posts[0].created_at} />
+                        <PostViews views={7} />
+                      </Box>
+                    </Grid>
+                  )}
+                </Grid>
+                <Grid item xs={6} className="post-list">
+                  {posts &&
+                    posts.length > 1 &&
+                    posts.map((post, key) => {
+                      if (key > 1 && key < 6)
+                        return (
+                          <Grid container className={"post-item"} key={key} spacing={2}>
+                            <Grid item xs={5}>
+                              <PostImage imageUrl={post.feature_image} altText={post.title} onClick={handleClick} />
+                              <PostTag label={post.tags[0].name} onClick={handleClick} />
+                            </Grid>
+                            <Grid item xs={7}>
+                              <Typography variant="h5" className="post-counter">
+                                0{key}
+                              </Typography>
+                              <PostTitle title={post.title} onClick={handleClick} />
+                              <Box className="post-metas">
+                                <PostDate date={post.created_at} />
+                              </Box>
+                            </Grid>
+                          </Grid>
+                        );
+                    })}
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid item xs={3}>
+              <SidebarSocials />
+            </Grid>
+          </Grid>
+        </Box>
+        <Box className="visible-xl">
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              <Grid container spacing={2}>
+                <Grid item xs={6} className="post-featured">
+                  {posts && posts.length > 0 && (
+                    <Grid item xs={12}>
+                      <PostImage imageUrl={posts[0].feature_image} altText={posts[0].title} onClick={handleClick} />
+                      <Typography variant="h5" className="post-counter">
+                        01
+                      </Typography>
+                      <PostTag label={posts[0].tags[0].name} onClick={handleClick} />
+                      <PostTitle title={posts[0].title} onClick={handleClick} />
+                      <PostExcerpt excerpt={posts[0].excerpt} />
+                      <Box className="post-metas">
+                        <PostDate date={posts[0].created_at} />
+                        <PostViews views={7} />
+                      </Box>
+                    </Grid>
+                  )}
+                </Grid>
+                <Grid item xs={6} className="post-list">
+                  {posts &&
+                    posts.length > 1 &&
+                    posts.map((post, key) => {
+                      if (key > 1 && key < 6)
+                        return (
+                          <Grid container className={"post-item"} key={key} spacing={2}>
+                            <Grid item xs={5}>
+                              <PostImage imageUrl={post.feature_image} altText={post.title} onClick={handleClick} />
+                              <PostTag label={post.tags[0].name} onClick={handleClick} />
+                            </Grid>
+                            <Grid item xs={7}>
+                              <Typography variant="h5" className="post-counter">
+                                0{key}
+                              </Typography>
+                              <PostTitle title={post.title} onClick={handleClick} />
+                              <Box className="post-metas">
+                                <PostDate date={post.created_at} />
+                              </Box>
+                            </Grid>
+                          </Grid>
+                        );
+                    })}
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid item xs={3}>
+              <SidebarSocials />
+            </Grid>
+          </Grid>
+        </Box>
+      </Box>
+    </Fragment>
   );
 };
 

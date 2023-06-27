@@ -34,7 +34,7 @@ function TabPanel(props: TabPanelProps) {
 function a11yProps(index: number) {
   return {
     id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`
   };
 }
 
@@ -48,15 +48,10 @@ export default function SearchCategories() {
   return (
     <Box sx={{ width: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="basic tabs example"
-          className="search-tabs"
-        >
+        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" className="search-tabs">
           <Tab label="Todos" {...a11yProps(0)} />
           {MenusCategories.map((item, key) => (
-            <Tab label={item.title} {...a11yProps(key + 1)} />
+            <Tab label={item.title} {...a11yProps(key + 1)} key={key} />
           ))}
         </Tabs>
       </Box>

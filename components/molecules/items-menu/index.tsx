@@ -2,17 +2,14 @@ import React from "react";
 import { List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-import { useDrawer } from "../../../utility/contexts/drawer-context";
 
-type SidebarMenuProps = {
-  toggleDrawer: () => void;
-};
+// type SidebarMenuProps = {
+//   toggleDrawer: () => void;
+// };
 
 const ItemsMenu = () => {
-  const { isOpen, toggleDrawer } = useDrawer();
-
   const handleClick = () => {
-    toggleDrawer();
+    console.log("handleClick");
   };
 
   return (

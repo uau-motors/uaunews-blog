@@ -1,5 +1,5 @@
 #header {
-  height: 188px;
+  height: 190px;
   position: relative;
   &:before {
     content: "";
@@ -49,7 +49,7 @@
       text-align: right;
     }
     .boxWeather {
-      width: 450px;
+      width: 100%;
       position: absolute;
       right: 0;
       padding-top: 3px;
@@ -66,45 +66,60 @@
     padding: 11px 0;
     color: #fff;
     .logo {
-      width: 160px;
+      width: 130px;
       position: relative;
-      top: 5px;
+      top: 0;
+      display: flex;
       &:before {
         content: " ";
         position: absolute;
         height: 40px;
         width: 2px;
-        right: -15px;
-        top: 5px;
+        right: -30px;
+        top: 4px;
         border-right: 1px dotted #fff;
         display: block;
       }
-      span {
-        visibility: hidden;
-        position: absolute;
-      }
-      link {
-        color: #fff;
-        text-decoration: none;
+      h1 {
+        width: 160px;
+        position: relative;
+        top: 12px;
+        left: 5px;
+        display: flex;
+        flex-direction: row;
+        font-size: 1.4em;
+        font-family: "Russo One";
       }
       img {
-        width: 100%;
-        margin-top: 5px;
+        width: 46px;
+        height: 46px;
+        margin-top: 3px;
       }
     }
     .logoUM1 {
       position: relative;
-      top: 15px;
+      top: 5px;
       margin-right: 0;
-      left: -90px;
+      left: -115px;
+      width: 160px;
+      span {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+        font-weight: 900;
+        color: var(--secondary);
+        z-index: 2;
+        font-size: 0.8em;
+      }
       img {
         width: 40px;
       }
       h2 {
-        font-size: 14px;
+        font-size: 12px;
         position: absolute;
         left: 50px;
-        top: 5px;
+        top: 0;
       }
     }
     .boxSocials {
@@ -126,12 +141,28 @@
         transition: all ease 0.31s;
       }
       button {
+        padding: 5px;
+        border-radius: 100%;
+        &.btn {
+          border-radius: 5px !important;
+          padding: 5px 15px;
+          box-shadow: 0 0 10px transparent;
+          border: 1px solid #222;
+        }
+        &.primary {
+          background-color: var(--primary);
+          border: 1px solid var(--primary);
+        }
         &:hover {
           background-color: var(--primary);
           box-shadow: 0 0 10px var(--primary);
           color: #fff;
+          border-color: var(--primary);
         }
       }
+    }
+    .toogle-xs {
+      display: none;
     }
   }
   .megamenu {
@@ -321,7 +352,14 @@
         padding-left: 30px;
         padding-top: 5px;
         color: #333;
-        border-color: #333;
+        border: 1px solid #333;
+        border-radius: 4px;
+        &.btn-xs-cta {
+          display: none;
+        }
+        &.btn-md-cta {
+          display: flex;
+        }
       }
       > svg {
         position: absolute;
@@ -337,6 +375,22 @@
       width: 60px;
       margin-left: 10px;
       right: 0;
+      svg {
+        fill: var(--secondary);
+        top: -2px;
+        position: relative;
+      }
+      .MuiSwitch-root {
+        left: -20px;
+        width: 82px;
+        .MuiButtonBase-root {
+          left: 17px;
+          top: 2px;
+        }
+      }
+    }
+    .menu-xs {
+      display: none;
     }
   }
   .hot-news {
@@ -344,7 +398,7 @@
     margin-top: 0;
     margin-bottom: 0;
     padding: 10px 0;
-    height: 36px;
+    height: 40px;
     &.hot-news-dark {
       background-color: #282727;
       .hot-box {
@@ -393,6 +447,7 @@
         font-size: 14px;
         font-weight: 600;
         font-family: "Roboto";
+        color: var(--secondary);
         &:hover {
           color: var(--primary);
         }
@@ -403,6 +458,8 @@
       flex-direction: row;
       align-items: baseline;
       justify-content: flex-end;
+      position: relative;
+      right: -40px;
       a {
         background-color: #ddd;
         border-radius: 3px;
@@ -425,66 +482,406 @@
         font-weight: 500;
         margin-right: 10px;
         text-decoration: underline;
+        float: left;
+      }
+    }
+  }
+  .formHeader {
+    position: relative;
+    left: 5px;
+    top: 10px;
+    height: 40px;
+  }
+
+  .customSelect {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background: #ffffff0d;
+    border-color: #484747;
+    color: #ccc;
+  }
+
+  .inputSearch {
+    position: relative;
+    left: -8px;
+    width: auto;
+    background: #ffffff0d;
+    border-color: #484747;
+    color: #ccc;
+    font-size: 0.9em;
+  }
+
+  .inputSearch:hover,
+  .inputSearch:focus {
+    background: #fff;
+    color: #333;
+  }
+
+  .inputGroupAppend {
+    padding: 0;
+    position: relative;
+    left: -10px;
+  }
+
+  .btnGray {
+    font-weight: 600;
+    border-color: var(--secondary);
+  }
+
+  .megamenu a:hover > a {
+    background-color: var(--primary);
+    color: #fff !important;
+  }
+
+  .megamenu a.active {
+    border-bottom: 2px solid var(--primary);
+  }
+
+  .megamenu a.active > a {
+    font-weight: 600;
+  }
+
+  .blogArrowActive {
+    position: relative;
+    left: -35px;
+    top: -8px;
+  }
+}
+
+@media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+  #header {
+    height: 164px;
+    .toolbar {
+      display: none;
+    }
+    .middleHeader {
+      border-top: 5px solid var(--primary);
+      .grid-logo {
+        width: 70px;
+      }
+      .logo {
+        width: 48px;
+        &::before {
+          right: -10px;
+        }
+        h1 {
+          visibility: hidden;
+        }
+      }
+      .logoUM1 {
+        left: 0;
+        top: 5px;
+        h2 {
+          top: -4px;
+        }
+      }
+      .header-actions {
+        width: auto;
+      }
+      .boxSocials {
+        display: none;
+      }
+      .toogle-xs {
+        position: absolute;
+        right: 5px;
+        display: block;
+        svg {
+          fill: #ddd;
+          top: -2px;
+          position: relative;
+        }
+        .MuiSwitch-root {
+          left: 0;
+          width: 82px;
+          .MuiButtonBase-root {
+            left: 17px;
+            top: 2px;
+          }
+        }
+      }
+    }
+    .megamenu {
+      overflow: hidden;
+      .side-menu-trigger {
+        top: 0;
+      }
+      .nav-item {
+        display: none;
+      }
+      .menu-item {
+      }
+      .nav-comparativos,
+      .nav-curiosidades,
+      .nav-avaliacoes,
+      .toggle-theme {
+        display: none;
+      }
+      .menuActions {
+        position: absolute;
+        top: -8px;
+        right: -40px;
+        .btnSearch {
+          width: 140px;
+          padding-left: 20px;
+          &.btn-xs-cta {
+            display: block;
+            width: 30px;
+            padding-left: 10px;
+            top: 3px;
+          }
+          &.btn-md-cta {
+            display: none;
+          }
+        }
+      }
+      .menu-xs {
+        display: block;
+
+        position: absolute;
+        left: 55px;
+        top: -3px;
+        color: #100f0f;
+        .btn {
+          padding: 3px 5px;
+          color: #100f0f;
+        }
+      }
+    }
+
+    .hot-news {
+      .hot-box {
+        width: 24px;
+        .hot-title {
+          display: none;
+          p {
+            color: var(--secondary);
+          }
+        }
+        svg {
+          left: -7px;
+          position: relative;
+        }
+      }
+      .hot-links {
+        display: none;
+      }
+      .hot-slider {
+        left: 35px;
+        top: -25px;
+        line-height: 14px;
+        font-size: 11px;
+        padding-right: 0;
+        width: 92%;
+        font-weight: normal;
+      }
+    }
+  }
+  .MuiMenu-paper {
+    left: 0px !important;
+    top: 118px !important;
+    width: 100%;
+  }
+
+  .MuiList-root {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .MuiMenu-list {
+    padding: 0;
+    position: relative;
+    min-width: 100%;
+  }
+  .menu-customized-menu {
+    position: absolute !important;
+  }
+  .css-1r9omg7-MuiModal-root-MuiPopover-root-MuiMenu-root .MuiPaper-root {
+    min-width: 100%;
+  }
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  #header {
+    .toolbar {
+      .mui-toolbar {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+    .middleHeader {
+      .grid-logo {
+        width: 70px;
+      }
+      .logo {
+        width: 48px;
+        &::before {
+          right: -10px;
+        }
+        h1 {
+          visibility: hidden;
+        }
+      }
+      .logoUM1 {
+        left: 0;
+        top: 5px;
+        h2 {
+          top: -4px;
+        }
+      }
+      .header-actions {
+        width: auto;
+      }
+      .boxSocials {
+        position: absolute;
+        right: 15px;
+        float: right;
+        width: 100%;
+        .btn-app {
+          display: none;
+        }
+      }
+    }
+    .megamenu {
+      .nav-item {
+        font-size: 0.82em;
+      }
+      .nav-comparativos,
+      .nav-curiosidades,
+      .nav-avaliacoes {
+        display: none;
+      }
+      .menuActions {
+        .btnSearch {
+          width: 140px;
+          padding-left: 20px;
+          &.btn-xs-cta {
+            display: block;
+            width: 30px;
+            padding-left: 10px;
+          }
+          &.btn-md-cta {
+            display: none;
+          }
+        }
+      }
+    }
+    .hot-news {
+      .hot-title {
+        p {
+          color: var(--secondary);
+        }
+      }
+
+      .hot-links {
+        display: none;
       }
     }
   }
 }
 
-.formHeader {
-  position: relative;
-  left: 5px;
-  top: 10px;
-  height: 40px;
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  #header {
+    .toolbar {
+      .mui-toolbar {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+    .middleHeader {
+      .grid-logo {
+        width: 70px;
+      }
+      .logo {
+        width: 48px;
+        &::before {
+          right: -10px;
+        }
+        h1 {
+          visibility: hidden;
+        }
+      }
+      .logoUM1 {
+        left: 0;
+        top: 5px;
+        h2 {
+          top: -4px;
+        }
+      }
+      .header-actions {
+        width: auto;
+      }
+      .boxSocials {
+        position: absolute;
+        right: 15px;
+        float: right;
+        width: 100%;
+        .btn-app {
+          display: none;
+        }
+      }
+    }
+    .megamenu {
+      .nav-item {
+        font-size: 0.82em;
+      }
+      .nav-comparativos,
+      .nav-curiosidades,
+      .nav-avaliacoes {
+        display: none;
+      }
+      .menuActions {
+        .btnSearch {
+          width: 140px;
+          padding-left: 20px;
+          &.btn-xs-cta {
+            display: block;
+            width: 30px;
+            padding-left: 10px;
+          }
+          &.btn-md-cta {
+            display: none;
+          }
+        }
+      }
+    }
+    .hot-news {
+      .hot-title {
+        p {
+          color: var(--secondary);
+        }
+      }
+
+      .hot-links {
+        display: none;
+      }
+    }
+  }
 }
 
-.customSelect {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  background: #ffffff0d;
-  border-color: #484747;
-  color: #ccc;
-}
-
-.inputSearch {
-  position: relative;
-  left: -8px;
-  width: auto;
-  background: #ffffff0d;
-  border-color: #484747;
-  color: #ccc;
-  font-size: 0.9em;
-}
-
-.inputSearch:hover,
-.inputSearch:focus {
-  background: #fff;
-  color: #333;
-}
-
-.inputGroupAppend {
-  padding: 0;
-  position: relative;
-  left: -10px;
-}
-
-.btnGray {
-  font-weight: 600;
-  border-color: var(--secondary);
-}
-
-.megamenu a:hover > a {
-  background-color: var(--primary);
-  color: #fff !important;
-}
-.megamenu a.active {
-  border-bottom: 2px solid var(--primary);
-}
-.megamenu a.active > a {
-  font-weight: 600;
-}
-
-.blogArrowActive {
-  position: relative;
-  left: -35px;
-  top: -8px;
+@media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+  #header {
+    .middleHeader {
+      .logoUM1 {
+        position: relative;
+        top: 10px;
+        margin-right: 0;
+        left: -70px;
+        width: 160px;
+      }
+    }
+    .megamenu {
+      .menuActions {
+        .btnSearch {
+          width: 213px;
+        }
+      }
+      .nav-item {
+        font-size: 0.82em;
+      }
+      .nav-curiosidades,
+      .nav-avaliacoes {
+        display: none;
+      }
+    }
+  }
 }

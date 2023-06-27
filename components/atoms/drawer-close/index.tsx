@@ -1,13 +1,14 @@
 import React from "react";
-import { useDrawer } from "../../../utility/contexts/drawer-context";
+import { useOverlay } from "@utility/contexts/provider-context";
 import { Button } from "@mui/material";
 
-export const DrawerClose = () => {
-  const { toggleDrawer } = useDrawer();
+const DrawerClose: React.FC = () => {
+  const { toggleDrawer } = useOverlay();
 
   const handleClose = () => {
     toggleDrawer();
   };
+
   return (
     <Button onClick={handleClose} className="drawer-close">
       <i className="fa fa-times"></i>

@@ -11,8 +11,8 @@ const PostDate = ({ date }: PostDateProps) => {
       <Box sx={{ mr: 1 }}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="12"
-          height="12"
+          width="16"
+          height="16"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#6B7280"
@@ -28,7 +28,7 @@ const PostDate = ({ date }: PostDateProps) => {
         </svg>
       </Box>
       <Typography variant="subtitle2" sx={{ color: "text.secondary" }}>
-        {format(new Date(date), "dd/MM/yyyy")}
+        {format(new Date(), "dd/MM/yyyy")}
       </Typography>
     </Box>
   );

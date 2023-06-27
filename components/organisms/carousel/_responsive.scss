@@ -3,20 +3,16 @@
     .carousel-items {
       .slide {
         img {
-          left: 0;
+          left: -55%;
         }
         &:hover {
           img {
-            left: 0;
+            left: -55%;
           }
         }
         .thumb-overlay {
           &:after {
-            background-image: linear-gradient(
-              to bottom,
-              transparent,
-              rgba(black, 0.9)
-            );
+            background-image: linear-gradient(to bottom, transparent, rgba(black, 0.9));
             animation: fadein 1s;
             -moz-animation: fadein 1s; /* Firefox */
             -webkit-animation: fadein 1s; /* Safari and Chrome */
