@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-
+const withPWA = require("next-pwa");
 const nextConfig = {
   //...(process.env.NETLIFY === 'true' && { target: 'serverless' }),
   images: {
@@ -26,6 +26,10 @@ const nextConfig = {
   reactStrictMode: true,
   experimental: {
     appDir: true
+  },
+  pwa: {
+    dest: "public",
+    disable: process.env.NODE_ENV === "development"
   }
 };
 
