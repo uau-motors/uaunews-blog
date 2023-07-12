@@ -41,7 +41,8 @@
     }
   ],
   "name": "UauNews",
-  "short_name": "uaunews",
+  "scope": "/",
+  "short_name": "UauNews",
   "start_url": "/",
   "theme_color": "#FFFFFF"
 }

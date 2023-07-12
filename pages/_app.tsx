@@ -10,25 +10,18 @@ import { ThemeProvider } from "@mui/material/styles";
 import { lightTheme, darkTheme } from "@utility/Theme";
 import { CssBaseline } from "@mui/material";
 
-function useServiceWorker() {
-  useEffect(() => {
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .register("/service-worker.js")
-        .then((registration) => console.log("scope is: ", registration.scope));
-    }
-  }, []);
-}
+import { Toaster } from "react-hot-toast";
+import NextNProgress from "nextjs-progressbar";
 
 function App({ Component, pageProps }: AppProps) {
   const { theme } = useContext(ThemeContext);
-
-  useServiceWorker();
 
   return (
     <ThemeContextProvider>
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
         <CssBaseline />
+        <NextNProgress color="#cc6101" height={3} options={{ showSpinner: false }} />
+        <Toaster />
         <OverlayProvider>
           <Component {...pageProps} />
         </OverlayProvider>

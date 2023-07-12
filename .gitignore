@@ -37,6 +37,14 @@ yarn-error.log*
 # post build
 /public/*.xml
 /public/images
-
+/public/sw.js
+/public/service-worker.js
+/public/workbox-*.js
+/public/worker-*.js
+/public/sw.js.map
+/public/workbox-*.js.map
+/public/worker-*.js.map
 # cache
 /.cache
+
+.history

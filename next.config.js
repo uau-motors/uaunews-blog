@@ -35,5 +35,4 @@ const nextConfig = withPWA({
     appDir: true
   }
 });
-
 module.exports = nextConfig;
