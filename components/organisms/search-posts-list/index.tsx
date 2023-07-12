@@ -1,7 +1,8 @@
 import React from "react";
 import { Grid } from "@mui/material";
-import PostCard from "../post-card";
+
 import { PostCardDataI } from "@utility/interfaces";
+import PostCard from "@components/molecules/post-card";
 
 interface PostListProps {
   posts: PostCardDataI[];
@@ -15,7 +16,7 @@ const SearchPostList = ({ posts }: PostListProps) => {
           if (index > 0 && index <= 8)
             return (
               <Grid item key={index} xs={3}>
-                <PostCard {...post} />
+                <PostCard post={post} delay={index} />
               </Grid>
             );
         })}
