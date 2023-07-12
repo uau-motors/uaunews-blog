@@ -4,11 +4,6 @@ import { resolve } from "url";
 import { processEnv } from "@libs/processEnv";
 
 export default class HeaderDocument extends Document {
-  static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
-  }
-
   render() {
     const { pageProps } = this.props.__NEXT_DATA__.props;
     const { cmsData, settings } = pageProps || { cmsData: null, settings: null };
