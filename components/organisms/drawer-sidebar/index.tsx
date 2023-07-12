@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Drawer } from "@mui/material";
-import { useOverlay } from "@utility/contexts/provider-context";
+import { useOverlay } from "@utility/contexts/ProviderContext";
 import DrawerTitle from "@molecules/drawer-title";
 import DrawerCategories from "@molecules/drawer-categories";
 import DrawerAbout from "@molecules/drawer-about";

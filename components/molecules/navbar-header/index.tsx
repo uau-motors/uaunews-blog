@@ -5,9 +5,9 @@ import Link from "next/link";
 import { Box, Button } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ThemeToggle from "../theme-toggle";
-import { useOverlay } from "@utility/contexts/provider-context";
+import { useOverlay } from "@utility/contexts/ProviderContext";
 import Router from "next/router";
-import settings from "@utility/settings";
+import settings from "@utility/Settings";
 
 import { styled, alpha } from "@mui/material/styles";
 import Menu, { MenuProps } from "@mui/material/Menu";

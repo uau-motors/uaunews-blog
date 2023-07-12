@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode, useCallback, useMemo } from "react";
 import { ThemeProvider } from "@material-ui/core/styles";
-import { lightTheme, darkTheme } from "@utility/theme";
+import { lightTheme, darkTheme } from "@utility/Theme";
 
 interface ThemeContextType {
   theme: string;

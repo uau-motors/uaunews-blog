@@ -4,14 +4,14 @@ import { Box, Container, Stack } from "@mui/material";
 import LastedPosts from "@organisms/lasteds-posts";
 
 import DefaultTemplate from "@components/templates";
-import settings from "@utility/settings";
+import settings from "@utility/Settings";
 import { SEO } from "@organisms/meta/seo";
 import { CmsData, CarouselDataI, PostCardDataI } from "@utility/interfaces";
-import { BodyClass } from "@helpers/bodyClass";
+import { BodyClass } from "@helpers/BodyClass";
 import { getAllPosts } from "../api";
-import useWindowSize from "@utility/useWindowSize";
-import getScreenSize from "@utility/getScreenSize";
-import { limitCharacters, removePartialRecords } from "@utility/helpers/formatedJson";
+import useWindowSize from "@utility/UseWindowSize";
+import getScreenSize from "@utility/GetScreenSize";
+import { limitCharacters, removePartialRecords } from "@utility/helpers/FormatedJson";
 import CategoryPage from "@components/organisms/categories";
 import PaginationLink from "@components/molecules/pagination";
 

@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import HomeIcon from "@mui/icons-material/Home";
-import { getTitle } from "@utility/getTitle";
+import { getTitle } from "@utility/GetTitle";
 
 interface BreadcrumbProps {
   titlePage?: string;
@@ -16,11 +16,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ titlePage }) => {
   const pathnames = pathname.split("/").filter((x) => x);
 
   return (
-    <Breadcrumbs
-      separator={<KeyboardArrowRightIcon />}
-      aria-label="breadcrumb"
-      className="breadcrumb"
-    >
+    <Breadcrumbs separator={<KeyboardArrowRightIcon />} aria-label="breadcrumb" className="breadcrumb">
       <Link color="inherit" href="/">
         <HomeIcon className="icon-home" />
         Home

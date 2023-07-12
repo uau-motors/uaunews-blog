@@ -7,7 +7,7 @@ import TitleSection from "@molecules/title-section";
 import SidebarSocials from "@organisms/sidebar/socials";
 import PostCard from "@components/molecules/post-card";
 
-import { screenContainer } from "@utility/helpers/screenContainer";
+import { screenContainer } from "@utility/helpers/ScreenContainer";
 
 interface RecentPostsProps {
   posts: PostCardDataI[];

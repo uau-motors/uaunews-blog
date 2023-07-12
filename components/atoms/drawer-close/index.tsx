@@ -1,5 +1,5 @@
 import React from "react";
-import { useOverlay } from "@utility/contexts/provider-context";
+import { useOverlay } from "@utility/contexts/ProviderContext";
 import { Button } from "@mui/material";
 
 const DrawerClose: React.FC = () => {

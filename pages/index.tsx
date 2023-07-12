@@ -1,23 +1,24 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, lazy, Suspense } from "react";
 import { useRouter } from "next/router";
 import { Box, Container } from "@mui/material";
-import { ThemeContext } from "@utility/contexts/theme-context";
-import CarouselBlog from "@organisms/carousel";
-import RecentsPosts from "@organisms/recents-posts";
-import VehicleEvaluation from "@organisms/vehicle-evaluation";
-import RecentsVehicles from "@organisms/recents-vehicles";
-import PostsVideos from "@organisms/posts-videos";
-import LastedPosts from "@organisms/lasteds-posts";
-
-import DefaultTemplate from "@components/templates";
-import settings from "@utility/settings";
+import { ThemeContext } from "@utility/contexts/ThemeContext";
 import { SEO } from "@organisms/meta/seo";
 import { CmsData, CarouselDataI, PostCardDataI } from "@utility/interfaces";
-import { BodyClass } from "@helpers/bodyClass";
+import { BodyClass } from "@helpers/BodyClass";
 import { getAllPosts } from "./api";
-import useWindowSize from "@utility/useWindowSize";
-import getScreenSize from "@utility/getScreenSize";
-import { limitCharacters, removeLastRecords, removePartialRecords } from "@utility/helpers/formatedJson";
+import useWindowSize from "@utility/UseWindowSize";
+import getScreenSize from "@utility/GetScreenSize";
+import { limitCharacters, removeLastRecords, removePartialRecords } from "@utility/helpers/FormatedJson";
+import settings from "@utility/Settings";
+
+const CarouselBlog = lazy(() => import("@organisms/carousel"));
+const RecentsPosts = lazy(() => import("@organisms/recents-posts"));
+const VehicleEvaluation = lazy(() => import("@organisms/vehicle-evaluation"));
+const RecentsVehicles = lazy(() => import("@organisms/recents-vehicles"));
+const PostsVideos = lazy(() => import("@organisms/posts-videos"));
+const LastedPosts = lazy(() => import("@organisms/lasteds-posts"));
+
+const DefaultTemplate = lazy(() => import("@components/templates"));
 
 const Home: React.FC<{
   cmsData: CmsData;
@@ -47,34 +48,46 @@ const Home: React.FC<{
       <SEO {...{ title: seo.title, description: seo.description }} />
       <DefaultTemplate {...{ bodyClass, id: "home", header: true, footer: true }}>
         <Container>
-          <CarouselBlog posts={carouselPosts || []} />
+          <Suspense fallback={<div className="loading">Carregando...</div>}>
+            <CarouselBlog posts={carouselPosts || []} />
+          </Suspense>
 
           <Box className={"recent-posts"}>
-            <RecentsPosts posts={recentsPosts} screen={screen} width={width} />
+            <Suspense fallback={<div className="loading">Carregando...</div>}>
+              <RecentsPosts posts={recentsPosts} screen={screen} width={width} />
+            </Suspense>
           </Box>
         </Container>
 
         <Box className={`vehicle-evaluation bg-${theme}`}>
           <Container>
-            <VehicleEvaluation posts={evaluationPosts} screen={screen} width={width} />
+            <Suspense fallback={<div className="loading">Carregando...</div>}>
+              <VehicleEvaluation posts={evaluationPosts} screen={screen} width={width} />
+            </Suspense>
           </Container>
         </Box>
 
         <Box className={`recents-vehicles`}>
           <Container>
-            <RecentsVehicles posts={evaluationPosts} screen={screen} width={width} />
+            <Suspense fallback={<div className="loading">Carregando...</div>}>
+              <RecentsVehicles posts={evaluationPosts} screen={screen} width={width} />
+            </Suspense>
           </Container>
         </Box>
 
         <Box className={`posts-videos bg-${theme}`}>
           <Container>
-            <PostsVideos posts={evaluationPosts} screen={screen} width={width} />
+            <Suspense fallback={<div className="loading">Carregando...</div>}>
+              <PostsVideos posts={evaluationPosts} screen={screen} width={width} />
+            </Suspense>
           </Container>
         </Box>
 
         <Box className={`lasteds-posts`}>
           <Container>
-            <LastedPosts posts={lastedPosts} screen={screen} width={width} />
+            <Suspense fallback={<div className="loading">Carregando...</div>}>
+              <LastedPosts posts={lastedPosts} screen={screen} width={width} />
+            </Suspense>
           </Container>
         </Box>
       </DefaultTemplate>

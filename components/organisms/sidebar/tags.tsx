@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
 import TitleSection from "../../molecules/title-section";
 import TagCloud from "../../atoms/tag-cloud";
-import { ThemeContext } from "../../../utility/contexts/theme-context";
+import { ThemeContext } from "../../../utility/contexts/ThemeContext";
 import { useContext } from "react";
-import { Tags } from "../../../utility/constants";
+import { Tags } from "../../../utility/Constants";
 
 interface TagsI {
   title: string;

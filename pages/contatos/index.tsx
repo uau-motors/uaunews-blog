@@ -3,10 +3,10 @@ import { useRouter } from "next/router";
 import { Container, Grid } from "@mui/material";
 
 import DefaultTemplate from "@components/templates";
-import settings from "@utility/settings";
+import settings from "@utility/Settings";
 import { SEO } from "@organisms/meta/seo";
 import { CmsData } from "@utility/interfaces";
-import { BodyClass } from "@helpers/bodyClass";
+import { BodyClass } from "@helpers/BodyClass";
 
 export const getStaticProps = async () => {
   const cmsData = {

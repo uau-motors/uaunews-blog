@@ -7,8 +7,8 @@ import Box from "@mui/material/Box";
 import CloudIcon from "@mui/icons-material/Cloud";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
-import settings from "@utility/settings";
-import { useOverlay } from "@utility/contexts/provider-context";
+import settings from "@utility/Settings";
+import { useOverlay } from "@utility/contexts/ProviderContext";
 
 const ToolbarHeader = () => {
   const { city, weather } = useOverlay();

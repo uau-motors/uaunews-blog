@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import Switch from "@mui/material/Switch";
 import { Brightness4 as DarkModeIcon, Brightness7 as LightModeIcon } from "@mui/icons-material";
-import { ThemeContext } from "@utility/contexts/theme-context";
+import { ThemeContext } from "@utility/contexts/ThemeContext";
 
 function ThemeToggle() {
   const { theme, setTheme } = useContext(ThemeContext);

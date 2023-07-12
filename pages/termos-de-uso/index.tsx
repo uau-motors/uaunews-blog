@@ -2,9 +2,9 @@ import React from "react";
 import { useRouter } from "next/router";
 
 import DefaultTemplate from "@components/templates";
-import settings from "@utility/settings";
+import settings from "@utility/Settings";
 import { SEO } from "@organisms/meta/seo";
-import { BodyClass } from "@helpers/bodyClass";
+import { BodyClass } from "@helpers/BodyClass";
 import Institutional from "@organisms/page";
 
 const Pageinstitutional: React.FC = () => {

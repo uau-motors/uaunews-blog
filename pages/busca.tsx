@@ -5,10 +5,10 @@ import { useRouter } from "next/router";
 import SearchModal from "../components/organisms/search-modal";
 
 import DefaultTemplate from "@components/templates";
-import settings from "@utility/settings";
+import settings from "@utility/Settings";
 import { SEO } from "@organisms/meta/seo";
 import { CmsData, CarouselDataI, PostCardDataI } from "@utility/interfaces";
-import { BodyClass } from "@helpers/bodyClass";
+import { BodyClass } from "@helpers/BodyClass";
 import { getAllPosts } from "./api";
 
 function removeLast12Records(jsonArray: any[]): any[] {

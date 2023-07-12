@@ -1,4 +1,4 @@
-import { lang, StringKeyObjectMap } from "@utility/language";
+import { lang, StringKeyObjectMap } from "@utility/Language";
 
 const getLang = (locale: string = "en") => {
   return lang[locale] ?? lang.en;

@@ -1,6 +1,6 @@
 import { useEffect, useContext } from "react";
 import { useRouter } from "next/router";
-import { ThemeContext } from "@utility/contexts/theme-context";
+import { ThemeContext } from "@utility/contexts/ThemeContext";
 
 interface DocumentHeadProps {
   className: string;

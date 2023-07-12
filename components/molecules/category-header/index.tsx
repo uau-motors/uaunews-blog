@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import Breadcrumb from "@molecules/breadcrumb";
 import TitleSection from "@components/molecules/title-section";
-import { getTitle } from "@utility/getTitle";
+import { getTitle } from "@utility/GetTitle";
 import { useRouter } from "next/router";
 import Image from "next/image";
 

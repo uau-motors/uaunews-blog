@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Container, Typography, Box, Grid, Paper } from "@mui/material";
 import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
-import { ThemeContext } from "@utility/contexts/theme-context";
+import { ThemeContext } from "@utility/contexts/ThemeContext";
 import Link from "next/link";
 
 const hotNews = [

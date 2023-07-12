@@ -4,8 +4,8 @@ import Box from "@mui/material/Box";
 import InstallMobileIcon from "@mui/icons-material/InstallMobile";
 import FeedIcon from "@mui/icons-material/Feed";
 
-import { useOverlay } from "@utility/contexts/provider-context";
-import settings from "@utility/settings";
+import { useOverlay } from "@utility/contexts/ProviderContext";
+import settings from "@utility/Settings";
 
 const MiddleActions = () => {
   const { socialItens } = settings;

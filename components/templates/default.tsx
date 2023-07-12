@@ -1,7 +1,7 @@
 import { ReactFragment, FC, Fragment } from "react";
 
 import Link from "next/link";
-import { getLang, get } from "@utility/useLang";
+import { getLang, get } from "@utility/UseLang";
 import { GhostSettings } from "@libs/ghost";
 
 import { DocumentHead } from "@molecules/document-head";

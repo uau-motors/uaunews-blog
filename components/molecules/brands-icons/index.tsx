@@ -2,7 +2,7 @@ import React from "react";
 
 import { Paper, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { BrandsIcons } from "../../../utility/constants";
+import { BrandsIcons } from "../../../utility/Constants";
 import Link from "next/link";
 import Image from "next/image";
 

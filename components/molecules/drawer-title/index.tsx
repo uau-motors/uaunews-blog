@@ -1,7 +1,7 @@
 import { Link } from "@mui/material";
 import React, { useContext } from "react";
 import Logo from "../logo";
-import { ThemeContext } from "@utility/contexts/theme-context";
+import { ThemeContext } from "@utility/contexts/ThemeContext";
 
 const DrawerTitle = () => {
   const { theme } = useContext(ThemeContext);

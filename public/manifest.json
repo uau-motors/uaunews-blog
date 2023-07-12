@@ -6,37 +6,37 @@
     {
       "density": "0.75",
       "sizes": "36x36",
-      "src": "/assets/images/favicons/android-icon-36x36.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Fandroid-icon-36x36.png?alt=media",
       "type": "image/png"
     },
     {
       "density": "1.0",
       "sizes": "48x48",
-      "src": "/assets/images/favicons/android-icon-48x48.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Fandroid-icon-48x48.png?alt=media",
       "type": "image/png"
     },
     {
       "density": "1.5",
       "sizes": "72x72",
-      "src": "/assets/images/favicons/android-icon-72x72.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Fandroid-icon-72x72.png?alt=media",
       "type": "image/png"
     },
     {
       "density": "2.0",
       "sizes": "96x96",
-      "src": "/assets/images/favicons/android-icon-96x96.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Fandroid-icon-96x96.png?alt=media",
       "type": "image/png"
     },
     {
       "density": "3.0",
       "sizes": "144x144",
-      "src": "/assets/images/favicons/android-icon-144x144.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Fandroid-icon-144x144.png?alt=media",
       "type": "image/png"
     },
     {
       "density": "4.0",
       "sizes": "192x192",
-      "src": "/assets/images/favicons/android-icon-192x192.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Fandroid-icon-192x192.png?alt=media",
       "type": "image/png"
     }
   ],

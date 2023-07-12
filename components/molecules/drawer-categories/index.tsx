@@ -1,15 +1,7 @@
 import React from "react";
-import {
-  Box,
-  Typography,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Divider,
-} from "@mui/material";
+import { Box, Typography, List, ListItem, ListItemIcon, ListItemText, Divider } from "@mui/material";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
-import { MenusCategories } from "../../../utility/constants";
+import { MenusCategories } from "../../../utility/Constants";
 const DrawerCategories = () => {
   return (
     <Box className="drawer-categories">

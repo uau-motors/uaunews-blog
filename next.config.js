@@ -19,6 +19,7 @@ const nextConfig = {
       "demo.tagdiv.com",
       "via.placeholder.com",
       "192.168.15*",
+      "firebasestorage.googleapis.com",
       ...(process.env.IMAGE_DOMAINS || "").split(",")
     ],
     formats: ["image/avif", "image/webp"]
