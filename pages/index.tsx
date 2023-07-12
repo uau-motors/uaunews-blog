@@ -17,7 +17,6 @@ const VehicleEvaluation = lazy(() => import("@organisms/vehicle-evaluation"));
 const RecentsVehicles = lazy(() => import("@organisms/recents-vehicles"));
 const PostsVideos = lazy(() => import("@organisms/posts-videos"));
 const LastedPosts = lazy(() => import("@organisms/lasteds-posts"));
-
 const DefaultTemplate = lazy(() => import("@components/templates"));
 
 const Home: React.FC<{
@@ -31,9 +30,9 @@ const Home: React.FC<{
   const router = useRouter();
   const bodyClass = BodyClass({ isHome: true });
   const { seo } = settings;
-  const { cmsData, carouselPosts, recentsPosts, evaluationPosts, lastedPosts } = props;
+  const { carouselPosts, recentsPosts, evaluationPosts, lastedPosts } = props;
   const [screen, setScreen] = useState<string>("");
-  const { width, height } = useWindowSize();
+  const { width } = useWindowSize();
 
   useEffect(() => {
     setScreen(getScreenSize(width));
@@ -46,51 +45,40 @@ const Home: React.FC<{
   return (
     <>
       <SEO {...{ title: seo.title, description: seo.description }} />
-      <DefaultTemplate {...{ bodyClass, id: "home", header: true, footer: true }}>
-        <Container>
-          <Suspense fallback={<div className="loading">Carregando...</div>}>
+      <Suspense fallback={<div className="loading">Carregando...</div>}>
+        <DefaultTemplate {...{ bodyClass, id: "home", header: true, footer: true }}>
+          <Container>
             <CarouselBlog posts={carouselPosts || []} />
-          </Suspense>
-
-          <Box className={"recent-posts"}>
-            <Suspense fallback={<div className="loading">Carregando...</div>}>
+            <Box className={"recent-posts"}>
               <RecentsPosts posts={recentsPosts} screen={screen} width={width} />
-            </Suspense>
-          </Box>
-        </Container>
+            </Box>
+          </Container>
 
-        <Box className={`vehicle-evaluation bg-${theme}`}>
-          <Container>
-            <Suspense fallback={<div className="loading">Carregando...</div>}>
+          <Box className={`vehicle-evaluation bg-${theme}`}>
+            <Container>
               <VehicleEvaluation posts={evaluationPosts} screen={screen} width={width} />
-            </Suspense>
-          </Container>
-        </Box>
+            </Container>
+          </Box>
 
-        <Box className={`recents-vehicles`}>
-          <Container>
-            <Suspense fallback={<div className="loading">Carregando...</div>}>
+          <Box className={`recents-vehicles`}>
+            <Container>
               <RecentsVehicles posts={evaluationPosts} screen={screen} width={width} />
-            </Suspense>
-          </Container>
-        </Box>
+            </Container>
+          </Box>
 
-        <Box className={`posts-videos bg-${theme}`}>
-          <Container>
-            <Suspense fallback={<div className="loading">Carregando...</div>}>
+          <Box className={`posts-videos bg-${theme}`}>
+            <Container>
               <PostsVideos posts={evaluationPosts} screen={screen} width={width} />
-            </Suspense>
-          </Container>
-        </Box>
+            </Container>
+          </Box>
 
-        <Box className={`lasteds-posts`}>
-          <Container>
-            <Suspense fallback={<div className="loading">Carregando...</div>}>
+          <Box className={`lasteds-posts`}>
+            <Container>
               <LastedPosts posts={lastedPosts} screen={screen} width={width} />
-            </Suspense>
-          </Container>
-        </Box>
-      </DefaultTemplate>
+            </Container>
+          </Box>
+        </DefaultTemplate>
+      </Suspense>
     </>
   );
 };

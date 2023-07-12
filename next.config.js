@@ -1,7 +1,13 @@
-/** @type {import('next').NextConfig} */
-const withPWA = require("next-pwa");
-const nextConfig = {
-  //...(process.env.NETLIFY === 'true' && { target: 'serverless' }),
+const runtimeCaching = require("next-pwa/cache");
+const withPWA = require("next-pwa")({
+  dest: "public",
+  register: true,
+  skipWaiting: true,
+  runtimeCaching,
+  buildExcludes: [/middleware-manifest.json$/]
+});
+
+const nextConfig = withPWA({
   images: {
     deviceSizes: [320, 500, 680, 1040, 2080, 2048, 3120],
     domains: [
@@ -27,11 +33,7 @@ const nextConfig = {
   reactStrictMode: true,
   experimental: {
     appDir: true
-  },
-  pwa: {
-    dest: "public",
-    disable: process.env.NODE_ENV === "development"
   }
-};
+});
 
 module.exports = nextConfig;
