@@ -18,7 +18,7 @@ const PostImage: React.FC<PostImageProps> = ({
   imageUrl,
   altText,
   format = "large",
-  position = "left",
+  position = "down",
   legend,
   credit = "Divulgação",
   zoom = true

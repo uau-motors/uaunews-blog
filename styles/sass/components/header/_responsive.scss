@@ -1,0 +1,337 @@
+@media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+  #header {
+    height: 164px;
+    .toolbar {
+      display: none;
+    }
+    .middleHeader {
+      border-top: 5px solid var(--primary);
+      .grid-logo {
+        width: 70px;
+      }
+      .logo {
+        width: 48px;
+        &::before {
+          right: -10px;
+        }
+        h1 {
+          visibility: hidden;
+        }
+      }
+      .logoUM1 {
+        left: 0;
+        top: 5px;
+        h2 {
+          top: -4px;
+        }
+      }
+      .header-actions {
+        width: auto;
+      }
+      .boxSocials {
+        display: none;
+      }
+      .toogle-xs {
+        position: absolute;
+        right: 5px;
+        display: block;
+        svg {
+          fill: #ddd;
+          top: -2px;
+          position: relative;
+        }
+        .MuiSwitch-root {
+          left: 0;
+          width: 82px;
+          .MuiButtonBase-root {
+            left: 17px;
+            top: 2px;
+          }
+        }
+      }
+    }
+    .megamenu {
+      overflow: hidden;
+      .side-menu-trigger {
+        top: 0;
+      }
+      .nav-item {
+        display: none;
+      }
+      .menu-item {
+      }
+      .nav-comparativos,
+      .nav-curiosidades,
+      .nav-avaliacoes,
+      .toggle-theme {
+        display: none;
+      }
+      .menuActions {
+        position: absolute;
+        top: -8px;
+        right: -40px;
+        .btnSearch {
+          width: 140px;
+          padding-left: 20px;
+          &.btn-xs-cta {
+            display: block;
+            width: 30px;
+            padding-left: 10px;
+            top: 3px;
+          }
+          &.btn-md-cta {
+            display: none;
+          }
+        }
+      }
+      .menu-xs {
+        display: block;
+
+        position: absolute;
+        left: 55px;
+        top: -3px;
+        color: #100f0f;
+        .btn {
+          padding: 3px 5px;
+          color: #100f0f;
+        }
+      }
+    }
+
+    .hot-news {
+      .hot-box {
+        width: 24px;
+        .hot-title {
+          display: none;
+          p {
+            color: var(--secondary);
+          }
+        }
+        svg {
+          left: -7px;
+          position: relative;
+        }
+      }
+      .hot-links {
+        display: none;
+      }
+      .hot-slider {
+        left: 35px;
+        top: -25px;
+        line-height: 14px;
+        font-size: 11px;
+        padding-right: 0;
+        width: 92%;
+        font-weight: normal;
+      }
+    }
+  }
+  .MuiMenu-paper {
+    left: 0px !important;
+    top: 118px !important;
+    width: 100%;
+  }
+
+  .MuiList-root {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .MuiMenu-list {
+    padding: 0;
+    position: relative;
+    min-width: 100%;
+  }
+  .menu-customized-menu {
+    position: absolute !important;
+  }
+  .css-1r9omg7-MuiModal-root-MuiPopover-root-MuiMenu-root .MuiPaper-root {
+    min-width: 100%;
+  }
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  #header {
+    .toolbar {
+      .mui-toolbar {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+    .middleHeader {
+      .grid-logo {
+        width: 70px;
+      }
+      .logo {
+        width: 48px;
+        &::before {
+          right: -10px;
+        }
+        h1 {
+          visibility: hidden;
+        }
+      }
+      .logoUM1 {
+        left: 0;
+        top: 5px;
+        h2 {
+          top: -4px;
+        }
+      }
+      .header-actions {
+        width: auto;
+      }
+      .boxSocials {
+        position: absolute;
+        right: 15px;
+        float: right;
+        width: 100%;
+        .btn-app {
+          display: none;
+        }
+      }
+    }
+    .megamenu {
+      .nav-item {
+        font-size: 0.82em;
+      }
+      .nav-comparativos,
+      .nav-curiosidades,
+      .nav-avaliacoes {
+        display: none;
+      }
+      .menuActions {
+        .btnSearch {
+          width: 140px;
+          padding-left: 20px;
+          &.btn-xs-cta {
+            display: block;
+            width: 30px;
+            padding-left: 10px;
+          }
+          &.btn-md-cta {
+            display: none;
+          }
+        }
+      }
+    }
+    .hot-news {
+      .hot-title {
+        p {
+          color: var(--secondary);
+        }
+      }
+
+      .hot-links {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  #header {
+    .toolbar {
+      .mui-toolbar {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+    .middleHeader {
+      .grid-logo {
+        width: 70px;
+      }
+      .logo {
+        width: 48px;
+        &::before {
+          right: -10px;
+        }
+        h1 {
+          visibility: hidden;
+        }
+      }
+      .logoUM1 {
+        left: 0;
+        top: 5px;
+        h2 {
+          top: -4px;
+        }
+      }
+      .header-actions {
+        width: auto;
+      }
+      .boxSocials {
+        position: absolute;
+        right: 15px;
+        float: right;
+        width: 100%;
+        .btn-app {
+          display: none;
+        }
+      }
+    }
+    .megamenu {
+      .nav-item {
+        font-size: 0.82em;
+      }
+      .nav-comparativos,
+      .nav-curiosidades,
+      .nav-avaliacoes {
+        display: none;
+      }
+      .menuActions {
+        .btnSearch {
+          width: 140px;
+          padding-left: 20px;
+          &.btn-xs-cta {
+            display: block;
+            width: 30px;
+            padding-left: 10px;
+          }
+          &.btn-md-cta {
+            display: none;
+          }
+        }
+      }
+    }
+    .hot-news {
+      .hot-title {
+        p {
+          color: var(--secondary);
+        }
+      }
+
+      .hot-links {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+  #header {
+    .middleHeader {
+      .logoUM1 {
+        position: relative;
+        top: 10px;
+        margin-right: 0;
+        left: -70px;
+        width: 160px;
+      }
+    }
+    .megamenu {
+      .menuActions {
+        .btnSearch {
+          width: 213px;
+        }
+      }
+      .nav-item {
+        font-size: 0.82em;
+      }
+      .nav-curiosidades,
+      .nav-avaliacoes {
+        display: none;
+      }
+    }
+  }
+}

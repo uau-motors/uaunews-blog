@@ -190,7 +190,7 @@ export const Footer = () => {
               <div className="footerTitle">
                 <h2>Tags</h2>
               </div>
-              <div className="tagcloud">
+              {/* <div className="tagcloud">
                 {UauTags.map((tag, key) => {
                   if (key < 12) {
                     return (
@@ -200,7 +200,7 @@ export const Footer = () => {
                     );
                   }
                 })}
-              </div>
+              </div> */}
             </div>
           </Grid>
           <Grid item xs={12} sm={6} md={3} lg={3}>

@@ -335,20 +335,28 @@
     }
   }
   .brands-container {
+    .title-section {
+      width: 110px;
+    }
     .brands-icons {
       position: relative;
       z-index: 9;
       margin-left: -15px;
+      .css-wupnnk {
+        grid-template-columns: auto auto auto auto;
+      }
       .brand-item {
-        height: 64px;
-        padding: 8px;
-        width: 64px;
+        height: 100%;
+        width: 100%;
+        max-height: 46px;
         transition: all ease-in-out 0.3s;
         img {
-          height: 48px;
-          width: 48px;
+          max-height: 75%;
+          max-width: 75%;
           background: #fff;
           border-radius: 4px;
+          position: relative;
+          top: 10%;
         }
         &:hover {
           box-shadow: 0 3px 9px var(--secondary);
@@ -360,7 +368,7 @@
   }
   .archive-container {
     .title-section {
-      width: 100px;
+      width: 110px;
       min-width: 50px;
     }
     .archive-posts {
@@ -451,6 +459,13 @@
         }
       }
     }
+    .archive-container {
+      .archive-posts {
+        ul {
+          max-width: 100%;
+        }
+      }
+    }
   }
 }
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
@@ -483,6 +498,13 @@
         margin-left: 0;
         > div {
           margin-left: 0px;
+        }
+      }
+    }
+    .archive-container {
+      .archive-posts {
+        ul {
+          max-width: 100%;
         }
       }
     }
@@ -550,13 +572,17 @@
     .brands-container {
       .brands-icons {
         margin-left: 0;
+        .css-wupnnk {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
         .brand-item {
-          height: 46px;
-          padding: 3px;
-          width: 46px;
+          height: 60px;
+          width: 60px;
+          max-height: 60px;
           img {
             height: 36px;
             width: 36px;
+            top: 20%;
           }
         }
       }
@@ -608,13 +634,17 @@
     .brands-container {
       .brands-icons {
         margin-left: 0;
+        .css-wupnnk {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
         .brand-item {
-          height: 46px;
-          padding: 3px;
-          width: 46px;
+          height: 60px;
+          width: 60px;
+          max-height: 60px;
           img {
             height: 36px;
             width: 36px;
+            top: 20%;
           }
         }
       }

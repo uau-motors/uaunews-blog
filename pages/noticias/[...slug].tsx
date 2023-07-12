@@ -138,9 +138,9 @@ const PageSinglePost: React.FC<{
             <Grid item xs={9}>
               <TitleSection title={"Recentes Posts"} />
               <SinglePostHeader />
-              <Stack spacing={2} className="pagination">
+              {/* <Stack spacing={2} className="pagination">
                 <PaginationLink />
-              </Stack>
+              </Stack> */}
             </Grid>
             <Grid item xs={3}>
               <SidebarSocials />

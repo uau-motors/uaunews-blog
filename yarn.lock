@@ -900,6 +900,11 @@ animate-sass@^0.8.2:
   resolved "https://registry.yarnpkg.com/animate-sass/-/animate-sass-0.8.2.tgz#fbfa76e049177d217a50b0f99c8ee77af490b7d9"
   integrity sha512-6sZ34dusqb1HdZLNpJUNaZc0CuuLgFI8SqlyaxbSSKE9zqfoNtOeO3IpVUCqvaSm/oMNH1VlEAsJlppjg+idKQ==
 
+animate-scss@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/animate-scss/-/animate-scss-3.2.1.tgz#1bb32331ea1233407f22007c8815011d2e342b03"
+  integrity sha512-qx3nwCKlVk/wxHEkTk2t2LBb0WuASgk4h+z8zuDPtg+0tY1Ls13BbS7sxyVaplo2/FaDzK92Y1sP+rM6QAK25g==
+
 ansi-escapes@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-3.2.0.tgz#8780b98ff9dbf5638152d1f1fe5c1d7b4442976b"

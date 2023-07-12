@@ -2,8 +2,8 @@ import { Box, Grid, Button } from "@mui/material";
 import React from "react";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import PostThumb from "../post-card-thumb";
-import PostTitle from "../post-title";
+import PostTitle from "../../atoms/post-title";
+// import PostThumb from '../post-thumb';
 
 const PostNavigator = () => {
   return (
@@ -12,10 +12,10 @@ const PostNavigator = () => {
         <Box className="post-previous">
           <Button startIcon={<KeyboardArrowLeftIcon />}>Anterior</Button>
           <Box className="post">
-            <PostThumb
+            {/* <PostThumb
               imageUrl="https://foxiz.themeruby.com/default/wp-content/uploads/sites/2/2021/08/t5-150x150.jpg"
               altText="previous"
-            />
+            /> */}
             <PostTitle title="Google deve permitir que desenvolvedores usem outros sistemas de pagamento" />
           </Box>
         </Box>
@@ -25,10 +25,10 @@ const PostNavigator = () => {
           <Button endIcon={<KeyboardArrowRightIcon />}>Próximo</Button>
           <Box className="post">
             <PostTitle title="Carros autônomos: tudo o que você precisa saber" />
-            <PostThumb
+            {/* <PostThumb
               imageUrl="https://foxiz.themeruby.com/default/wp-content/uploads/sites/2/2021/08/t13-150x150.jpg"
               altText="next"
-            />
+            /> */}
           </Box>
         </Box>
       </Grid>

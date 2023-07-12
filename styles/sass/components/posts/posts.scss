@@ -1,0 +1,56 @@
+@import "../../mixins";
+@import "./atoms/image";
+@import "./atoms/tag";
+@import "./content";
+
+.post {
+  position: relative;
+  &.size-xs {
+    @include box-img-height("xs", $image-height-xs);
+  }
+  &.size-sm {
+    @include box-img-height("sm", $image-height-sm);
+  }
+  &.size-md {
+    @include box-img-height("md", $image-height-sm);
+  }
+  &.size-lg {
+    @include box-img-height("lg", $image-height-md);
+  }
+  &.size-xl {
+    @include box-img-height("md", $image-height-md);
+  }
+  &.post-thumb {
+    position: relative;
+    .post-content {
+      position: absolute;
+      bottom: 40px;
+      left: 10px;
+      height: 100px;
+      .post-title {
+        h3 {
+          color: #fff;
+        }
+      }
+      .post-metas {
+        h6 {
+          color: #fff;
+        }
+      }
+      .review-extra {
+        color: #fff;
+      }
+    }
+    .post-image {
+      &::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(360deg, black, transparent);
+      }
+    }
+  }
+}

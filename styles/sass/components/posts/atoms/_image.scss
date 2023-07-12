@@ -1,0 +1,14 @@
+.post-image {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  img {
+    width: auto;
+    left: -10%;
+    position: absolute;
+  }
+}

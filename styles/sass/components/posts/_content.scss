@@ -1,0 +1,18 @@
+@import "./atoms/title";
+@import "./atoms/counter";
+@import "./atoms/excerpt";
+@import "./atoms/metas";
+
+.post-content {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  &.border-left {
+    padding-right: 10px;
+    border-right: 3px solid var(--primary);
+  }
+  &.border-right {
+    padding-left: 10px;
+    border-left: 3px solid var(--primary);
+  }
+}

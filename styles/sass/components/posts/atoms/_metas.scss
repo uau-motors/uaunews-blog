@@ -1,0 +1,21 @@
+.post-content {
+  .post-metas {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: normal;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+    .post-date {
+      padding-right: 15px;
+    }
+    .post-date,
+    .post-views {
+      h6 {
+        @include font-size(22px);
+        font-weight: 400;
+      }
+    }
+  }
+}

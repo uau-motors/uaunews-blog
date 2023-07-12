@@ -71,6 +71,12 @@
   }
   .featureds-category {
     margin-top: 50px;
+    .post-image {
+      figure {
+        width: 100%;
+        height: 100%;
+      }
+    }
     .large-featured {
       position: relative;
       padding-right: 10px;
@@ -165,16 +171,23 @@
       .post {
         position: relative;
         z-index: 2;
-        height: 100%;
+        height: 240px;
         width: 100%;
         margin: 0;
         padding: 0;
         &:first-child {
           margin-bottom: 10px;
         }
+        &:hover {
+          .post-title {
+            h3 {
+              color: var(--primary);
+            }
+          }
+        }
       }
       .post-card-thumb {
-        width: 98%;
+        width: 100%;
         height: 266px;
         overflow: hidden;
         border-radius: 5px;
@@ -193,6 +206,7 @@
         img {
           height: 266px;
           left: 0;
+          width: auto;
           position: relative;
         }
       }
@@ -234,18 +248,96 @@
           }
         }
       }
-      &:hover {
-        .post-title {
-          h3 {
-            color: var(--primary);
-          }
-        }
-      }
     }
   }
   .pagination {
     display: flex;
     align-items: center;
     flex-direction: column;
+  }
+}
+
+@media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+  .lasteds-posts {
+    margin: 0;
+    .title-section {
+      width: 155px;
+      margin: 10px 0 20px 5px;
+      h2 {
+        font-size: 1.1em;
+      }
+    }
+  }
+
+  #categorySection {
+    .title-section {
+      width: 120px;
+      min-width: 50px;
+      h2 {
+        font-size: 1.2em;
+      }
+    }
+    .category-header {
+      .category-content {
+        .category-descript {
+          font-size: 1em;
+        }
+      }
+      .category-media {
+        width: auto;
+        margin: 0;
+        height: 120px;
+        top: 45%;
+        img {
+          height: 125px;
+          left: -45%;
+          position: relative;
+          width: auto;
+        }
+      }
+    }
+    .post-image {
+      height: 240px;
+      width: 100%;
+      &::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        transition: all ease-in-out 0.3s;
+        background: linear-gradient(360deg, black, transparent);
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+      .image-legend {
+        display: none;
+        visibility: hidden;
+      }
+      figure img {
+        height: 240px;
+        width: auto;
+        left: -15%;
+      }
+    }
+    .featureds-category {
+      margin-top: 25px;
+      .medium-featured {
+        .content {
+          bottom: 5px;
+          .post-metas {
+            margin: 15px 0 0;
+          }
+        }
+        .post-card-thumb {
+          width: 100%;
+          img {
+            left: -44px;
+            width: auto;
+          }
+        }
+      }
+    }
   }
 }

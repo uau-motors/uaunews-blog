@@ -4,7 +4,7 @@ import LocalGasStationIcon from "@mui/icons-material/LocalGasStation";
 import { Box, Divider, Grid, Typography } from "@mui/material";
 import VehicleThumb from "../vehicle-thumb";
 import VehiclePrice from "../vehicle-price";
-import VehicleTitle from "../post-title";
+import VehicleTitle from "../../atoms/post-title";
 
 const VehicleItem = () => {
   return (

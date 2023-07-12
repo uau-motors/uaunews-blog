@@ -1,0 +1,48 @@
+.toolbar {
+  position: relative;
+  z-index: 9;
+  background-color: $orange;
+  color: #fff;
+  height: 30px;
+  line-height: 30px;
+  font-family: "Montserrat", sans-serif;
+  min-height: inherit !important;
+  .toolbarLink {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    & a {
+      font-size: 0.7em;
+      color: #fff;
+      border-right: 1px dotted #fff;
+      padding: 0 15px;
+      text-decoration: none;
+      white-space: nowrap;
+      text-transform: uppercase;
+      transition: all ease 0.31s;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+  .gridSocials {
+    position: relative;
+    text-align: right;
+  }
+  .boxWeather {
+    width: 100%;
+    position: absolute;
+    right: 0;
+    padding-top: 3px;
+    top: -32px;
+    & a,
+    & span {
+      font-size: 0.9em;
+      color: #fff;
+    }
+  }
+}

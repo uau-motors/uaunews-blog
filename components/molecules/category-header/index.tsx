@@ -13,7 +13,7 @@ const CategoryHeader = () => {
   const title = getTitle(pathnames[0], "");
 
   return (
-    <Container className="category-header">
+    <Box className="category-header">
       <Grid container>
         <Grid item xs={8} className="category-content">
           <Breadcrumb />
@@ -25,14 +25,11 @@ const CategoryHeader = () => {
         </Grid>
         <Grid item xs={4}>
           <Box className="category-media">
-            <Image
-              src="https://motors.stylemixthemes.com/classified-four/wp-content/uploads/sites/13/2015/12/tesla1-398x206.jpg"
-              alt={pathnames[0]}
-            />
+            <Image src="/assets/images/samples/cars/image-20.jpeg" alt={pathnames[0]} width={1024} height={768} />
           </Box>
         </Grid>
       </Grid>
-    </Container>
+    </Box>
   );
 };
 

@@ -1,0 +1,507 @@
+#home {
+  .recent-posts,
+  .vehicle-evaluation,
+  .recents-vehicles,
+  .posts-videos,
+  .lasteds-posts {
+    .post {
+      &.size-xs {
+        @include box-img-height("xs", 240);
+        .post-image {
+          img {
+            left: -7%;
+          }
+        }
+        .post-content {
+          margin-top: -15px;
+          margin-bottom: 40px;
+        }
+      }
+    }
+    .post-list {
+      .post {
+        &.size-xs {
+          @include box-img-height("sm", 90);
+          margin-bottom: 5px;
+          .post-tag {
+            bottom: 10px;
+            width: 100px;
+            > span {
+              @include font-size(18px);
+              padding: 2px 4px;
+            }
+          }
+          .post-metas {
+            .post-views {
+              display: none;
+            }
+          }
+          .post-content {
+            margin-top: -10px;
+            margin-bottom: 0;
+          }
+          .post-title {
+            h3 {
+              @include font-size(22px);
+            }
+          }
+          .review-meta-inner {
+            .extra-meta {
+              display: none;
+            }
+          }
+        }
+        &.size-sm,
+        &.size-md {
+          .post-tag {
+            bottom: 10px;
+            width: 110px;
+            > span {
+              @include font-size(18px);
+              padding: 2px 4px;
+            }
+          }
+          .post-content {
+            top: 10px;
+            min-height: 110px;
+            .post-title {
+              h3 {
+                @include font-size(25px);
+              }
+            }
+            .post-metas {
+              .post-date {
+                h6 {
+                  @include font-size(22px);
+                }
+              }
+              .post-views {
+                display: none;
+              }
+            }
+          }
+        }
+        &.size-lg,
+        &.size-xl {
+          .post-content {
+            top: 10px;
+            min-height: 110px;
+            .post-title {
+              h3 {
+                @include font-size(24px);
+              }
+            }
+            .post-metas {
+              .post-date {
+                h6 {
+                  font-size: 0.9em;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .recent-posts {
+    margin-bottom: 20px;
+    .title-section {
+      width: 130px;
+      margin: 25px 0;
+    }
+    .post {
+      &.size-xs {
+        @include box-img-height("xs", 240);
+        .post-image {
+          img {
+            left: -7%;
+          }
+        }
+        .post-tag {
+          width: 145px;
+          > span {
+            @include font-size(18px);
+          }
+        }
+        .post-content {
+          margin-top: -15px;
+          margin-bottom: 40px;
+        }
+        .post-counter {
+          right: 0px;
+          @include font-size(140px);
+        }
+      }
+      &.size-sm,
+      &.size-md {
+        @include box-img-height("sm", $image-height-sm);
+        .post-tag {
+          width: 160px;
+          > span {
+            @include font-size(20px);
+          }
+        }
+        .post-counter {
+          right: 0px;
+          @include font-size(150px);
+        }
+        .post-content {
+          margin-top: -15px;
+        }
+        .post-metas {
+          .post-views {
+            display: none;
+          }
+        }
+      }
+      &.size-lg,
+      &.size-xl {
+        @include box-img-height("md", $image-height-sm);
+        .post-tag {
+          width: 160px;
+          > span {
+            @include font-size(20px);
+          }
+        }
+        .post-content {
+          margin-top: -15px;
+        }
+        .post-metas {
+          .post-views {
+            display: none;
+          }
+        }
+      }
+    }
+    .post-list {
+      &.post-sm {
+        .post {
+          &.size-sm {
+            @include box-img-height("md", 140);
+            .post-title {
+              h3 {
+                @include font-size(25px);
+              }
+            }
+          }
+        }
+      }
+      .post {
+        margin-bottom: 15px;
+        &.size-xs {
+          .post-tag {
+            bottom: 10px;
+            width: 100px;
+            > span {
+              @include font-size(18px);
+              padding: 2px 4px;
+            }
+          }
+          .post-counter {
+            right: 0px;
+            @include font-size(80px);
+          }
+        }
+        &.size-sm,
+        &.size-md {
+          @include box-img-height("sm", 110);
+          .post-tag {
+            bottom: 10px;
+            width: 110px;
+            > span {
+              @include font-size(18px);
+              padding: 2px 4px;
+            }
+          }
+          .post-metas {
+            .post-views {
+              display: none;
+            }
+          }
+          .post-counter {
+            right: 0px;
+            @include font-size(80px);
+          }
+          .post-title {
+            h3 {
+              @include font-size(25px);
+            }
+          }
+        }
+        &.size-lg,
+        &.size-xl {
+          @include box-img-height("sm", 110);
+          .post-tag {
+            bottom: 10px;
+            width: 110px;
+            > span {
+              @include font-size(18px);
+              padding: 2px 4px;
+            }
+          }
+          .post-counter {
+            right: 0px;
+            @include font-size(90px);
+          }
+        }
+      }
+    }
+  }
+  .vehicle-evaluation {
+    padding-bottom: 30px;
+    .title-section {
+      width: 250px;
+      margin: 10px 0 20px;
+      min-width: 70px;
+    }
+    .post-list {
+      .post {
+        &.size-xs {
+          @include box-img-height("sm", 110);
+          .post-content {
+            bottom: inherit;
+            .post-metas {
+              margin: 5px 0;
+            }
+            .post-title {
+              margin: 10px 0 5px;
+            }
+          }
+        }
+      }
+    }
+    .post {
+      &.size-xs {
+        .post-content {
+          margin-top: 0;
+          margin-bottom: 0;
+          bottom: 20px;
+          .post-metas {
+            margin: 5px 0;
+          }
+          .post-title {
+            margin: 10px 0 5px;
+          }
+        }
+      }
+      &.size-sm,
+      &.size-md {
+        @include box-img-height("md", 345);
+        .post-content {
+          margin-top: -15px;
+        }
+      }
+      &.size-lg,
+      &.size-xl {
+        @include box-img-height("md", $image-height-md);
+        .post-content {
+          margin-top: -15px;
+        }
+      }
+    }
+    .post-list {
+      .post {
+        &.size-sm,
+        &.size-md {
+          @include box-img-height("sm", 160);
+          margin-bottom: 10px;
+          .post-content {
+            margin-top: -15px;
+          }
+          .review-meta-inner {
+            .extra-meta {
+              display: none;
+            }
+          }
+        }
+        &.size-lg,
+        &.size-xl {
+          @include box-img-height("md", 240);
+        }
+      }
+    }
+  }
+  .recents-vehicles {
+    min-height: 460px;
+    .title-section {
+      width: 250px;
+      margin: 20px 0;
+      min-width: 70px;
+    }
+
+    .post-list {
+      .post {
+        margin-bottom: 15px;
+        padding-right: 10px;
+        &.size-xs {
+          @include box-img-height("sm", 96);
+          .post-content {
+            bottom: inherit;
+            .post-metas {
+              margin: 5px 0;
+            }
+            .post-title {
+              margin: 10px 0 5px;
+            }
+          }
+        }
+        &.size-sm,
+        &.size-md {
+          @include box-img-height("sm", 120);
+          margin-bottom: 10px;
+          .post-content {
+            margin-top: -15px;
+          }
+          .review-meta-inner {
+            .extra-meta {
+              display: none;
+            }
+          }
+        }
+        &.size-lg,
+        &.size-xl {
+          @include box-img-height("xl", 110);
+          .post-image {
+            margin-top: 20px;
+          }
+
+          .post-content {
+            top: 10px;
+            min-height: 110px;
+          }
+          .post-metas {
+            .post-date,
+            .post-views {
+              h6 {
+                @include font-size(18px);
+              }
+            }
+            .post-views {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .sidebar {
+      .newsletter {
+        padding-top: 0;
+      }
+    }
+  }
+  .posts-videos {
+    background-color: #222;
+    padding-bottom: 20px;
+    .title-section {
+      width: 100px;
+      margin: 20px 0;
+      color: #fff;
+      min-width: 70px;
+    }
+    .post {
+      &.size-xs {
+        .box-play {
+          top: 30%;
+          left: 40%;
+        }
+      }
+      &.size-sm {
+        .box-md {
+          top: 30%;
+          left: 40%;
+        }
+      }
+      &.size-sm,
+      &.size-md {
+        .box-play {
+          top: 35%;
+          left: 45%;
+        }
+      }
+      &.size-lg,
+      &.size-xl {
+        @include box-img-height("md", 320);
+        .box-play {
+          top: 35%;
+          left: 45%;
+        }
+      }
+
+      .post-content {
+        .post-title {
+          h3 {
+            color: #fff;
+          }
+        }
+        .post-metas {
+          .post-date,
+          .post-views {
+            h6 {
+              font-size: 0.8em;
+              font-weight: 200;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+    .post-list {
+      .post {
+        margin-bottom: 20px;
+        @include box-img-height("sm", 140);
+        .box-play {
+          top: 40%;
+          left: 16%;
+        }
+      }
+    }
+  }
+  .lasteds-posts {
+    .post-list {
+      .post {
+        &.size-sm {
+          @include box-img-height("sm", 120);
+          .post-content {
+            margin-top: -15px;
+          }
+        }
+        &.size-md,
+        &.size-lg {
+          @include box-img-height("md", 180);
+          .post-content {
+            margin-top: -15px;
+          }
+        }
+      }
+    }
+    .post {
+      &.size-lg,
+      &.size-xl {
+        @include box-img-height("md", 200);
+      }
+      .post-tag {
+        width: 160px;
+        > span {
+          @include font-size(20px);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  #home {
+    .recents-vehicles {
+      padding-bottom: 30px;
+    }
+  }
+}
+
+@media (min-width: 680px) and (max-width: 1024px) {
+  #home {
+    .recents-vehicles {
+      padding-bottom: 30px;
+    }
+  }
+}

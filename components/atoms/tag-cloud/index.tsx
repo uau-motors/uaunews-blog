@@ -10,7 +10,7 @@ interface TagCloudProps {
   tags: Tag[];
 }
 
-const TagCloud: React.FC<TagCloudProps> = ({ tags }) => {
+const TagCloud = ({ tags }: TagCloudProps) => {
   return (
     <>
       {tags.map((tag, index) => (

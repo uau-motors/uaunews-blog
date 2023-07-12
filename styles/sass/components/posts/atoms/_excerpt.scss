@@ -1,0 +1,5 @@
+.post-excerpt {
+  position: relative;
+  z-index: 2;
+  @include font-size(22px);
+}

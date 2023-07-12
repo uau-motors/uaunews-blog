@@ -5,7 +5,7 @@ import Breadcrumb from "@molecules/breadcrumb";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import PostTitle from "@molecules/post-title";
+import PostTitle from "@components/atoms/post-title";
 import { Container, Box, ListItemIcon } from "@mui/material";
 import { useRouter } from "next/router";
 import TitleSection from "@molecules/title-section";

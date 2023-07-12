@@ -1,12 +1,16 @@
 import CategoryHeader from "@molecules/category-header";
 import CategoryFeatureds from "@molecules/category-featureds";
 import React from "react";
+import { PostCardDataI } from "@utility/interfaces";
 
-const CategoryPage = () => {
+interface FeaturedPostsProps {
+  posts: PostCardDataI[];
+}
+const CategoryPage = ({ posts }: FeaturedPostsProps) => {
   return (
     <section id="categorySection">
       <CategoryHeader />
-      <CategoryFeatureds />
+      <CategoryFeatureds posts={posts} />
     </section>
   );
 };

@@ -1,0 +1,241 @@
+.megamenu {
+  background: #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.25s ease;
+  padding: 0;
+  height: 45px;
+  a {
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    font-weight: 600;
+    color: var(--secondary);
+    font-size: 0.75em;
+    font-family: "Montserrat", sans-serif;
+    display: inline-block;
+    transition: all ease 0.31s;
+    padding: 15px 5px;
+    height: 48px;
+    &::before {
+      position: absolute;
+      content: "";
+      height: 3px;
+      background: var(--primary);
+      right: 0;
+      margin: 0 auto;
+      bottom: 0;
+      width: 100%;
+      transition: 0.5s;
+      transform: scaleX(0);
+      transform-origin: top right;
+    }
+    &:hover {
+      color: var(--primary);
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+  }
+  .side-menu-trigger {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 0 0;
+    border-radius: 4px;
+    justify-content: center;
+    position: relative;
+    top: 4px;
+    height: 17px;
+    padding-right: 10px;
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 1px;
+      height: 180%;
+      top: -3px;
+      right: 0;
+      background-color: #818181;
+    }
+    .menu-btn-icon {
+      position: relative;
+      display: block;
+      width: 28px;
+      height: 16.5px;
+      top: 1px;
+      overflow: hidden;
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #818181;
+        transition: all 0.3s ease-out;
+        transform: translateX(-100%);
+        transform-origin: left;
+        transition-delay: 0s;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #818181;
+        transition: all 0.3s ease-out;
+        transform: translateX(-100%);
+        transform-origin: left;
+        transition-delay: 0s;
+      }
+      .line {
+        position: absolute;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: #818181;
+        border-radius: 12px;
+        transition: all 0.3s ease-out;
+        transition-delay: 0s;
+        transform: translateX(0);
+        &.line1 {
+          top: 0;
+        }
+        &.line2 {
+          top: 7px;
+          width: 20px;
+          &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #818181;
+            transition: all 0.3s ease-out;
+            transform: translateX(-100%);
+            transform-origin: left;
+            transition-delay: 0s;
+          }
+        }
+        &.line3 {
+          top: 14px;
+        }
+      }
+      &:hover {
+        &::before {
+          transition-delay: 0.3s;
+          transform: translateX(0);
+        }
+        .line {
+          transform: translateX(100%);
+          &.line1 {
+            transition-delay: 0s;
+          }
+          &.line2 {
+            transition-delay: 0.15s;
+            transform: translateX(100%);
+            &::before {
+              transform: translateX(-100%);
+              transition-delay: 0.75s;
+            }
+          }
+          &.line3 {
+            transition-delay: 0.3s;
+          }
+        }
+      }
+    }
+  }
+  .blogInfoActive {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--secondary);
+    margin-right: 30px;
+    position: relative;
+    margin-left: 10px;
+    top: -15px;
+  }
+  .blogActive {
+    left: -40px;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    position: relative;
+    width: 85px;
+    top: -15px;
+    display: inline-block;
+    color: var(--secondary);
+  }
+  .menuActions {
+    position: absolute;
+    top: 0px;
+    right: 24px;
+    .btnSearch {
+      background-color: #fff;
+      height: 36px;
+      top: 5px;
+      position: relative;
+      width: 217px;
+      right: 55px;
+      justify-content: flex-start;
+      padding-left: 30px;
+      padding-top: 5px;
+      color: #333;
+      border: 1px solid #333;
+      border-radius: 4px;
+      &.btn-xs-cta {
+        display: none;
+      }
+      &.btn-md-cta {
+        display: flex;
+      }
+    }
+    > svg {
+      position: absolute;
+      left: 5px;
+      padding-right: 5px;
+      border-right: solid 1px rgba(0, 0, 0, 0.1);
+    }
+  }
+  .toggle-theme {
+    top: 4px;
+    position: absolute;
+    display: block;
+    width: 60px;
+    margin-left: 10px;
+    right: 0;
+    svg {
+      fill: var(--secondary);
+      top: -2px;
+      position: relative;
+    }
+    .MuiSwitch-root {
+      left: -20px;
+      width: 82px;
+      .MuiButtonBase-root {
+        left: 17px;
+        top: 2px;
+      }
+    }
+  }
+  .menu-xs {
+    display: none;
+  }
+}
+
+.megamenu a:hover > a {
+  background-color: var(--primary);
+  color: #fff !important;
+}
+
+.megamenu a.active {
+  border-bottom: 2px solid var(--primary);
+}
+
+.megamenu a.active > a {
+  font-weight: 600;
+}

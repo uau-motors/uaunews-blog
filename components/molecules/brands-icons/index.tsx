@@ -26,10 +26,11 @@ const BrandIcons = () => {
         gridTemplateColumns: {
           xs: "1fr 1fr 1fr 1fr",
           sm: "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr",
-          md: "1fr 1fr 1fr 1fr"
+          md: "auto auto auto auto",
+          lg: "auto auto auto auto"
         },
-
-        gap: 2
+        gridRowGap: 10,
+        gridColumnGap: 10
       }}
     >
       {sortedBrandsIcons.map((brand, key) => (

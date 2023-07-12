@@ -1,27 +1,135 @@
-// Small devices
-@mixin sm {
-  @media (min-width: #{$screen-sm-min}) {
-    @content;
+@function calculateRem($size) {
+  $remSize: $size / 24px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin box-img-width($type, $size: $image-width-md) {
+  @if $type == "ex" {
+    .post-image {
+      width: $size + px;
+      img {
+        width: $size + px;
+      }
+    }
+  } @else if $type == "xs" {
+    .post-image {
+      width: $size + px;
+      img {
+        width: $size + px;
+      }
+    }
+  } @else if $type == "sm" {
+    .post-image {
+      width: $size + px;
+      img {
+        width: $size + px;
+      }
+    }
+  } @else if $type == "md" {
+    .post-image {
+      width: $size + px;
+      img {
+        width: $size + px;
+      }
+    }
+  } @else if $type == "lg" {
+    .post-image {
+      width: $size + px;
+      img {
+        width: $size + px;
+      }
+    }
+  } @else if $type == "xl" {
+    .post-image {
+      width: $size + px;
+      img {
+        width: $size + px;
+      }
+    }
+  } @else if $type == "custom" {
+    .post-image {
+      width: $size + px;
+      img {
+        width: $size + px;
+      }
+    }
+  } @else {
+    .post-image {
+      width: 1080 + px;
+      img {
+        width: 1080 + px;
+      }
+    }
   }
 }
 
-// Medium devices
-@mixin md {
-  @media (min-width: #{$screen-md-min}) {
-    @content;
+@mixin box-img-height($type, $size: $image-height-md) {
+  @if $type == "ex" {
+    .post-image {
+      height: $size + px;
+      img {
+        height: $size + px;
+      }
+    }
+  } @else if $type == "xs" {
+    .post-image {
+      height: $size + px;
+      img {
+        height: $size + px;
+      }
+    }
+  } @else if $type == "sm" {
+    .post-image {
+      height: $size + px;
+      img {
+        height: $size + px;
+      }
+    }
+  } @else if $type == "md" {
+    .post-image {
+      height: $size + px;
+      img {
+        height: $size + px;
+      }
+    }
+  } @else if $type == "lg" {
+    .post-image {
+      height: $size + px;
+      img {
+        height: $size + px;
+      }
+    }
+  } @else if $type == "xl" {
+    .post-image {
+      height: $size + px;
+      img {
+        height: $size + px;
+      }
+    }
+  } @else if $type == "custom" {
+    .post-image {
+      height: $size + px;
+      img {
+        height: $size + px;
+      }
+    }
+  } @else {
+    .post-image {
+      height: 1080 + px;
+      img {
+        height: 1080 + px;
+      }
+    }
   }
 }
 
-// Large devices
-@mixin lg {
-  @media (min-width: #{$screen-lg-min}) {
-    @content;
-  }
-}
-
-// Extra large devices
-@mixin xl {
-  @media (min-width: #{$screen-xl-min}) {
-    @content;
+@mixin screen($type) {
+  @if $type == "xs" {
+  } @else if $type == "xl" {
   }
 }

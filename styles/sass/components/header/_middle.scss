@@ -1,0 +1,104 @@
+.middleHeader {
+  background-color: var(--secondary);
+  padding: 11px 0;
+  color: #fff;
+  .logo {
+    width: 130px;
+    position: relative;
+    top: 0;
+    display: flex;
+    &:before {
+      content: " ";
+      position: absolute;
+      height: 40px;
+      width: 2px;
+      right: -30px;
+      top: 4px;
+      border-right: 1px dotted #fff;
+      display: block;
+    }
+    h1 {
+      width: 160px;
+      position: relative;
+      top: 12px;
+      left: 5px;
+      display: flex;
+      flex-direction: row;
+      font-size: 1.4em;
+      font-family: "Russo One";
+    }
+    img {
+      width: 46px;
+      height: 46px;
+      margin-top: 3px;
+    }
+  }
+  .logoUM1 {
+    position: relative;
+    top: 5px;
+    margin-right: 0;
+    left: -115px;
+    width: 160px;
+    span {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      font-weight: 900;
+      color: var(--secondary);
+      z-index: 2;
+      font-size: 0.8em;
+    }
+    img {
+      width: 40px;
+    }
+    h2 {
+      font-size: 12px;
+      position: absolute;
+      left: 50px;
+      top: 0;
+    }
+  }
+  .boxSocials {
+    height: 40px;
+    line-height: 40px;
+    padding-top: 0;
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    justify-content: flex-end;
+    margin-top: 10px;
+    a,
+    span {
+      font-size: 0.8em;
+      color: #fff;
+      float: left;
+      transition: all ease 0.31s;
+    }
+    button {
+      padding: 5px;
+      border-radius: 100%;
+      &.btn {
+        border-radius: 5px !important;
+        padding: 5px 15px;
+        box-shadow: 0 0 10px transparent;
+        border: 1px solid #222;
+      }
+      &.primary {
+        background-color: var(--primary);
+        border: 1px solid var(--primary);
+      }
+      &:hover {
+        background-color: var(--primary);
+        box-shadow: 0 0 10px var(--primary);
+        color: #fff;
+        border-color: var(--primary);
+      }
+    }
+  }
+  .toogle-xs {
+    display: none;
+  }
+}

@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { Box, Container, Grid } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import { ThemeContext } from "@utility/contexts/theme-context";
 import CarouselBlog from "@organisms/carousel";
 import RecentsPosts from "@organisms/recents-posts";
@@ -15,74 +15,14 @@ import { SEO } from "@organisms/meta/seo";
 import { CmsData, CarouselDataI, PostCardDataI } from "@utility/interfaces";
 import { BodyClass } from "@helpers/bodyClass";
 import { getAllPosts } from "./api";
-
-function removeLast12Records(jsonArray: any[]): any[] {
-  const sortedArray = jsonArray.sort((a, b) => {
-    const dateA = new Date(a.created_at);
-    const dateB = new Date(b.created_at);
-    return dateA.getTime() - dateB.getTime();
-  });
-
-  const posts = sortedArray.slice(-12);
-  return posts;
-}
-
-function removePartialRecords(jsonArray: any[], init: number, end: number): any[] {
-  const sortedArray = jsonArray.sort((a, b) => {
-    const dateA = new Date(a.created_at);
-    const dateB = new Date(b.created_at);
-    return dateA.getTime() - dateB.getTime();
-  });
-
-  const posts = sortedArray.slice(init, sortedArray.length - end);
-  return posts;
-}
-
-function removeLast6Records(jsonArray: any[], category: string): any[] {
-  const sortedArray = jsonArray.sort((a, b) => {
-    const dateA = new Date(a.created_at);
-    const dateB = new Date(b.created_at);
-    return dateA.getTime() - dateB.getTime();
-  });
-
-  const trimmedArray = sortedArray.filter((record, index) => {
-    if (index < sortedArray.length - 6) {
-      return true;
-    }
-
-    const tag = category;
-    return record.tags && record.tags.slug === tag;
-  });
-
-  return trimmedArray;
-}
-
-function limitExcerptCharacters(jsonArray: any[], maxLength: number): any[] {
-  const modifiedArray = jsonArray.map((record) => {
-    if (record.excerpt && record.excerpt.length > maxLength) {
-      record.excerpt = record.excerpt.substring(0, maxLength) + "...";
-    }
-    return record;
-  });
-
-  return modifiedArray;
-}
-
-function limitTitleCharacters(jsonArray: any[], maxLength: number): any[] {
-  const modifiedArray = jsonArray.map((record) => {
-    if (record.title && record.title.length > maxLength) {
-      record.title = record.title.substring(0, maxLength) + "...";
-    }
-    return record;
-  });
-
-  return modifiedArray;
-}
+import useWindowSize from "@utility/useWindowSize";
+import getScreenSize from "@utility/getScreenSize";
+import { limitCharacters, removeLastRecords, removePartialRecords } from "@utility/helpers/formatedJson";
 
 export const getStaticProps = async () => {
   const allPosts = await getAllPosts();
-  const posts = limitExcerptCharacters(limitTitleCharacters(allPosts, 80), 240);
-  const carouselPosts = removeLast12Records(posts);
+  const posts = limitCharacters(limitCharacters(allPosts, "title", 80), "excerpt", 240);
+  const carouselPosts = removeLastRecords(posts, 12);
   const recentsPosts = removePartialRecords(posts, 12, 6);
   const evaluationPosts = removePartialRecords(posts, 0, 5);
   const lastedPosts = removePartialRecords(posts, 12, 6);
@@ -106,12 +46,17 @@ const Home: React.FC<{
 }> = (props) => {
   const { theme } = useContext(ThemeContext);
   const router = useRouter();
-  if (router.isFallback) return <div className="loading">Carregando...</div>;
   const bodyClass = BodyClass({ isHome: true });
   const { seo } = settings;
   const { cmsData, carouselPosts, recentsPosts, evaluationPosts, lastedPosts } = props;
+  const [screen, setScreen] = useState<string>("");
+  const { width, height } = useWindowSize();
 
-  // console.log("HOME PROPS ==> ", cmsData);
+  if (router.isFallback) return <div className="loading">Carregando...</div>;
+
+  useEffect(() => {
+    setScreen(getScreenSize(width));
+  }, [width]);
 
   return (
     <>
@@ -120,32 +65,32 @@ const Home: React.FC<{
         <Container>
           <CarouselBlog posts={carouselPosts || []} />
 
-          <Box className={"recents-news"}>
-            <RecentsPosts posts={recentsPosts} />
+          <Box className={"recent-posts"}>
+            <RecentsPosts posts={recentsPosts} screen={screen} width={width} />
           </Box>
         </Container>
 
         <Box className={`vehicle-evaluation bg-${theme}`}>
           <Container>
-            <VehicleEvaluation posts={evaluationPosts} />
+            <VehicleEvaluation posts={evaluationPosts} screen={screen} width={width} />
           </Container>
         </Box>
 
         <Box className={`recents-vehicles`}>
           <Container>
-            <RecentsVehicles posts={evaluationPosts} />
+            <RecentsVehicles posts={evaluationPosts} screen={screen} width={width} />
           </Container>
         </Box>
 
         <Box className={`posts-videos bg-${theme}`}>
           <Container>
-            <PostsVideos posts={evaluationPosts} />
+            <PostsVideos posts={evaluationPosts} screen={screen} width={width} />
           </Container>
         </Box>
 
         <Box className={`lasteds-posts`}>
           <Container>
-            <LastedPosts posts={lastedPosts} />
+            <LastedPosts posts={lastedPosts} screen={screen} width={width} />
           </Container>
         </Box>
       </DefaultTemplate>
