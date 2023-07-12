@@ -19,24 +19,6 @@ import useWindowSize from "@utility/useWindowSize";
 import getScreenSize from "@utility/getScreenSize";
 import { limitCharacters, removeLastRecords, removePartialRecords } from "@utility/helpers/formatedJson";
 
-export const getStaticProps = async () => {
-  const allPosts = await getAllPosts();
-  const posts = limitCharacters(limitCharacters(allPosts, "title", 80), "excerpt", 240);
-  const carouselPosts = removeLastRecords(posts, 12);
-  const recentsPosts = removePartialRecords(posts, 12, 6);
-  const evaluationPosts = removePartialRecords(posts, 0, 5);
-  const lastedPosts = removePartialRecords(posts, 12, 6);
-
-  const cmsData = {
-    bodyClass: BodyClass({ isHome: true })
-  };
-
-  return {
-    revalidate: 10,
-    props: { cmsData, carouselPosts, recentsPosts, evaluationPosts, lastedPosts }
-  };
-};
-
 const Home: React.FC<{
   cmsData: CmsData;
   carouselPosts: CarouselDataI[];
@@ -52,11 +34,13 @@ const Home: React.FC<{
   const [screen, setScreen] = useState<string>("");
   const { width, height } = useWindowSize();
 
-  if (router.isFallback) return <div className="loading">Carregando...</div>;
-
   useEffect(() => {
     setScreen(getScreenSize(width));
   }, [width]);
+
+  if (router.isFallback) {
+    return <div className="loading">Carregando...</div>;
+  }
 
   return (
     <>
@@ -96,6 +80,24 @@ const Home: React.FC<{
       </DefaultTemplate>
     </>
   );
+};
+
+export const getStaticProps = async () => {
+  const allPosts = await getAllPosts();
+  const posts = limitCharacters(limitCharacters(allPosts, "title", 80), "excerpt", 240);
+  const carouselPosts = removeLastRecords(posts, 12);
+  const recentsPosts = removePartialRecords(posts, 12, 6);
+  const evaluationPosts = removePartialRecords(posts, 0, 5);
+  const lastedPosts = removePartialRecords(posts, 12, 6);
+
+  const cmsData = {
+    bodyClass: BodyClass({ isHome: true })
+  };
+
+  return {
+    revalidate: 10,
+    props: { cmsData, carouselPosts, recentsPosts, evaluationPosts, lastedPosts }
+  };
 };
 
 export default Home;
