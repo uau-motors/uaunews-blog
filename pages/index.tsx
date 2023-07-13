@@ -45,40 +45,40 @@ const Home: React.FC<{
   return (
     <>
       <SEO {...{ title: seo.title, description: seo.description }} />
-      <Suspense fallback={<div className="loading">Carregando...</div>}>
-        <DefaultTemplate {...{ bodyClass, id: "home", header: true, footer: true }}>
-          <Container>
+      <DefaultTemplate {...{ bodyClass, id: "home", header: true, footer: true }}>
+        <Container>
+          <Suspense fallback={<div className="loading">Carregando...</div>}>
             <CarouselBlog posts={carouselPosts || []} />
-            <Box className={"recent-posts"}>
-              <RecentsPosts posts={recentsPosts} screen={screen} width={width} />
-            </Box>
+          </Suspense>
+          <Box className={"recent-posts"}>
+            <RecentsPosts posts={recentsPosts} screen={screen} width={width} />
+          </Box>
+        </Container>
+
+        <Box className={`vehicle-evaluation bg-${theme}`}>
+          <Container>
+            <VehicleEvaluation posts={evaluationPosts} screen={screen} width={width} />
           </Container>
+        </Box>
 
-          <Box className={`vehicle-evaluation bg-${theme}`}>
-            <Container>
-              <VehicleEvaluation posts={evaluationPosts} screen={screen} width={width} />
-            </Container>
-          </Box>
+        <Box className={`recents-vehicles`}>
+          <Container>
+            <RecentsVehicles posts={evaluationPosts} screen={screen} width={width} />
+          </Container>
+        </Box>
 
-          <Box className={`recents-vehicles`}>
-            <Container>
-              <RecentsVehicles posts={evaluationPosts} screen={screen} width={width} />
-            </Container>
-          </Box>
+        <Box className={`posts-videos bg-${theme}`}>
+          <Container>
+            <PostsVideos posts={evaluationPosts} screen={screen} width={width} />
+          </Container>
+        </Box>
 
-          <Box className={`posts-videos bg-${theme}`}>
-            <Container>
-              <PostsVideos posts={evaluationPosts} screen={screen} width={width} />
-            </Container>
-          </Box>
-
-          <Box className={`lasteds-posts`}>
-            <Container>
-              <LastedPosts posts={lastedPosts} screen={screen} width={width} />
-            </Container>
-          </Box>
-        </DefaultTemplate>
-      </Suspense>
+        <Box className={`lasteds-posts`}>
+          <Container>
+            <LastedPosts posts={lastedPosts} screen={screen} width={width} />
+          </Container>
+        </Box>
+      </DefaultTemplate>
     </>
   );
 };
