@@ -52,7 +52,9 @@ const LastedPosts = ({ posts, screen, width }: LastedPostsProps) => {
               <Grid item xs={12}>
                 <Ads
                   format={"rectangle"}
-                  imageUrl={"https://securemove.in/wp-content/uploads/2022/08/Car-transport-cost.jpg"}
+                  imageUrl={
+                    "https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/ads%2Fads-300-100.png?alt=media"
+                  }
                   altText="300x100"
                 />
               </Grid>
@@ -162,7 +164,9 @@ const LastedPosts = ({ posts, screen, width }: LastedPostsProps) => {
                   <Grid item xs={12}>
                     <Ads
                       format={"full"}
-                      imageUrl={"https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/08/newspaper-rec728.jpg"}
+                      imageUrl={
+                        "https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/ads%2Fads-728-90.png?alt=media"
+                      }
                       altText="728x90"
                     />
                   </Grid>
@@ -187,7 +191,9 @@ const LastedPosts = ({ posts, screen, width }: LastedPostsProps) => {
                   <Grid item xs={12}>
                     <Ads
                       format={"square"}
-                      imageUrl={"https://demo.tagdiv.com/newspaper_pro/wp-content/uploads/2019/08/newspaper-rec728.jpg"}
+                      imageUrl={
+                        "https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/ads%2Fads-250-250.png?alt=media"
+                      }
                       altText="250x250"
                     />
                   </Grid>

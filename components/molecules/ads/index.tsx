@@ -14,12 +14,16 @@ const Ads = ({ format, imageUrl, altText }: AdsPropsI) => {
 
   useEffect(() => {
     if (format === "full") {
-      setHeight(90);
       setWidth(728);
+      setHeight(90);
     }
     if (format === "square") {
-      setHeight(250);
       setWidth(250);
+      setHeight(250);
+    }
+    if (format === "rectangle") {
+      setWidth(320);
+      setHeight(110);
     }
   }, [format]);
 
