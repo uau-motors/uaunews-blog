@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, lazy, Suspense } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Box, Container } from "@mui/material";
 import { ThemeContext } from "@utility/contexts/ThemeContext";
@@ -11,13 +11,13 @@ import getScreenSize from "@utility/GetScreenSize";
 import { limitCharacters, removeLastRecords, removePartialRecords } from "@utility/helpers/FormatedJson";
 import settings from "@utility/Settings";
 
-const CarouselBlog = lazy(() => import("@organisms/carousel"));
-const RecentsPosts = lazy(() => import("@organisms/recents-posts"));
-const VehicleEvaluation = lazy(() => import("@organisms/vehicle-evaluation"));
-const RecentsVehicles = lazy(() => import("@organisms/recents-vehicles"));
-const PostsVideos = lazy(() => import("@organisms/posts-videos"));
-const LastedPosts = lazy(() => import("@organisms/LastedPosts"));
-const DefaultTemplate = lazy(() => import("@components/templates"));
+import CarouselBlog from "@organisms/carousel";
+import RecentsPosts from "@organisms/recents-posts";
+import VehicleEvaluation from "@organisms/vehicle-evaluation";
+import RecentsVehicles from "@organisms/recents-vehicles";
+import PostsVideos from "@organisms/posts-videos";
+import LastedPosts from "@organisms/LastedPosts";
+import DefaultTemplate from "@components/templates";
 
 const Home: React.FC<{
   cmsData: CmsData;
@@ -47,9 +47,7 @@ const Home: React.FC<{
       <SEO {...{ title: seo.title, description: seo.description }} />
       <DefaultTemplate {...{ bodyClass, id: "home", header: true, footer: true }}>
         <Container>
-          <Suspense fallback={<div className="loading">Carregando...</div>}>
-            <CarouselBlog posts={carouselPosts || []} />
-          </Suspense>
+          <CarouselBlog posts={carouselPosts || []} />
           <Box className={"recent-posts"}>
             <RecentsPosts posts={recentsPosts} screen={screen} width={width} />
           </Box>

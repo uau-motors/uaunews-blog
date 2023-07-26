@@ -13,7 +13,11 @@ const Ads = ({ format, imageUrl, altText }: AdsPropsI) => {
   const [height, setHeight] = useState(250);
 
   useEffect(() => {
-    if (format === "full") {
+    if (format === "mobile") {
+      setWidth(320);
+      setHeight(50);
+    }
+    if (format === "leaderboard") {
       setWidth(728);
       setHeight(90);
     }
@@ -21,31 +25,16 @@ const Ads = ({ format, imageUrl, altText }: AdsPropsI) => {
       setWidth(250);
       setHeight(250);
     }
-    if (format === "rectangle") {
-      setWidth(320);
-      setHeight(110);
+    if (format === "billboard") {
+      setWidth(970);
+      setHeight(250);
     }
   }, [format]);
 
   return (
     <Box className="ads">
       <Box className="ads-container">
-        <Paper sx={{ display: { xl: "none", xs: "block" } }} className="ads-paper">
-          {imageUrl ? (
-            <center>
-              <Image
-                src={imageUrl}
-                className="ads-image"
-                width={width}
-                height={height}
-                alt={altText ? altText : "ads-image"}
-              />
-            </center>
-          ) : (
-            <Skeleton variant="rectangular" width={width} height={height} className="ads-image" />
-          )}
-        </Paper>
-        <Paper sx={{ display: { xl: "block", xs: "none" } }} className="ads-paper">
+        <Paper sx={{ display: { xl: "block", xs: "none" } }} className={`ads-paper ads-${format}`}>
           {imageUrl ? (
             <center>
               <Image

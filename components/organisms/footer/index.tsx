@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
-import { Container, Grid, Box, Typography, Link } from "@mui/material";
+import React from "react";
+import { Container, Grid, Box, Typography } from "@mui/material";
 
 import Logo from "@molecules/logo";
-import { loadCSS } from "fg-loadcss";
 
 import Icon from "@mui/material/Icon";
 import Date from "@components/atoms/date-component";
@@ -169,18 +168,18 @@ export const Footer = () => {
             >
               <Logo mode="light" />
               <Typography className="content-about">
-                A UauNews é um canal de contéudo da UauMotors, que tem como objetivo trazer a você, conteúdos de
-                relevância e todas novidades do mundo automotivos.
+                A UauNews é um canal de conteúdo da UauMotors, dedicado a trazer a você conteúdos de alta relevância e
+                todas as novidades do mundo automotivo.
               </Typography>
               <span className="mobileTitle">
                 <h4>UauNews Mobile</h4>
               </span>
               <Box className="icons">
                 <Image
-                  src="/assets/images/logos/app-legislativo-disponivel-googleplay-e-appstore.png"
+                  src="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/ads%2Fapp-store.png?alt=media"
                   alt="logos"
-                  width={1}
-                  height={1}
+                  width={240}
+                  height={50}
                 />
               </Box>
             </Box>
@@ -235,7 +234,7 @@ export const Footer = () => {
               <div className="thumbnails">
                 {vehiclePhotos.map((img, key) => (
                   <div key={key}>
-                    <Image src={img.src} alt={img.alt} width={1920} height={1080} />
+                    <Image src={img.src} alt={img.alt} width={128} height={128} />
                   </div>
                 ))}
               </div>
@@ -255,7 +254,7 @@ export const Footer = () => {
                   return (
                     <li key={key}>
                       <a href={item.url} target="_blank">
-                        <i className={`${item.icon}`} />
+                        <i className={`fa fa-${item.icon}`} />
                       </a>
                     </li>
                   );

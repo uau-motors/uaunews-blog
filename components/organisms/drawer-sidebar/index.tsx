@@ -17,9 +17,9 @@ export default function DrawerSidebar() {
     <Drawer anchor="left" open={isOpenDrawer} onClose={handleClose} style={{ width: 320 }}>
       <div className="drawer-sidebar">
         <DrawerClose />
-        <DrawerTitle />
+        <DrawerTitle onClose={handleClose} />
         <DrawerAbout />
-        <DrawerCategories />
+        <DrawerCategories onClose={handleClose} />
       </div>
     </Drawer>
   );

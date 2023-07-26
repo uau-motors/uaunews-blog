@@ -39,10 +39,10 @@ const RecentPosts = ({ posts, screen, width }: RecentPostsProps) => {
               {posts && posts.length > 0 && (
                 <Grid item xs={12}>
                   <PostCard
-                    post={posts[0]}
+                    post={posts[6]}
                     delay={1}
                     tag={true}
-                    excerpt={true}
+                    excerpt={false}
                     counter={1}
                     size={screen}
                     orient="down"
@@ -85,7 +85,7 @@ const RecentPosts = ({ posts, screen, width }: RecentPostsProps) => {
               <Grid item xs={6}>
                 {posts && posts.length > 0 && (
                   <PostCard
-                    post={posts[0]}
+                    post={posts[6]}
                     delay={1}
                     tag={true}
                     excerpt={true}
@@ -130,7 +130,7 @@ const RecentPosts = ({ posts, screen, width }: RecentPostsProps) => {
                   <Grid item xs={6} className="post-featured">
                     {posts && posts.length > 0 && (
                       <PostCard
-                        post={posts[0]}
+                        post={posts[6]}
                         delay={1}
                         tag={true}
                         excerpt={true}

@@ -83,9 +83,13 @@
         }
         &.size-lg,
         &.size-xl {
+          @include box-img-height("md", 160);
+          img {
+            left: -10%;
+          }
           .post-content {
             top: 10px;
-            min-height: 110px;
+            min-height: 100px;
             .post-title {
               h3 {
                 @include font-size(24px);
@@ -156,9 +160,13 @@
       }
       &.size-lg,
       &.size-xl {
-        @include box-img-height("md", $image-height-sm);
+        @include box-img-height("md", 320);
+        img {
+          left: -25%;
+        }
         .post-tag {
           width: 160px;
+          bottom: 35px;
           > span {
             @include font-size(20px);
           }
@@ -187,7 +195,6 @@
         }
       }
       .post {
-        margin-bottom: 15px;
         &.size-xs {
           .post-tag {
             bottom: 10px;
@@ -232,7 +239,7 @@
         &.size-xl {
           @include box-img-height("sm", 110);
           .post-tag {
-            bottom: 10px;
+            bottom: 30px;
             width: 110px;
             > span {
               @include font-size(18px);
@@ -293,7 +300,7 @@
       }
       &.size-lg,
       &.size-xl {
-        @include box-img-height("md", $image-height-md);
+        @include box-img-height("md", 380);
         .post-content {
           margin-top: -15px;
         }
@@ -317,6 +324,9 @@
         &.size-lg,
         &.size-xl {
           @include box-img-height("md", 240);
+          .post-content {
+            margin-top: -35px;
+          }
         }
       }
     }
@@ -420,7 +430,7 @@
       }
       &.size-lg,
       &.size-xl {
-        @include box-img-height("md", 320);
+        @include box-img-height("md", 360);
         .box-play {
           top: 35%;
           left: 45%;
@@ -447,40 +457,74 @@
     }
     .post-list {
       .post {
-        margin-bottom: 20px;
-        @include box-img-height("sm", 140);
+        padding-bottom: 0;
         .box-play {
           top: 40%;
           left: 16%;
+        }
+        &.size-lg,
+        &.size-xl {
+          @include box-img-height("sm", 140);
+          img {
+            left: 0;
+          }
+          .post-content {
+            margin-top: -10px;
+          }
         }
       }
     }
   }
   .lasteds-posts {
+    .title-section {
+      max-width: 120px;
+    }
     .post-list {
       .post {
-        &.size-sm {
-          @include box-img-height("sm", 120);
-          .post-content {
-            margin-top: -15px;
+        &.size-xs {
+          @include box-img-height("sm", 90);
+          margin-bottom: 5px;
+          .post-metas {
+            .post-views {
+              display: none;
+            }
+          }
+          .review-meta-inner {
+            .extra-meta {
+              display: none;
+            }
           }
         }
-        &.size-md,
-        &.size-lg {
+        &.size-sm,
+        &.size-md {
           @include box-img-height("md", 180);
           .post-content {
-            margin-top: -15px;
+            .post-metas {
+              .post-views {
+                display: none;
+              }
+            }
+          }
+        }
+        &.size-lg,
+        &.size-xl {
+          @include box-img-height("md", 220);
+          .post-content {
+            .post-metas {
+              .post-date {
+                h6 {
+                  font-size: 0.9em;
+                }
+              }
+            }
           }
         }
       }
     }
     .post {
-      &.size-lg,
-      &.size-xl {
-        @include box-img-height("md", 200);
-      }
       .post-tag {
         width: 160px;
+        bottom: 30px;
         > span {
           @include font-size(20px);
         }

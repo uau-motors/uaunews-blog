@@ -1,26 +1,44 @@
-.ads-box{
+.ads-box {
   border: 1px solid #ccc;
   overflow: hidden;
   display: block;
-  img{
+  img {
     width: 100%;
     height: 100%;
     display: block !important;
   }
 }
 
-.ads{
+.ads {
   position: relative;
-  &.ads-250x250{
-    @extend .ads-box;
-    width: 250px;
-    height: 250px;
-  }
-  &.ads-729x90{
-    @extend .ads-box;
-    margin: 20px auto;
-    width: 790px;
-    height: 90px;
+  .ads-container {
+    .ads-mobile {
+      @extend .ads-box;
+      width: 100%;
+      height: 50px;
+      margin: 15px auto 20px;
+    }
+    .ads-square {
+      @extend .ads-box;
+      width: 276px;
+      height: 276px;
+    }
+    .ads-leaderboard {
+      @extend .ads-box;
+      margin: 20px auto;
+      width: 790px;
+      height: 90px;
+    }
+    .ads-billboard {
+      @extend .ads-box;
+      margin: 10px auto 30px;
+      width: auto;
+      height: 221px;
+      img {
+        width: 100% !important;
+        height: 221px;
+      }
+    }
   }
 }
 

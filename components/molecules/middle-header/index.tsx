@@ -17,7 +17,7 @@ export default function UauMiddleHeader() {
             <div className="logoUM1">
               <span>UM1</span>
               <Image src={`/assets/images/svg/logo-um1.svg`} alt="logo-um1" width={40} height={40} />
-              <h2>Canal de conteúdo da UauMotors</h2>
+              <h2>Seu hub de conteúdo automotivo</h2>
             </div>
           </Grid>
           <Grid xs={5} sm={7} md={6} className="header-actions">

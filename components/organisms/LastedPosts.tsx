@@ -51,11 +51,11 @@ const LastedPosts = ({ posts, screen, width }: LastedPostsProps) => {
             <Grid container spacing={2} className="ads-xs">
               <Grid item xs={12}>
                 <Ads
-                  format={"rectangle"}
+                  format={"mobile"}
                   imageUrl={
-                    "https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/ads%2Fads-300-100.png?alt=media"
+                    "https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/ads%2Fads-320x50.png?alt=media"
                   }
-                  altText="300x100"
+                  altText="320x50"
                 />
               </Grid>
             </Grid>
@@ -163,11 +163,11 @@ const LastedPosts = ({ posts, screen, width }: LastedPostsProps) => {
                 <Grid container spacing={2} className="ads-md">
                   <Grid item xs={12}>
                     <Ads
-                      format={"full"}
+                      format={"billboard"}
                       imageUrl={
-                        "https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/ads%2Fbanner-782x90.png?alt=media"
+                        "https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/ads%2Fads-970-250.png?alt=media"
                       }
-                      altText="728x90"
+                      altText="970x250"
                     />
                   </Grid>
                 </Grid>

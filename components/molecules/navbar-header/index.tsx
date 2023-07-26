@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState } from "react";
 import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
 import Link from "next/link";
@@ -12,12 +12,8 @@ import settings from "@utility/Settings";
 import { styled, alpha } from "@mui/material/styles";
 import Menu, { MenuProps } from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import EditIcon from "@mui/icons-material/Edit";
-import Divider from "@mui/material/Divider";
-import ArchiveIcon from "@mui/icons-material/Archive";
-import FileCopyIcon from "@mui/icons-material/FileCopy";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { useRouter } from "next/router";
 
 const StyledMenu = styled((props: MenuProps) => (
   <Menu
@@ -58,21 +54,19 @@ const StyledMenu = styled((props: MenuProps) => (
 
 export default function NavbarHeader() {
   const { menusCategories } = settings;
-  const { isOpenDrawer, toggleDrawer } = useOverlay();
+  const { toggleDrawer } = useOverlay();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+  const router = useRouter();
+
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleCloseMenu = () => {
+  const handleCloseMenu = (pathname: string) => {
     setAnchorEl(null);
+    router.push(pathname);
   };
   const [category, setCategory] = useState("home");
-  // const [collapse, setCollapse] = useState(false);
-
-  // useEffect(() => {
-  //   setCategory(router.query.category);
-  // }, [category]);
 
   const handleClose = () => {
     toggleDrawer();
@@ -127,7 +121,12 @@ export default function NavbarHeader() {
                 onClose={handleCloseMenu}
               >
                 {menusCategories.map((section) => (
-                  <MenuItem onClick={handleCloseMenu} disableRipple key={section.title} className="menu-item">
+                  <MenuItem
+                    onClick={() => handleCloseMenu(`/${section.pathname}`)}
+                    disableRipple
+                    key={section.title}
+                    className="menu-item"
+                  >
                     {section.title}
                   </MenuItem>
                 ))}

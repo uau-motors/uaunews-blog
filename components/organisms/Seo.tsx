@@ -39,7 +39,7 @@ export const SEO = (props: SEOI) => {
 
   return (
     <Head>
-      <title>{title}</title>
+      <title>{title} - Mude de marcha com a UauNews - Seu hub de conteúdo Automotivo</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonical} />
       <meta property="og:type" content={type} />
@@ -68,77 +68,81 @@ export const SEO = (props: SEOI) => {
       <link
         rel="apple-touch-icon"
         sizes="57x57"
-        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/apple%2Ficon%2F57x57.png?alt=media"
+        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2FFapple-icon-57x57.png?alt=media"
       />
       <link
         rel="apple-touch-icon"
         sizes="60x60"
-        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/apple%2Ficon%2F60x60.png?alt=media"
+        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Fapple%2Ficon%2F60x60.png?alt=media"
       />
       <link
         rel="apple-touch-icon"
         sizes="72x72"
-        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/apple%2Ficon%2F72x72.png?alt=media"
+        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Fapple%2Ficon%2F72x72.png?alt=media"
       />
       <link
         rel="apple-touch-icon"
         sizes="76x76"
-        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/apple%2Ficon%2F76x76.png?alt=media"
+        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Fapple%2Ficon%2F76x76.png?alt=media"
       />
       <link
         rel="apple-touch-icon"
         sizes="114x114"
-        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/apple%2Ficon%2F114x114.png?alt=media"
+        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Fapple%2Ficon%2F114x114.png?alt=media"
       />
       <link
         rel="apple-touch-icon"
         sizes="120x120"
-        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/apple%2Ficon%2F120x120.png?alt=media"
+        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Fapple%2Ficon%2F120x120.png?alt=media"
       />
       <link
         rel="apple-touch-icon"
         sizes="144x144"
-        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/apple%2Ficon%2F144x144.png?alt=media"
+        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Fapple%2Ficon%2F144x144.png?alt=media"
       />
       <link
         rel="apple-touch-icon"
         sizes="152x152"
-        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/apple%2Ficon%2F152x152.png?alt=media"
+        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Fapple%2Ficon%2F152x152.png?alt=media"
       />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
-        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/apple%2Ficon%2F180x180.png?alt=media"
+        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Fapple%2Ficon%2F180x180.png?alt=media"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="192x192"
-        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/android%2Ficon%2F192x192.png?alt=media"
+        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Fandroid%2Ficon%2F192x192.png?alt=media"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="32x32"
-        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicon%2F32x32.png?alt=media"
+        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Ffavicons2F32x32.png?alt=media"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="96x96"
-        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicon%2F96x96.png?alt=media"
+        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Ffavicons2F96x96.png?alt=media"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="16x16"
-        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicon%2F16x16.png?alt=media"
+        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2FFfavicon-16x16.png?alt=media"
+      />
+      <link
+        rel="icon"
+        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Ffavicon.ico?alt=media"
       />
       <link rel="manifest" href="/manifest.json" />
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta
         name="msapplication-TileImage"
-        content="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/ms%2Ficon-144x144.png?alt=media"
+        content="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Fms%2Ficon-144x144.png?alt=media"
       />
       <meta name="theme-color" content="#ffffff" />
 
