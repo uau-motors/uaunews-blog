@@ -165,7 +165,7 @@ const LastedPosts = ({ posts, screen, width }: LastedPostsProps) => {
                     <Ads
                       format={"full"}
                       imageUrl={
-                        "https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/ads%2Fads-728-90.png?alt=media"
+                        "https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/ads%2Fbanner-782x90.png?alt=media"
                       }
                       altText="728x90"
                     />
