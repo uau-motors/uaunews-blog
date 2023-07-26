@@ -127,6 +127,13 @@ a {
         }
       }
     }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      ul li a {
+        border-radius: 5px;
+      }
+    }
   }
 }
 

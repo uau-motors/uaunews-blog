@@ -1,8 +1,8 @@
 import React from "react";
 import { Avatar, Typography, makeStyles, Theme } from "@material-ui/core";
 import { Box } from "@mui/material";
-import PostDate from "../post-date";
-import PostViews from "../post-views";
+import PostDate from "../PostDate";
+import PostViews from "../PostViews";
 
 interface PostAuthorProps {
   name: string;
@@ -11,17 +11,10 @@ interface PostAuthorProps {
   office?: string;
 }
 
-const PostAuthor: React.FC<PostAuthorProps> = ({
-  name,
-  avatarSrc,
-  created,
-  office
-}) => {
+const PostAuthor: React.FC<PostAuthorProps> = ({ name, avatarSrc, created, office }) => {
   const displayName = name ? `<strong>${name}</strong> ` : "";
   const displayOffice = office ? ` - ${office}` : "";
-  const displayCreated = created
-    ? `<br/><strong>Último post:</strong> ${created}`
-    : "";
+  const displayCreated = created ? `<br/><strong>Último post:</strong> ${created}` : "";
   return (
     <div className="author">
       <Box>

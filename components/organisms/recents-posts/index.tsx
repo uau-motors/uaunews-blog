@@ -3,9 +3,9 @@ import React, { Fragment } from "react";
 import { Box, Grid } from "@mui/material";
 
 import { PostCardDataI } from "@utility/interfaces";
-import TitleSection from "@molecules/title-section";
+import TitleSection from "@molecules/TitleSection";
 import SidebarSocials from "@organisms/sidebar/socials";
-import PostCard from "@components/molecules/post-card";
+import PostCard from "@molecules/PostCard";
 
 import { screenContainer } from "@utility/helpers/ScreenContainer";
 

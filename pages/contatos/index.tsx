@@ -1,10 +1,10 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { Container, Grid } from "@mui/material";
+import { Container } from "@mui/material";
 
 import DefaultTemplate from "@components/templates";
 import settings from "@utility/Settings";
-import { SEO } from "@organisms/meta/seo";
+import { SEO } from "@organisms/Seo";
 import { CmsData } from "@utility/interfaces";
 import { BodyClass } from "@helpers/BodyClass";
 

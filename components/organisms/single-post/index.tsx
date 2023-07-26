@@ -1,7 +1,7 @@
-import TitleSection from "@molecules/title-section";
+import TitleSection from "@molecules/TitleSection";
 import PostCredit from "@molecules/post-credit";
-import PostImage from "@molecules/post-image";
-import PostTitle from "@components/atoms/post-title";
+import PostImage from "@molecules/PostImage";
+import PostTitle from "@components/molecules/PostTitle";
 import RelatedsPosts from "@molecules/relateds-posts";
 
 import { Box, Grid } from "@mui/material";

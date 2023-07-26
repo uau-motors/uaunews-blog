@@ -14,29 +14,31 @@
 
 // COMPONENTS
 @import "../../components/molecules/close-title/style.scss";
-@import "../../components/molecules/review-meta/style.scss";
-@import "../../components/molecules/play/style.scss";
-@import "../../components/molecules/post-image/post-image.scss";
 @import "../../components/molecules/modal/modal.scss";
 
 // COMPONENTS ORGANISMS
-@import "components/header/header";
+@import "components/organisms/header/header";
 @import "components/search/search";
 @import "components/drawer/drawer";
 @import "components/carousel/carousel";
 @import "components/posts/posts";
+@import "components/organisms/sidebar";
+
+// COMPONENTS MOLECULES
+@import "components/molecules/post-image";
+@import "components/molecules/post-review-meta";
+@import "components/molecules/post-icon-play";
 
 @import "components/footer/footer";
 
 // COMPONENTS PAGES
 @import "components/pages/home";
+@import "components/pages/categories";
 
-@import "../../components/organisms/categories/categories.scss";
 @import "../../components/organisms/about/about.scss";
 @import "../../components/organisms/contact/contact.scss";
 @import "../../components/organisms/page/page.scss";
 @import "../../components/organisms/post-header/post-header.scss";
-@import "../../components/organisms/sidebar/sidebar.scss";
 
 @media (max-width: 575.98px) {
 }

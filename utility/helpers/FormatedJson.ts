@@ -26,3 +26,7 @@ export function limitCharacters(jsonArray: any[], field: string, maxLength: numb
     return record;
   });
 }
+
+export function postsByTagSlug(posts: any[], tagSlug: string): any[] {
+  return posts.filter((post) => post.tags.some((tag: any) => tag.slug === tagSlug));
+}

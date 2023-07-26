@@ -1,15 +1,15 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import { PostCardDataI } from "@utility/interfaces";
-import PostImage from "../PostImage";
-import PostTitle from "../../molecules/PostTitle";
-import PostDate from "../PostDate";
-import PostViews from "../PostViews";
+import PostImage from "./PostImage";
+import PostTitle from "@molecules/PostTitle";
+import PostDate from "./PostDate";
+import PostViews from "./PostViews";
 import Link from "next/link";
-import PostTag from "../../atoms/PostTag";
-import PostExcerpt from "../PostExcerpt";
-import ReviewMeta from "../PostReviewMeta";
-import Play from "../PostIconPlay";
+import PostTag from "@atoms/PostTag";
+import PostExcerpt from "./PostExcerpt";
+import ReviewMeta from "./PostReviewMeta";
+import Play from "./PostIconPlay";
 
 interface PostCardProps {
   post: PostCardDataI;

@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
 import { Box, Grid } from "@mui/material";
 
-import TitleSection from "@components/molecules/title-section";
+import TitleSection from "@components/molecules/TitleSection";
 import { PostCardDataI } from "@utility/interfaces";
 import PostThumb from "@molecules/post-thumb";
-import PostCard from "@components/molecules/post-card";
+import PostCard from "@components/molecules/PostCard";
 
 interface VehicleEvaluationProps {
   posts: PostCardDataI[];

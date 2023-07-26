@@ -1,12 +1,12 @@
 import React from "react";
 import { Box, Skeleton } from "@mui/material";
 import { PostCardDataI } from "@utility/interfaces";
-import PostImage from "../post-image";
-import PostTitle from "../../atoms/post-title";
-import PostDate from "../post-date";
-import PostViews from "../post-views";
+import PostImage from "../PostImage";
+import PostTitle from "../../molecules/PostTitle";
+import PostDate from "../PostDate";
+import PostViews from "../PostViews";
 import Link from "next/link";
-import ReviewMeta from "../review-meta";
+import ReviewMeta from "../PostReviewMeta";
 
 interface Tag {
   slug: string;

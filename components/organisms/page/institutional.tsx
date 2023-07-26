@@ -5,10 +5,10 @@ import Breadcrumb from "@molecules/breadcrumb";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import PostTitle from "@components/atoms/post-title";
+import PostTitle from "@components/molecules/PostTitle";
 import { Container, Box, ListItemIcon } from "@mui/material";
 import { useRouter } from "next/router";
-import TitleSection from "@molecules/title-section";
+import TitleSection from "@molecules/TitleSection";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 interface InstitutionalProps {

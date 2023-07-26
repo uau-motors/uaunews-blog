@@ -2,7 +2,7 @@ import React from "react";
 import { Grid } from "@mui/material";
 
 import { PostCardDataI } from "@utility/interfaces";
-import PostCard from "@components/molecules/post-card";
+import PostCard from "@components/molecules/PostCard";
 
 interface PostListProps {
   posts: PostCardDataI[];

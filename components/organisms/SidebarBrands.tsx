@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
-import TitleSection from "../../molecules/title-section";
-import BrandsIcons from "../../molecules/brands-icons";
-import { ThemeContext } from "../../../utility/contexts/ThemeContext";
+import TitleSection from "@molecules/TitleSection";
+import BrandsIcons from "@molecules/BrandIcons";
+import { ThemeContext } from "@utility/contexts/ThemeContext";
 import { useContext } from "react";
 import Link from "next/link";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";

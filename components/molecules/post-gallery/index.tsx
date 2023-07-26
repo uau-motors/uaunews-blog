@@ -10,7 +10,7 @@ import "swiper/css/effect-fade";
 
 import SwiperClass from "swiper/types/swiper-class";
 import SwiperCore, { FreeMode, Navigation, Thumbs, Controller } from "swiper";
-import PostImage from "../post-image";
+import PostImage from "../PostImage";
 import Image from "next/image";
 
 const PostGallery = () => {

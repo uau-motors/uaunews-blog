@@ -37,7 +37,9 @@ const PostImage: React.FC<PostImageProps> = ({
 
   return (
     <div className={`post-image size-${format} position-${position} image-${full === true ? "full" : ""}`}>
-      {imageUrl && imageUrl != "/assets/images/samples/cars/image-0.jpeg" ? (
+      {imageUrl &&
+      imageUrl !=
+        "https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/samples%2Fimage-1.jpeg?alt=media" ? (
         <>
           {zoom && (
             <figure onClick={() => setFull(full ? false : true)}>

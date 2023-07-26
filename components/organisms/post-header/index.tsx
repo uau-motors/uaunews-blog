@@ -1,12 +1,12 @@
 import Breadcrumb from "@molecules/breadcrumb";
 import PostAuthor from "@molecules/post-author";
-import PostDate from "@molecules/post-date";
-import PostExcerpt from "@molecules/post-excerpt";
+import PostDate from "@molecules/PostDate";
+import PostExcerpt from "@molecules/PostExcerpt";
 import PostReadingTime from "@molecules/post-reading-time";
 import PostShare from "@molecules/post-share";
-import PostTag from "@components/atoms/post-tag";
-import PostTitle from "@components/atoms/post-title";
-import PostViews from "@molecules/post-views";
+import PostTag from "@components/atoms/PostTag";
+import PostTitle from "@components/molecules/PostTitle";
+import PostViews from "@molecules/PostViews";
 import { Box, Container, Grid } from "@mui/material";
 import React from "react";
 

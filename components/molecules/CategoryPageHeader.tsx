@@ -1,14 +1,14 @@
 import React from "react";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import Breadcrumb from "@molecules/breadcrumb";
-import TitleSection from "@components/molecules/title-section";
+import TitleSection from "@molecules/TitleSection";
 import { getTitle } from "@utility/GetTitle";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
 const CategoryHeader = () => {
   const router = useRouter();
-  const { pathname, query } = router;
+  const { pathname } = router;
   const pathnames = pathname.split("/").filter((x) => x);
   const title = getTitle(pathnames[0], "");
 
@@ -19,13 +19,18 @@ const CategoryHeader = () => {
           <Breadcrumb />
           <TitleSection title={title} />
           <Typography variant="h4" className="category-descript">
-            The real test is not whether you avoid this failure, because you won’t. It’s whether you let it harden or
-            shame you into inaction, or whether you learn from it; whether you choose to persevere.
+            Esta categoria é uma seção dedicada a fornecer informações atualizadas e relevantes sobre o mundo dos
+            automóveis.
           </Typography>
         </Grid>
         <Grid item xs={4}>
           <Box className="category-media">
-            <Image src="/assets/images/samples/cars/image-20.jpeg" alt={pathnames[0]} width={1024} height={768} />
+            <Image
+              src="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/samples%2Fimage-20.jpeg?alt=media"
+              alt={`categoria-${pathnames[0]}`}
+              width={1024}
+              height={768}
+            />
           </Box>
         </Grid>
       </Grid>

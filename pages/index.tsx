@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState, lazy, Suspense } from "react";
 import { useRouter } from "next/router";
 import { Box, Container } from "@mui/material";
 import { ThemeContext } from "@utility/contexts/ThemeContext";
-import { SEO } from "@organisms/meta/seo";
+import { SEO } from "@organisms/Seo";
 import { CmsData, CarouselDataI, PostCardDataI } from "@utility/interfaces";
 import { BodyClass } from "@helpers/BodyClass";
 import { getAllPosts } from "./api";
@@ -16,7 +16,7 @@ const RecentsPosts = lazy(() => import("@organisms/recents-posts"));
 const VehicleEvaluation = lazy(() => import("@organisms/vehicle-evaluation"));
 const RecentsVehicles = lazy(() => import("@organisms/recents-vehicles"));
 const PostsVideos = lazy(() => import("@organisms/posts-videos"));
-const LastedPosts = lazy(() => import("@organisms/lasteds-posts"));
+const LastedPosts = lazy(() => import("@organisms/LastedPosts"));
 const DefaultTemplate = lazy(() => import("@components/templates"));
 
 const Home: React.FC<{

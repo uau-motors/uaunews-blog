@@ -1,6 +1,6 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import TitleSection from "../title-section";
+import TitleSection from "../TitleSection";
 import Link from "next/link";
 
 import FacebookIcon from "@mui/icons-material/Facebook";

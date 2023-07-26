@@ -8,7 +8,7 @@ const PostVideo = () => {
     <iframe
       width="840"
       height="480"
-      src="https://player.vimeo.com/video/107747073?h=aee925f4ae&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&color=cc6101"
+      src="https://PostIconPlayer.vimeo.com/video/107747073?h=aee925f4ae&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&color=cc6101"
       frameBorder="0"
       allow="autoplay; fullscreen; picture-in-picture"
       allowFullScreen

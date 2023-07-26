@@ -2,7 +2,7 @@ import { Box, Grid, Button } from "@mui/material";
 import React from "react";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import PostTitle from "../../atoms/post-title";
+import PostTitle from "../../molecules/PostTitle";
 // import PostThumb from '../post-thumb';
 
 const PostNavigator = () => {

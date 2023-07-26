@@ -6,8 +6,8 @@ import SearchModal from "../components/organisms/search-modal";
 
 import DefaultTemplate from "@components/templates";
 import settings from "@utility/Settings";
-import { SEO } from "@organisms/meta/seo";
-import { CmsData, CarouselDataI, PostCardDataI } from "@utility/interfaces";
+import { SEO } from "@organisms/Seo";
+import { CmsData, PostCardDataI } from "@utility/interfaces";
 import { BodyClass } from "@helpers/BodyClass";
 import { getAllPosts } from "./api";
 

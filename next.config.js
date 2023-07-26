@@ -1,17 +1,13 @@
-/** @type {import('next').NextConfig} */
-// @ts-check
-
-const isProd = process.env.NODE_ENV === "production";
-const runtimeCaching = require("next-pwa/cache");
 const withPWA = require("next-pwa")({
   dest: "public",
   register: true,
   skipWaiting: true,
-  runtimeCaching,
-  buildExcludes: [/manifest.json$/],
-  disable: !isProd,
-  maximumFileSizeToCacheInBytes: 5000000
+  maximumFileSizeToCacheInBytes: 5000000,
+  disable: process.env.NODE_ENV === "development"
 });
+
+/** @type {import('next').NextConfig} */
+// @ts-check
 
 const nextConfig = withPWA({
   //...(process.env.NETLIFY === 'true' && { target: 'serverless' }),

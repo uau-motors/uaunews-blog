@@ -4,9 +4,9 @@ import { Box, Grid } from "@mui/material";
 
 import { PostCardDataI } from "@utility/interfaces";
 
-import TitleSection from "@components/molecules/title-section";
+import TitleSection from "@components/molecules/TitleSection";
 import SidebarNewsletter from "../sidebar/newsletter";
-import PostCard from "@components/molecules/post-card";
+import PostCard from "@components/molecules/PostCard";
 
 interface RecentsVehiclesProps {
   posts: PostCardDataI[];

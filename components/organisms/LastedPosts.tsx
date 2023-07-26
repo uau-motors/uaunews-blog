@@ -4,13 +4,12 @@ import Box from "@mui/material/Box";
 import Ads from "@molecules/ads";
 import Grid from "@mui/material/Grid";
 
-import { Typography } from "@mui/material";
-import TitleSection from "@components/molecules/title-section";
+import TitleSection from "@components/molecules/TitleSection";
 import { PostCardDataI } from "@utility/interfaces";
-import SidebarBrands from "../sidebar/brands";
-import SidebarArchive from "../sidebar/archive";
-import SidebarTags from "../sidebar/tags";
-import PostCard from "@components/molecules/post-card";
+import SidebarBrands from "@organisms/SidebarBrands";
+import SidebarArchive from "@organisms/SidebarArchive";
+import SidebarTags from "@organisms/SidebarTags";
+import PostCard from "@components/molecules/PostCard";
 
 interface LastedPostsProps {
   posts: PostCardDataI[];
@@ -29,7 +28,7 @@ const LastedPosts = ({ posts, screen, width }: LastedPostsProps) => {
         <Grid container spacing={2}>
           <Grid item xs={12} className="post-featured">
             <Box sx={{ width: "100%" }}>
-              <TitleSection title={"Recentes Posts"} />
+              <TitleSection title={"Recentes"} />
             </Box>
           </Grid>
         </Grid>

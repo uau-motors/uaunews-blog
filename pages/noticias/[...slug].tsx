@@ -4,21 +4,19 @@ import { Container, Grid } from "@mui/material";
 
 import DefaultTemplate from "@components/templates";
 import settings from "@utility/Settings";
-import { SEO } from "@organisms/meta/seo";
+import { SEO } from "@organisms/Seo";
 import { CmsData, PostCardDataI } from "@utility/interfaces";
 import { BodyClass } from "@helpers/BodyClass";
 
 import SidebarSocials from "@organisms/sidebar/socials";
 import SidebarNewsletter from "@organisms/sidebar/newsletter";
-import SidebarTags from "@organisms/sidebar/tags";
-import SidebarBrands from "@organisms/sidebar/brands";
-import SidebarArchive from "@organisms/sidebar/archive";
+import SidebarTags from "@organisms/SidebarTags";
+import SidebarBrands from "@organisms/SidebarBrands";
+import SidebarArchive from "@organisms/SidebarArchive";
 
 import SinglePostHeader from "@organisms/post-header";
 
-import TitleSection from "@molecules/title-section";
-import PaginationLink from "@molecules/pagination";
-import Stack from "@mui/material/Stack";
+import TitleSection from "@molecules/TitleSection";
 
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";

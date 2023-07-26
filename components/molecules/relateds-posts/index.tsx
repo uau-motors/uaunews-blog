@@ -1,4 +1,4 @@
-import TitleSection from "@molecules/title-section";
+import TitleSection from "@molecules/TitleSection";
 import { Box } from "@mui/material";
 import React from "react";
 

@@ -1,44 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy } from "react";
 import { useRouter } from "next/router";
-import { Box, Container, Stack } from "@mui/material";
-import LastedPosts from "@organisms/lasteds-posts";
-
-import DefaultTemplate from "@components/templates";
-import settings from "@utility/Settings";
-import { SEO } from "@organisms/meta/seo";
-import { CmsData, CarouselDataI, PostCardDataI } from "@utility/interfaces";
+import { Box, Container } from "@mui/material";
+import { SEO } from "@organisms/Seo";
+import { CmsData, PostCardDataI } from "@utility/interfaces";
 import { BodyClass } from "@helpers/BodyClass";
 import { getAllPosts } from "../api";
 import useWindowSize from "@utility/UseWindowSize";
 import getScreenSize from "@utility/GetScreenSize";
-import { limitCharacters, removePartialRecords } from "@utility/helpers/FormatedJson";
-import CategoryPage from "@components/organisms/categories";
-import PaginationLink from "@components/molecules/pagination";
+import { limitCharacters, postsByTagSlug, removeLastRecords } from "@utility/helpers/FormatedJson";
+import settings from "@utility/Settings";
 
-export const getStaticProps = async () => {
-  const allPosts = await getAllPosts();
-  const posts = limitCharacters(limitCharacters(allPosts, "title", 80), "excerpt", 240);
-  const lastedPosts = removePartialRecords(posts, 0, 12);
+import CategoryPage from "@organisms/CategoryPage";
+import ListPosts from "@organisms/ListPosts";
 
-  const cmsData = {
-    bodyClass: BodyClass({ isHome: false })
-  };
-
-  return {
-    revalidate: 10,
-    props: { cmsData, lastedPosts }
-  };
-};
+const DefaultTemplate = lazy(() => import("@components/templates"));
 
 const PageNews: React.FC<{
   cmsData: CmsData;
-  carouselPosts: CarouselDataI[];
   lastedPosts: PostCardDataI[];
+  categoriesPosts: PostCardDataI[];
 }> = (props) => {
   const router = useRouter();
   const bodyClass = BodyClass({ isHome: false });
   const { seo } = settings;
-  const { lastedPosts, carouselPosts } = props;
+  const { lastedPosts, categoriesPosts } = props;
   const [screen, setScreen] = useState<string>("");
   const { width } = useWindowSize();
 
@@ -53,19 +38,32 @@ const PageNews: React.FC<{
   return (
     <>
       <SEO {...{ title: seo.title, description: seo.description }} />
-      <DefaultTemplate {...{ bodyClass, id: "page", header: true, footer: true }}>
+      <DefaultTemplate {...{ bodyClass, id: "news", header: true, footer: true }}>
         <Container>
-          <CategoryPage posts={carouselPosts} />
+          <CategoryPage posts={categoriesPosts} screen={screen} width={width} />
           <Box className={`lasteds-posts`}>
-            <LastedPosts posts={lastedPosts} screen={screen} width={width} />
+            <ListPosts posts={lastedPosts} screen={screen} width={width} />
           </Box>
-          <Stack spacing={2} className="pagination">
-            <PaginationLink />
-          </Stack>
         </Container>
       </DefaultTemplate>
     </>
   );
+};
+
+export const getStaticProps = async () => {
+  const allPosts = await getAllPosts();
+  const posts = limitCharacters(limitCharacters(allPosts, "title", 80), "excerpt", 240);
+  const lastedPosts = postsByTagSlug(posts, "noticias");
+  const categoriesPosts = removeLastRecords(posts, 12);
+
+  const cmsData = {
+    bodyClass: BodyClass({ isHome: false })
+  };
+
+  return {
+    revalidate: 10,
+    props: { cmsData, categoriesPosts, lastedPosts }
+  };
 };
 
 export default PageNews;

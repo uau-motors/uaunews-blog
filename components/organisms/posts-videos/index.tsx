@@ -2,9 +2,9 @@ import React, { Fragment } from "react";
 
 import { Box, Grid } from "@mui/material";
 
-import TitleSection from "@components/molecules/title-section";
+import TitleSection from "@components/molecules/TitleSection";
 import { PostCardDataI } from "@utility/interfaces";
-import PostCard from "@molecules/post-card";
+import PostCard from "@molecules/PostCard";
 
 interface VideosProps {
   posts: PostCardDataI[];
@@ -21,7 +21,7 @@ const PostsVideos = ({ posts, screen, width }: VideosProps) => {
     <Fragment>
       <Box className={"posts"}>
         <Grid container spacing={2}>
-          <Grid item xs={12} className="post-featured">
+          <Grid item xs={12}>
             <Box sx={{ width: "100%" }}>
               <TitleSection title={"Vídeos"} />
             </Box>

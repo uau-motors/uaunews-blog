@@ -15,6 +15,11 @@ export default function PaginationLink() {
       page={1}
       count={10}
       variant="outlined"
+      shape="rounded"
+      color="primary"
+      size="small"
+      showFirstButton
+      showLastButton
       renderItem={(item) => (
         <PaginationItem component={Link} href={`${slug}/${item.page === 1 ? "" : `?page=${item.page}`}`} {...item} />
       )}
