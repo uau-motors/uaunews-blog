@@ -1,4 +1,4 @@
-import React, { useEffect, useState, lazy } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Box, Container } from "@mui/material";
 import { SEO } from "@organisms/Seo";
@@ -12,8 +12,7 @@ import settings from "@utility/Settings";
 
 import CategoryPage from "@organisms/CategoryPage";
 import ListPosts from "@organisms/ListPosts";
-
-const DefaultTemplate = lazy(() => import("@components/templates"));
+import DefaultTemplate from "@components/templates";
 
 const PageNews: React.FC<{
   cmsData: CmsData;
