@@ -1,475 +1,422 @@
+$box-featured-6-height: 320;
+$box-featured-4-height: 240;
+$box-postlist-4-height: 120;
+$box-postlist-3-height: 120;
+$box-featured-6: 320;
+$box-featured-4: 380;
+$box-postlist-default: 110;
+$box-postlist-4: 220;
+$box-postlist-6: 160;
+
 #home {
   .recent-posts,
   .vehicle-evaluation,
   .recents-vehicles,
   .posts-videos,
   .lasteds-posts {
-    .post {
-      &.size-xs {
-        @include box-img-height("xs", 240);
-        .post-image {
-          img {
-            left: -7%;
+    .title-section {
+      margin: 20px 0;
+    }
+    .post-featured {
+      .post {
+        &.size-lg,
+        &.size-xl {
+          .post-content {
+            top: -40px;
+            min-height: $box-featured-6 / 2 + px;
+            .post-counter {
+              right: -20px;
+              bottom: 0;
+            }
           }
-        }
-        .post-content {
-          margin-top: -15px;
-          margin-bottom: 40px;
+          .post-tag {
+            bottom: 35px;
+            width: 160px;
+            left: 15px;
+            > span {
+              @include font-size(20px);
+              padding: 2px 4px;
+            }
+          }
+          .post-metas {
+            .post-date {
+              h6 {
+                font-size: 0.9em;
+              }
+            }
+          }
         }
       }
     }
     .post-list {
       .post {
-        &.size-xs {
-          @include box-img-height("sm", 90);
-          margin-bottom: 5px;
+        &.size-lg,
+        &.size-xl {
+          .post-content {
+            top: -10px;
+            min-height: $box-postlist-4-height + px;
+            .post-counter {
+              right: 0;
+              bottom: 0;
+              font-size: 48px;
+            }
+          }
           .post-tag {
-            bottom: 10px;
-            width: 100px;
+            bottom: 35px;
+            width: 90px;
+
             > span {
-              @include font-size(18px);
+              @include font-size(16px);
               padding: 2px 4px;
             }
           }
           .post-metas {
+            .post-date {
+              h6 {
+                font-size: 0.9em;
+              }
+            }
             .post-views {
               display: none;
-            }
-          }
-          .post-content {
-            margin-top: -10px;
-            margin-bottom: 0;
-          }
-          .post-title {
-            h3 {
-              @include font-size(22px);
-            }
-          }
-          .review-meta-inner {
-            .extra-meta {
-              display: none;
-            }
-          }
-        }
-        &.size-sm,
-        &.size-md {
-          .post-tag {
-            bottom: 10px;
-            width: 110px;
-            > span {
-              @include font-size(18px);
-              padding: 2px 4px;
-            }
-          }
-          .post-content {
-            top: 10px;
-            min-height: 110px;
-            .post-title {
-              h3 {
-                @include font-size(25px);
-              }
-            }
-            .post-metas {
-              .post-date {
-                h6 {
-                  @include font-size(22px);
-                }
-              }
-              .post-views {
-                display: none;
-              }
-            }
-          }
-        }
-        &.size-lg,
-        &.size-xl {
-          @include box-img-height("md", 160);
-          img {
-            left: -10%;
-          }
-          .post-content {
-            top: 10px;
-            min-height: 100px;
-            .post-title {
-              h3 {
-                @include font-size(24px);
-              }
-            }
-            .post-metas {
-              .post-date {
-                h6 {
-                  font-size: 0.9em;
-                }
-              }
+              visibility: hidden;
             }
           }
         }
       }
     }
   }
+}
+
+#home {
   .recent-posts {
     margin-bottom: 20px;
     .title-section {
-      width: 130px;
-      margin: 25px 0;
+      max-width: 120px;
     }
-    .post {
-      &.size-xs {
-        @include box-img-height("xs", 240);
-        .post-image {
-          img {
-            left: -7%;
+    .post-featured {
+      .post {
+        &.size-lg,
+        &.size-xl {
+          .post-tag {
+            > span {
+              @include font-size(20px);
+            }
           }
         }
-        .post-tag {
-          width: 145px;
-          > span {
-            @include font-size(18px);
+        &.size-xs {
+          @include box-img-size(220);
+          .post-content {
+            margin-top: -40px;
+            .post-counter {
+              right: -15px;
+              font-size: 64px;
+            }
+            .post-excerpt {
+              display: none;
+            }
+          }
+          .post-tag {
+            bottom: 37px;
+            width: 160px;
+            > span {
+              @include font-size(18px);
+            }
           }
         }
-        .post-content {
-          margin-top: -15px;
-          margin-bottom: 40px;
-        }
-        .post-counter {
-          right: 0px;
-          @include font-size(140px);
-        }
-      }
-      &.size-sm,
-      &.size-md {
-        @include box-img-height("sm", $image-height-sm);
-        .post-tag {
-          width: 160px;
-          > span {
-            @include font-size(20px);
+        &.size-sm,
+        &.size-md {
+          @include box-img-size(280);
+          .post-tag {
+            bottom: 37px;
+            width: 160px;
+            > span {
+              @include font-size(20px);
+            }
           }
-        }
-        .post-counter {
-          right: 0px;
-          @include font-size(150px);
-        }
-        .post-content {
-          margin-top: -15px;
-        }
-        .post-metas {
-          .post-views {
-            display: none;
-          }
-        }
-      }
-      &.size-lg,
-      &.size-xl {
-        @include box-img-height("md", 320);
-        img {
-          left: -25%;
-        }
-        .post-tag {
-          width: 160px;
-          bottom: 35px;
-          > span {
-            @include font-size(20px);
-          }
-        }
-        .post-content {
-          margin-top: -15px;
-        }
-        .post-metas {
-          .post-views {
-            display: none;
+          .post-content {
+            margin-top: -40px;
+            .post-counter {
+              right: -15px;
+              font-size: 64px;
+            }
+            .post-excerpt {
+              display: none;
+            }
           }
         }
       }
     }
     .post-list {
-      &.post-sm {
-        .post {
-          &.size-sm {
-            @include box-img-height("md", 140);
-            .post-title {
-              h3 {
-                @include font-size(25px);
+      .post {
+        &.size-sm,
+        &.size-md,
+        &.size-lg,
+        &.size-xl {
+          @include box-img-size($box-postlist-default);
+        }
+        &.size-xs {
+          margin-bottom: -20px;
+          @include box-img-size(110);
+          .post-content {
+            .post-counter {
+              right: -15px;
+              font-size: 64px;
+            }
+            .post-metas {
+              .post-views {
+                display: none;
+                visibility: hidden;
               }
             }
           }
-        }
-      }
-      .post {
-        &.size-xs {
           .post-tag {
-            bottom: 10px;
-            width: 100px;
+            bottom: 37px;
+            width: 90px;
             > span {
               @include font-size(18px);
-              padding: 2px 4px;
             }
-          }
-          .post-counter {
-            right: 0px;
-            @include font-size(80px);
           }
         }
         &.size-sm,
         &.size-md {
-          @include box-img-height("sm", 110);
+          margin-bottom: -20px;
           .post-tag {
-            bottom: 10px;
+            bottom: 37px;
             width: 110px;
             > span {
-              @include font-size(18px);
-              padding: 2px 4px;
+              @include font-size(16px);
             }
           }
-          .post-metas {
-            .post-views {
-              display: none;
+          .post-content {
+            .post-counter {
+              right: 0;
+              bottom: 0;
+              font-size: 48px;
             }
-          }
-          .post-counter {
-            right: 0px;
-            @include font-size(80px);
-          }
-          .post-title {
-            h3 {
-              @include font-size(25px);
+            .post-metas {
+              .post-views {
+                display: none;
+                visibility: hidden;
+              }
             }
-          }
-        }
-        &.size-lg,
-        &.size-xl {
-          @include box-img-height("sm", 110);
-          .post-tag {
-            bottom: 30px;
-            width: 110px;
-            > span {
-              @include font-size(18px);
-              padding: 2px 4px;
-            }
-          }
-          .post-counter {
-            right: 0px;
-            @include font-size(90px);
           }
         }
       }
     }
   }
   .vehicle-evaluation {
-    padding-bottom: 30px;
     .title-section {
-      width: 250px;
-      margin: 10px 0 20px;
-      min-width: 70px;
+      max-width: 255px;
     }
-    .post-list {
+    .post-featured {
       .post {
-        &.size-xs {
-          @include box-img-height("sm", 110);
-          .post-content {
-            bottom: inherit;
-            .post-metas {
-              margin: 5px 0;
-            }
-            .post-title {
-              margin: 10px 0 5px;
-            }
-          }
-        }
-      }
-    }
-    .post {
-      &.size-xs {
-        .post-content {
-          margin-top: 0;
-          margin-bottom: 0;
-          bottom: 20px;
-          .post-metas {
-            margin: 5px 0;
-          }
-          .post-title {
-            margin: 10px 0 5px;
-          }
-        }
-      }
-      &.size-sm,
-      &.size-md {
-        @include box-img-height("md", 345);
-        .post-content {
-          margin-top: -15px;
-        }
-      }
-      &.size-lg,
-      &.size-xl {
-        @include box-img-height("md", 380);
-        .post-content {
-          margin-top: -15px;
-        }
-      }
-    }
-    .post-list {
-      .post {
-        &.size-sm,
-        &.size-md {
-          @include box-img-height("sm", 160);
-          margin-bottom: 10px;
-          .post-content {
-            margin-top: -15px;
-          }
-          .review-meta-inner {
-            .extra-meta {
-              display: none;
-            }
-          }
-        }
         &.size-lg,
         &.size-xl {
-          @include box-img-height("md", 240);
           .post-content {
-            margin-top: -35px;
+            top: auto;
+            bottom: -10px;
+            .post-title {
+              h3,
+              h4 {
+                color: #fff;
+              }
+            }
+          }
+          .post-tag {
+            > span {
+              @include font-size(20px);
+            }
+          }
+        }
+        &.size-xs {
+          @include box-img-size(360);
+        }
+        &.size-sm,
+        &.size-md {
+          @include box-img-size(360);
+          .post-content {
+            .post-title {
+              h3,
+              h4 {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+    .post-list {
+      .post {
+        &.size-lg,
+        &.size-xl {
+          @include box-img-size($box-postlist-4);
+          .post-content {
+            top: -30px;
+            min-height: $box-postlist-4-height + px;
+            .post-metas {
+              .post-views {
+                display: flex;
+                visibility: visible;
+              }
+            }
+            .post-title h3 {
+              @include custom-heading(h4);
+            }
+          }
+        }
+        &.size-xs {
+          .post-content {
+            .post-metas .post-views,
+            .review-meta-inner .extra-meta {
+              display: none;
+              visibility: hidden;
+            }
+          }
+        }
+        &.size-sm,
+        &.size-md {
+          @include box-img-size(160);
+          .post-content {
+            .post-metas .post-views,
+            .review-meta-inner .extra-meta {
+              display: none;
+              visibility: hidden;
+            }
           }
         }
       }
     }
   }
   .recents-vehicles {
-    padding-bottom: 30px;
+    margin-bottom: 40px;
     .title-section {
-      width: 250px;
-      margin: 20px 0;
-      min-width: 70px;
+      max-width: 250px;
     }
-
-    .post-list {
+    .post-featured {
       .post {
-        margin-bottom: 15px;
-        padding-right: 10px;
-        &.size-xs {
-          @include box-img-height("sm", 96);
-          .post-content {
-            bottom: inherit;
-            .post-metas {
-              margin: 5px 0;
-            }
-            .post-title {
-              margin: 10px 0 5px;
-            }
-          }
-        }
         &.size-sm,
         &.size-md {
-          @include box-img-height("sm", 120);
-          margin-bottom: 10px;
+          @include box-img-size(270);
           .post-content {
-            margin-top: -15px;
-          }
-          .review-meta-inner {
-            .extra-meta {
-              display: none;
-            }
-          }
-        }
-        &.size-lg,
-        &.size-xl {
-          @include box-img-height("xl", 110);
-          .post-image {
-            margin-top: 20px;
-          }
-
-          .post-content {
-            top: 10px;
-            min-height: 110px;
-          }
-          .post-metas {
-            .post-date,
-            .post-views {
-              h6 {
-                @include font-size(18px);
-              }
-            }
-            .post-views {
-              display: none;
-            }
+            margin-top: -30px;
           }
         }
       }
     }
-    .sidebar {
-      .newsletter {
-        padding-top: 0;
+    .post-list {
+      .post {
+        &.size-sm,
+        &.size-md,
+        &.size-lg,
+        &.size-xl {
+          @include box-img-size($box-postlist-default);
+        }
+        &.size-xs {
+          @include box-img-size(130);
+        }
+        &.size-xs,
+        &.size-sm,
+        &.size-md {
+          .post-content {
+            .post-metas {
+              .post-views {
+                display: none;
+                visibility: hidden;
+              }
+            }
+          }
+        }
       }
     }
   }
   .posts-videos {
-    background-color: #222;
-    padding-bottom: 20px;
     .title-section {
-      width: 100px;
-      margin: 20px 0;
-      color: #fff;
-      min-width: 70px;
+      max-width: 100px;
+      min-width: 80px;
     }
-    .post {
-      &.size-xs {
-        .box-play {
-          top: 30%;
-          left: 40%;
-        }
-      }
-      &.size-sm {
-        .box-md {
-          top: 30%;
-          left: 40%;
-        }
-      }
-      &.size-sm,
-      &.size-md {
-        .box-play {
-          top: 35%;
-          left: 45%;
-        }
-      }
-      &.size-lg,
-      &.size-xl {
-        @include box-img-height("md", 360);
-        .box-play {
-          top: 35%;
-          left: 45%;
-        }
-      }
-
-      .post-content {
-        .post-title {
-          h3 {
-            color: #fff;
+    .post-featured {
+      .post {
+        &.size-sm,
+        &.size-md,
+        &.size-lg,
+        &.size-xl {
+          .post-content {
+            min-height: inherit;
+          }
+          .post-tag {
+            > span {
+              @include font-size(20px);
+            }
+          }
+          .box-play {
+            top: 35%;
           }
         }
-        .post-metas {
-          .post-date,
-          .post-views {
-            h6 {
-              font-size: 0.8em;
-              font-weight: 200;
-              color: #fff;
-            }
+        &.size-xs {
+          @include box-img-size(240);
+          .post-content {
+            margin-top: -30px;
+          }
+          .box-play {
+            top: 30%;
+            left: 43%;
+          }
+        }
+        &.size-sm,
+        &.size-md {
+          .post-content {
+            margin-top: -30px;
           }
         }
       }
     }
     .post-list {
       .post {
-        padding-bottom: 0;
-        .box-play {
-          top: 40%;
-          left: 16%;
-        }
         &.size-lg,
         &.size-xl {
-          @include box-img-height("sm", 140);
-          img {
-            left: 0;
+          @include box-img-size($box-postlist-6);
+          .post-metas {
+            .post-views {
+              display: flex;
+              visibility: visible;
+            }
           }
+          .box-play {
+            top: 36%;
+            left: 17%;
+          }
+        }
+        &.size-xs {
+          margin-bottom: -10px;
+          @include box-img-size(120);
           .post-content {
             margin-top: -10px;
+            .post-metas {
+              .post-views {
+                display: none;
+                visibility: hidden;
+              }
+            }
+          }
+          .box-play {
+            top: 36%;
+            left: 12%;
+          }
+        }
+        &.size-sm,
+        &.size-md {
+          @include box-img-size($box-postlist-default);
+          .post-content {
+            .post-metas {
+              .post-views {
+                display: none;
+                visibility: hidden;
+              }
+            }
+          }
+          .box-play {
+            top: 33%;
+            left: 15%;
           }
         }
       }
@@ -477,43 +424,169 @@
   }
   .lasteds-posts {
     .title-section {
-      max-width: 120px;
+      min-width: 50px;
+      max-width: 130px;
     }
     .post-list {
       .post {
-        &.size-xs {
-          @include box-img-height("sm", 90);
-          margin-bottom: 5px;
-          .post-metas {
-            .post-views {
-              display: none;
+        &.size-lg,
+        &.size-xl {
+          @include box-img-size($box-postlist-4);
+          .post-tag {
+            > span {
+              @include font-size(20px);
             }
           }
-          .review-meta-inner {
-            .extra-meta {
-              display: none;
+        }
+        &.size-xs {
+          margin-bottom: -20px;
+          @include box-img-size(110);
+          .post-content {
+            .post-metas {
+              .post-views {
+                display: none;
+                visibility: hidden;
+              }
+            }
+          }
+          .post-tag {
+            bottom: 37px;
+            width: 90px;
+            > span {
+              @include font-size(18px);
             }
           }
         }
         &.size-sm,
         &.size-md {
-          @include box-img-height("md", 180);
+          margin-bottom: -30px;
+          @include box-img-size($box-postlist-default);
+          .post-tag {
+            bottom: 37px;
+            width: 110px;
+            > span {
+              @include font-size(16px);
+            }
+          }
           .post-content {
             .post-metas {
               .post-views {
                 display: none;
+                visibility: hidden;
               }
             }
           }
         }
-        &.size-lg,
-        &.size-xl {
-          @include box-img-height("md", 220);
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+  #home {
+    .recent-posts {
+      .post-featured {
+        .post {
           .post-content {
             .post-metas {
-              .post-date {
-                h6 {
-                  font-size: 0.9em;
+              .post-views {
+                display: none;
+                visibility: hidden;
+              }
+            }
+          }
+        }
+      }
+      .post-list {
+        .post {
+          .post-content {
+            .post-metas {
+              .post-views {
+                display: flex;
+                visibility: visible;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  #home {
+    .recent-posts {
+      .post-featured {
+        .post {
+          .post-content {
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  #home {
+    .recent-posts {
+      margin-bottom: 0;
+      .post-featured {
+        .post {
+          &.size-lg {
+            .post-content {
+              min-height: inherit;
+              .post-excerpt {
+                display: none;
+              }
+              .post-counter {
+                font-size: 80px;
+              }
+            }
+          }
+        }
+      }
+      .post-list {
+        .post {
+          .post-content {
+            .post-title {
+              h4 {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .vehicle-evaluation,
+    .posts-videos,
+    .recents-vehicles,
+    .lasteds-posts {
+      .post-list {
+        .post {
+          &.size-lg {
+            .post-content {
+              .post-title {
+                h3,
+                h4 {
+                  font-size: 14px;
+                }
+              }
+              .post-excerpt {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .lasteds-posts {
+      .post-list {
+        .post {
+          &.size-lg {
+            .post-content {
+              .post-title {
+                h4 {
+                  font-size: 18px;
                 }
               }
             }
@@ -521,30 +594,12 @@
         }
       }
     }
-    .post {
-      .post-tag {
-        width: 160px;
-        bottom: 30px;
-        > span {
-          @include font-size(20px);
-        }
-      }
-    }
   }
 }
 
-@media (min-width: 320px) and (max-width: 768px) {
-  #home {
-    .recents-vehicles {
-      padding-bottom: 30px;
-    }
-  }
-}
-
-@media (min-width: 680px) and (max-width: 1024px) {
-  #home {
-    .recents-vehicles {
-      padding-bottom: 30px;
-    }
+@media (min-width: $screen-md-min) and (max-width: $screen-lg-max) {
+  .ads .ads-container .ads-square {
+    width: 100%;
+    height: inherit;
   }
 }

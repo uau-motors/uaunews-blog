@@ -8,10 +8,10 @@
     position: relative;
     text-transform: uppercase;
     text-decoration: none !important;
-    font-weight: 600;
+    font-weight: var(--menu-fweight);
     color: var(--secondary);
-    font-size: 0.75em;
-    font-family: "Montserrat", sans-serif;
+    font-size: var(--menu-fsize);
+    font-family: var(--menu-family);
     display: inline-block;
     transition: all ease 0.31s;
     padding: 15px 5px;

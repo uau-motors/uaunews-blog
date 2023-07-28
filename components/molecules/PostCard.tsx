@@ -73,7 +73,7 @@ const PostCard = ({ post, delay, tag, excerpt, orient, counter, bordered, size, 
                     0{counter}
                   </Typography>
                 )}
-                <PostTitle title={post.title} onClick={handleClick} />
+                <PostTitle title={post.title} onClick={handleClick} variant={orient === "down" ? "h3" : "h4"} />
                 {reviews && <ReviewMeta score={reviews} place="Good Place" />}
                 {excerpt && <PostExcerpt excerpt={post.excerpt} />}
                 <Box className="post-metas">

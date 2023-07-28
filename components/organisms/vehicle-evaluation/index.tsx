@@ -31,7 +31,7 @@ const VehicleEvaluation = ({ posts, screen, width }: VehicleEvaluationProps) => 
         {screenMobile.includes(screen) && (
           <Box className={`visible-${screen}`}>
             <Grid container spacing={2}>
-              <Grid item xs={12}>
+              <Grid item xs={12} className="post-featured">
                 {posts && posts.length > 0 && <PostThumb post={posts[0]} size={screen} reviews={9.6} />}
               </Grid>
               {posts &&
@@ -59,7 +59,7 @@ const VehicleEvaluation = ({ posts, screen, width }: VehicleEvaluationProps) => 
         {screenMedium.includes(screen) && (
           <Box className={`visible-${screen}`}>
             <Grid container spacing={2}>
-              <Grid item xs={width > 479 && width <= 641 ? 12 : 6}>
+              <Grid item xs={width > 479 && width <= 641 ? 12 : 6} className="post-featured">
                 {posts && posts.length > 0 && <PostThumb post={posts[0]} size={screen} reviews={9.6} />}
               </Grid>
               <Grid item xs={width > 479 && width <= 641 ? 12 : 6}>

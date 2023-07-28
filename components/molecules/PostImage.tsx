@@ -57,16 +57,17 @@ const PostImage: React.FC<PostImageProps> = ({
               {!full && <OpenInFullIcon />}
             </Button>
           )}
-          <Box className="image-legend">
-            {legend && (
+          {legend && (
+            <Box className="image-legend">
               <Typography className="legend" variant="h5">
                 {legend}
               </Typography>
-            )}
-            <small>
-              <strong>Crédito:</strong> {credit}
-            </small>
-          </Box>
+
+              <small>
+                <strong>Crédito:</strong> {credit}
+              </small>
+            </Box>
+          )}
         </>
       ) : (
         <Skeleton variant="rectangular" width={`100%`} height={155} />

@@ -4,7 +4,10 @@
     margin: 10px 0 15px;
     z-index: 2;
     h3 {
-      @include font-size(28px);
+      @include custom-heading(h3);
+    }
+    h4 {
+      @include custom-heading(h4);
     }
   }
 }

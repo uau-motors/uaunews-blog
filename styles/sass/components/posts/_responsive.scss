@@ -56,16 +56,15 @@
 @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
   .recents-news {
     .post-featured {
-      .post-title h3 {
-        font-size: 18px;
-      }
-      .post-excerpt {
-        font-size: 14px;
-      }
-      .post-card-thumb {
-        height: 320px;
-        img {
+      .post-content {
+        .post-excerpt {
+          font-size: 14px;
+        }
+        .post-card-thumb {
           height: 320px;
+          img {
+            height: 320px;
+          }
         }
       }
     }

@@ -37,7 +37,7 @@ const RecentPosts = ({ posts, screen, width }: RecentPostsProps) => {
           <Box className={`visible-${screen}`}>
             <Grid container spacing={2}>
               {posts && posts.length > 0 && (
-                <Grid item xs={12}>
+                <Grid item xs={12} className="post-featured">
                   <PostCard
                     post={posts[6]}
                     delay={1}
@@ -81,8 +81,8 @@ const RecentPosts = ({ posts, screen, width }: RecentPostsProps) => {
 
         {screenMedium.includes(screen) && (
           <Box className={`visible-${screen}`}>
-            <Grid container spacing={2}>
-              <Grid item xs={6}>
+            <Grid container columnSpacing={2}>
+              <Grid item xs={6} className="post-featured">
                 {posts && posts.length > 0 && (
                   <PostCard
                     post={posts[6]}

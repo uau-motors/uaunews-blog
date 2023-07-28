@@ -146,10 +146,9 @@
             color: #fff;
           }
           .thumb-title {
-            font-size: 18px;
-            font-weight: 600;
             text-shadow: 1px 2px 3px $gray;
             cursor: pointer;
+            line-height: normal;
             a {
               color: #fff;
               cursor: pointer;
@@ -161,8 +160,7 @@
             font-size: 14px;
             overflow: hidden;
             opacity: 0;
-            transition: opacity 0.4s ease-out, max-height 0.4s ease-out,
-              margin 0.4s;
+            transition: opacity 0.4s ease-out, max-height 0.4s ease-out, margin 0.4s;
             text-shadow: 1px 2px 3px $gray;
             cursor: pointer;
           }
@@ -186,11 +184,7 @@
           bottom: 0;
           height: 65%;
           transition: opacity 0.2s;
-          background-image: linear-gradient(
-            to bottom,
-            transparent,
-            rgba($orange, 0.75)
-          );
+          background-image: linear-gradient(to bottom, transparent, rgba($orange, 0.75));
           -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
           -webkit-transition: 0.5s ease-in-out;
@@ -207,11 +201,7 @@
         }
         .thumb-overlay {
           &:after {
-            background-image: linear-gradient(
-              to bottom,
-              transparent,
-              rgba(black, 0.9)
-            );
+            background-image: linear-gradient(to bottom, transparent, rgba(black, 0.9));
             animation: fadein 1s;
             -moz-animation: fadein 1s; /* Firefox */
             -webkit-animation: fadein 1s; /* Safari and Chrome */

@@ -24,7 +24,7 @@ const CarouselItem = ({ data }: CarouselItemProps) => {
               <i className="fa fa-calendar-o" /> <Date dateString={"2023-03-03"} />
             </span>
           </div>
-          <h2 className="thumb-title">{data.title}</h2>
+          <h3 className="thumb-title">{data.title}</h3>
         </div>
       </div>
       <div className="thumb-overlay" />

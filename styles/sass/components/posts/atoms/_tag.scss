@@ -36,6 +36,7 @@
       color: #fff;
       position: relative;
       z-index: 2;
+      font-family: var(--cat-family);
     }
     &:hover {
       &::before {

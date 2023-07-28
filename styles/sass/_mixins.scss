@@ -3,66 +3,109 @@
   @return $remSize * 1rem;
 }
 
+@mixin dynamic-headings {
+  @for $i from 1 through $headings {
+    $heading-selector: &;
+    @if $i > 1 {
+      $heading-selector: append($heading-selector, " h#{$i}");
+    }
+    #{$heading-selector} {
+      font-family: var(--h#{$i}-family);
+      font-size: var(--h#{$i}-fsize);
+      font-weight: var(--h#{$i}-fweight);
+      font-style: var(--h#{$i}-fstyle);
+      line-height: var(--h#{$i}-lheight);
+      letter-spacing: var(--h#{$i}-fspace);
+      text-transform: var(--h#{$i}-transform);
+    }
+  }
+}
+
+$font-styles: (
+  h1: (
+    family: var(--h1-family),
+    size: var(--h1-fsize),
+    weight: var(--h1-fweight),
+    style: var(--h1-fstyle),
+    height: var(--h1-lheight),
+    spacing: var(--h1-fspace),
+    transform: var(--h1-transform)
+  ),
+  h2: (
+    family: var(--h2-family),
+    size: var(--h2-fsize),
+    weight: var(--h2-fweight),
+    style: var(--h2-fstyle),
+    height: var(--h2-lheight),
+    spacing: var(--h2-fspace),
+    transform: var(--h2-transform)
+  ),
+  h3: (
+    family: var(--h3-family),
+    size: var(--h3-fsize),
+    weight: var(--h3-fweight),
+    style: var(--h3-fstyle),
+    height: var(--h3-lheight),
+    spacing: var(--h3-fspace),
+    transform: var(--h3-transform)
+  ),
+  h4: (
+    family: var(--h4-family),
+    size: var(--h4-fsize),
+    weight: var(--h4-fweight),
+    style: var(--h4-fstyle),
+    height: var(--h4-lheight),
+    spacing: var(--h4-fspace),
+    transform: var(--h4-transform)
+  ),
+  h5: (
+    family: var(--h5-family),
+    size: var(--h5-fsize),
+    weight: var(--h5-fweight),
+    style: var(--h5-fstyle),
+    height: var(--h5-lheight),
+    spacing: var(--h5-fspace),
+    transform: var(--h5-transform)
+  ),
+  h6: (
+    family: var(--h6-family),
+    size: var(--h6-fsize),
+    weight: var(--h6-fweight),
+    style: var(--h6-fstyle),
+    height: var(--h6-lheight),
+    spacing: var(--h6-fspace),
+    transform: var(--h6-transform)
+  )
+);
+
+@mixin custom-heading($type) {
+  $heading-styles: map-get($font-styles, $type);
+
+  font-family: map-get($heading-styles, family);
+  font-size: map-get($heading-styles, size);
+  font-weight: map-get($heading-styles, weight);
+  font-style: map-get($heading-styles, style);
+  line-height: map-get($heading-styles, height);
+  letter-spacing: map-get($heading-styles, spacing);
+  text-transform: map-get($heading-styles, transform);
+}
+
 @mixin font-size($size) {
   font-size: $size;
   font-size: calculateRem($size);
 }
 
-@mixin box-img-width($type, $size: $image-width-md) {
-  @if $type == "ex" {
-    .post-image {
-      width: $size + px;
+@mixin box-img-size($height: $image-height-md) {
+  $image-width: 1920;
+  .post-image {
+    width: 100%;
+    height: $height + px;
+    figure {
+      height: $height + px;
       img {
-        width: $size + px;
-      }
-    }
-  } @else if $type == "xs" {
-    .post-image {
-      width: $size + px;
-      img {
-        width: $size + px;
-      }
-    }
-  } @else if $type == "sm" {
-    .post-image {
-      width: $size + px;
-      img {
-        width: $size + px;
-      }
-    }
-  } @else if $type == "md" {
-    .post-image {
-      width: $size + px;
-      img {
-        width: $size + px;
-      }
-    }
-  } @else if $type == "lg" {
-    .post-image {
-      width: $size + px;
-      img {
-        width: $size + px;
-      }
-    }
-  } @else if $type == "xl" {
-    .post-image {
-      width: $size + px;
-      img {
-        width: $size + px;
-      }
-    }
-  } @else if $type == "custom" {
-    .post-image {
-      width: $size + px;
-      img {
-        width: $size + px;
-      }
-    }
-  } @else {
-    .post-image {
-      width: 1080 + px;
-      img {
-        width: 1080 + px;
+        width: auto;
+        height: $height + px;
+        left: 0;
       }
     }
   }

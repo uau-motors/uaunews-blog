@@ -42,11 +42,13 @@
   }
   .meta-bold {
     font-weight: "bold";
+    font-size: 0.9em;
   }
   .extra-meta {
     align-items: center;
     display: flex;
     flex-flow: row nowrap;
     padding-left: 10px;
+    font-size: 0.9em;
   }
 }

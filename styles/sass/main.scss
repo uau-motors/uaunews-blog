@@ -3,8 +3,9 @@
 @import "~animate-sass/_animate.scss";
 // CONFIG
 @import "helpers";
-@import "hover";
+@import "mixins";
 @import "globals";
+@import "hover";
 
 @import "./animate-sass/animate";
 
@@ -40,24 +41,3 @@
 @import "../../components/organisms/contact/contact.scss";
 @import "../../components/organisms/page/page.scss";
 @import "../../components/organisms/post-header/post-header.scss";
-
-@media (max-width: 575.98px) {
-}
-@media (min-width: 576px) and (max-width: 767.98px) {
-}
-@media (min-width: 768px) and (max-width: 991.98px) {
-}
-@media (min-width: 992px) and (max-width: 1199.98px) {
-}
-
-@media (min-width: 1200px) {
-  .mui-style-1oqqzyl-MuiContainer-root {
-    max-width: 1200px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .mui-style-1oqqzyl-MuiContainer-root {
-    max-width: 1320px;
-  }
-}

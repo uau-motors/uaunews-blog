@@ -20,9 +20,7 @@ const PostTitle: FC<PostTitleProps> = ({ title, variant = "h4", component = "h3"
   return (
     <div className="post-title" onClick={onClick}>
       {title ? (
-        <Typography variant={variant} component={component}>
-          {title}
-        </Typography>
+        <Typography variant={variant}>{title}</Typography>
       ) : (
         <Skeleton variant="text" sx={{ fontSize: "2rem" }} />
       )}
