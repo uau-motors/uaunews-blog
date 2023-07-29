@@ -239,3 +239,30 @@
 .megamenu a.active > a {
   font-weight: 600;
 }
+
+.sticky {
+  position: "relative";
+  z-index: 999;
+  width: 100%;
+  transition: 0.9s;
+  .megamenu .toggle-theme .MuiSwitch-root {
+    left: 0;
+    width: 100%;
+  }
+
+  .megamenu .menuActions .btnSearch {
+    width: 200px;
+    right: 70px;
+  }
+  .megamenu .toggle-theme .MuiSwitch-root .MuiButtonBase-root {
+    left: inherit;
+    top: 0px;
+  }
+}
+
+.fixed {
+  transition: 0.9s;
+  position: fixed;
+  top: 0;
+  left: 0;
+}

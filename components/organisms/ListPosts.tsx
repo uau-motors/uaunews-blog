@@ -179,11 +179,11 @@ const ListPosts = ({ posts, screen, width }: ListPostsProps) => {
                 <Grid container spacing={2} className="ads-md">
                   <Grid item xs={12}>
                     <Ads
-                      format={"full"}
+                      format={"billboard"}
                       imageUrl={
-                        "https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/ads%2Fbanner-782x90.png?alt=media"
+                        "https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/ads%2Fads-970-250.png?alt=media"
                       }
-                      altText="728x90"
+                      altText="970x250"
                     />
                   </Grid>
                 </Grid>

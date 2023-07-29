@@ -86,6 +86,23 @@ a {
     .icon-home {
       fill: #aaa;
     }
+    .breadcrumb {
+      color: #fff;
+      li {
+        color: #fff;
+        a {
+          color: #fff;
+        }
+        svg {
+          fill: #aaa;
+        }
+        &:first-child {
+          svg {
+            fill: var(--primary);
+          }
+        }
+      }
+    }
     .recents-news {
       .post-featured,
       .post-list {
@@ -153,8 +170,23 @@ a {
     .pagination {
       display: flex;
       justify-content: center;
-      ul li a {
-        border-radius: 5px;
+      ul li {
+        a {
+          border-radius: 5px;
+          color: #aaa;
+          border-color: #aaa;
+          transition: 0.32s;
+        }
+        &:hover {
+          a {
+            color: #fff;
+            border-color: #fff;
+            background: #202020;
+          }
+        }
+        div {
+          color: #aaa;
+        }
       }
     }
   }

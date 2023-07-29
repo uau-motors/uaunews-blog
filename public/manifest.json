@@ -1,7 +1,11 @@
 {
-  "background_color": "#FFFFFF",
-  "description": "Um canal de notícias da UauMotors",
+  "background_color": "#202020",
+  "description": "A UauNews é um canal de conteúdo da UauMotors, dedicado a trazer a você conteúdos de alta relevância e todas as novidades do mundo automotivo.",
   "display": "standalone",
+  "display_override": ["window-controls-overlay"],
+  "edge_side_panel": {
+    "preferred_width": 496
+  },
   "icons": [
     {
       "density": "0.75",
@@ -40,9 +44,35 @@
       "type": "image/png"
     }
   ],
+  "lang": "pt-BR",
   "name": "UauNews",
+  "protocol_handlers": [
+    {
+      "protocol": "web+amp",
+      "url": "./?cmd=%s"
+    }
+  ],
   "scope": "/",
+  "screenshots": [
+    {
+      "label": "A UauNews é um canal de conteúdo da UauMotors, dedicado a trazer a você conteúdos de alta relevância e todas as novidades do mundo automotivo.",
+      "platform": "wide",
+      "sizes": "1280x720",
+      "src": "./screenshot-playlist.png"
+    },
+    {
+      "label": "A UauNews é um canal de conteúdo da UauMotors, dedicado a trazer a você conteúdos de alta relevância e todas as novidades do mundo automotivo.",
+      "platform": "wide",
+      "sizes": "1280x720",
+      "src": "./screenshot-visualizer.png"
+    },
+    {
+      "label": "A UauNews é um canal de conteúdo da UauMotors, dedicado a trazer a você conteúdos de alta relevância e todas as novidades do mundo automotivo.",
+      "sizes": "600x400",
+      "src": "./screenshot-widget.png"
+    }
+  ],
   "short_name": "UauNews",
   "start_url": "/",
-  "theme_color": "#FFFFFF"
+  "theme_color": "#cc6101"
 }
