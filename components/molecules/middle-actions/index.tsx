@@ -26,14 +26,11 @@ const MiddleActions: React.FC = () => {
   const { socialItens } = settings;
   const { openModal } = useOverlay();
 
-  // const [prompt, setPrompt] = useState<BeforeInstallPromptEvent | null>(null);
+  const [prompt, setPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const isPwaInstalled = typeof window !== "undefined" && window.matchMedia("(display-mode: standalone)").matches;
 
   const handleInstallButtonClick = () => {
-    if (prompt) {
-      return prompt?.prompt();
-    }
-    return Promise.reject(new Error('Tried installing before browser sent "beforeinstallprompt" event'));
+    prompt?.prompt();
   };
 
   return (

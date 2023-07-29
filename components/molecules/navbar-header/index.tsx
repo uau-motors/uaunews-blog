@@ -52,30 +52,30 @@ const StyledMenu = styled((props: MenuProps) => (
   }
 }));
 
+interface MenuCategory {
+  title: string;
+  pathname: string;
+}
+
 export default function NavbarHeader() {
   const { menusCategories } = settings;
   const { toggleDrawer } = useOverlay();
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const router = useRouter();
+  const navbar = useRef<HTMLDivElement | null>(null);
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleCloseMenu = (pathname: string) => {
-    setAnchorEl(null);
-    router.push(pathname);
-  };
-  // const [category, setCategory] = useState("home");
+  interface NavbarData {
+    sticky: boolean;
+    navHeight: number;
+    pageYOffset: number;
+  }
 
-  const [navbarData, setNavbarData] = useState({
+  const [navbarData, setNavbarData] = useState<NavbarData>({
     sticky: false,
     navHeight: 0,
     pageYOffset: 0
   });
-
-  const navbar = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,10 +90,10 @@ export default function NavbarHeader() {
     };
 
     const handleResize = () => {
-      if (navbar.current) {
+      if (navbar.current !== null) {
         setNavbarData((prevState) => ({
           ...prevState,
-          navHeight: navbar.current.clientHeight,
+          navHeight: navbar.current?.clientHeight as number,
           pageYOffset: window.scrollY
         }));
       }
@@ -102,10 +102,10 @@ export default function NavbarHeader() {
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
 
-    if (navbar.current) {
+    if (navbar.current !== null) {
       setNavbarData((prevState) => ({
         ...prevState,
-        navHeight: navbar.current.clientHeight,
+        navHeight: navbar.current?.clientHeight as number,
         pageYOffset: window.pageYOffset
       }));
     }
@@ -114,10 +114,19 @@ export default function NavbarHeader() {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
     };
-  }, [navbarData.navHeight]);
+  }, []);
 
   const handleClose = () => {
     toggleDrawer();
+  };
+
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleCloseMenu = (pathname: string) => {
+    setAnchorEl(null);
+    router.push(pathname);
   };
 
   return (
@@ -169,7 +178,7 @@ export default function NavbarHeader() {
                   open={open}
                   onClose={handleCloseMenu}
                 >
-                  {menusCategories.map((section) => (
+                  {menusCategories.map((section: MenuCategory) => (
                     <MenuItem
                       onClick={() => handleCloseMenu(`/${section.pathname}`)}
                       disableRipple
@@ -181,7 +190,7 @@ export default function NavbarHeader() {
                   ))}
                 </StyledMenu>
               </div>
-              {menusCategories.map((section) => (
+              {menusCategories.map((section: MenuCategory) => (
                 <Link key={section.title} href={section.pathname} className={`nav-item nav-${section.pathname}`}>
                   {section.title}
                 </Link>
