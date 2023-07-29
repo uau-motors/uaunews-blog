@@ -39,7 +39,7 @@ export const SEO = (props: SEOI) => {
 
   return (
     <Head>
-      <title>{title} - Mude de marcha com a UauNews - Seu hub de conteúdo Automotivo</title>
+      <title>{`${title.toString()} - Mude de marcha com a UauNews - Seu hub de conteúdo Automotivo`}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonical} />
       <meta property="og:type" content={type} />
@@ -126,13 +126,13 @@ export const SEO = (props: SEOI) => {
         rel="icon"
         type="image/png"
         sizes="96x96"
-        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Ffavicons2F96x96.png?alt=media"
+        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Ffavicon2F96x96.png?alt=media"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="16x16"
-        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2FFfavicon-16x16.png?alt=media"
+        href="https://firebasestorage.googleapis.com/v0/b/uaumotors-5211e.appspot.com/o/favicons%2Ffavicon2F16x16.png?alt=media"
       />
       <link
         rel="icon"

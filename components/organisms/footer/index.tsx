@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Container, Grid, Box, Typography } from "@mui/material";
 
 import Logo from "@molecules/logo";
@@ -7,37 +7,40 @@ import Icon from "@mui/material/Icon";
 import Date from "@components/atoms/date-component";
 import SignInModal from "@molecules/modal/sign-in";
 import Image from "next/image";
+import Link from "next/link";
+import { ThemeContext } from "@utility/contexts/ThemeContext";
+import Newsletter from "@components/molecules/newsletter";
 
 export const SocialNetworks = [
   {
     title: "Facebook",
     url: "https://www.facebook.com/uaumotors",
-    icon: "fab fa-facebook"
+    icon: "fa fa-facebook"
   },
   {
     title: "LinkedIn",
     url: "https://instagram.com/uau.motors",
-    icon: "fab fa-instagram"
+    icon: "fa fa-instagram"
   },
   {
     title: "LinkedIn",
     url: "https://www.linkedin.com/company/uaumotors/",
-    icon: "fab fa-linkedin"
+    icon: "fa fa-linkedin"
   },
   {
     title: "Twitter",
     url: "https://twitter.com/uaumotors",
-    icon: "fab fa-twitter"
+    icon: "fa fa-twitter"
   },
   {
     title: "YouTube",
     url: "https://www.youtube.com/channel/UCp_56lUt24Nc_sYt3NP1mzw/",
-    icon: "fab fa-youtube"
+    icon: "fa fa-youtube"
   },
   {
     title: "RssFeed",
     url: "",
-    icon: "fas fa-rss"
+    icon: "fa fa-rss"
   }
 ];
 
@@ -112,51 +115,13 @@ interface VehiclePhoto {
   alt: string;
 }
 
-const vehiclePhotos: VehiclePhoto[] = [
-  {
-    src: "https://via.placeholder.com/320x320.png?text=Car+1",
-    alt: "Carro 1"
-  },
-  {
-    src: "https://via.placeholder.com/320x320.png?text=Car+2",
-    alt: "Carro 2"
-  },
-  {
-    src: "https://via.placeholder.com/320x320.png?text=Car+3",
-    alt: "Carro 3"
-  },
-  {
-    src: "https://via.placeholder.com/320x320.png?text=Car+4",
-    alt: "Carro 4"
-  },
-  {
-    src: "https://via.placeholder.com/320x320.png?text=Car+5",
-    alt: "Carro 5"
-  },
-  {
-    src: "https://via.placeholder.com/320x320.png?text=Car+6",
-    alt: "Carro 6"
-  },
-  {
-    src: "https://via.placeholder.com/320x320.png?text=Car+7",
-    alt: "Carro 7"
-  },
-  {
-    src: "https://via.placeholder.com/320x320.png?text=Car+8",
-    alt: "Carro 8"
-  },
-  {
-    src: "https://via.placeholder.com/320x320.png?text=Car+9",
-    alt: "Carro 9"
-  }
-];
-
 export const Footer = () => {
+  const { theme } = useContext(ThemeContext);
   return (
-    <footer id="footer">
-      <Container>
+    <footer id="footer" className={`bg-${theme}`}>
+      <Container maxWidth="lg">
         <Grid container rowSpacing={0} columnSpacing={0}>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={3} lg={3}>
             <Box
               sx={{
                 typography: "body1",
@@ -189,7 +154,7 @@ export const Footer = () => {
               <div className="footerTitle">
                 <h2>Tags</h2>
               </div>
-              {/* <div className="tagcloud">
+              <div className="tagcloud">
                 {UauTags.map((tag, key) => {
                   if (key < 12) {
                     return (
@@ -199,7 +164,7 @@ export const Footer = () => {
                     );
                   }
                 })}
-              </div> */}
+              </div>
             </div>
           </Grid>
           <Grid item xs={12} sm={6} md={3} lg={3}>
@@ -229,15 +194,9 @@ export const Footer = () => {
           <Grid item xs={12} sm={6} md={3} lg={3}>
             <div className="footerWidget">
               <div className="footerTitle">
-                <h2>Instagram</h2>
+                <h2>Assine a nossa newsletter</h2>
               </div>
-              <div className="thumbnails">
-                {vehiclePhotos.map((img, key) => (
-                  <div key={key}>
-                    <Image src={img.src} alt={img.alt} width={128} height={128} />
-                  </div>
-                ))}
-              </div>
+              <Newsletter />
             </div>
           </Grid>
         </Grid>
@@ -254,7 +213,7 @@ export const Footer = () => {
                   return (
                     <li key={key}>
                       <a href={item.url} target="_blank">
-                        <i className={`fa fa-${item.icon}`} />
+                        <i className={`${item.icon}`} />
                       </a>
                     </li>
                   );

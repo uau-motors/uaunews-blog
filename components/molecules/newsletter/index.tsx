@@ -1,16 +1,21 @@
-import React, { useState } from "react";
-import { Box, TextField, Button, Typography, Stack } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import React, { useContext, useState } from "react";
+import { Box, TextField, Button, Typography, Stack, Checkbox, FormControlLabel } from "@mui/material";
+
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles((theme) => ({
+  input: {
+    background: theme === "dark" ? "#202020" : "#f0f0f0",
+    color: theme === "dark" ? "#ffffff" : "#212121"
+  }
+}));
+
 const Newsletter = () => {
   const [email, setEmail] = useState("");
-
-  const Input = styled(TextField)(({ theme }) => ({
-    color: theme.palette.mode === "dark" ? "#1A2027" : "#1A2027"
-  }));
+  const classes = useStyles();
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    // Aqui você pode adicionar a lógica para enviar o email para o servidor
     setEmail("");
   };
 
@@ -27,16 +32,30 @@ const Newsletter = () => {
         >
           <Typography variant="h3">Assine nossa newsletter</Typography>
 
-          <Typography variant="body2">Faça parte da lista VIP, e receba em primeira mão nossas novidades.</Typography>
-          <Input
+          <Typography variant="body2" className="info">
+            Faça parte da lista VIP, e receba em primeira mão nossas novidades.
+          </Typography>
+
+          <TextField
             label="Digite seu e-mail"
-            variant="outlined"
+            variant="filled"
             value={email}
+            size="small"
+            color="primary"
             onChange={(event) => setEmail(event.target.value)}
-            sx={{ mr: 1 }}
+            InputProps={{ className: classes.input }}
+            sx={{ m: 2 }}
           />
+
+          <FormControlLabel
+            required
+            control={<Checkbox />}
+            label="Eu li e concordo com os termos e condições"
+            className="term"
+          />
+
           <Button variant="contained" type="submit">
-            assinar
+            escreva-se agora
           </Button>
         </Stack>
       </Box>

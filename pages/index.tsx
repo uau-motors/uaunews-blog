@@ -46,7 +46,7 @@ const Home: React.FC<{
     <>
       <SEO {...{ title: seo.title, description: seo.description }} />
       <DefaultTemplate {...{ bodyClass, id: "home", header: true, footer: true }}>
-        <Container>
+        <Container maxWidth="lg">
           <CarouselBlog posts={carouselPosts || []} />
           <Box className={"recent-posts"}>
             <RecentsPosts posts={recentsPosts} screen={screen} width={width} />
@@ -54,25 +54,25 @@ const Home: React.FC<{
         </Container>
 
         <Box className={`vehicle-evaluation bg-${theme}`}>
-          <Container>
+          <Container maxWidth="lg">
             <VehicleEvaluation posts={evaluationPosts} screen={screen} width={width} />
           </Container>
         </Box>
 
         <Box className={`recents-vehicles`}>
-          <Container>
+          <Container maxWidth="lg">
             <RecentsVehicles posts={evaluationPosts} screen={screen} width={width} />
           </Container>
         </Box>
 
         <Box className={`posts-videos bg-${theme}`}>
-          <Container>
+          <Container maxWidth="lg">
             <PostsVideos posts={evaluationPosts} screen={screen} width={width} />
           </Container>
         </Box>
 
         <Box className={`lasteds-posts`}>
-          <Container>
+          <Container maxWidth="lg">
             <LastedPosts posts={lastedPosts} screen={screen} width={width} />
           </Container>
         </Box>

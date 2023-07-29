@@ -1,10 +1,7 @@
 import { FC, Fragment } from "react";
-
 import { DocumentHead } from "@molecules/document-head";
-
 import Header from "@organisms/header";
 import Footer from "@organisms/footer";
-
 interface LayoutProps {
   header: boolean;
   footer: boolean;

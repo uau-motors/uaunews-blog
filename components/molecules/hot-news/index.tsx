@@ -56,7 +56,7 @@ const HotNews = () => {
 
   return (
     <section className={`hot-news hot-news-${theme}`}>
-      <Container>
+      <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12} md={8}>
             <Box className="hot-box">

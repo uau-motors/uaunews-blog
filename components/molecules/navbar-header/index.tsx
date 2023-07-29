@@ -80,7 +80,7 @@ export default function NavbarHeader() {
         sx={{ justifyContent: "space-between", overflowX: "auto" }}
         className="megamenu"
       >
-        <Container style={{ position: "relative" }}>
+        <Container style={{ position: "relative" }} maxWidth="lg">
           <Box
             sx={{
               typography: "body1",
